@@ -2,16 +2,18 @@
 
 Velkommen til vores Project Stock repository!
 
-# Materiale
+## Materiale
 
-## Liste over ansatte på diku
+Liste over forskellige materiale og evt. relevant information.
+
+### Liste over ansatte på diku
 
 [DIKU Ansatte](http://diku.dk/Ansatte/)
 
-## Liste over projekter for studerende
+### Liste over projekter for studerende
 
 [Erhvervsportal](http://diku.dk/diku_business_club/erhvervsportal/studerende/)
 
-## HTML Scraping via PYthon
+### HTML Scraping via PYthon
 
 [Python Guide](http://docs.python-guide.org/en/latest/scenarios/scrape/)
