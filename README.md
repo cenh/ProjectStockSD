@@ -18,6 +18,9 @@ Liste over forskellige materiale og evt. relevant information.
 
 [Python Guide](http://docs.python-guide.org/en/latest/scenarios/scrape/)
 
+[
+Web Scraping with Beautiful Soup](http://web.stanford.edu/~zlotnick/TextAsData/Web_Scraping_with_Beautiful_Soup.html)
+
 ## HTML Tags - Ansatte
 
 De ansatte har (måske alle) følgende html tags, som er brugbare for scraping:
