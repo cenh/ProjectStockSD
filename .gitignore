@@ -1,0 +1,11 @@
+# Tex files #
+#############
+*.synctex.gz
+*.toc
+*.log
+*.aux
+*.out
+
+# PDF files #
+#############
+*.pdf
