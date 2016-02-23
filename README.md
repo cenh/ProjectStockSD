@@ -14,7 +14,7 @@ Liste over forskellige materiale og evt. relevant information.
 
 [Erhvervsportal](http://diku.dk/diku_business_club/erhvervsportal/studerende/)
 
-### HTML Scraping via Python
+### HTML Scraping via Python evt. diverse
 
 [Python Guide](http://docs.python-guide.org/en/latest/scenarios/scrape/)
 
