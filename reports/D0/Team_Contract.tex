@@ -1,0 +1,83 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, hmargin={1cm, 1cm}, vmargin={2.5cm, 2.5cm}]{geometry}
+\usepackage{eso-pic} % \AddToShipoutPicture
+\usepackage{graphicx} % \includegraphics
+\usepackage{amsmath}
+%% Change `ku-farve` to `nat-farve` to use SCIENCE's old colors or
+%% `natbio-farve` to use SCIENCE's new colors and logo.
+\def \ColourPDF {../include/ku-farve}
+
+%% Change `ku-en` to `nat-en` to use the `Faculty of Science` header
+\def \TitlePDF {../include/ku-en}  % University of Copenhagen
+
+\title{
+  \vspace{3cm}
+  \Huge{Team Contract} \\
+  \Large{Software Udvikling 2016}
+}
+
+\date{
+    \today
+}
+
+\begin{document}
+
+
+\AddToShipoutPicture*{\put(0,0){\includegraphics*[viewport=0 0 700 600]{\ColourPDF}}}
+\AddToShipoutPicture*{\put(0,602){\includegraphics*[viewport=0 600 700 1600]{\ColourPDF}}}
+
+\AddToShipoutPicture*{\put(0,0){\includegraphics*{\TitlePDF}}}
+
+\clearpage\maketitle
+\thispagestyle{empty}
+
+\newpage
+
+\section{Holdmedlemmer og kontaktinformation}
+\begin{enumerate}
+\item Mads Kronborg – xlq446 – 22210902 – kronborg96@gmail.com
+\item Stefan Friis Tofte – jwr342 – 60248116 – stefan.f.tofte@gmail.com
+\item Lasse Haarbye – lpt113 – 20243431 – ninjalf2@gmail.com
+\item Christian Hansen – vmk541 – 53836858 – cralle@outlook.com
+\end{enumerate}
+\section{Evner}
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Skills}    & \textbf{High}      & \textbf{Medium}                  & \textbf{Low}                     \\ \hline
+Web scraping       &                    &                                  & Lasse, Stefan, Mads og Christian \\ \hline
+Web development    & Lasse              & Mads og Christian                & Stefan                           \\ \hline
+Project management &                    & Christian                        & Lasse, Mads og Stefan            \\ \hline
+Implementation     & Lasse              & Christian, Stefan og Mads        &                                  \\ \hline
+Web design         &                    & Mads og Stefan                   & Lasse og Christian               \\ \hline
+Documentation      &                    & Stefan, Mads, Lasse og Christian &                                  \\ \hline
+Database design    & Christian og Lasse & Mads                             & Stefan                           \\ \hline
+\end{tabular}
+\end{table}
+\section{Ansvar og Fokusområde}
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Team member} & \textbf{Ansvar}                                & \textbf{Fokusområde}                                                                                       \\ \hline
+Alle                 & Web scraping                                   &                                                                                                            \\ \hline
+Lasse                & Implementation, proof reading, web development & \begin{tabular}[c]{@{}l@{}}Implementation, proof reading, \\ database design, web development\end{tabular} \\ \hline
+Stefan               &                                                & Web scraping                                                                                               \\ \hline
+Mads                 & Web design, documentation                      & Web design, documentation                                                                                  \\ \hline
+Christian            & Database design, project management            & Database design, project management, implementation                                                        \\ \hline
+\end{tabular}
+\end{table}
+\section{Møder}
+Vi mødes hver tirsdag kl. 09:15 i kantinen, og arbejder på enten implementation af frontend/backend eller arbejder på en af D-rapporterne. Derudover snakker vi om hvad der er blevet lavet og hvad der skal laves indtil næste møde. Mødet afsluttet imellem tidsrummet 12-13.
+\section{Regler}
+Vi har lavet følgende regler som hold-medlemmerne skal følge:
+\begin{itemize}
+\item Vi bruger git til at dele filer og ideer imellem os.
+\item Hvis man ikke kan komme til et møde, skal man give besked igennem Facebook til alle gruppe-medlemmerne.
+\item Kommunikation udenfor møder/øvelsestimer/forelæsninger foregår på Facebook.
+\item Man skal informere gruppen om hvilke opgaver man arbejder på regelmæssigt.
+\item Når man ikke en deadline, skal man kommunikere det videre til gruppen.
+\end{itemize}
+\end{document}
