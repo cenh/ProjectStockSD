@@ -1,0 +1,5 @@
+http://diku.dk/Ansatte
+
+Links af formen http://diku.dk/Ansatte/?id=XXXXXXXvis=medarbejder har et andet format end http://diku.dk/Ansatte?pure=da/persons/XXXXXXX
+
+Lauge Sørensen ændrer nogle gange navn til xfj310
