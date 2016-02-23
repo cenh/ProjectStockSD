@@ -18,10 +18,19 @@ Liste over forskellige materiale og evt. relevant information.
 
 [Python Guide](http://docs.python-guide.org/en/latest/scenarios/scrape/)
 
-[
-Web Scraping with Beautiful Soup](http://web.stanford.edu/~zlotnick/TextAsData/Web_Scraping_with_Beautiful_Soup.html)
+[Web Scraping with Beautiful Soup](http://web.stanford.edu/~zlotnick/TextAsData/Web_Scraping_with_Beautiful_Soup.html)
 
 ## HTML Tags - Ansatte
+
+### Tabel
+
+Table id og class:
+
+`<table id="medarbejdertable" cellspacing="0" class="list" summary="Medarbejderoversigt">`
+
+Format for rows:
+
+`<tr><td valign='top'><a href="LINK">NAVN</a></td><td valign='top'>STILLING</td><td valign='top'>ARBEJDSOMRÅDE</td><td valign='top'>TELEFON</td><td valign='top'>EMAIL</td></tr>`
 
 De ansatte har (måske alle) følgende html tags, som er brugbare for scraping:
 
