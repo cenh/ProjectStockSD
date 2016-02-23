@@ -16,6 +16,8 @@ Liste over forskellige materiale og evt. relevant information.
 
 ### HTML Scraping via Python evt. diverse
 
+[xml.etree.ElementTree](https://docs.python.org/3/library/xml.etree.elementtree.html)
+
 [Python Guide](http://docs.python-guide.org/en/latest/scenarios/scrape/)
 
 [Web Scraping with Beautiful Soup](http://web.stanford.edu/~zlotnick/TextAsData/Web_Scraping_with_Beautiful_Soup.html)
