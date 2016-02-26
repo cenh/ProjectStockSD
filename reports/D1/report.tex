@@ -118,8 +118,44 @@ Vores repository har på nuværende tidspunkt følgende mappe-struktur:
 \end{itemize}
 \subsection{Programmeringssprog/IDE}
 Vi udvikler en backend i python, hvis formål er at hente relevante .html sider og derefter harveste dem for information vi skal bruge. Hvad end relevant information programmet finder, skal gemmes i form af xml, en sql database eller andet, dette er på nuværende tidspunkt ikke fastlagt. \\ \\
-Vi udvikler ikke i en bestemt IDE, men derimod i vores inviduelle præference. Dette ville typisk være Emacs eller Atom.
+Vi udvikler ikke i en bestemt IDE, men derimod i vores inviduelle præference. Dette ville typisk være Emacs eller Atom. \\ \\
+Vi har ikke fastlagt på hvordan hjemmesiden skal laves og i hvilket sprog. Vi overvejer lidt om det skal gøres i php eller javascript (evt. jquery).
 \section{Udforskning af teknologien}
-Til vores prototype har vi lavet en simpel scraper, der udtrækker information fra hjemmesiden: \href{http://www.diku.dk/Ansatte}{DIKU Ansatte}, og finder information udfra html-tags.
+\subsection{Scraper}
+Til vores prototype har vi lavet en simpel scraper, der udtrækker information fra hjemmesiden: \href{http://www.diku.dk/Ansatte}{DIKU Ansatte}, og finder information udfra html-tags. \\
+Udsnit af programmet efter en gennemkørsel:
+\begin{verbatim}
++45 60 42 56 52
+Name: E-mail
+Link: http://diku.dk/Ansatte
+None
+Name: Wilhjelm, Kristoffer Bach
+Link: http://diku.dk/Ansatte?pure=da/persons/289312
+None
+Hjælpelærer
+
+
+Name: E-mail
+Link: http://diku.dk/Ansatte
+None
+Name: Winter, Pawel
+Link: http://diku.dk/Ansatte?pure=da/persons/86225
+None
+Professor
+
++45 23 80 77 99
+Name: E-mail
+Link: http://diku.dk/Ansatte
+None
+Name: Wulff-Nilsen, Christian
+Link: http://diku.dk/Ansatte?pure=da/persons/205096
+None
+Adjunkt
+\end{verbatim}
+Det kan hive de fleste informationer ud, dog er der stadig nogle problemer.
+\subsection{Webpage}
+Vi har lavet en index.html, hvor der intet er endnu.
+\subsection{Database}
+Eftersom vi på nuværende tidspunkt ikke ved præcis hvordan vi ville gemme vores data, har vi lavet en prototype af en sql-schema, som vi muligvis kunne bruge eller ihvertfald bruge som inspiration/udgangspunkt hvis vi vælger en anden måde at gemme vores data på.
 \section{Planlægning af næste iteration}
 \end{document}
