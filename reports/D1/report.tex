@@ -68,17 +68,18 @@
 \end{enumerate}
 \subsection{Brugsscenarier}
 
-\begin{itemize}
-  \item Brugeren skal kunne søge efter specifikke \textit{keywords}.
-  \item Brugeren skal kunne præsenteres for \textit{up-to-date} oplysninger om potentielle vejledere, herunder:
+\begin{enumerate}
+  \item Systemet skal kunne vise projekter knyttet til specifikke \textit{keywords}.
+  \item Systemet skal kunne præsentere \textit{up-to-date} oplysninger om potentielle vejledere, herunder:
   \begin{itemize}
     \item Tidligere projekter.
     \item Forskningspublikationer.
     \item Kontaktoplysninger.
   \end{itemize}
   \item Systemet skal vise en status på en vejleders arbejdsbyrde \textit{up-to-date} (hvad der præcist menes med dette, skal yderlige specificeres).
-  \item En vejleder eller industrien skal kunne tilføje et projekt til projektkataloget.
-\end{itemize}
+  \item En vejleder eller en person knyttet til en \textit{business club}, skal kunne tilføje et projekt til projektkataloget.
+  \item 
+\end{enumerate}
 
 \begin{itemize}
 \item Titel:
@@ -93,7 +94,7 @@
 \subsection{Git}
 Vi har valgt at bruge Git som vores versionskontrol værktøj, og bruger GitHub som webplatform til netop dette.
 Vi har opsat et 'repository', som bliver delt op i flere sektioner. Vi har en forside, som består af en 'README' fil, hvori vi deler materialer/resurser som kan være relevante for vores projekt.
-Derudover har vi opsat afsnit til rapporter, og til selve koden. \\ \\
+Derudover har vi opsat afsnit til rapporter, og til selve koden. \\
 Vores repository har på nuværende tidspunkt følgende mappe-struktur:
 \begin{itemize}
 \item reports
@@ -109,9 +110,9 @@ Vores repository har på nuværende tidspunkt følgende mappe-struktur:
   \end{itemize}
 \end{itemize}
 \subsection{Programmeringssprog/IDE}
-Vi udvikler en backend i python, hvis formål er at hente relevante .html sider og derefter harveste dem for information vi skal bruge. Hvad end relevant information programmet finder, skal gemmes i form af xml, en sql database eller andet, dette er på nuværende tidspunkt ikke fastlagt. \\ \\
+Vi udvikler en backend i python, hvis formål er at hente relevante .html sider og derefter høste dem for information vi skal bruge. Hvad end relevant information programmet finder, skal gemmes i form af xml, en sql database eller andet, dette er på nuværende tidspunkt ikke fastlagt. \\
 Vi udvikler ikke i en bestemt IDE, men derimod i vores inviduelle præference. Dette ville typisk være Emacs eller Atom.
 \section{Udforskning af teknologien}
-Til vores prototype har vi lavet en simpel scraper, der udtrækker information fra hjemmesiden: \hyperref[DIKU Ansatte]{http://diku.dk/Ansatte}, og finder information udfra html-tags.
+Til vores prototype har vi lavet en simpel scraper, der udtrækker information fra hjemmesiden: d\hyperref[DIKU Ansatte]{http://diku.dk/Ansatte}, og finder information udfra html-tags.
 \section{Planlægning af næste iteration}
 \end{document}
