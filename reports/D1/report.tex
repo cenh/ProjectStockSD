@@ -37,11 +37,6 @@
 	\Large{Christian E.N. Hansen} - \textbf{vmk541}% - \texttt{cralle@outlook.com}
 }
 
-%\Large{Stefan Friis Tofte} - \textbf{jwr342} \\
-%\Large{Mads Kronborg} - \textbf{xlq446} \\
-%\Large{Lasse Halberg Haarbye} - \textbf{lpt113} \\
-%\Large{Christian E.N. Hansen} - \textbf{vmk541} \\
-
 \date{
     \today
 }
@@ -87,6 +82,7 @@
   \end{itemize}
   \item Systemet skal vise en status på en vejleders arbejdsbyrde \textit{up-to-date} (hvad der præcist menes med dette, skal yderlige specificeres).
   \item En vejleder eller en person knyttet til en \textit{business-club}, skal kunne tilføje et projekt til projektkataloget.
+  \item Personer, der optræder på siden, skal kunne verificeres, hvis de eksempelvis ønsker at tilføje projekter eller foretage rettelser.
 \end{enumerate}
 
 \section{Opsætning af udviklingsmiljø}
@@ -113,11 +109,10 @@ Vi udvikler en backend i python, hvis formål er at hente relevante .html sider 
 Vi udvikler ikke i en bestemt IDE, men derimod i vores inviduelle præference. Dette ville typisk være Emacs eller Atom.
 \section{Udforskning af teknologien}
 
-Til vores prototype har vi lavet en simpel scraper, der udtrækker information fra hjemmesiden: \hyperref[DIKU Ansatte]{http://diku.dk/Ansatte}, og finder information udfra html-tags.
-
 Til vores prototype har vi lavet en simpel scraper, der udtrækker information fra hjemmesiden: \href{http://www.diku.dk/Ansatte}{DIKU Ansatte}, og finder information udfra html-tags.
 
 \section{Planlægning af næste iteration}
 I det kommende \textit{sprint} vil vi fokusere på at høstning af data. Vi vurderer at det er en kerneopgave i systemet, at automatisk opsamle \textit{up-to-date} data. Vi skal afgøre hvilke informationer, knyttet til de enkelte vejledere, der relevante og mulige at præsentere for brugerne.
 Vi skal overveje og designe en måde man kan verificere person på.
+Næste iteration vil altså primært bestå af udvikling af prototype baseret på vores brugsscenarier samt dokumentation af samme. Vi vil se nærmere på vores scraper, da den skal bruges til at indsamle information til alle scenarierne.
 \end{document}
