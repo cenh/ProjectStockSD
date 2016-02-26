@@ -5,8 +5,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[danish]{babel}
 \usepackage[T1]{fontenc}
-
-% \Packages for amsmath
+\usepackage{hyperref}
 \usepackage{amsmath, amscd}
 \usepackage{amsmath,amscd}
 \usepackage{amssymb}
@@ -17,7 +16,7 @@
 \usepackage{color}
 %% Change `ku-farve` to `nat-farve` to use SCIENCE's old colors or
 %% `natbio-farve` to use SCIENCE's new colors and logo.
-\def \ColourPDF {../include/nat-farve}
+\def \ColourPDF {../include/ku-farve}
 
 %% Change `ku-en` to `nat-en` to use the `Faculty of Science` header
 \def \TitlePDF {../include/ku-en}  % University of Copenhagen
@@ -28,11 +27,20 @@
   \Large{Software Udvikling 2016}
 }
 
-
 \author{
-  \Large{Stefan Friis Tofte} \\
-  \texttt{jwr342@alumni.ku.dk} \\
+	\Large{Stefan Friis Tofte} - \textbf{jwr342}% - \texttt{stefan.f.tofte@gmail.com}
+	\and
+	\Large{Mads Kronborg} - \textbf{xlq446}% - \texttt{kronborg96@gmail.com}
+	\and
+	\Large{Lasse Halberg Haarbye} - \textbf{lpt113}% - \texttt{ninjalf2@gmail.com}
+	\and
+	\Large{Christian E.N. Hansen} - \textbf{vmk541}% - \texttt{cralle@outlook.com}
 }
+
+%\Large{Stefan Friis Tofte} - \textbf{jwr342} \\
+%\Large{Mads Kronborg} - \textbf{xlq446} \\
+%\Large{Lasse Halberg Haarbye} - \textbf{lpt113} \\
+%\Large{Christian E.N. Hansen} - \textbf{vmk541} \\
 
 \date{
     \today
@@ -112,6 +120,6 @@ Vores repository har på nuværende tidspunkt følgende mappe-struktur:
 Vi udvikler en backend i python, hvis formål er at hente relevante .html sider og derefter harveste dem for information vi skal bruge. Hvad end relevant information programmet finder, skal gemmes i form af xml, en sql database eller andet, dette er på nuværende tidspunkt ikke fastlagt. \\ \\
 Vi udvikler ikke i en bestemt IDE, men derimod i vores inviduelle præference. Dette ville typisk være Emacs eller Atom.
 \section{Udforskning af teknologien}
-Til vores prototype har vi lavet en simpel scraper, der udtrækker information fra hjemmesiden: \hyperref[DIKU Ansatte]{http://diku.dk/Ansatte}, og finder information udfra html-tags.
+Til vores prototype har vi lavet en simpel scraper, der udtrækker information fra hjemmesiden: \href{http://www.diku.dk/Ansatte}{DIKU Ansatte}, og finder information udfra html-tags.
 \section{Planlægning af næste iteration}
 \end{document}
