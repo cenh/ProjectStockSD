@@ -5,8 +5,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[danish]{babel}
 \usepackage[T1]{fontenc}
-
-% \Packages for amsmath
+\usepackage{hyperref}
 \usepackage{amsmath, amscd}
 \usepackage{amsmath,amscd}
 \usepackage{amssymb}
@@ -17,7 +16,7 @@
 \usepackage{color}
 %% Change `ku-farve` to `nat-farve` to use SCIENCE's old colors or
 %% `natbio-farve` to use SCIENCE's new colors and logo.
-\def \ColourPDF {../include/nat-farve}
+\def \ColourPDF {../include/ku-farve}
 
 %% Change `ku-en` to `nat-en` to use the `Faculty of Science` header
 \def \TitlePDF {../include/ku-en}  % University of Copenhagen
@@ -28,11 +27,20 @@
   \Large{Software Udvikling 2016}
 }
 
-
 \author{
-  \Large{Stefan Friis Tofte} \\
-  \texttt{jwr342@alumni.ku.dk} \\
+	\Large{Stefan Friis Tofte} - \textbf{jwr342}% - \texttt{stefan.f.tofte@gmail.com}
+	\and
+	\Large{Mads Kronborg} - \textbf{xlq446}% - \texttt{kronborg96@gmail.com}
+	\and
+	\Large{Lasse Halberg Haarbye} - \textbf{lpt113}% - \texttt{ninjalf2@gmail.com}
+	\and
+	\Large{Christian E.N. Hansen} - \textbf{vmk541}% - \texttt{cralle@outlook.com}
 }
+
+%\Large{Stefan Friis Tofte} - \textbf{jwr342} \\
+%\Large{Mads Kronborg} - \textbf{xlq446} \\
+%\Large{Lasse Halberg Haarbye} - \textbf{lpt113} \\
+%\Large{Christian E.N. Hansen} - \textbf{vmk541} \\
 
 \date{
     \today
@@ -70,6 +78,7 @@
 
 \begin{enumerate}
   \item Systemet skal kunne vise projekter knyttet til specifikke \textit{keywords}.
+  \item Det skal være muligt at se et katalog over projekter.
   \item Systemet skal kunne præsentere \textit{up-to-date} oplysninger om potentielle vejledere, herunder:
   \begin{itemize}
     \item Tidligere projekter.
@@ -77,8 +86,7 @@
     \item Kontaktoplysninger.
   \end{itemize}
   \item Systemet skal vise en status på en vejleders arbejdsbyrde \textit{up-to-date} (hvad der præcist menes med dette, skal yderlige specificeres).
-  \item En vejleder eller en person knyttet til en \textit{business club}, skal kunne tilføje et projekt til projektkataloget.
-  \item 
+  \item En vejleder eller en person knyttet til en \textit{business-club}, skal kunne tilføje et projekt til projektkataloget.
 \end{enumerate}
 
 \begin{itemize}
@@ -113,6 +121,12 @@ Vores repository har på nuværende tidspunkt følgende mappe-struktur:
 Vi udvikler en backend i python, hvis formål er at hente relevante .html sider og derefter høste dem for information vi skal bruge. Hvad end relevant information programmet finder, skal gemmes i form af xml, en sql database eller andet, dette er på nuværende tidspunkt ikke fastlagt. \\
 Vi udvikler ikke i en bestemt IDE, men derimod i vores inviduelle præference. Dette ville typisk være Emacs eller Atom.
 \section{Udforskning af teknologien}
-Til vores prototype har vi lavet en simpel scraper, der udtrækker information fra hjemmesiden: d\hyperref[DIKU Ansatte]{http://diku.dk/Ansatte}, og finder information udfra html-tags.
+
+Til vores prototype har vi lavet en simpel scraper, der udtrækker information fra hjemmesiden: \hyperref[DIKU Ansatte]{http://diku.dk/Ansatte}, og finder information udfra html-tags.
+
+Til vores prototype har vi lavet en simpel scraper, der udtrækker information fra hjemmesiden: \href{http://www.diku.dk/Ansatte}{DIKU Ansatte}, og finder information udfra html-tags.
+
 \section{Planlægning af næste iteration}
+I det kommende \textit{sprint} vil vi fokusere på at høstning af data. Vi vurderer at det er en kerneopgave i systemet, at automatisk opsamle \textit{up-to-date} data. Vi skal afgøre hvilke informationer, om de enkelte vejledere, der relevante og mulige at præsentere for brugerne.  
+Vi skal overveje og designe en måde man kan verificere person på.
 \end{document}
