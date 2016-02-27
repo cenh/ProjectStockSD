@@ -14,6 +14,12 @@
 \usepackage{graphicx}
 \usepackage{framed}
 \usepackage{color}
+\usepackage{listings}
+\lstset{
+	frame=single,
+	breaklines=true,
+	postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}}
+}
 %% Change `ku-farve` to `nat-farve` to use SCIENCE's old colors or
 %% `natbio-farve` to use SCIENCE's new colors and logo.
 \def \ColourPDF {../include/ku-farve}
@@ -56,7 +62,7 @@
 \tableofcontents
 \newpage
 \section{Afklaring af krav}
-Systemet skal primært være automatiseret, men der vil være noget manuelt indtastning. Kravet om at systemet skal kunne vurdere kvaliteten af et projekt fra industrien finder vi ikke realistisk. Vi vil fokusere på at høste og fremvise det data vi har høstet.
+Systemet skal primært være automatiseret, men der vil være noget manuelt indtastning. Kravet om at systemet skal kunne vurdere kvaliteten af et projekt fra industrien finder vi ikke realistisk. Vi vil fokusere på at høste og fremvise de data vi har høstet.
 
 
 \subsection{Interessenter}
@@ -85,9 +91,9 @@ Systemet skal primært være automatiseret, men der vil være noget manuelt indt
 
 \section{Opsætning af udviklingsmiljø}
 \subsection{Git}
-Vi har valgt at bruge Git som vores versionskontrol værktøj, og bruger GitHub som webplatform til netop dette.
+Vi har valgt at bruge Git som vores versionskontrolværktøj, og bruger GitHub som web-platform til netop dette.
 Vi har opsat et 'repository', som bliver delt op i flere sektioner. Vi har en forside, som består af en 'README' fil, hvori vi deler materialer/resurser som kan være relevante for vores projekt.
-Derudover har vi opsat afsnit til rapporter, og til selve koden. \\
+Derudover har vi opsat kataloger til rapporter, og til selve koden. \\
 Vores repository har på nuværende tidspunkt følgende mappe-struktur:
 \begin{itemize}
 \item reports
@@ -102,15 +108,50 @@ Vores repository har på nuværende tidspunkt følgende mappe-struktur:
   \item include
   \end{itemize}
 \end{itemize}
+
 \subsection{Programmeringssprog/IDE}
-Vi udvikler en backend i python, hvis formål er at hente relevante .html sider og derefter høste dem for information vi skal bruge. Hvad end relevant information programmet finder, skal gemmes i form af xml, en sql database eller andet, dette er på nuværende tidspunkt ikke fastlagt. \\
-Vi udvikler ikke i en bestemt IDE, men derimod i vores inviduelle præference. Dette ville typisk være Emacs eller Atom.
+Vi udvikler en backend i Python, hvis formål er at hente relevante .html sider og derefter høste dem for information, vi skal bruge. Det relevante information programmet finder skal gemmes i form af XML, en SQL-database eller andet. Dette er på nuværende tidspunkt ikke fastlagt.\\
+\\
+Vi udvikler ikke i en bestemt IDE, men har derimod inviduelle præferencer. Dette ville typisk være Emacs eller Atom.
+
 \section{Udforskning af teknologien}
 
-Til vores prototype har vi lavet en simpel scraper, der udtrækker information fra hjemmesiden: \href{http://www.diku.dk/Ansatte}{DIKU Ansatte}, og finder information udfra html-tags.
+Til vores prototype har vi lavet en simpel scraper skrevet i Python 3.x. Den udtrækker information fra hjemmesiden over DIKU Ansatte: \url{http://www.diku.dk/Ansatte}, og høster information baseret på nogle foruddefinerede HTML-tags.\\
+\\
+Scraperen gemmer endnu ikke noget information i nogen database, men sender den høstede information til stdout. Et eksempel på programmets output kan ses herunder:
+\begin{lstlisting}
+Name: Abelskov, Hjalte
+Link: http://diku.dk/Ansatte?pure=da/persons/432412
+None
+Instruktor
+
+
+None
+Name: Abrahamsen, Mikkel
+Link: http://diku.dk/Ansatte?pure=da/persons/289414
+None
+ph.d.-studerende
+
+
+Name: E-mail
+Link: http://diku.dk/Ansatte
+None
+Name: Adamaszek, Anna Maria
+Link: http://diku.dk/Ansatte?pure=da/persons/506000
+None
+Postdoc
+\end{lstlisting}
+Der bliver loopet igennem rækkerne og kolonnerne i tabellen og derfor er inputtet ikke gjort særligt pænt. Nogle kolonner på siden er tomme hvis der er ikke er noget relevant at indskrive.\\
+\\
+Programmet kan køres ved at indtaste \texttt{python3 scraper\_template.py} i terminalen.\\
+\\
+Bemærk: Siden ændrer nogle gange output, tilsyneladende på tilfældige tidspunkter. På nuværende tidspunkt kan fejlen reproduceres ved at klikke opdater gentagne gange og nogle gange skifter folk navne, og nogle gange dukker der nye personer op, som giver en 404 hvis man klikker på dem.\\
+Det er også værd at bemærke at links af formen http://diku.dk/Ansatte/?id=XXXXXXXvis=medarbejder har et andet HTML-format end http://diku.dk/Ansatte?pure=da/persons/XXXXXXX, hvor XXXXXXX er et unikt tal der identificerer en person.\\
 
 \section{Planlægning af næste iteration}
-I det kommende \textit{sprint} vil vi fokusere på at høstning af data. Vi vurderer at det er en kerneopgave i systemet, at automatisk opsamle \textit{up-to-date} data. Vi skal afgøre hvilke informationer, knyttet til de enkelte vejledere, der relevante og mulige at præsentere for brugerne.
-Vi skal overveje og designe en måde man kan verificere person på.
-Næste iteration vil altså primært bestå af udvikling af prototype baseret på vores brugsscenarier samt dokumentation af samme. Vi vil se nærmere på vores scraper, da den skal bruges til at indsamle information til alle scenarierne. Vi vil yderligere undersøge muligheder i frameworks som \textit{Django} eller \textit{Flask} til eksempelvis verifikation af projektvejledere. Hvordan vi opfylder kravet om at vise en vejledere arbejdsbyrde, afgøre den information vi får fra sekretærer og lignede i de kommende uger.  
+I det kommende \textit{sprint} vil vi fokusere på høstning af data. Vi vurderer at det er en kerneopgave i systemet, at automatisk kunne opsamle \textit{up-to-date} data. Vi skal afgøre hvilke informationer, knyttet til de enkelte vejledere, der relevante og mulige at præsentere for brugerne.\\
+\\
+Vi skal overveje og designe en måde man kan verificere person på. Vi har allerede idéer omkring dette som blev foreslået under en tidligere øvelsestime.\\
+\\
+Næste iteration vil altså primært bestå af udvikling af prototype baseret på vores brugsscenarier samt dokumentation af samme. Vi vil se nærmere på vores scraper, da den skal bruges til at indsamle information til alle scenarierne. Vi vil yderligere undersøge muligheder i frameworks som \textit{Django} eller \textit{Flask} til eksempelvis verifikation af projektvejledere. Hvordan vi opfylder kravet om at vise en vejleders arbejdsbyrde, afgøres af den information vi får fra sekretærer og lignede i de kommende uger.
 \end{document}
