@@ -39,6 +39,8 @@ Liste over forskellige materiale og evt. relevant information.
 
 [Web Scraping with Beautiful Soup](http://web.stanford.edu/~zlotnick/TextAsData/Web_Scraping_with_Beautiful_Soup.html)
 
+[Thenewboston - Web Crawler Tutorial Pythin](https://www.youtube.com/playlist?list=PL6gx4Cwl9DGA8Vys-f48mAH9OKSUyav0q)
+
 ## HTML Tags - Ansatte
 
 ### Tabel
