@@ -2,6 +2,23 @@
 
 Velkommen til vores Project Stock repository!
 
+## Git Tips
+### Hjælp til git kommandoer:
+
+`git [kommando] --help`
+
+Eksempler:
+
+git add --help
+
+git commit --help
+
+git help --help
+
+### Se forskellen på HEAD (nyeste commit) og de *n* seneste commits:
+
+`git diff HEAD~n HEAD [fil]`
+
 ## Materiale
 
 Liste over forskellige materiale og evt. relevant information.
@@ -71,4 +88,4 @@ De ansatte har (måske alle) følgende html tags, som er brugbare for scraping:
 
 ## HTML Tags - Projekter
 
-Projekter har følgende interessanter HTML tags:
+Projekter har følgende interessante HTML tags:
