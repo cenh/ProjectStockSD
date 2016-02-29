@@ -3,3 +3,5 @@ http://diku.dk/Ansatte
 Links af formen http://diku.dk/Ansatte/?id=XXXXXXXvis=medarbejder har et andet format end http://diku.dk/Ansatte?pure=da/persons/XXXXXXX
 
 Lauge Sørensen ændrer nogle gange navn til xfj310
+
+RegEx er en dårlig idé, da whitespace bliver taget i betragtning, derfor xml.etree.ElementTree.
