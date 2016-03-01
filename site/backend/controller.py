@@ -74,7 +74,7 @@ def sendRequest(request, url, port):
 
     # Create IPV4 and TCP socket
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.connect((host, 5000))
+    s.connect((host, port))
 
     # Send the request
     sendRequest = (("GET %s HTTP/1.1\r\nHost: %s\r\nConnection: close\r\n\r\n"%(target, host)).encode("ascii"))
