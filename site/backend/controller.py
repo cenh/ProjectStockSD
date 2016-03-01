@@ -36,17 +36,12 @@ def deleteFile(file, dir):
     if os.path.exists(path):
         os.remove(path)
 
-# Returns all files in directory as array
+# Returns all files in directory as a list
 def getFiles(dir):
     if os.path.isdir(dir):
         f = os.listdir(dir)
-        #f = []
-        #for file in os.path.listdir(dir):
-        #    if os.path.isfile(f):
-        #        f.extend(file)
         return f
                 
-
 # Gets last modified date of file   
 def fileModified(file, dir):
     path = dir + "/" + file
@@ -85,7 +80,7 @@ def sendRequest(request, url, port):
     sendRequest = (("GET %s HTTP/1.1\r\nHost: %s\r\nConnection: close\r\n\r\n"%(target, host)).encode("ascii"))
     s.send(sendRequest)
     
-    # Start recieving response in terms of 4096 bits
+    # Start recieving response in terms of chunks of 4096 bytes
     r = b''
     r = s.recv(4096)
     response = ''
