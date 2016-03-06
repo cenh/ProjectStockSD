@@ -1,7 +1,7 @@
 # TODO:
 # checkFile and checkDir to replace checks in other functions
 
-import os, time, socket, time
+import os, time, socket, time, shutil
 
 # Chceks if a path leads to a file
 def checkFile(path):
@@ -25,9 +25,12 @@ def createFolder(path):
         pass
 
 # Deletes a folder with given directory name
-def deleteFolder(path):
+def deleteFolder(path, force=False):
     if os.path.isdir(path):
-        os.rmdir(path)
+        if not os.listdir(path):
+            if not force:
+                raise ValueError('Directory not empty')
+        shutil.rmtree(path)
     else:
         raise ValueError('Not a folder')
 
@@ -106,7 +109,7 @@ def fileModified(path):
 def convertTime(epoch):
     modified = time.strftime("%a, %d %B %Y %H:%M:%S GMT", time.gmtime(epoch))
     return modified
-    
+
 # Check if two given files have the same modified date
 def modifiedComparison(path1, path2):
     modified1 = fileModified(path1)
@@ -148,10 +151,11 @@ def sendRequest(url, port):
     while r:
         response = response+str(r)
         r = s.recv(4096)
-        
+
     s.close()
     return response
 
+# these should be in individual methods
 def test():
     string = "\nHello World!"
     longString = "\nHello World!\nHow are you doing?\nI'm doing well!"
@@ -176,13 +180,7 @@ def test():
     print("List of all sub-dirs in folder test: " + str(getDirs("test")))
     print("wut.txt == wat.txt?: " + str(modifiedComparison("test/wut.txt", "test/wat.txt")))
     print("wut.txt == wot.txt?: " + str(modifiedComparison("test/wut.txt", "test/wot.txt")))
-    deleteFile("test/hej/pls.txt")
-    deleteFolder("test/hej")
-    deleteFile("test/wut.txt")
-    deleteFile("test/wat.txt")
-    deleteFile("test/tad.dat")
-    deleteFile("test/wot.txt")
-    deleteFolder("test")
+    deleteFolder("test", force=True)
 
 def socket_test():
     res = sendRequest("http://example.org/index.html", 80)
@@ -191,3 +189,7 @@ def socket_test():
     print("Contents of request response: " + readFile("socketTest/Contents.txt"))
     deleteFile("socketTest/Contents.txt")
     deleteFolder("socketTest")
+
+# only run test code if run directly, not on imports
+if __name__ == '__main__':
+    test()
