@@ -1,6 +1,8 @@
-Overall:
+Overall/Generelt:
 
 * Kortfattet, mere beskrivende tekst
+* Appendix, henvisninger, indledning
+* Figurer, tabeller og modeller
 
 1: Afklaring
 
