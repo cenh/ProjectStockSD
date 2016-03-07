@@ -1,0 +1,25 @@
+Overall:
+
+* Kortfattet, mere beskrivende tekst
+
+1: Afklaring
+
+* Hvorfor skal systemet være automatisk, der mangler nogle tanker bag det.
+* Hvad er de vigtigeste brugsscenarier.
+* Brugsscenarie #4, hvad skal være up-to-date.
+
+2: Opsætning
+
+* Fint, kortfattet men forstående.
+
+3: Udforskning
+
+* Opfylder nok ikke kravene så meget, der står noget med web-server.
+* Fortælle at vi fokuserer på website
+
+4: Planlægning
+
+* Svageste afsnit, specifisering af hvad vi skal lave. F.eks. arbejdsopgaver eller user-stories.
+* Punktopdeling af hvad vi skal lave.
+
+
