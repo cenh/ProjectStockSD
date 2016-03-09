@@ -187,9 +187,9 @@ def socket_test():
     createFolder("socketTest")
     writeFile("socketTest/Contents.txt", res)
     print("Contents of request response: " + readFile("socketTest/Contents.txt"))
-    deleteFile("socketTest/Contents.txt")
-    deleteFolder("socketTest")
+    deleteFolder("socketTest", force=True)
 
 # only run test code if run directly, not on imports
 if __name__ == '__main__':
     test()
+    socket_test()
