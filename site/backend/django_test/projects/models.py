@@ -18,9 +18,10 @@ class Supervisor(models.Model):
 class Project(models.Model):
     supervisor = models.ForeignKey(Supervisor, on_delete=models.SET_NULL, null=True, blank=True)
     name = models.CharField(max_length=32)
+    subject = models.CharField(max_length=64)
     description_short = models.CharField(max_length=256)
-    description_long = models.CharField(max_length=1024)
-    pub_date = models.DateTimeField('date published')
+    description_long = models.TextField()
+    pub_date = models.DateField('date published')
 
     def __str__(self):
         return self.name
