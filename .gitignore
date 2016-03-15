@@ -9,3 +9,8 @@
 # PDF files #
 #############
 *.pdf
+
+# Python #
+##########
+*.pyc
+__pycache__
