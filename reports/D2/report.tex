@@ -29,7 +29,7 @@
 
 \title{
   \vspace{3cm}
-  \Huge{D1} \\
+  \Huge{D2} \\
   \Large{Software Udvikling 2016}
 }
 
@@ -58,4 +58,93 @@
 \tableofcontents
 \newpage
 
+\section{Implementaring af opgaver}
+\section{Afprøvning}
+Vi har til denne rapport lavet testing af følgende: \\
+\begin{itemize}
+\item Django webapp
+\item Scraper
+\item Controller
+\end{itemize}
+Django webapp referer til: XXX, Scraper referer til vores webscraper, som henter information fra diku.dk og indsætter dem ind i vores database. Controller referer til vores eget lille python modul, som er opsat af flere hjælpefunktioner, der skal spare os for noget arbejde.
+\subsection{Django webapp}
+\subsection{Scraper}
+\subsection{Controller}
+Testene er placeret i vores test-mappe, herinde har vi lavet 7 forskellige tests, som har til formål at vise om testene bliver klaret, hvad deres output er, og hvor hurtig testene er. Testene er beskrevet nedenfor: \\
+\begin{itemize}
+\item \textit{files\_test()}
+  \begin{itemize}
+  \item Beskrivelse: Laver en mappe og 3 filer, derefter bliver indholdet af filerne printet.
+  \item Forventet output: Stringene som er blevet skrevet til filerne. En lang string, og to små.
+  \end{itemize}
+\item \textit{folder\_test()} 
+  \begin{itemize}
+  \item Beskrivelse: Laver en mappe kaldet \textit{test}, og placerer 3 mapper inden i denne mappe. Printer derefter alle undermappe i mappen \textit{test}.
+  \item Forventet output: 3 mapper.
+  \end{itemize}
+\item \textit{last\_modified\_test()}
+  \begin{itemize}
+  \item Beskrivelse: Laver 3 filer, hvoraf den ene først bliver lavet med 1 sekunds \textit{delay}, derefter bliver deres last modified timestamp printet.
+  \item Forventet output: Deres tid siden epoch, og et convertet læseligt timestamp. Den ene skal være anderledes grundet delay.
+  \end{itemize}
+\item \textit{last\_modified\_comparison\_test()} 
+  \begin{itemize}
+  \item Beskrivelse: Sammen som overstående, men deres timestamps bliver sammenlignet.
+  \item Forventet output: Mappe 1 og 2 giver \textit{True}, mens mappe 1 og 3 giver \textit{False}.
+  \end{itemize}
+\item \textit{files\_ext\_test()}
+  \begin{itemize}
+  \item Beskrivelse: Laver 4 filer, hvoraf den ene har et andet format. Derefter bliver alle filerne med den ene type printet, og derefter filer med den anden type.
+  \item Forventet output: Først skriver den alle \textit{.txt} og derefter den ene \textit{.dat}.
+  \end{itemize}
+\item \textit{clear\_file\_test()} 
+  \begin{itemize}
+  \item Beskrivelse: Laver en fil og skriver en \textit{String} til den. Printer indeholdet, derefter sletter den alt i filen og printer dens nye indhold.
+  \item Forventet output: Først har filen et indhold der bliver printet, og derefter intet indhold.
+  \end{itemize}
+\item \textit{socket\_test()}
+  \begin{itemize}
+  \item Beskrivelse: Opretter en socket, og prøver at hente indholdet af websiden example.org. Skriver indeholdet til en fil, som derefter bliver printet.
+  \item Forventet output: Vi får en HTTP response tilbage, og derefter sidens html-kode.
+  \end{itemize}
+\end{itemize}
+Testene bliver kørt en efter hinanden, før en test bliver kørt begynder vi at tage tid, testen bliver kørt og efter testen er færdig bliver tiden printet. Efter hver test er der 3 sekunders pause, for at gøre det lettere at læse outputtet, inden den næste test bliver kørt.
+\subsubsection{Output}
+Vores tests er opbygget sådan, at vis testene ikke fejler så er alt gået godt. Derfor hvis vi ikke for nogle errors fra python, og hvis outputtet er korrekt så er alt gået godt. \\ \\
+Under vises et udsnit af test resultaterne:
+\begin{verbatim}
+Starting last modified comparison test!
+wut.txt last modified converted: Tue, 15 March 2016 10:39:02 GMT
+wat.txt last modified converted: Tue, 15 March 2016 10:39:02 GMT
+wot.txt last modified converted: Tue, 15 March 2016 10:39:03 GMT
+wut.txt == wat.txt?: True
+wut.txt == wot.txt?: False
+Last modified comparison test took: --- 1.00246596336 seconds ---
+
+Starting files extention test!
+Creating files wut.txt, wat.txt, wot.txt, tad.dat
+List of all .txt files in folder test: ['wot.txt', 'wat.txt', 'wut.txt']
+List of all .dat files in folder test: ['tad.dat']
+Files extension test took: --- 0.00122594833374 seconds ---
+
+Starting socket test!
+Contents of request response: HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: max-age=604800
+Content-Type: text/html
+Date: Tue, 15 Mar 2016 09:39:07 GMT
+Etag: "359670651"
+Expires: Tue, 22 Mar 2016 09:39:07 GMT
+Last-Modified: Fri, 09 Aug 2013 23:54:35 GMT
+Server: ECS (iad/18F0)
+Vary: Accept-Encoding
+X-Cache: HIT
+x-ec-custom-error: 1
+Content-Length: 1270
+Connection: close
+Socket test took: --- 0.243407011032 seconds ---
+
+\end{verbatim}
+\section{Design}
+\section{Planlægning af næste iteration}
 \end{document}
