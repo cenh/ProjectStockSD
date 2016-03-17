@@ -2,9 +2,9 @@ from django.db import models
 from django.core.validators import RegexValidator
 
 class Supervisor(models.Model):
-    first_name = models.CharField(max_length=32, blank=True)
-    last_name = models.CharField(max_length=32, blank=True)
-    email = models.CharField(max_length=128, blank=True)
+    first_name = models.CharField(max_length=32)
+    last_name = models.CharField(max_length=32)
+    email = models.CharField(max_length=128)
     website = models.CharField(max_length=128, blank=True)
     location = models.CharField(max_length=128, blank=True) # office
     workplace = models.CharField(max_length=128, blank=True)
