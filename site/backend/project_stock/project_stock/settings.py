@@ -78,10 +78,9 @@ WSGI_APPLICATION = 'project_stock.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'projectstock',
-        'USER': 'projectstock',
-        'PASSWORD': 'projectstock',
-        'HOST': '127.0.0.1'
+        'OPTIONS': {
+            'read_default_file': '/var/www/html/project_stock/project_stock/config.cnf',
+        },
     }
 }
 
