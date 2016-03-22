@@ -9,7 +9,7 @@ Velkommen til vores Project Stock repository!
 `[sudo] pip install mysqlclient`
 
 ### Skift til debug mode
-I filen `project_stock/project_stock/settings.py` erstat `Debug = False` med `Debug = True` (husk at den ikke skal commites medmindre I laver andre relevante ændringer; Debug skal være False på webserveren).
+I filen `project_stock/project_stock/settings.py` erstat `Debug = False` med `Debug = True` (husk at den ikke skal pushes medmindre I laver andre relevante ændringer; Debug SKAL være False på webserveren).
 
 ### Login-fil
 Filen `project_stock/project_stock/config.cnf` skal have følgende format:
@@ -26,7 +26,7 @@ Filen `project_stock/project_stock/config.cnf` skal have følgende format:
 
 `default-character-set = "utf8"`
 
-Denne fil skal heller ikke pushes til Github, da passwords kun skal være på webserveren og testmaskinerne.
+Indstillingerne skal udfyldes manuelt (spørg efter dem), og husk, at denne fil heller ikke skal pushes til Github, da passwords kun skal være på webserveren og testmaskinerne.
 
 ### Kør serveren
 Skift mappe til project_stock Django projektet og kør:
@@ -34,27 +34,18 @@ Skift mappe til project_stock Django projektet og kør:
 `python manage.py runserver`
 
 ## Migrations på serveren
-### Lav migrations
-`sudo python manage.py makemigrations`
+### Log ind som root
+`sudo -i`
 
-`sudo python manage.py migrate`
+### Lav migrations project_stock
+`python manage.py makemigrations`
+
+`python manage.py migrate`
 
 ### Genstart serveren
-`sudo systemctl restart httpd mariadb` eller CTRL-C + `python manage.py runserver`
+`systemctl restart httpd mariadb` eller CTRL-C + `python manage.py runserver`
 
 ## Git Tips
-### Hjælp til git kommandoer:
-
-`git [kommando] --help`
-
-Eksempler:
-
-git add --help
-
-git commit --help
-
-git help --help
-
 ### Se forskellen på HEAD (nyeste commit) og de *n* seneste commits:
 
 `git diff HEAD~n HEAD [fil]`
