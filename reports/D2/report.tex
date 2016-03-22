@@ -201,12 +201,17 @@ Vi vil fokusere på tre \textit{use cases} i næste iteration. Disse \textit{use
 \end{itemize}
 
 \subsubsection*{\textit{Use case} \ref{enum:verifikation}}
-De specifikke detaljer, for verificeringen, skal overvejes og konkretiseres nærmere. Verificeringen skal foregå med mindst mulig adminstrativ vedligholdelse, men samtidig korrekt. Hvi den deles op i underopgaver er disse,
+De specifikke detaljer, for verificeringen, skal overvejes og konkretiseres nærmere. Verificeringen skal foregå med mindst mulig adminstrativ vedligholdelse, men samtidig korrekt. Hvis den deles op i underopgaver er disse,
 \begin{itemize}
 	\item Der skal en password generering.
 	\item Muligheden for oprettelse af en bruger, med prædefinerede valg, ud fra det høstede data.
 \end{itemize}
 
 \subsubsection*{\textit{Use case} \ref{enum:vejlederInfo}}
-Den høstede information om vejlederne skal benyttes til automatisk at oprette brugere i Django. Hver af disse brugere skal herefter kunne overtages de respektive vejledere.
+Den høstede information om vejlederne skal benyttes til automatisk at oprette et katalog over vejledere. Hver af disse vejledere skal herefter kunne overtages de respektive vejledere med oprettelse af en Django-bruger.
+\begin{itemize}
+	\item Scraperen skal kunne omforme den høstede data til det korrekte format.
+	\item En Django-bruger skal kunne knyttes til en vejleder i kataloget.
+	\item En katalog-vejledes skal kunne "låses", således indtastet information har højere prioritet end høstet information.
+\end{itemize}
 \end{document}

@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'projectstock.karen.gg', '128.199.39.
 # Application definition
 
 INSTALLED_APPS = [
+    'project_stock.apps.ProjectStockConfig',
     'projects.apps.ProjectsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
