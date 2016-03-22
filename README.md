@@ -2,6 +2,37 @@
 
 Velkommen til vores Project Stock repository!
 
+## Kør serveren lokalt
+### Installer afhængigheder
+`[sudo] apt-get install libmysqlclient-dev python-dev # eller den tilsvarende kommando for din distribution`
+
+`[sudo] pip install mysqlclient`
+
+### Skift til debug mode
+I filen `project_stock/project_stock/settings.py` erstat `Debug = False` med `Debug = True` (husk at den ikke skal commites medmindre I laver andre relevante ændringer; Debug skal være False på webserveren).
+
+### Login-fil
+Filen `project_stock/project_stock/config.cnf` skal have følgende format:
+
+`[client]`
+
+`database = "database"`
+
+`user = "username"`
+
+`password = "password"`
+
+`host = "128.199.39.136"`
+
+`default-character-set = "utf8"`
+
+Denne fil skal heller ikke pushes til Github, da passwords kun skal være på webserveren og testmaskinerne.
+
+### Kør serveren
+Skift mappe til project_stock Django projektet og kør:
+
+`python manage.py runserver`
+
 ## Git Tips
 ### Hjælp til git kommandoer:
 
