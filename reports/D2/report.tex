@@ -14,6 +14,7 @@
 \usepackage{graphicx}
 \usepackage{framed}
 \usepackage{color}
+\usepackage{float}
 \usepackage{listings}
 \lstset{
 	frame=single,
@@ -166,7 +167,7 @@ Bemærk at Last modified test tager over et sekund, da den venter et sekund før
 \section{Design}
 Django benytter \textit{models}, hver model knytter sig til en enkelt tabel i den tilhørende database. En model i Django er en Python klasse. \\ I vores projekt benytter vi indtil videre klasserne \texttt{Supervisor} og \texttt{Project}. På Figur \ref{fig:modelUML} ses et UML diagram for klasserne \texttt{Supervisor} og \texttt{Project}.
 
-\begin{figure}[!h] %% Jeg kan ikke få det diagram til at stå korrekt :/
+\begin{figure}[H]
 			\centering
 			\includegraphics[width=1.0\textwidth]{modelUML.png}
 			\caption{Foreløbelig UML diagram over vores klasser.}
