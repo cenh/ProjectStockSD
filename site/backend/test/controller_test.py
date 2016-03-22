@@ -1,4 +1,4 @@
-import sys, time
+import sys, time, os
 sys.path.append('..')
 from controller import *
 
@@ -10,18 +10,22 @@ def files_test():
     writeFile("test/wut.txt", string)
     writeFile("test/wat.txt", longString)
     writeFile("test/wot.txt", string)
-    print("Contents of wut.txt: " + readFile("test/wut.txt"))
-    print("Contents of wat.txt: " + readFile("test/wat.txt"))
-    print("Contents of wot.txt: " + readFile("test/wot.txt"))
-    deleteFolder("test", force=True)
+    if (readFile("test/wut.txt") == string and readFile("test/wat.txt") == longString
+        and readFile("test/wot.txt") == string):
+        return True
+    else:
+        return False
 
 def folder_test():
     createFolder("test")
     createFolder("test/test")
     createFolder("test/hej")
     createFolder("test/fedt")
-    print("List of all sub-dirs in folder test: " + str(getDirs("test")))
-    deleteFolder("test", force=True)
+    ex_res = ['fedt', 'hej', 'test'] # Expected result
+    if all(x in ex_res for x in getDirs("test")):
+        return True
+    else:
+        return False
 
 def last_modified_test():
     createFolder("test")
@@ -29,13 +33,14 @@ def last_modified_test():
     writeFile("test/wat.txt", longString)
     time.sleep(1)
     writeFile("test/wot.txt", string)
-    print("wut.txt last modified: " + str(fileModified("test/wut.txt")))
-    print("wut.txt last modified converted: " + convertTime(fileModified("test/wut.txt")))
-    print("wat.txt last modified: " + str(fileModified("test/wat.txt")))
-    print("wat.txt last modified converted: " + convertTime(fileModified("test/wat.txt")))
-    print("wot.txt last modified: " + str(fileModified("test/wot.txt")))
-    print("wot.txt last modified converted: " + convertTime(fileModified("test/wot.txt")))
-    deleteFolder("test", force=True)
+    wut_os = os.path.getmtime("test/wut.txt")
+    wat_os = os.path.getmtime("test/wat.txt")
+    wot_os = os.path.getmtime("test/wot.txt")
+    if (wut_os == fileModified("test/wut.txt") and wat_os == fileModified("test/wat.txt")
+        and wot_os == fileModified("test/wot.txt")):
+        return True
+    else:
+        return False
 
 def last_modified_comparison_test():
     createFolder("test")
@@ -43,72 +48,89 @@ def last_modified_comparison_test():
     writeFile("test/wat.txt", longString)
     time.sleep(1)
     writeFile("test/wot.txt", string)
-    print("wut.txt last modified converted: " + convertTime(fileModified("test/wut.txt")))
-    print("wat.txt last modified converted: " + convertTime(fileModified("test/wat.txt")))
-    print("wot.txt last modified converted: " + convertTime(fileModified("test/wot.txt")))
-    print("wut.txt == wat.txt?: " + str(modifiedComparison("test/wut.txt", "test/wat.txt")))
-    print("wut.txt == wot.txt?: " + str(modifiedComparison("test/wut.txt", "test/wot.txt")))
-    deleteFolder("test", force=True)
+    wut_os = os.path.getmtime("test/wut.txt")
+    wat_os = os.path.getmtime("test/wat.txt")
+    wot_os = os.path.getmtime("test/wot.txt")
+    if (modifiedComparison("test/wut.txt", "test/wat.txt") and modifiedComparison("test/wut.txt", "test/wot.txt") == False):
+        return True
+    else:
+        return False
 
 def files_ext_test():
-    print("Creating files wut.txt, wat.txt, wot.txt, tad.dat")
     createFolder("test")
     writeFile("test/wut.txt", string)
     writeFile("test/wat.txt", longString)
     writeFile("test/wot.txt", string)
     writeFile("test/tad.dat", string)
-    print("List of all .txt files in folder test: " + str(getFilesExt("test", ".txt")))
-    print("List of all .dat files in folder test: " + str(getFilesExt("test", ".dat")))
-    deleteFolder("test", force=True)
+    ex_res1 = ['wot.txt', 'wat.txt', 'wut.txt']
+    ex_res2 = ['tad.dat']
+    if (all(x in ex_res1 for x in getFilesExt("test", ".txt")) and all(x in ex_res2 for x in getFilesExt("test", ".dat"))):
+        return True
+    else:
+        return False
 
 def clear_file_test():
     createFolder("test")
     writeFile("test/wut.txt", string)
-    print("Contents of wut.txt before clearing: " + readFile("test/wut.txt"))
+    ex_res = ''
     clearFile("test/wut.txt")
-    print("Contents of wut.txt after clearing: " + readFile("test/wut.txt"))
-    deleteFolder("test", force=True)
-    
+    if (readFile("test/wut.txt") == ex_res):
+        return True
+    else:
+        return False
+
+    # Just returns true for now
 def socket_test():
     res = sendRequest("http://example.org/index.html", 80)
     createFolder("socketTest")
     writeFile("socketTest/Contents.txt", res)
-    print("Contents of request response: " + readFile("socketTest/Contents.txt"))
-    deleteFolder("socketTest", force=True)
+    # if(SOMETHING):
+    return True
     
     # only run test code if run directly, not on imports
+    # Maybe run all the tests in a loop instead :/
 if __name__ == '__main__':
     print("Starting files test!")
     start_time = time.time()
-    files_test()
+    res = files_test()
+    print("Files test returned: " + str(res))
     print("Files test took: --- %s seconds ---" % (time.time() - start_time) + '\n')
-    time.sleep(3)
+    time.sleep(1)
     print("Starting folder test!")
     start_time = time.time()
-    folder_test()
+    res = folder_test()
+    print("Folder test returned: " + str(res))
     print("Folder test took: --- %s seconds ---" % (time.time() - start_time) + '\n')
-    time.sleep(3)
+    time.sleep(1)
     print("Starting last modified test!")
     start_time = time.time()
-    last_modified_test()
+    res = last_modified_test()
+    print("Last modified test returned: " + str(res))
     print("Last modified test took: --- %s seconds ---" % (time.time() - start_time) + '\n')
-    time.sleep(3)
+    time.sleep(1)
     print("Starting last modified comparison test!")
     start_time = time.time()
-    last_modified_comparison_test()
+    res = last_modified_comparison_test()
+    print("Last modified comparison test returned: " + str(res))
     print("Last modified comparison test took: --- %s seconds ---" % (time.time() - start_time) + '\n')
-    time.sleep(3)
-    print("Starting files extention test!")
+    time.sleep(1)
+    print("Starting files extension test!")
     start_time = time.time()
-    files_ext_test()
+    res = files_ext_test()
+    print("Files extension test returned: " + str(res))
     print("Files extension test took: --- %s seconds ---" % (time.time() - start_time) + '\n')
-    time.sleep(3)
+    time.sleep(1)
     print("Starting clear file test!")
     start_time = time.time()
-    clear_file_test()
+    res = clear_file_test()
+    print("Clear file test returned: " + str(res))
     print("Clear file test took: --- %s seconds ---" % (time.time() - start_time) + '\n')
-    time.sleep(3)
+    time.sleep(1)
     print("Starting socket test!")
     start_time = time.time()
-    socket_test()
+    res = socket_test()
+    print("Socket test returned: " + str(res))
     print("Socket test took: --- %s seconds ---" % (time.time() - start_time) + '\n')
+    deleteFolder("test", force=True)
+    deleteFolder("socketTest", force=True)
+
