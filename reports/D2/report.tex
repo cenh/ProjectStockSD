@@ -114,17 +114,17 @@ Testene er placeret i vores test-mappe, herinde har vi lavet 7 forskellige tests
   \item Beskrivelse: Laver en mappe og 3 filer, derefter bliver indholdet af filerne printet.
   \item Forventet output: Stringene som er blevet skrevet til filerne. En lang string, og to små.
   \end{itemize}
-\item \textit{folder\_test()} 
+\item \textit{folder\_test()}
   \begin{itemize}
   \item Beskrivelse: Laver en mappe kaldet \textit{test}, og placerer 3 mapper inden i denne mappe. Printer derefter alle undermappe i mappen \textit{test}.
   \item Forventet output: 3 mapper.
   \end{itemize}
 \item \textit{last\_modified\_test()}
   \begin{itemize}
-  \item Beskrivelse: Laver 3 filer, hvoraf den ene først bliver lavet med 1 sekunds \textit{delay}, derefter bliver deres last modified timestamp printet.
+  \item Beskrivelse: Laver 3 filer, hvoraf den ene først bliver lavet med 1 sekunders \textit{delay}, derefter bliver deres last modified timestamp printet.
   \item Forventet output: Deres tid siden epoch, og et convertet læseligt timestamp. Den ene skal være anderledes grundet delay.
   \end{itemize}
-\item \textit{last\_modified\_comparison\_test()} 
+\item \textit{last\_modified\_comparison\_test()}
   \begin{itemize}
   \item Beskrivelse: Sammen som overstående, men deres timestamps bliver sammenlignet.
   \item Forventet output: Mappe 1 og 2 giver \textit{True}, mens mappe 1 og 3 giver \textit{False}.
@@ -134,7 +134,7 @@ Testene er placeret i vores test-mappe, herinde har vi lavet 7 forskellige tests
   \item Beskrivelse: Laver 4 filer, hvoraf den ene har et andet format. Derefter bliver alle filerne med den ene type printet, og derefter filer med den anden type.
   \item Forventet output: Først skriver den alle \textit{.txt} og derefter den ene \textit{.dat}.
   \end{itemize}
-\item \textit{clear\_file\_test()} 
+\item \textit{clear\_file\_test()}
   \begin{itemize}
   \item Beskrivelse: Laver en fil og skriver en \textit{String} til den. Printer indeholdet, derefter sletter den alt i filen og printer dens nye indhold.
   \item Forventet output: Først har filen et indhold der bliver printet, og derefter intet indhold.
@@ -163,5 +163,14 @@ Last modified test returned: True
 Last modified test took: --- 1.00135111809 seconds ---
 \end{lstlisting}
 \section{Design}
+Django benytter \textit{models}, hver model knytter sig til en enkelt tabel i den tilhørende database. En model i Django er en Python klasse. \\ I vores projekt benytter vi indtil videre klasserne \texttt{Supervisor} og \texttt{Project}. På Figur \ref{fig:modelUML} ses et UML diagram for klasserne \texttt{Supervisor} og \texttt{Project}. 
+
+\begin{figure}
+			\centering
+			\includegraphics[width=1.0\textwidth]{modelUML.pdf}
+			\caption{}
+			\label{fig:modelUML}
+	\end{figure}
+
 \section{Planlægning af næste iteration}
 \end{document}

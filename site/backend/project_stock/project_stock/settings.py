@@ -79,7 +79,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
-            'read_default_file': '/var/www/html/project_stock/project_stock/config.cnf',
+            'read_default_file': os.path.join(BASE_DIR, 'project_stock/config.cnf'),
         },
     }
 }
