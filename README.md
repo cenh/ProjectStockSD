@@ -33,6 +33,15 @@ Skift mappe til project_stock Django projektet og kør:
 
 `python manage.py runserver`
 
+## Migrations på serveren
+### Lav migrations
+`sudo python manage.py makemigrations`
+
+`sudo python manage.py migrate`
+
+### Genstart serveren
+`sudo systemctl restart httpd mariadb` eller CTRL-C + `python manage.py runserver`
+
 ## Git Tips
 ### Hjælp til git kommandoer:
 
