@@ -20,4 +20,5 @@ urlpatterns = [
     url(r'^', include('projects.urls')), # don't know if this is the correct way to do it but it works :D
     url(r'^projects/', include('projects.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^example/', views.example, name='example'),
 ]
