@@ -218,18 +218,43 @@ Django benytter \textit{models}, hver model knytter sig til en enkelt tabel i de
 
 \section{Planlægning af næste iteration}
 Vi vil fokusere på tre \textit{use cases} i næste iteration. Disse \textit{use cases} er,
-\begin{itemize}
-	\item Det skal være muligt at se et katalog over projekter.
-	\item Personer, der optræder på siden, skal kunne verificeres, hvis de eksempelvis ønsker at tilføje projekter eller foretage rettelser.
-	\item Systemet skal kunne præsentere \textit{up-to-date} oplysninger om potentielle vejledere, herunder:
+\subsection*{Forventes implementeret i næste iteration}
+\begin{enumerate}
+	\item \label{enum:katalog} Det skal være muligt at se et katalog over projekter.
+
+	\item \label{enum:verifikation} Personer, der optræder på siden, skal kunne verificeres, hvis de eksempelvis ønsker at tilføje projekter eller foretage rettelser.
+
+\subsection*{Påbegyndes i næste iteration}
+
+	\item \label{enum:vejlederInfo} Systemet skal kunne præsentere \textit{up-to-date} oplysninger om potentielle vejledere, herunder:
 	\begin{itemize}
 		\item Tidligere projekter.
 		\item Forskningspublikationer.
 		\item Kontaktoplysninger.
 	\end{itemize}
+\end{enumerate}
+
+\subsection{Underopgaver for de udvalgte \textit{use cases}}
+\subsubsection*{\textit{Use case} \ref{enum:katalog}}
+\begin{itemize}
+	\item Django \textit{modellen} for et projekt skal færdiggøres.
+	\item Der skal laves en \textit{template} knyttet til denne model.
 \end{itemize}
 
-\subsection{Underopgaver for \textit{use cases}}
+\subsubsection*{\textit{Use case} \ref{enum:verifikation}}
+De specifikke detaljer, for verificeringen, skal overvejes og konkretiseres nærmere. Verificeringen skal foregå med mindst mulig adminstrativ vedligholdelse, men samtidig korrekt. Hvi den deles op i underopgaver er disse,
+\begin{itemize}
+	\item Der skal en password generering.
+	\item Muligheden for oprettelse af en bruger, med prædefinerede valg, ud fra det høstede data.
+\end{itemize}
+
+\subsubsection*{\textit{Use case} \ref{enum:vejlederInfo}}
+Den høstede information om vejlederne skal benyttes til automatisk at oprette brugere i Django. Hver af disse brugere skal herefter kunne overtages de respektive vejledere.
+
+
+
+
+
 
 
 \end{document}

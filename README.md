@@ -131,3 +131,16 @@ De ansatte har (måske alle) følgende html tags, som er brugbare for scraping:
 ## HTML Tags - Projekter
 
 Projekter har følgende interessante HTML tags:
+
+## DIKU test server links
+
+[Bachelor Projekter](http://dikutestserver.dk/resultat.php?emne=&type=Bachelorprojekt&firma=&submit=S%C3%B8g)
+
+[Kandidat Projekter](http://dikutestserver.dk/resultat.php?emne=&type=Kandidatprojekt&firma=&submit=S%C3%B8g)
+
+[Kandidat Speciale](http://dikutestserver.dk/resultat.php?emne=&type=Speciale&firma=&submit=S%C3%B8g)
+
+[Virksomhedsprojekter](http://dikutestserver.dk/resultat.php?emne=&type=Virksomhedsprojekt&firma=&submit=S%C3%B8g)
+
+[Andre projekter](http://dikutestserver.dk/result.php?search=true&searcher=Student)
+
