@@ -147,43 +147,6 @@ Testene er placeret i vores test-mappe, herinde har vi lavet 7 forskellige tests
 \end{itemize}
 Testene bliver kørt en efter hinanden, før en test bliver kørt begynder vi at tage tid, testen bliver kørt og efter testen er færdig bliver tiden printet. Efter hver test er der 1 sekunders pause, for at gøre det lettere at læse outputtet, inden den næste test bliver kørt.
 \subsubsection{Output}
-
-Vores tests er opbygget sådan, at vis testene ikke fejler så er alt gået godt. Derfor hvis vi ikke for nogle errors fra python, og hvis outputtet er korrekt så er alt gået godt.
-Under vises et udsnit af test resultaterne:
-\begin{verbatim}
-Starting last modified comparison test!
-wut.txt last modified converted: Tue, 15 March 2016 10:39:02 GMT
-wat.txt last modified converted: Tue, 15 March 2016 10:39:02 GMT
-wot.txt last modified converted: Tue, 15 March 2016 10:39:03 GMT
-wut.txt == wat.txt?: True
-wut.txt == wot.txt?: False
-Last modified comparison test took: --- 1.00246596336 seconds ---
-
-Starting files extention test!
-Creating files wut.txt, wat.txt, wot.txt, tad.dat
-List of all .txt files in folder test: ['wot.txt', 'wat.txt', 'wut.txt']
-List of all .dat files in folder test: ['tad.dat']
-Files extension test took: --- 0.00122594833374 seconds ---
-
-Starting socket test!
-Contents of request response: HTTP/1.1 200 OK
-Accept-Ranges: bytes
-Cache-Control: max-age=604800
-Content-Type: text/html
-Date: Tue, 15 Mar 2016 09:39:07 GMT
-Etag: "359670651"
-Expires: Tue, 22 Mar 2016 09:39:07 GMT
-Last-Modified: Fri, 09 Aug 2013 23:54:35 GMT
-Server: ECS (iad/18F0)
-Vary: Accept-Encoding
-X-Cache: HIT
-x-ec-custom-error: 1
-Content-Length: 1270
-Connection: close
-Socket test took: --- 0.243407011032 seconds ---
-
-\end{verbatim}
-
 Vores tests er opbygget på sådan en måde, at de bare returner en \textit{Boolean}, så vi ved om testen er fejlet eller ej. \\ \\
 Under vises et udsnit af test resultaterne:
 \begin{lstlisting}
@@ -199,22 +162,18 @@ Starting last modified test!
 Last modified test returned: True
 Last modified test took: --- 1.00135111809 seconds ---
 \end{lstlisting}
-
-
-
-
+Bemærk at Last modified test tager over et sekund, da den venter et sekund før den laver den tredje fil.
 \section{Design}
 Django benytter \textit{models}, hver model knytter sig til en enkelt tabel i den tilhørende database. En model i Django er en Python klasse. \\ I vores projekt benytter vi indtil videre klasserne \texttt{Supervisor} og \texttt{Project}. På Figur \ref{fig:modelUML} ses et UML diagram for klasserne \texttt{Supervisor} og \texttt{Project}.
 
-
-\begin{figure}
+\begin{figure}[!h] %% Jeg kan ikke få det diagram til at stå korrekt :/
 			\centering
-			\includegraphics[width=1.0\textwidth]{modelUML.pdf}
-			\caption{}
+			\includegraphics[width=1.0\textwidth]{modelUML.png}
+			\caption{Foreløbelig UML diagram over vores klasser.}
 			\label{fig:modelUML}
 \end{figure}
 
-
+Dette er på nuværende tidspunkt, hvordan vi forestiller os det kommer til at se ud. Der vil formentlig ske ændringer i fremtiden, når vi bliver mere bekendte med hvilke attributer som vi skal gemme.
 
 \section{Planlægning af næste iteration}
 Vi vil fokusere på tre \textit{use cases} i næste iteration. Disse \textit{use cases} er,
@@ -250,11 +209,4 @@ De specifikke detaljer, for verificeringen, skal overvejes og konkretiseres nær
 
 \subsubsection*{\textit{Use case} \ref{enum:vejlederInfo}}
 Den høstede information om vejlederne skal benyttes til automatisk at oprette brugere i Django. Hver af disse brugere skal herefter kunne overtages de respektive vejledere.
-
-
-
-
-
-
-
 \end{document}
