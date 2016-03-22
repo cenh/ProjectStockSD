@@ -60,7 +60,7 @@
 
 \section{Implementaring af opgaver}
 \section{Afprøvning}
-Vi har til denne rapport lavet testing af følgende: \\
+Vi har til denne rapport lavet testing af følgende:
 \begin{itemize}
 \item Django webapp
 \item Scraper
@@ -70,7 +70,7 @@ Django webapp referer til: XXX, Scraper referer til vores webscraper, som henter
 \subsection{Django webapp}
 \subsection{Scraper}
 \subsection{Controller}
-Testene er placeret i vores test-mappe, herinde har vi lavet 7 forskellige tests, som har til formål at vise om testene bliver klaret, hvad deres output er, og hvor hurtig testene er. Testene er beskrevet nedenfor: \\
+Testene er placeret i vores test-mappe, herinde har vi lavet 7 forskellige tests, som har til formål at vise om testene bliver klaret, hvad deres output er, og hvor hurtig testene er. Testene er beskrevet nedenfor:
 \begin{itemize}
 \item \textit{files\_test()}
   \begin{itemize}
@@ -110,7 +110,7 @@ Testene er placeret i vores test-mappe, herinde har vi lavet 7 forskellige tests
 \end{itemize}
 Testene bliver kørt en efter hinanden, før en test bliver kørt begynder vi at tage tid, testen bliver kørt og efter testen er færdig bliver tiden printet. Efter hver test er der 3 sekunders pause, for at gøre det lettere at læse outputtet, inden den næste test bliver kørt.
 \subsubsection{Output}
-Vores tests er opbygget sådan, at vis testene ikke fejler så er alt gået godt. Derfor hvis vi ikke for nogle errors fra python, og hvis outputtet er korrekt så er alt gået godt. \\ \\
+Vores tests er opbygget sådan, at vis testene ikke fejler så er alt gået godt. Derfor hvis vi ikke for nogle errors fra python, og hvis outputtet er korrekt så er alt gået godt.
 Under vises et udsnit af test resultaterne:
 \begin{verbatim}
 Starting last modified comparison test!
@@ -145,15 +145,33 @@ Connection: close
 Socket test took: --- 0.243407011032 seconds ---
 
 \end{verbatim}
-\section{Design}
-Django benytter \textit{models}, hver model knytter sig til en enkelt tabel i den tilhørende database. En model i Django er en Python klasse. \\ I vores projekt benytter vi indtil videre klasserne \texttt{Supervisor} og \texttt{Project}. På Figur \ref{fig:modelUML} ses et UML diagram for klasserne \texttt{Supervisor} og \texttt{Project}. 
 
 \begin{figure}
 			\centering
 			\includegraphics[width=1.0\textwidth]{modelUML.pdf}
 			\caption{}
 			\label{fig:modelUML}
-	\end{figure}
+\end{figure}
+
+\section{Design}
+Django benytter \textit{models}, hver model knytter sig til en enkelt tabel i den tilhørende database. En model i Django er en Python klasse. \\ I vores projekt benytter vi indtil videre klasserne \texttt{Supervisor} og \texttt{Project}. På Figur \ref{fig:modelUML} ses et UML diagram for klasserne \texttt{Supervisor} og \texttt{Project}.
+
+
 
 \section{Planlægning af næste iteration}
+Vi vil fokusere på tre \textit{use cases} i næste iteration. Disse \textit{use cases} er,
+\begin{itemize}
+	\item Det skal være muligt at se et katalog over projekter.
+	\item Personer, der optræder på siden, skal kunne verificeres, hvis de eksempelvis ønsker at tilføje projekter eller foretage rettelser.
+	\item Systemet skal kunne præsentere \textit{up-to-date} oplysninger om potentielle vejledere, herunder:
+	\begin{itemize}
+		\item Tidligere projekter.
+		\item Forskningspublikationer.
+		\item Kontaktoplysninger.
+	\end{itemize}
+\end{itemize}
+
+\subsection{Underopgaver for \textit{use cases}}
+
+
 \end{document}
