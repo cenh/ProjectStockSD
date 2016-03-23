@@ -82,6 +82,7 @@ Vi har til denne rapport lavet testing af følgende:
 	\end{itemize}
 \end{itemize}
 \subsection{Django webapp}
+
 \subsection{Scraper}
 Til denne test har vi kørt vores scraper på hjemmesiden over DIKU Ansatte: \url{http://www.diku.dk/Ansatte}, og høster information baseret på nogle foruddefinerede HTML-tags. Nedenstående er et udsnit af vores resultat. \\ \\
 Scraperen gemmer endnu ikke noget information i nogen database, men sender den høstede information til stdout. Et eksempel på programmets output kan ses herunder:
@@ -142,8 +143,8 @@ Testene er placeret i vores test-mappe, herinde har vi lavet 7 forskellige tests
   \end{itemize}
 \item \textit{socket\_test()}
   \begin{itemize}
-  \item Beskrivelse: Opretter en socket, og prøver at hente indholdet af websiden example.org. Skriver indeholdet til en fil, som derefter bliver printet.
-  \item Forventet output: Vi får en HTTP response tilbage, og derefter sidens html-kode.
+  \item Beskrivelse: Opretter en socket, og prøver at hente indholdet af en webside, som vi har liggende på vores webserver (Så den aldrig ændrer sig). Skriver indeholdet til en fil, som derefter bliver printet.
+  \item Forventet output: Filen der bliver skrevet til, vil være identisk med den der ligger på webserveren.
   \end{itemize}
 \end{itemize}
 Testene bliver kørt en efter hinanden, før en test bliver kørt begynder vi at tage tid, testen bliver kørt og efter testen er færdig bliver tiden printet. Efter hver test er der 1 sekunders pause, for at gøre det lettere at læse outputtet, inden den næste test bliver kørt.
