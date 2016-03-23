@@ -152,5 +152,8 @@ def sendRequest(url, port):
         response = response+str(r)
         r = s.recv(4096)
 
+    msg = response.split('\n', 1)[0].split(' ', 2)[2]
+    body = response.split("\r\n\r\n", 1)[1]
+
     s.close()
-    return response
+    return (msg, body)

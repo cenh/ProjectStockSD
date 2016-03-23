@@ -1,4 +1,4 @@
-import sys, time, os
+import sys, time, os, filecmp
 sys.path.append('..')
 from controller import *
 
@@ -81,11 +81,13 @@ def clear_file_test():
 
     # Just returns true for now
 def socket_test():
-    res = sendRequest("http://example.org/index.html", 80)
+    (msg, body) = sendRequest("http://128.199.39.136/example/", 80)
     createFolder("socketTest")
-    writeFile("socketTest/Contents.txt", res)
-    # if(SOMETHING):
-    return True
+    writeFile("socketTest/Contents.txt", body)
+    if(filecmp.cmp('expected_test.txt', 'socketTest/Contents.txt')):
+        return True
+    else:
+       return False
     
     # only run test code if run directly, not on imports
     # Maybe run all the tests in a loop instead :/
