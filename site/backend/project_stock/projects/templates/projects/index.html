@@ -6,20 +6,38 @@
     <link rel="stylesheet" type="text/css" href="/static/style.css">
   </head>
   <body>
-    <table border="1">
-      {% for p in project_list %}
-      <tr>
-        <td>
-          {{ p.name }}
-        </td>
-        <td>
-          {{ p.description_short }}
-        </td>
-        <td>
-          {{ p.pub_date }}
-        </td>
-      </tr>
-      {% endfor %}
-    </table>
+    <center>
+      <h1>Projects</h1>
+      <table border="1">
+	<tr>
+	  <th>Project</th><th>Type</th><th>Supervisor</th><th>Subject</th><th>Start Date</th><th>Deadline</th><th>Published</th>
+	</tr>
+	{% for p in project_list %}
+	<tr>
+          <td>
+            {{ p.name }}
+          </td>
+	  <td>
+	    {{ p.type }}
+	  </td>
+          <td>
+            {{ p.supervisor }}
+          </td>
+	  <td>
+	    {{ p.subject }}
+	  </td>
+          <td>
+            {{ p.start_date }}
+          </td>
+	  <td>
+	    {{ p.deadline }}
+	  </td>
+	  <td>
+	    {{ p.pub_date }}
+	  </td>
+	</tr>
+	{% endfor %}
+      </table>
+    </center>
   </body>
 </html>

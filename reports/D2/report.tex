@@ -82,7 +82,13 @@ Vi har til denne rapport lavet testing af følgende:
 	\end{itemize}
 \end{itemize}
 \subsection{Django webapp}
-
+\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.0\textwidth]{projects.png}
+			\caption{Forskellige projekter tilføjet til vores Django webapp.}
+			\label{fig:projects}
+\end{figure}
+Ovenstående på figur\ref{fig:projects} kan man se nogle \textit{dummy} projekter, som vi manuelt har tilføjet til vores webapp. Dette har vi gjort for at kunne tilpasse templates, og visuelt kunne se hvordan vi vil repræsentere data inden vi begynder at scrape.
 \subsection{Scraper}
 Til denne test har vi kørt vores scraper på hjemmesiden over DIKU Ansatte: \url{http://www.diku.dk/Ansatte}, og høster information baseret på nogle foruddefinerede HTML-tags. Nedenstående er et udsnit af vores resultat. \\ \\
 Scraperen gemmer endnu ikke noget information i nogen database, men sender den høstede information til stdout. Et eksempel på programmets output kan ses herunder:
