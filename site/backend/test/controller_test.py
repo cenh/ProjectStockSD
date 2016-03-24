@@ -10,11 +10,9 @@ def files_test():
     writeFile("test/wut.txt", string)
     writeFile("test/wat.txt", longString)
     writeFile("test/wot.txt", string)
-    if (readFile("test/wut.txt") == string and readFile("test/wat.txt") == longString
-        and readFile("test/wot.txt") == string):
-        return True
-    else:
-        return False
+    return (readFile("test/wut.txt") == string
+            and readFile("test/wat.txt") == longString
+            and readFile("test/wot.txt") == string)
 
 def folder_test():
     createFolder("test")
@@ -22,10 +20,7 @@ def folder_test():
     createFolder("test/hej")
     createFolder("test/fedt")
     ex_res = ['fedt', 'hej', 'test'] # Expected result
-    if all(x in ex_res for x in getDirs("test")):
-        return True
-    else:
-        return False
+    return (all(x in ex_res for x in getDirs("test")))
 
 def last_modified_test():
     createFolder("test")
@@ -36,11 +31,9 @@ def last_modified_test():
     wut_os = os.path.getmtime("test/wut.txt")
     wat_os = os.path.getmtime("test/wat.txt")
     wot_os = os.path.getmtime("test/wot.txt")
-    if (wut_os == fileModified("test/wut.txt") and wat_os == fileModified("test/wat.txt")
-        and wot_os == fileModified("test/wot.txt")):
-        return True
-    else:
-        return False
+    return (wut_os == fileModified("test/wut.txt")
+            and wat_os == fileModified("test/wat.txt")
+            and wot_os == fileModified("test/wot.txt"))
 
 def last_modified_comparison_test():
     createFolder("test")
@@ -51,10 +44,8 @@ def last_modified_comparison_test():
     wut_os = os.path.getmtime("test/wut.txt")
     wat_os = os.path.getmtime("test/wat.txt")
     wot_os = os.path.getmtime("test/wot.txt")
-    if (modifiedComparison("test/wut.txt", "test/wat.txt") and modifiedComparison("test/wut.txt", "test/wot.txt") == False):
-        return True
-    else:
-        return False
+    return (modifiedComparison("test/wut.txt", "test/wat.txt")
+            and modifiedComparison("test/wut.txt", "test/wot.txt") == False)
 
 def files_ext_test():
     createFolder("test")
@@ -64,31 +55,23 @@ def files_ext_test():
     writeFile("test/tad.dat", string)
     ex_res1 = ['wot.txt', 'wat.txt', 'wut.txt']
     ex_res2 = ['tad.dat']
-    if (all(x in ex_res1 for x in getFilesExt("test", ".txt")) and all(x in ex_res2 for x in getFilesExt("test", ".dat"))):
-        return True
-    else:
-        return False
+    return (all(x in ex_res1 for x in getFilesExt("test", ".txt"))
+            and all(x in ex_res2 for x in getFilesExt("test", ".dat")))
 
 def clear_file_test():
     createFolder("test")
     writeFile("test/wut.txt", string)
     ex_res = ''
     clearFile("test/wut.txt")
-    if (readFile("test/wut.txt") == ex_res):
-        return True
-    else:
-        return False
+    return (readFile("test/wut.txt") == ex_res)
 
     # Just returns true for now
 def socket_test():
     (msg, body) = sendRequest("http://128.199.39.136/example/", 80)
     createFolder("socketTest")
     writeFile("socketTest/Contents.txt", body)
-    if(filecmp.cmp('expected_test.txt', 'socketTest/Contents.txt')):
-        return True
-    else:
-       return False
-    
+    return (filecmp.cmp('expected_test.txt', 'socketTest/Contents.txt'))
+
     # only run test code if run directly, not on imports
     # Maybe run all the tests in a loop instead :/
 if __name__ == '__main__':
