@@ -60,25 +60,25 @@
 \newpage
 
 \section{Implementering af opgaver}
-Vi har for denne iteration, mødtes hver mandag til øvelsestimerne og nogle gange om tirsdagen. Vi har diskuteret hvilke opgaver der var vigtige, og siddet sammen og implementeret visse opgaver i fællesskab. \\ \\
-Ved sidste iteration regnede vi med at, vi skulle fokusere på høstning af data til denne iteration. Her har vi ændret holdning, og har istedet for fokuseret på at få sat en \textit{Django-webapplikation} op på en server, så vi har kunne afprøve og se det kører på en rigtig server med tilhørende database. \\ \\
-Vi har igennem \textit{Django-frameworket} fået opsat nogle \textit{Models} som indeholder data over projekter, vejleder og andet (Dette bliver beskrevet nærmere i  næste afsnit omkring afprøvning af Django).
+Vi har i denne iteration, mødtes hver mandag til øvelsestimerne og nogle gange om tirsdagenfor at diskutere hvilke opgaver der var vigtige, og siddet sammen og implementeret visse opgaver i fællesskab. \\ \\
+Ved sidste iteration regnede vi med at, vi skulle fokusere på høstning af data i denne iteration. Her har vi ændret holdning og istedet fokuseret på at få sat en \textit{Django-webapplikation} op på en server, så vi har kunne afprøve og se det køre på en rigtig server med tilhørende database. \\ \\
+Vi har igennem \textit{Django-frameworket} fået opsat nogle \textit{Models} som indeholder data omkring projekter, vejledere og andet. Dette bliver beskrevet nærmere i næste afsnit under afprøvning af Django.
 Derved har vi opfyldt vores \textit{brugsscenarie} om at kunne se et katalog over projekter og vejledere. Og igennem samme \textit{Models} opfylder vi endnu et \textit{brugsscenarie} om at kunne præsentere \textit{up-to-date} oplysninger omkring vejledere, projekter, publikationer og kontaktoplysninger. \\ \\
-Vi er derudover kommet frem til, at vi vil verificerer personer som optræder på siden, med deres email-addresse. Dette mener vi er den bedste løsning, da vi tager email-addresserne fra diku's hjemmeside, så antager vi kun en bruger for at være verificeret hvis vi kan se den email-addresse stående under en person på diku's hjemmeside. Vi lader kun verificerede brugere ændre i projekter og andet. Derudover må en verificeret bruger selvfølgelig kun ændre på sine egne data.
+Vi er derudover kommet frem til, at vi vil verificere personer som optræder på siden, med deres email-addresse. Dette mener vi er den bedste løsning, da vi tager email-addresserne fra DIKUs hjemmeside, og derfor antager vi kun en bruger for at være verificeret hvis vi kan se den email-addresse stående under en person på DIKUs hjemmeside. Vi lader kun verificerede brugere ændre i projekter og andet. Derudover må en verificeret bruger selvfølgelig kun ændre på sine egne data eller data relateret til et projekt som de er ansvarlige for.
 \section{Afprøvning}
 Vi har til denne rapport lavet testing af følgende:
 \begin{itemize}
-\item Django webapplikation
+\item Django-webapplikation
 	\begin{itemize}
-	\item Bestående af \textit{Models} og en \textit{MySQL-database} har vi indsat værdier og vist dem på vores webserver.
+	\item Bestående af \textit{Models} og en MySQL-database hvor vi har indsat værdier og vist dem på vores webserver.
 	\end{itemize}
 \item Scraper
 	\begin{itemize}
-	\item Vi har kørt vores scraper på diku's hjemmeside over ansatte og printet resultatet.
+	\item Vi har kørt vores scraper på DIKUs hjemmeside over ansatte og printet resultatet.
 	\end{itemize}
 \item Controller
 	\begin{itemize}
-	\item Controller er vores eget lille modul, som er designet til at lette vores arbejde ved implementation af f.eks. Scraperen. Vi har testet flere af funktionerne igennem \textit{unit-testing}.
+	\item Controller er vores eget lille modul, som er designet til at lette vores arbejde ved implementation af f.eks. scraperen. Vi har testet flere af funktionerne igennem \textit{unit-testing}.
 	\end{itemize}
 \end{itemize}
 \subsection{Django webapp}
@@ -114,43 +114,43 @@ Testene er placeret i vores test-mappe, herinde har vi lavet 7 forskellige tests
 \item \textit{files\_test()}
   \begin{itemize}
   \item Beskrivelse: Laver en mappe og 3 filer, derefter bliver indholdet af filerne printet.
-  \item Forventet output: Stringene som er blevet skrevet til filerne. En lang string, og to små.
+  \item Forventet output: Strengene som er blevet skrevet til filerne. En lang streng, og to små.
   \end{itemize}
 \item \textit{folder\_test()}
   \begin{itemize}
-  \item Beskrivelse: Laver en mappe kaldet \textit{test}, og placerer 3 mapper inden i denne mappe. Printer derefter alle undermappe i mappen \textit{test}.
+  \item Beskrivelse: Laver en mappe kaldet \textit{test}, og placerer 3 mapper inde i denne mappe. Printer derefter alle undermapper i mappen \textit{test}.
   \item Forventet output: 3 mapper.
   \end{itemize}
 \item \textit{last\_modified\_test()}
   \begin{itemize}
-  \item Beskrivelse: Laver 3 filer, hvoraf den ene først bliver lavet med 1 sekunders \textit{delay}, derefter bliver deres last modified timestamp printet.
+  \item Beskrivelse: Laver 3 filer, hvoraf den ene først bliver lavet med en forsinkelse på 1 sekund, og derefter bliver deres last modified timestamp printet.
   \item Forventet output: Deres tid siden epoch, og et convertet læseligt timestamp. Den ene skal være anderledes grundet delay.
   \end{itemize}
 \item \textit{last\_modified\_comparison\_test()}
   \begin{itemize}
-  \item Beskrivelse: Sammen som overstående, men deres timestamps bliver sammenlignet.
-  \item Forventet output: Mappe 1 og 2 giver \textit{True}, mens mappe 1 og 3 giver \textit{False}.
+  \item Beskrivelse: Samme som overstående, men deres timestamps bliver sammenlignet.
+  \item Forventet output: Mappe 1 og 2 giver True, mens mappe 1 og 3 giver False.
   \end{itemize}
 \item \textit{files\_ext\_test()}
   \begin{itemize}
-  \item Beskrivelse: Laver 4 filer, hvoraf den ene har et andet format. Derefter bliver alle filerne med den ene type printet, og derefter filer med den anden type.
-  \item Forventet output: Først skriver den alle \textit{.txt} og derefter den ene \textit{.dat}.
+  \item Beskrivelse: Laver 4 filer, hvoraf den ene har en anden filtype. Derefter bliver alle filerne med den ene type printet, og derefter filer med den anden type.
+  \item Forventet output: Først skriver den alle \textit{.txt}-filer og derefter den ene \textit{.dat}-fil.
   \end{itemize}
 \item \textit{clear\_file\_test()}
   \begin{itemize}
-  \item Beskrivelse: Laver en fil og skriver en \textit{String} til den. Printer indeholdet, derefter sletter den alt i filen og printer dens nye indhold.
+  \item Beskrivelse: Laver en fil, skriver en streng til den, printer indeholdet og derefter sletter den alt i filen og printer dens nye indhold.
   \item Forventet output: Først har filen et indhold der bliver printet, og derefter intet indhold.
   \end{itemize}
 \item \textit{socket\_test()}
   \begin{itemize}
-  \item Beskrivelse: Opretter en socket, og prøver at hente indholdet af en webside, som vi har liggende på vores webserver (Så den aldrig ændrer sig). Skriver indeholdet til en fil, som derefter bliver printet.
+  \item Beskrivelse: Opretter en socket, og prøver at hente indholdet af en webside, som vi har liggende på vores webserver (så den aldrig ændrer sig). Skriver indeholdet til en fil, som derefter bliver printet.
   \item Forventet output: Filen der bliver skrevet til, vil være identisk med den der ligger på webserveren.
   \end{itemize}
 \end{itemize}
-Testene bliver kørt en efter hinanden, før en test bliver kørt begynder vi at tage tid, testen bliver kørt og efter testen er færdig bliver tiden printet. Efter hver test er der 1 sekunders pause, for at gøre det lettere at læse outputtet, inden den næste test bliver kørt.
+Testene bliver kørt lige efter hinanden. Før en test bliver kørt begynder vi at tage tid, som bliver printet når testen er færdig. Efter hver test er der en pause på 1 sekund for at gøre det lettere at læse outputtet, inden den næste test bliver kørt.
 \subsubsection{Output}
-Vores tests er opbygget på sådan en måde, at de bare returner en \textit{Boolean}, så vi ved om testen er fejlet eller ej. \\ \\
-Under vises et udsnit af test resultaterne:
+Vores tests returnerer True eller False, så vi ved om testen er fejlet eller ej. \\ \\
+Herunder vises et udsnit af test resultaterne:
 \begin{lstlisting}
 Starting files test!
 Files test returned: True
@@ -166,7 +166,7 @@ Last modified test took: --- 1.00135111809 seconds ---
 \end{lstlisting}
 Bemærk at Last modified test tager over et sekund, da den venter et sekund før den laver den tredje fil.
 \section{Design}
-Django benytter \textit{models}, hver model knytter sig til en enkelt tabel i den tilhørende database. En model i Django er en Python klasse. \\ I vores projekt benytter vi indtil videre klasserne \texttt{Supervisor} og \texttt{Project}. På Figur \ref{fig:modelUML} ses et UML diagram for klasserne \texttt{Supervisor} og \texttt{Project}.
+Django benytter \textit{models} og hver model knytter sig til en enkelt tabel i den tilhørende database. En model i Django er en Python klasse. \\ I vores projekt benytter vi indtil videre klasserne \texttt{Supervisor} og \texttt{Project}. På Figur \ref{fig:modelUML} ses et UML diagram for klasserne \texttt{Supervisor} og \texttt{Project}.
 
 \begin{figure}[H]
 			\centering
@@ -174,20 +174,20 @@ Django benytter \textit{models}, hver model knytter sig til en enkelt tabel i de
 			\caption{Foreløbelig UML diagram over vores klasser.}
 			\label{fig:modelUML}
 \end{figure}
-
-Dette er på nuværende tidspunkt, hvordan vi forestiller os det kommer til at se ud. Der vil formentlig ske ændringer i fremtiden, når vi bliver mere bekendte med hvilke attributer som vi skal gemme.
+~\\
+Dette er på nuværende tidspunkt, hvordan vi forestiller os det kommer til at se ud. Der vil formentlig ske ændringer i fremtiden, når vi bliver mere bekendte med hvilke attributer, vi skal gemme.
 
 \section{Planlægning af næste iteration}
-Vi vil fokusere på tre \textit{use cases} i næste iteration. Disse \textit{use cases} er,
-\subsection*{Forventes implementeret i næste iteration}
+Vi vil fokusere på tre \textit{use cases} i næste iteration. Disse \textit{use cases} er:
 \begin{enumerate}
+\subsection*{Forventes implementeret i næste iteration}
 	\item \label{enum:katalog} Det skal være muligt at se et katalog over projekter.
 
 	\item \label{enum:verifikation} Personer, der optræder på siden, skal kunne verificeres, hvis de eksempelvis ønsker at tilføje projekter eller foretage rettelser.
 
 \subsection*{Påbegyndes i næste iteration}
 
-	\item \label{enum:vejlederInfo} Systemet skal kunne præsentere \textit{up-to-date} oplysninger om potentielle vejledere, herunder:
+	\item \label{enum:vejlederInfo} Systemet skal kunne præsentere aktuelle oplysninger om potentielle vejledere, herunder:
 	\begin{itemize}
 		\item Tidligere projekter.
 		\item Forskningspublikationer.
@@ -203,17 +203,17 @@ Vi vil fokusere på tre \textit{use cases} i næste iteration. Disse \textit{use
 \end{itemize}
 
 \subsubsection*{\textit{Use case} \ref{enum:verifikation}}
-De specifikke detaljer, for verificeringen, skal overvejes og konkretiseres nærmere. Verificeringen skal foregå med mindst mulig adminstrativ vedligholdelse, men samtidig korrekt. Hvis den deles op i underopgaver er disse,
+De specifikke detaljer, for verificeringen, skal overvejes og konkretiseres nærmere. Verificeringen skal foregå med mindst mulig adminstrativ vedligholdelse, men samtidig korrekt. Hvis den deles op i underopgaver er disse:
 \begin{itemize}
 	\item Der skal en password generering.
 	\item Muligheden for oprettelse af en bruger, med prædefinerede valg, ud fra det høstede data.
 \end{itemize}
 
 \subsubsection*{\textit{Use case} \ref{enum:vejlederInfo}}
-Den høstede information om vejlederne skal benyttes til automatisk at oprette et katalog over vejledere. Hver af disse vejledere skal herefter kunne overtages de respektive vejledere med oprettelse af en Django-bruger.
+Den høstede information om vejlederne skal benyttes til automatisk at oprette et katalog over vejledere. Hver af disse vejledere skal herefter kunne overtages af de respektive vejledere med oprettelse af en Django-bruger.
 \begin{itemize}
 	\item Scraperen skal kunne omforme den høstede data til det korrekte format.
 	\item En Django-bruger skal kunne knyttes til en vejleder i kataloget.
-	\item En katalog-vejledes skal kunne "låses", således indtastet information har højere prioritet end høstet information.
+	\item En katalog-vejleder skal kunne "låses", således at indtastet information har højere prioritet end høstet information.
 \end{itemize}
 \end{document}
