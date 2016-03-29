@@ -1,6 +1,28 @@
 # ProjectStockSD
 
+## Indholdsfortegnelse
+* [TODO](https://github.com/cenh/ProjectStockSD#todo)
+* [Kør Serveren Lokalt](https://github.com/cenh/ProjectStockSD#kør-serveren-lokalt)
+* [Migrations på serveren](https://github.com/cenh/ProjectStockSD#migrations-på-serveren)
+* [Git tips](https://github.com/cenh/ProjectStockSD#git-tips)
+* [Diverse materiale](https://github.com/cenh/ProjectStockSD#materiale)
+* [HTML Tags](https://github.com/cenh/ProjectStockSD#html-tags---ansatte)
+* [DIKU Test Server Links](https://github.com/cenh/ProjectStockSD#diku-test-server-links)
+
 Velkommen til vores Project Stock repository!
+
+## Todo
+* Saml Django views og urls
+* Templates i Django til katalog over relevante modeler (Projekter, grupper og supervisorer)
+* Template til profil over objekt i relevante modeler (Profil over enkelte supervisorer og projekter)
+* Urls til kataloger (F.eks. 'supervisors/' viser et katalog over supervisors)
+* Urls til profiler (F.eks. 'supervisors/1' viser en profil over supervisor med id 1)
+* Navigations bar
+* Verifikation af brugere (E-mail)
+* Oprettelse af brugere til vejledere
+* Scraping af DIKUs liste over ansatte
+* Scraping af DIKU Test Servers liste over projekter
+* TESTING, TESTING OG MERE TESTING!
 
 ## Kør serveren lokalt
 ### Installer afhængigheder
