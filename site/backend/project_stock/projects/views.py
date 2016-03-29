@@ -1,7 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Project
+from django.views import generic
 
-def index(request):
-    context = {'project_list': Project.objects.order_by('id')}
-    return render(request, 'projects/index.html', context)
+class IndexView(generic.ListView):
+    model = Project
+    template_name = 'projects/index.html'
+
+    def get_queryset(self):
+        """Return the last five published questions."""
+        return Project.objects.order_by('id')
