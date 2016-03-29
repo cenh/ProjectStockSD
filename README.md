@@ -1,5 +1,7 @@
 # ProjectStockSD
 
+Velkommen til vores Project Stock repository!
+
 ## Indholdsfortegnelse
 * [TODO](https://github.com/cenh/ProjectStockSD#todo)
 * [Kør Serveren Lokalt](https://github.com/cenh/ProjectStockSD#kør-serveren-lokalt)
@@ -8,8 +10,6 @@
 * [Diverse materiale](https://github.com/cenh/ProjectStockSD#materiale)
 * [HTML Tags](https://github.com/cenh/ProjectStockSD#html-tags---ansatte)
 * [DIKU Test Server Links](https://github.com/cenh/ProjectStockSD#diku-test-server-links)
-
-Velkommen til vores Project Stock repository!
 
 ## Todo
 * Saml Django views og urls
