@@ -65,8 +65,9 @@ Skift mappe til project_stock Django projektet og kør:
 `python manage.py migrate`
 
 ### Fortryd migrations
-python manage.py squashmigrations 'app-navn' 'migration-nr'
-fx. python manage.py squashmigrations projects 0004
+`python manage.py squashmigrations 'app-navn' 'migration-nr'`
+## Eksempel 
+`python manage.py squashmigrations projects 0004`
 
 ### Genstart serveren
 `systemctl restart httpd mariadb` eller CTRL-C + `python manage.py runserver`
