@@ -64,6 +64,10 @@ Skift mappe til project_stock Django projektet og kør:
 
 `python manage.py migrate`
 
+### Fortryd migrations
+python manage.py squashmigrations 'app-navn' 'migration-nr'
+fx. python manage.py squashmigrations projects 0004
+
 ### Genstart serveren
 `systemctl restart httpd mariadb` eller CTRL-C + `python manage.py runserver`
 
@@ -156,4 +160,3 @@ Projekter har følgende interessante HTML tags:
 [Virksomhedsprojekter](http://dikutestserver.dk/resultat.php?emne=&type=Virksomhedsprojekt&firma=&submit=S%C3%B8g)
 
 [Andre projekter](http://dikutestserver.dk/result.php?search=true&searcher=Student)
-
