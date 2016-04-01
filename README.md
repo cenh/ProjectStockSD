@@ -99,6 +99,10 @@ Liste over forskellige materiale og evt. relevant information.
 
 [Thenewboston - Web Crawler Tutorial Python](https://www.youtube.com/playlist?list=PL6gx4Cwl9DGA8Vys-f48mAH9OKSUyav0q)
 
+[Thenewboston - Django for Beginners](https://www.youtube.com/playlist?list=PL6gx4Cwl9DGBlmzzFcLgDhKTTfNLfX1IK)
+
+^ Episode 34-36 handler om User Registration, Creating Accounts og User Authentification.
+
 ## HTML Tags - Ansatte
 
 ### Tabel
