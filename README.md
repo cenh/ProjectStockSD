@@ -66,7 +66,7 @@ Skift mappe til project_stock Django projektet og kør:
 
 ### Fortryd migrations
 `python manage.py squashmigrations 'app-navn' 'migration-nr'`
-## Eksempel 
+#### Eksempel 
 `python manage.py squashmigrations projects 0004`
 
 ### Genstart serveren
