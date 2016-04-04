@@ -6,23 +6,21 @@
 2. Afprøvning
 - Hvilke test er foretaget.
 - Resultat er tests.
-- TDD bliver ikke nævnt. (argumentation for hvorfor det ikke bliver brugt)
-- Omrokering af afsnit.
+- TDD bliver ikke nævnt (argumentation for hvorfor det ikke bliver brugt)
+- Omrokering af underafsnit.
 - Flere begreber fra pensum.
-- Djangos testing
+- Brug evt. Djangos testing.
 
 3. Design
-- Hvad er klassernes eksistensberettigelse (hvorfor skal vi have en Supervisor)
+- Hvad er klassernes eksistensberettigelse (hvorfor skal vi have en 'Supervisor').
 - Begreber fra evt. SOLID.
 - Det mest kritiske afsnit.
-- 
 
-4. Planlægning af næste iteration
-- Begrebsforklaring (projekt, katalog)
+
+4. Planlægning af næste iteration.
+- Begrebsforklaring (projekt, katalog).
 
 
 Generelt
 - Hvorfor, hvordan og hvad fik du ud af det.
-- Begreber fra pensum.
-
-
+- Brug begreber fra pensum.
