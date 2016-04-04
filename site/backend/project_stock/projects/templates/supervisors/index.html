@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Supervisors</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+  </head>
+  <body>
+    <center>
+      <h1>Supervisors</h1>
+      <table border="1">
+	<tr>
+	  <th>Supervisor</th>
+	</tr>
+	{% for s in supervisor_list %}
+	<tr>
+          <td>
+            {{ s.first_name }}
+	  </td>
+	</tr>
+	{% endfor %}
+      </table>
+    </center>
+  </body>
+</html>
