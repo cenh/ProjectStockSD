@@ -23,7 +23,7 @@ class Project(models.Model):
     type_choices = (('B', 'Bachelor project'),
                     ('M', 'Master\'s project'),
                     ('T', 'Master\'s thesis'),
-                    ('C', 'Project with compay'),
+                    ('C', 'Project with company'),
                     ('O', 'Other'))
     type = models.CharField(max_length=1, choices=type_choices)
     subject = models.CharField(max_length=128)
