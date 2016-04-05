@@ -1,7 +1,7 @@
 1. Implementering af opgaver
 - Mere tydelig dokumentation af implementering
 - Mindre fokus på arbejdsgang
-- Begrebsforklaring af ‘Models’ og mere generelt.
+- Begrebsforklaring, fx af ‘Models’ og generelt.
 
 2. Afprøvning
 - Hvilke test er foretaget.
