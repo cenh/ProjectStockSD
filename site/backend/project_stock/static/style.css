@@ -21,3 +21,32 @@ a:active
 {
     color: blue;
 }
+
+/* Table */
+table
+{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* Table headers and table cells */
+th, td
+{
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+
+/* Change color for uneven cells, also hover */
+tr:nth-child(even){background-color: #f2f2f2}
+tr:hover {bachground-color: #E0FF33;}
+
+/* More for only table headers */
+th
+{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #4CAF50;
+    color: white;
+}
