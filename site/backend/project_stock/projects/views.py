@@ -16,18 +16,12 @@ class SupervisorView(generic.ListView):
 
     def get_queryset(self):
         return Supervisor.objects.order_by('id')
-'''
-class SupervisorDetailView(generic.DetailView, supervisor_id):
+
+
+class SupervisorDetailView(generic.DetailView):
     model = Supervisor
     template_name = 'supervisors/profile.html'
 
-    def get_queryset(self):
-        return Supervisor.objects.get(pk=supervisor_id)
-
-class ProjectDetailView(generic.DetailView, project_id):
+class ProjectDetailView(generic.DetailView):
     model = Project
     template_name = 'projects/profile.html'
-
-    def get_queryset(self):
-        return Project.objects.get(pk=project_id)
-'''
