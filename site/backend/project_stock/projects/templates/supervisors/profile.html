@@ -1,1 +1,47 @@
-{{ supervisor.id }}
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+  </head>
+  <body>
+    <center>
+      <h1>{{ object.first_name }} {{ object.last_name }}</h1>
+      <table border="1">
+	       <tr>
+            <td> Email </td>
+            <td> {{ object.email }} </td>
+	       </tr>
+         <tr>
+             <td> Website </td>
+             <td> {{ object.website }} </td>
+         </tr>
+         <tr>
+             <td> Location </td>
+             <td> {{ object.location }} </td>
+         </tr>
+         <tr>
+             <td> Workplace </td>
+             <td> {{ object.workplace }} </td>
+         </tr>
+         <tr>
+             <td> Status </td>
+             <td> {{ object.status }} </td>
+         </tr>
+         <tr>
+             <td> Phone number </td>
+             <td> {{ object.phone }} </td>
+         </tr>
+         <tr>
+             <td> Mobile number </td>
+             <td> {{ object.mobile }} </td>
+         </tr>
+         <tr>
+             <td> Fax number </td>
+             <td> {{ object.fax }} </td>
+         </tr>
+      </table>
+    </center>
+  </body>
+</html>
