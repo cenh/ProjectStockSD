@@ -40,7 +40,11 @@ th, td
 
 /* Change color for uneven cells, also hover */
 tr:nth-child(even){background-color: #f2f2f2}
-tr:hover {bachground-color: #E0FF33;}
+tr.data:hover
+{
+    bachground-color: #E0FF33;
+    cursor: pointer;
+}
 
 /* More for only table headers */
 th

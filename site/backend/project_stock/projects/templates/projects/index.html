@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>ProjectStockSD</title>
     <link rel="stylesheet" type="text/css" href="/static/style.css" />
+    <link rel="import" href="/static/navbar.html" />
   </head>
   <body>
     <center>
@@ -13,7 +14,7 @@
 	  <th>Project</th><th>Type</th><th>Supervisor</th><th>Subject</th><th>Start Date</th><th>Deadline</th><th>Published</th>
 	</tr>
 	{% for p in project_list %}
-	<tr>
+	<tr class="data" onclick="window.document.location=' {{ p.id }} '">
           <td>
             {{ p.name }}
           </td>

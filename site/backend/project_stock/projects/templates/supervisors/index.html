@@ -10,12 +10,21 @@
       <h1>Supervisors</h1>
       <table border="1">
 	<tr>
-	  <th>Supervisor</th>
+	  <th>Supervisor</th><th>Title</th><th>Email</th><th>Phone</th>
 	</tr>
 	{% for s in supervisor_list %}
-	<tr>
+	<tr class="data" onclick="window.document.location=' {{ s.id }} '">
           <td>
-            {{ s.first_name }}
+            {{ s.last_name}} , {{ s.first_name }}
+	  </td>
+	  <td>
+	    {{ s.status }}
+	  </td>
+	  <td>
+	    {{ s.email }}
+	  </td>
+	  <td>
+	    {{ s.phone }}
 	  </td>
 	</tr>
 	{% endfor %}
