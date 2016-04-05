@@ -1,1 +1,47 @@
-{{ project.id }}
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ project.name }}</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+  </head>
+  <body>
+    <center>
+      <h1>{{ project.name }} (Published: {{ project.pub_date }})</h1>
+      <table border="1">
+	 <tr class="data">
+            <td> Supervisor </td>
+            <td> {{ project.supervisor }} </td>
+	 </tr>
+         <tr>
+             <td> Type </td>
+             <td> {{ project.get_type_display }} </td>
+         </tr>
+	 <tr>
+             <td> Project Start </td>
+             <td> {{ project.start_date }} </td>
+         </tr>
+	 <tr>
+             <td> Project Deadline </td>
+             <td> {{ project.deadline }} </td>
+         </tr>
+         <tr>
+             <td> Subject </td>
+             <td> {{ project.subject }} </td>
+         </tr>
+	 <tr>
+             <td> Website </td>
+             <td> {{ project.website }} </td>
+         </tr>
+         <tr>
+             <td> Summary </td>
+             <td> {{ project.description_short }} </td>
+         </tr>
+         <tr>
+             <td> Description </td>
+             <td> {{ project.description_long }} </td>
+         </tr>
+      </table>
+    </center>
+  </body>
+</html>

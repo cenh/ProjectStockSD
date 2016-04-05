@@ -2,44 +2,44 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>{{ supervisor.last_name }}, {{ supervisor.first_name }}</title>
     <link rel="stylesheet" type="text/css" href="/static/style.css">
   </head>
   <body>
     <center>
-      <h1>{{ object.first_name }} {{ object.last_name }}</h1>
+      <h1>{{ supervisor.first_name }} {{ supervisor.last_name }}</h1>
       <table border="1">
-	       <tr>
+	 <tr>
             <td> Email </td>
-            <td> {{ object.email }} </td>
-	       </tr>
+            <td> {{ supervisor.email }} </td>
+	 </tr>
          <tr>
              <td> Website </td>
-             <td> {{ object.website }} </td>
+             <td> {{ supervisor.website }} </td>
          </tr>
          <tr>
              <td> Location </td>
-             <td> {{ object.location }} </td>
+             <td> {{ supervisor.location }} </td>
          </tr>
          <tr>
              <td> Workplace </td>
-             <td> {{ object.workplace }} </td>
+             <td> {{ supervisor.workplace }} </td>
          </tr>
          <tr>
              <td> Status </td>
-             <td> {{ object.status }} </td>
+             <td> {{ supervisor.status }} </td>
          </tr>
          <tr>
              <td> Phone number </td>
-             <td> {{ object.phone }} </td>
+             <td> {{ supervisor.phone }} </td>
          </tr>
          <tr>
              <td> Mobile number </td>
-             <td> {{ object.mobile }} </td>
+             <td> {{ supervisor.mobile }} </td>
          </tr>
          <tr>
              <td> Fax number </td>
-             <td> {{ object.fax }} </td>
+             <td> {{ supervisor.fax }} </td>
          </tr>
       </table>
     </center>
