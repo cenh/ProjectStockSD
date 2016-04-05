@@ -13,7 +13,7 @@
 	  <th>Supervisor</th><th>Title</th><th>Email</th><th>Phone</th>
 	</tr>
 	{% for s in supervisor_list %}
-	<tr class="data" onclick="window.document.location=' {{ s.id }} '">
+	<tr class="data" onclick="window.document.location=' /supervisors/{{ s.id }} '">
           <td>
             {{ s.last_name}} , {{ s.first_name }}
 	  </td>

@@ -2,8 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>ProjectStockSD</title>
+    <title>Projects</title>
     <link rel="stylesheet" type="text/css" href="/static/style.css" />
+    <object type="text/html" data="/static/navbar.html"></object>
   </head>
   <body>
     <center>
@@ -13,7 +14,7 @@
 	  <th>Project</th><th>Type</th><th>Supervisor</th><th>Subject</th><th>Start Date</th><th>Deadline</th><th>Published</th>
 	</tr>
 	{% for p in project_list %}
-	<tr class="data" onclick="window.document.location=' {{ p.id }} '">
+	<tr class="data" onclick="window.document.location.href=' /projects/{{ p.id }} '">
           <td>
             {{ p.name }}
           </td>
