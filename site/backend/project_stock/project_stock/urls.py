@@ -23,10 +23,10 @@ urlpatterns = [
 
     url(r'^projects/$', p_views.ProjectView.as_view(), name='project'),
     url(r'^supervisors/$', p_views.SupervisorView.as_view(), name='supervisor'),
-    
+
     url(r'^supervisors/(?P<pk>[0-9]+)', p_views.SupervisorDetailView.as_view() , name='supervisor'),
     url(r'^projects/(?P<pk>[0-9]+)', p_views.ProjectDetailView.as_view() , name='project'),
-    
+
     url(r'^admin/', admin.site.urls),
     url(r'^example/$', views.example, name='example'),
 ]
