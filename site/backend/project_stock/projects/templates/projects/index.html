@@ -4,9 +4,15 @@
     <meta charset="utf-8">
     <title>Projects</title>
     <link rel="stylesheet" type="text/css" href="/static/style.css" />
-    <object type="text/html" data="/static/navbar.html"></object>
+    <link rel="import" href="/static/navbar.html" />
   </head>
   <body>
+    <script>
+      var link = document.querySelector('link[rel="import"]');
+      var content = link.import;
+      var el = content.querySelector('.navbar');
+      document.body.appendChild(el.cloneNode(true));
+    </script>
     <center>
       <h1>Projects</h1>
       <table border="1">

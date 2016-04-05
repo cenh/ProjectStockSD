@@ -4,18 +4,25 @@
     <meta charset="utf-8">
     <title>{{ supervisor.last_name }}, {{ supervisor.first_name }}</title>
     <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link rel="import" href="/static/navbar.html" />
   </head>
   <body>
+    <script>
+      var link = document.querySelector('link[rel="import"]');
+      var content = link.import;
+      var el = content.querySelector('.navbar');
+      document.body.appendChild(el.cloneNode(true));
+    </script>
     <center>
       <h1>{{ supervisor.first_name }} {{ supervisor.last_name }}</h1>
       <table border="1">
 	 <tr>
             <td> Email </td>
-            <td> {{ supervisor.email }} </td>
+            <td> <a href="mailto:{{ supervisor.email }}">{{ supervisor.email }}</a> </td>
 	 </tr>
          <tr>
              <td> Website </td>
-             <td> {{ supervisor.website }} </td>
+             <td> <a href="{{ supervisor.website }}">{{ supervisor.website }}</a> </td>
          </tr>
          <tr>
              <td> Location </td>
