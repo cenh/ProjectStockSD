@@ -10,7 +10,7 @@ class ProjectView(generic.ListView):
     def get_queryset(self):
         return Project.objects.order_by('id')
 
-    class SupervisorView(generic.ListView):
+class SupervisorView(generic.ListView):
     model = Supervisor
     template_name = 'supervisors/index.html'
 
