@@ -11,19 +11,6 @@ Velkommen til vores Project Stock repository!
 * [HTML Tags](https://github.com/cenh/ProjectStockSD#html-tags---ansatte)
 * [DIKU Test Server Links](https://github.com/cenh/ProjectStockSD#diku-test-server-links)
 
-## Todo
-* Saml Django views og urls
-* Templates i Django til katalog over relevante modeler (Projekter, grupper og supervisorer)
-* Template til profil over objekt i relevante modeler (Profil over enkelte supervisorer og projekter)
-* Urls til kataloger (F.eks. 'supervisors/' viser et katalog over supervisors)
-* Urls til profiler (F.eks. 'supervisors/1' viser en profil over supervisor med id 1)
-* Navigations bar
-* Verifikation af brugere (E-mail)
-* Oprettelse af brugere til vejledere
-* Scraping af DIKUs liste over ansatte
-* Scraping af DIKU Test Servers liste over projekter
-* TESTING, TESTING OG MERE TESTING!
-
 ## Kør serveren lokalt
 ### Installer afhængigheder
 `[sudo] apt-get install libmysqlclient-dev python-dev # eller den tilsvarende kommando for din distribution`
@@ -111,19 +98,21 @@ Table id og class:
 
 Format for rows:
 
-`<tr><td valign='top'><a href="LINK">NAVN</a></td><td valign='top'>STILLING</td><td valign='top'>ARBEJDSOMRÅDE</td><td valign='top'>TELEFON</td><td valign='top'>EMAIL</td></tr>`
+`<tr><td valign='top'><a href="LINK">NAVN</a></td><td valign='top'>titel</td><td valign='top'>ARBEJDSOMRÅDE</td><td valign='top'>TELEFON</td><td valign='top'>EMAIL</td></tr>`
 
 De ansatte har (måske alle) følgende html tags, som er brugbare for scraping:
 
-### Foto
+### "pure" links
+
+#### Foto
 
 `<div class="person_photo"><img src="LINK" alt="NAVN"></div>`
 
-### Navn og Stilling
+#### Navn og titel
 
-`<span class="person">NAVN</span></h2><p class="type">STILLING</p>`
+`<span class="person">NAVN</span></h2><p class="type">titel</p>`
 
-### Adresse, Telefon og Email
+#### Adresse, telefon og e-mail
 
 `<div class="address"><p>ADRESSE</p><p>ADRESSE FORTSAT</p>`
 
@@ -131,22 +120,36 @@ De ansatte har (måske alle) følgende html tags, som er brugbare for scraping:
 
 `<span class="numbers"><span class="property person_contact_phone"><strong>Telefon: </strong>TELEFON NUMMER</span></span>`
 
-### Arbejdsgruppe
+#### Arbejdsgruppe
 
 `<ul class="relations organisations"><li><h2 class="title"><span>ARBEJDS GRUPPE</span></h2></ul>`
 
-### Hjemmeside
+#### Hjemmeside
 
 `<ul class="relations"><li><a onclick="window.open(this.href); return false;" href="HJEMMESIDE" class="link"><span>HJEMMESIDE</span></a></li></ul>`
 
-### Præsentation
+#### Præsentation
 
 
-### Publikationer
+#### Publikationer
 
 
-### Aktiviteter
+#### Aktiviteter
 
+### "id" links
+
+#### Foto
+`<div id="forskerprofil_kontaktoplysninger"><img src="LINK" alt="NAVN"></img></div>`
+
+#### Navn og titel
+`<div xmlns="http://www.w3.org/1999/xhtml" id="forskerprofil_kontaktoplysninger"><h1>NAVN</h1></div>`
+
+`<p class="forskerprofil_titel">titel</p>`
+
+#### Adresse, telefon og e-mail
+`<p class="forskerprofil_adresse"><strong>INSTITUT</strong><br>GADE+GADENUMMER<br>POSTNR+BY</p>`
+
+`<p class="forskerprofil_kontakt">Telefon: NUMMER<br/>Telefon (Sekretariat): SEKRETARIATNUMMER<br/>Mobil: MOBILNUMMER<br/>E-mail: <a href="mailto:EMAIL">EMAIL</a><br/></p>`
 
 ## HTML Tags - Projekter
 
