@@ -52,12 +52,13 @@ Skift mappe til project_stock Django projektet og kør:
 `python manage.py migrate`
 
 ### Fortryd migrations
-`python manage.py squashmigrations 'app-navn' 'migration-nr'`
+`python manage.py migrate app-navn zero`
+
 #### Eksempel 
-`python manage.py squashmigrations projects 0004`
+`python manage.py migrate projects zero`
 
 ### Genstart serveren
-`systemctl restart httpd mariadb` eller CTRL-C + `python manage.py runserver`
+`systemctl restart httpd mariadb` (over SSH som root) eller lokalt med CTRL-C + `python manage.py runserver`
 
 ## Git Tips
 ### Se forskellen på HEAD (nyeste commit) og de *n* seneste commits:
