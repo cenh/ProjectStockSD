@@ -111,7 +111,9 @@ De ansatte har (måske alle) følgende html tags, som er brugbare for scraping:
 
 #### Navn og titel
 
-`<span class="person">NAVN</span></h2><p class="type">titel</p>`
+`<span class="person">NAVN</span>`
+
+`<p class="type">TITEL</p>`
 
 #### Adresse, telefon og e-mail
 
