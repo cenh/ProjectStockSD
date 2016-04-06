@@ -5,3 +5,7 @@ Links af formen http://diku.dk/Ansatte/?id=XXXXXXXvis=medarbejder har et andet f
 Lauge Sørensen ændrer nogle gange navn til xfj310
 
 RegEx er en dårlig idé, da whitespace bliver taget i betragtning, derfor xml.etree.ElementTree.
+
+Nogle steder bliver man nødt til at bruge regex, fx i folks kontaktinformation, da de alle står i samme tag.
+
+Scrapy er et glimrende scraping tool (virker dog kun til Python 2.7)
