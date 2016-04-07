@@ -16,34 +16,34 @@
     <center>
       <h1>Projects</h1>
       <table border="1">
-	<tr>
-	  <th>Project</th><th>Type</th><th>Supervisor</th><th>Subject</th><th>Start Date</th><th>Deadline</th><th>Published</th>
-	</tr>
-	{% for p in project_list %}
-	<tr class="data" onclick="window.document.location.href=' /projects/{{ p.id }} '">
+        <tr>
+          <th>Project</th><th>Type</th><th>Supervisor</th><th>Subject</th><th>Start Date</th><th>Deadline</th><th>Published</th>
+        </tr>
+        {% for p in project_list %}
+        <tr class="data" onclick="window.document.location.href=' /projects/{{ p.id }} '">
           <td>
             {{ p.name }}
           </td>
-	  <td>
-	    {{ p.get_type_display }}
-	  </td>
+          <td>
+            {{ p.get_type_display }}
+          </td>
           <td>
             {{ p.supervisor }}
           </td>
-	  <td>
-	    {{ p.subject }}
-	  </td>
+          <td>
+            {{ p.subject }}
+          </td>
           <td>
             {{ p.start_date }}
           </td>
-	  <td>
-	    {{ p.deadline }}
-	  </td>
-	  <td>
-	    {{ p.pub_date }}
-	  </td>
-	</tr>
-	{% endfor %}
+          <td>
+            {{ p.deadline }}
+          </td>
+          <td>
+            {{ p.pub_date }}
+          </td>
+        </tr>
+        {% endfor %}
       </table>
     </center>
   </body>

@@ -4,7 +4,7 @@ from . import views
 urlpatterns = [
     # projects
     url(r'^projects/$', views.ProjectView.as_view(), name='project'),
-    
+
     # supervisors
     url(r'^supervisors/$', views.SupervisorView.as_view(), name='supervisor'),
 
