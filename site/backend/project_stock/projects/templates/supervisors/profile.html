@@ -48,6 +48,16 @@
           <td> Fax number </td>
           <td> {{ supervisor.fax }} </td>
         </tr>
+        <tr>
+          <td valign="top"> Projects </td>
+          <td>
+            {% for p in project_list %}
+            {% if p.supervisor == supervisor %}
+            <a href="/projects/{{ p.id }}" style="cursor:pointer;">{{ p.name }}</a>
+            {% endif %}
+            {% endfor %}
+          </td>
+        </tr>
       </table>
     </center>
   </body>
