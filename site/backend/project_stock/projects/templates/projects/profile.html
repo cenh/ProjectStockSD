@@ -17,35 +17,35 @@
       <h1>{{ project.name }} (Published: {{ project.pub_date }})</h1>
       <table border="1">
         <tr>
-          <td> Supervisor </td>
+          <td>Supervisor</td>
           <td> {{ project.supervisor }} </td>
         </tr>
         <tr>
-          <td> Type </td>
+          <td>Type</td>
           <td> {{ project.get_type_display }} </td>
         </tr>
         <tr>
-          <td> Project Start </td>
+          <td>Project Start</td>
           <td> {{ project.start_date }} </td>
         </tr>
         <tr>
-          <td> Project Deadline </td>
+          <td>Project Deadline</td>
           <td> {{ project.deadline }} </td>
         </tr>
         <tr>
-          <td> Subject </td>
+          <td>Subject</td>
           <td> {{ project.subject }} </td>
         </tr>
         <tr>
-          <td> Website </td>
+          <td>Website</td>
           <td> <a href="{{ project.website }}">{{ project.website }}</a> </td>
         </tr>
         <tr>
-          <td> Summary </td>
+          <td>Summary</td>
           <td> {{ project.description_short }} </td>
         </tr>
         <tr>
-          <td> Description </td>
+          <td>Description</td>
           <td> {{ project.description_long }} </td>
         </tr>
       </table>

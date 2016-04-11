@@ -20,7 +20,7 @@
           <th>Project</th><th>Type</th><th>Supervisor</th><th>Subject</th><th>Start Date</th><th>Deadline</th><th>Published</th>
         </tr>
         {% for p in project_list %}
-        <tr class="data" onclick="window.document.location.href=' /projects/{{ p.id }} '">
+        <tr class="data" onclick="window.document.location.href='/projects/{{ p.id }}'">
           <td>
             {{ p.name }}
           </td>

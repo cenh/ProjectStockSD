@@ -14,6 +14,10 @@ class Supervisor(models.Model):
     mobile = models.CharField(validators=[phone_regex], max_length=15, blank=True, null=True)
     fax = models.CharField(validators=[phone_regex], max_length=15, blank=True, null=True)
 
+    # this is a base64 field. Easy to scrape and link but how to manage from admin page?
+    # 2^25 should be about 32MB in characters
+    photo = models.TextField(max_length=2**25, blank=True, null=True)
+
     def __str__(self):
         return self.first_name + ' ' + self.last_name
 
