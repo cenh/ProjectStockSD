@@ -3,7 +3,6 @@
 Velkommen til vores Project Stock repository!
 
 ## Indholdsfortegnelse
-* [TODO](https://github.com/cenh/ProjectStockSD#todo)
 * [Kør Serveren Lokalt](https://github.com/cenh/ProjectStockSD#kør-serveren-lokalt)
 * [Migrations på serveren](https://github.com/cenh/ProjectStockSD#migrations-på-serveren)
 * [Git tips](https://github.com/cenh/ProjectStockSD#git-tips)
