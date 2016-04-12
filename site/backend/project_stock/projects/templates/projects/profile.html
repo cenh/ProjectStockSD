@@ -4,15 +4,9 @@
     <meta charset="utf-8">
     <title>{{ project.name }}</title>
     <link rel="stylesheet" type="text/css" href="/static/style.css">
-    <link rel="import" href="/static/navbar.html" />
   </head>
   <body>
-    <script>
-      var link = document.querySelector('link[rel="import"]');
-      var content = link.import;
-      var el = content.querySelector('.navbar');
-      document.body.appendChild(el.cloneNode(true));
-    </script>
+    {% include "navbar.html" %}
     <center>
       <h1>{{ project.name }} (Published: {{ project.pub_date }})</h1>
       <table border="1">
@@ -38,7 +32,7 @@
         </tr>
         <tr>
           <td>Website</td>
-          <td> <a href="{{ project.website }}">{{ project.website }}</a> </td>
+          <td><a href="{{ project.website }}">{{ project.website }}</a></td>
         </tr>
         <tr>
           <td>Summary</td>

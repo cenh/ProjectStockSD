@@ -1,25 +1,7 @@
-/* unvisited link */
-a:link
-{
-    color: red;
-}
-
-/* visited link */
-a:visited
+/* link */
+a
 {
     color: green;
-}
-
-/* mouse over link */
-a:hover
-{
-    color: hotpink;
-}
-
-/* selected link */
-a:active
-{
-    color: blue;
 }
 
 /* Table */
@@ -38,12 +20,15 @@ th, td
     padding: 8px;
 }
 
-/* Change color for uneven cells, also hover */
+/* Change color for uneven cells */
 tr:nth-child(even){background-color: #f2f2f2}
+
+/* data row hover */
 tr.data:hover
 {
     bachground-color: #E0FF33;
     cursor: pointer;
+    color: green;
 }
 
 /* More for only table headers */
@@ -75,7 +60,6 @@ li
 li a
 {
     display: block;
-    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;

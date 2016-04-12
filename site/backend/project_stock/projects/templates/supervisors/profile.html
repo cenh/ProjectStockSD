@@ -4,28 +4,22 @@
     <meta charset="utf-8">
     <title>{{ supervisor.last_name }}, {{ supervisor.first_name }}</title>
     <link rel="stylesheet" type="text/css" href="/static/style.css">
-    <link rel="import" href="/static/navbar.html" />
   </head>
   <body>
-    <script>
-      var link = document.querySelector('link[rel="import"]');
-      var content = link.import;
-      var el = content.querySelector('.navbar');
-      document.body.appendChild(el.cloneNode(true));
-    </script>
+    {% include "navbar.html" %}
     <center>
       <h1>{{ supervisor.first_name }} {{ supervisor.last_name }}</h1>
       {% if supervisor.photo %}
       <img src="data:;base64,{{ supervisor.photo }}" height="256" alt="Photo of {{ supervisor.first_name }} {{ supervisor.last_name }}" />
       {% endif %}
-      <table border="1">
+      <table>
         <tr>
           <td>Email</td>
-          <td> <a href="mailto:{{ supervisor.email }}">{{ supervisor.email }}</a> </td>
+          <td><a href="mailto:{{ supervisor.email }}">{{ supervisor.email }}</a></td>
         </tr>
         <tr>
           <td>Website</td>
-          <td> <a href="{{ supervisor.website }}">{{ supervisor.website }}</a> </td>
+          <td><a href="{{ supervisor.website }}">{{ supervisor.website }}</a></td>
         </tr>
         <tr>
           <td>Location</td>
@@ -56,7 +50,7 @@
           <td>
             {% for p in project_list %}
             {% if p.supervisor == supervisor %}
-            <a href="/projects/{{ p.id }}" style="cursor:pointer;">{{ p.name }}</a>
+            <a href="/projects/{{ p.id }}">{{ p.name }}</a>
             {% endif %}
             {% endfor %}
           </td>
