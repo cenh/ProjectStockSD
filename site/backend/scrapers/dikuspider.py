@@ -1,13 +1,18 @@
-import scrapy, base64, urllib2
+import scrapy, base64, urllib2, re
 from scrapy.crawler import CrawlerProcess
 
 class DikuAnsatteItem(scrapy.Item):
-    name = scrapy.Field()
-    title = scrapy.Field()
-    profile_link = scrapy.Field()
-    photo = scrapy.Field()
-    tel = scrapy.Field()
-    email = scrapy.Field()
+    name = scrapy.Field() # check
+    title = scrapy.Field() # check
+    profile_link = scrapy.Field() # check
+    photo = scrapy.Field() # check
+    email = scrapy.Field() # check
+    tel = scrapy.Field() # check
+    tel_internal = scrapy.Field()
+    fax = scrapy.Field()
+    cell = scrapy.Field()
+    workplace = scrapy.Field() # check
+    location = scrapy.Field()
 
 
 class DikuAnsatteSpider(scrapy.Spider):
@@ -27,8 +32,6 @@ class DikuAnsatteSpider(scrapy.Spider):
 
                 item = DikuAnsatteItem()
 
-                # maybe add email from here since it's difficult to get from detail page
-                #item['email'] = ...
                 item['profile_link'] = response.urljoin(a.xpath('@href').extract()[0])
                 request = scrapy.Request(item['profile_link'], callback=self.parse_detail)
                 request.meta['item'] = item
@@ -42,16 +45,51 @@ class DikuAnsatteSpider(scrapy.Spider):
             name_tag = '//span[@class="person"]/text()'
             title_tag = '//p[@class="type"]/text()'
             photo_tag = '//div[@class="person_photo"]/img/@src'
+
+            workplace = response.xpath('//div[@class="address"]/p/text()').extract()
+            item['workplace'] = workplace[0] if len(workplace) > 0 else ''
+
+            email = response.xpath('//ul[@class="relations email"]/li/a/span/text()').extract()
+            item['email'] = email[0] if len(email) > 0 else ''
         else:
             name_tag = '//div[@id="forskerprofil_kontaktoplysninger"]/h1/text()'
             title_tag = '//p[@class="forskerprofil_titel"]/text()'
             photo_tag = '//div[@id="forskerprofil_kontaktoplysninger"]/img/@src'
 
+            email = response.xpath('//p[@class="forskerprofil_kontakt"]/a/text()').extract()
+            item['email'] = ''.join(email) if len(email) > 0 else ''
+
+            workplace = response.xpath('//p[@class="forskerprofil_adresse"]/text()').extract()
+            if workplace:
+                item['workplace'] = ', '.join(workplace)
+
+            contact_info = response.xpath('//p[@class="forskerprofil_kontakt"]/text()').extract()
+            for c in contact_info:
+                location = re.match('Kontor:\s+(.*)', c)
+                if location:
+                    item['location'] = location.group(1)
+
+                tel = re.match('Telefon:\s+(.*)', c)
+                if tel:
+                    item['tel'] = tel.group(1)
+
+                tel_internal = re.match('Telefon (Sekretariat):\s(.*)', c)
+                if tel_internal:
+                    item['tel_internal'] = tel_internal.group(1)
+
+                fax = re.match('Fax:\s+(.*)', c)
+                if fax:
+                    item['fax'] = fax.group(1)
+
+                cell = re.match('Mobil:\s+(.*)', c)
+                if cell:
+                    item['cell'] = cell.group(1)
+
         name = response.xpath(name_tag).extract()
-        item['name'] = name[0] if name else None
+        item['name'] = name[0] if name else ''
 
         title = response.xpath(title_tag).extract()
-        item['title'] = title[0] if title else None
+        item['title'] = title[0] if title else ''
 
         photo_url = response.xpath(photo_tag).extract()
         if photo_url:
@@ -63,6 +101,7 @@ class DikuAnsatteSpider(scrapy.Spider):
         # the rest will need regexes I believe
 
         self.items.append(item)
+
         yield item
 
     def start(self):
