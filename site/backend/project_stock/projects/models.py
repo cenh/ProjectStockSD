@@ -40,22 +40,25 @@ class Project(models.Model):
 
     def __str__(self):
         return self.name
-'''
+
+class Publication(models.Model):
+    author = models.ForeignKey(Supervisor, on_delete=models.SET_NULL, blank=True, null=True)
+    title = models.TextField(max_length=128)
+    description_short = models.TextField(max_length=256, blank=True, null=True)
+    description_long = models.TextField(blank=True, null=True)
+    website = models.URLField(max_length=128, blank=True, null=True)
+    pub_date = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+
 class Group(models.Model):
+    members = models.ManyToManyField(Supervisor)
     name = models.CharField(max_length=128)
-    members = models.ManyToManyField(Person, through='Membership')
-    location = models.CharField(max_length=128)
+    subject = models.TextField(max_length=64, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    website = models.URLField(max_length=128, blank=True, null=True)
+    location = models.CharField(max_length=128, blank=True, null=True)
 
     def __str__(self):
         return self.name
-
-class Presentations(models.Model):
-    person = models.ForeignKey(Supervisor, on_delete=models.CASCADE)
-    title = models.CharField(max_length=128)
-    description = models.TextField()
-    date = models.DateField()
-    website = models.URLField(max_length=128)
-
-    def __str__(self):
-        return self.name
-'''

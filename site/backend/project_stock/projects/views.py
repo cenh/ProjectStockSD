@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Project, Supervisor
+from .models import Project, Supervisor, Group, Publication
 from django.views import generic
 
 class ProjectView(generic.ListView):
@@ -8,15 +8,25 @@ class ProjectView(generic.ListView):
     template_name = 'projects/index.html'
 
     def get_queryset(self):
-        return Project.objects.order_by('id')
+        return Project.objects.order_by('-pub_date') #Descending
 
 class SupervisorView(generic.ListView):
     model = Supervisor
     template_name = 'supervisors/index.html'
 
     def get_queryset(self):
-        return Supervisor.objects.order_by('id')
+        return Supervisor.objects.order_by('last_name')
 
+class GroupView(generic.ListView):
+    model = Group
+    template_name = 'groups/index.html'
+
+    def get_queryset(self):
+        return Group.objects.order_by('name')
+
+class ProjectDetailView(generic.DetailView):
+    model = Project
+    template_name = 'projects/profile.html'
 
 class SupervisorDetailView(generic.DetailView):
     model = Supervisor
@@ -29,6 +39,6 @@ class SupervisorDetailView(generic.DetailView):
 
         return context
 
-class ProjectDetailView(generic.DetailView):
-    model = Project
-    template_name = 'projects/profile.html'
+class GroupDetailView(generic.DetailView):
+    model = Group
+    template_name = 'groups/profile.html'
