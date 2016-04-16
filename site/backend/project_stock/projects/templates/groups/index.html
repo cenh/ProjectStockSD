@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Projects</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css" />
+  </head>
+  <body>
+    {% include "navbar.html" %}
+    <center>
+      <h1>Groups</h1>
+      <table>
+        <tr>
+          <th>Group</th><th>Subject</th><th>Location</th><th>Members</th>
+        </tr>
+        {% for g in group_list %}
+        <tr class="data" onclick="window.document.location.href='/groups/{{ g.id }}'">
+          <td>
+            {{ g.name }}
+          </td>
+          <td>
+            {{ g.subject }}
+          </td>
+          <td>
+            {{ g.location }}
+          </td>
+	  <td>
+            {{ g.members.count }}
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+    </center>
+  </body>
+</html>
