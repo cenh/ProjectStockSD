@@ -42,3 +42,11 @@ class SupervisorDetailView(generic.DetailView):
 class GroupDetailView(generic.DetailView):
     model = Group
     template_name = 'groups/profile.html'
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(GroupDetailView, self).get_context_data(**kwargs)
+        context['supervisor_list'] = Supervisor.objects.all()
+
+        return context
+
