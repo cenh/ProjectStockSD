@@ -4,17 +4,18 @@
     <meta charset="utf-8">
     <title>Projects</title>
     <link rel="stylesheet" type="text/css" href="/static/style.css" />
+    <script src="/static/sorttable.js"></script>
   </head>
   <body>
     {% include "navbar.html" %}
     <center>
       <h1>Projects</h1>
-      <table>
+      <table class="data sortable">
         <tr>
           <th>Project</th><th>Type</th><th>Supervisor</th><th>Subject</th><th>Start Date</th><th>Deadline</th><th>Published</th>
         </tr>
         {% for p in project_list %}
-        <tr class="data" onclick="window.document.location.href='/projects/{{ p.id }}'">
+        <tr class="link" onclick="window.document.location.href='/projects/{{ p.id }}'">
           <td>
             {{ p.name }}
           </td>
@@ -36,6 +37,10 @@
           <td>
             {{ p.pub_date }}
           </td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td>No projects to show!</td>
         </tr>
         {% endfor %}
       </table>

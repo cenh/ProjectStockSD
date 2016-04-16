@@ -8,27 +8,31 @@
   <body>
     {% include "navbar.html" %}
     <center>
-      <h1>{{ project.name }} (Published: {{ project.pub_date }})</h1>
-      <table>
+      <h1>Project: {{ project.name }}</h1>
+      <table class="data">
         <tr>
           <td>Supervisor</td>
-          <td> {{ project.supervisor }} </td>
+          <td><a href="/supervisors/{{ project.supervisor.id }}">{{ project.supervisor }}</a></td>
         </tr>
         <tr>
           <td>Type</td>
-          <td> {{ project.get_type_display }} </td>
+          <td>{{ project.get_type_display }}</td>
+        </tr>
+        <tr>
+          <td>Published</td>
+          <td>{{ project.pub_date }}</td>
         </tr>
         <tr>
           <td>Project Start</td>
-          <td> {{ project.start_date }} </td>
+          <td>{{ project.start_date }}</td>
         </tr>
         <tr>
           <td>Project Deadline</td>
-          <td> {{ project.deadline }} </td>
+          <td>{{ project.deadline }}</td>
         </tr>
         <tr>
           <td>Subject</td>
-          <td> {{ project.subject }} </td>
+          <td>{{ project.subject }}</td>
         </tr>
         <tr>
           <td>Website</td>
@@ -36,11 +40,11 @@
         </tr>
         <tr>
           <td>Summary</td>
-          <td> {{ project.description_short }} </td>
+          <td>{{ project.description_short }}</td>
         </tr>
         <tr>
           <td>Description</td>
-          <td> {{ project.description_long }} </td>
+          <td>{{ project.description_long }}</td>
         </tr>
       </table>
     </center>

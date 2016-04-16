@@ -4,7 +4,13 @@ a
     color: green;
 }
 
-/* Table */
+/* sortable tables' headers should indicate that they can be clicked */
+table.sortable th:hover
+{
+    cursor: pointer;
+}
+
+/* Data table */
 table.data
 {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -12,12 +18,7 @@ table.data
     width: 100%;
 }
 
-table.sortable th:hover
-{
-    cursor: pointer;
-}
-
-/* Table headers and table cells */
+/* Data table headers and table cells */
 table.data th, table.data td
 {
     border: 1px solid #ddd;
@@ -25,27 +26,27 @@ table.data th, table.data td
     padding: 8px;
 }
 
-/* Change color for uneven cells */
-table.data tr:nth-child(even)
-{
-    background-color: #f2f2f2
-}
-
-/* data row hover */
-table.data tr:hover
-{
-    bachground-color: #E0FF33;
-    cursor: pointer;
-    color: green;
-}
-
-/* More for only table headers */
+/* Data table ONLY table headers */
 table.data th
 {
     padding-top: 12px;
     padding-bottom: 12px;
     background-color: #4CAF50;
     color: white;
+}
+
+/* Change color for uneven data cells */
+table.data tr:nth-child(even)
+{
+    background-color: #f2f2f2
+}
+
+/* Data link class for rows that cannot be wrapped in <a> tags */
+table.data tr.link:hover
+{
+    bachground-color: #E0FF33;
+    color: green;
+    cursor: pointer;
 }
 
 /* Unordered list */

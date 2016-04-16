@@ -8,7 +8,7 @@ class ProjectView(generic.ListView):
     template_name = 'projects/index.html'
 
     def get_queryset(self):
-        return Project.objects.order_by('-pub_date') #Descending
+        return Project.objects.order_by('name') #Descending
 
 class SupervisorView(generic.ListView):
     model = Supervisor
@@ -35,7 +35,7 @@ class SupervisorDetailView(generic.DetailView):
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
         context = super(SupervisorDetailView, self).get_context_data(**kwargs)
-        context['project_list'] = Project.objects.all()
+        context['project_list'] = Project.objects.order_by('name')
 
         return context
 
@@ -46,7 +46,7 @@ class GroupDetailView(generic.DetailView):
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
         context = super(GroupDetailView, self).get_context_data(**kwargs)
-        context['supervisor_list'] = Supervisor.objects.all()
+        context['supervisor_list'] = Supervisor.objects.order_by('last_name')
 
         return context
 
