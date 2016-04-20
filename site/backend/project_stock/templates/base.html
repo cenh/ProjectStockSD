@@ -2,21 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>{% block title %}Base title {% endblock %}</title>
+    <title>{% block title %}Base title{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="/static/style.css">
     <script src="/static/sorttable.js"></script>
     <script src="/static/searchtable.js"></script>
   </head>
   <body>
-    <div class="navbar">
-      <ul>
-        <li><a href="/">Frontpage</a></li>
-        <li><a href="/projects/">Projects</a></li>
-        <li><a href="/supervisors/">Supervisors</a></li>
-        <li><a href="/groups/">Groups</a></li>
-        <li><a href="/admin/">Admin</a></li>
-      </ul>
-    </div>
+    {% include "navbar.html" %}
     {% block body %}
     {% endblock %}
   </body>
