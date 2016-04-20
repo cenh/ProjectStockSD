@@ -18,15 +18,15 @@ from django.contrib import admin
 from . import views
 
 urlpatterns = [
-    url(r'^$', p_views.ProjectView.as_view(), name='project'),
+    url(r'^$', views.ProjectView.as_view(), name='project'),
 
-    url(r'^projects/$', p_views.ProjectView.as_view(), name='project'),
-    url(r'^supervisors/$', p_views.SupervisorView.as_view(), name='supervisor'),
-    url(r'^groups/$', p_views.GroupView.as_view(), name='group'),
+    url(r'^projects/$', views.ProjectView.as_view(), name='project'),
+    url(r'^supervisors/$', views.SupervisorView.as_view(), name='supervisor'),
+    url(r'^groups/$', views.GroupView.as_view(), name='group'),
 
-    url(r'^supervisors/(?P<pk>[0-9]+)', p_views.SupervisorDetailView.as_view(), name='supervisor'),
-    url(r'^projects/(?P<pk>[0-9]+)', p_views.ProjectDetailView.as_view(), name='project'),
-    url(r'^groups/(?P<pk>[0-9]+)', p_views.GroupDetailView.as_view(), name='group'),
+    url(r'^supervisors/(?P<pk>[0-9]+)', views.SupervisorDetailView.as_view(), name='supervisor'),
+    url(r'^projects/(?P<pk>[0-9]+)', views.ProjectDetailView.as_view(), name='project'),
+    url(r'^groups/(?P<pk>[0-9]+)', views.GroupDetailView.as_view(), name='group'),
 
     url(r'^admin/', admin.site.urls),
     url(r'^example/$', views.example, name='example'),
