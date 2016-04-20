@@ -1,61 +1,56 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>{{ supervisor.last_name }}, {{ supervisor.first_name }}</title>
-    <link rel="stylesheet" type="text/css" href="/static/style.css">
-  </head>
-  <body>
-    {% include "navbar.html" %}
-    <center>
-      <h1>Supervisor: {{ supervisor.first_name }} {{ supervisor.last_name }}</h1>
-      {% if supervisor.photo %}
-      <img src="data:;base64,{{ supervisor.photo }}" height="256" alt="Photo of {{ supervisor.first_name }} {{ supervisor.last_name }}" />
-      {% endif %}
-      <table class="data">
-        <tr>
-          <td>Email</td>
-          <td><a href="mailto:{{ supervisor.email }}">{{ supervisor.email }}</a></td>
-        </tr>
-        <tr>
-          <td>Website</td>
-          <td><a href="{{ supervisor.website }}">{{ supervisor.website }}</a></td>
-        </tr>
-        <tr>
-          <td>Location</td>
-          <td>{{ supervisor.location }}</td>
-        </tr>
-        <tr>
-          <td>Workplace</td>
-          <td>{{ supervisor.workplace }}</td>
-        </tr>
-        <tr>
-          <td>Status</td>
-          <td>{{ supervisor.status }}</td>
-        </tr>
-        <tr>
-          <td>Phone number</td>
-          <td>{{ supervisor.phone }}</td>
-        </tr>
-        <tr>
-          <td>Mobile number</td>
-          <td>{{ supervisor.mobile }}</td>
-        </tr>
-        <tr>
-          <td>Fax number</td>
-          <td>{{ supervisor.fax }}</td>
-        </tr>
-        <tr>
-          <td valign="top">Projects</td>
-          <td>
-            {% for p in project_list %}
-            {% if p.supervisor == supervisor %}
-            <a href="/projects/{{ p.id }}">{{ p.name }}</a>
-            {% endif %}
-            {% endfor %}
-          </td>
-        </tr>
-      </table>
-    </center>
-  </body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}{{ supervisor.last_name }}, {{ supervisor.first_name }}{% endblock %}
+
+{% block body %}
+<center>
+  <h1>Supervisor: {{ supervisor.first_name }} {{ supervisor.last_name }}</h1>
+  {% if supervisor.photo %}
+  <img src="data:;base64,{{ supervisor.photo }}" height="256" alt="Photo of {{ supervisor.first_name }} {{ supervisor.last_name }}" />
+  {% endif %}
+  <table class="data">
+    <tr>
+      <td>Email</td>
+      <td><a href="mailto:{{ supervisor.email }}">{{ supervisor.email }}</a></td>
+    </tr>
+    <tr>
+      <td>Website</td>
+      <td><a href="{{ supervisor.website }}">{{ supervisor.website }}</a></td>
+    </tr>
+    <tr>
+      <td>Location</td>
+      <td>{{ supervisor.location }}</td>
+    </tr>
+    <tr>
+      <td>Workplace</td>
+      <td>{{ supervisor.workplace }}</td>
+    </tr>
+    <tr>
+      <td>Status</td>
+      <td>{{ supervisor.status }}</td>
+    </tr>
+    <tr>
+      <td>Phone number</td>
+      <td>{{ supervisor.phone }}</td>
+    </tr>
+    <tr>
+      <td>Mobile number</td>
+      <td>{{ supervisor.mobile }}</td>
+    </tr>
+    <tr>
+      <td>Fax number</td>
+      <td>{{ supervisor.fax }}</td>
+    </tr>
+    <tr>
+      <td valign="top">Projects</td>
+      <td>
+        {% for p in project_list %}
+        {% if p.supervisor == supervisor %}
+        <a href="/projects/{{ p.id }}">{{ p.name }}</a>
+        {% endif %}
+        {% endfor %}
+      </td>
+    </tr>
+  </table>
+</center>
+{% endblock %}
