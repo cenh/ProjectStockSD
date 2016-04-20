@@ -15,8 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from project_stock import views
-from projects import views as p_views
+from . import views
 
 urlpatterns = [
     url(r'^$', p_views.ProjectView.as_view(), name='project'),
