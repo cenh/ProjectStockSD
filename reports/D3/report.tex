@@ -6,6 +6,7 @@
 \usepackage[danish]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{hyperref}
+\usepackage{nameref}
 \usepackage{amsmath, amscd}
 \usepackage{amsmath,amscd}
 \usepackage{amssymb}
@@ -29,7 +30,7 @@
 
 \title{
   \vspace{3cm}
-  \Huge{D1} \\
+  \Huge{D3} \\
   \Large{Software Udvikling 2016}
 }
 
@@ -59,10 +60,45 @@
 \newpage
 
 \section{Implementering af opgaver}
+Vi er i denne iteration begyndt at bruge GitHubs \textit{issue-tracking}\footnote{\url{https://en.wikipedia.org/wiki/Issue_tracking_system}} system til at holde styr på opgaver der skal udføres og fejl der skal rettes.
+
 
 \section{Programdesign}
 
 \section{Kodning}
+Vi har gjort os nogle nye overvejelse mht. hvordan vores scraper skal fungere. Vi indså at det ville blive for omfattende at lave en spider/crawler fra bunden, og vi har derfor undersøgt andre muligheder.
+
+\subsection{Spider/crawler og scraper}
+Vi har fundet et nyt framework til kodning af \textit{scrapers} og \textit{spiders/crawlers} kaldet Scrapy. Dette gør arbejdet en del nemmere, da den kombinere både en spider og scraper i én pakke. Selve spider-delen er indbygget, og man skal self kun stå for scraper-koden.\\
+\\
+Frameworket ligner meget Django, og det er derfor meget let at gå i gang med, fx vha. deres tutorial. Scrapy har samme setup-system som Django, og man kan starte et Scrapy projekt med en simpel kommando: \texttt{scrapy startproject tutorial}.\\
+\\
+Scrapy fungerer ved at man laver en klasse der nedarver scrapy.Item og her definerer man så de informationer man gerne vil udtrække. Herefter laver man en klasse der nedarver \texttt{Scrapy.Spider}, og her skal man bare angive en navn, tilladte domæner og en start-URL, og så sørger Scrapy selv for at crawle links uden at komme uden for de tilladte domæner. I \texttt{parse} metoden (scraper-delen) sørger man selv for at udtrække den nødvendige information, ofte vha. et \href{https://docs.python.org/3.5/library/xml.etree.elementtree.html}{xml.etree.ElementTree}\footnote{\url{https://docs.python.org/3.5/library/xml.etree.elementtree.html}} objekt. Se et simpelt eksempel herunder, lånt fra Scrapy tutorial (dette involverer ikke et xml.etree.ElementTree).\\
+\begin{lstlisting}
+import scrapy
+
+class DmozItem(scrapy.Item):
+    title = scrapy.Field()
+    link = scrapy.Field()
+    desc = scrapy.Field()
+
+class DmozSpider(scrapy.Spider):
+    name = "dmoz"
+    allowed_domains = ["dmoz.org"]
+    start_urls = [
+        "http://www.dmoz.org/Computers/Programming/Languages/Python/Books/",
+        "http://www.dmoz.org/Computers/Programming/Languages/Python/Resources/"
+    ]
+
+    def parse(self, response):
+        filename = response.url.split("/")[-2] + '.html'
+        with open(filename, 'wb') as f:
+        f.write(response.body)
+\end{lstlisting}
+~\\
+Det er dog problematisk at siden \url{http://diku.dk/Ansatte} har forskellige formater for nogle medarbejdere. Scraper-koden bliver meget lang og ulæselig, og det vil være svært at ændre en spider for at bringe den i overensstemmelse med et andet format.\\
+\\
+Scrapy er dog kun tilgængeligt til Python 2.x lige i øjeblikket\footnote{\url{http://doc.scrapy.org/en/latest/faq.html\#faq-python-versions}}, men en 3.x version bliver måske tilgængelig i fremtiden.\footnote{\url{http://doc.scrapy.org/en/latest/faq.html\#does-scrapy-work-with-python-3}}\\
 
 \section{Formelle inspektioner}
 
