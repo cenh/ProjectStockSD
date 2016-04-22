@@ -50,7 +50,7 @@ table.data tr.link:hover
 }
 
 /* Unordered list */
-ul
+div.navbar ul
 {
     list-style-type: none;
     margin: 0;
@@ -60,13 +60,13 @@ ul
 }
 
 /* List item */
-li
+div.navbar li
 {
     float: left;
 }
 
 /* List item with link */
-li a
+div.navbar li a
 {
     display: block;
     text-align: center;
@@ -75,7 +75,7 @@ li a
 }
 
 /* Hover list item link */
-li a:hover
+div.navbar li a:hover
 {
     background-color: #111;
 }

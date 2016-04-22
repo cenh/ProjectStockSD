@@ -1,36 +1,30 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Supervisors</title>
-    <link rel="stylesheet" type="text/css" href="/static/style.css">
-    <script src="/static/sorttable.js"></script>
-  </head>
-  <body>
-    {% include "navbar.html" %}
-    <center>
-      <h1>Supervisors</h1>
-      <table class="data sortable">
-        <tr>
-          <th>Supervisor</th><th>Title</th><th>Email</th><th>Phone</th>
-        </tr>
-        {% for s in supervisor_list %}
-        <tr class="link" onclick="window.document.location='/supervisors/{{ s.id }}'">
-          <td>
-            {{ s.last_name}}, {{ s.first_name }}
-          </td>
-          <td>
-            {{ s.status }}
-          </td>
-          <td>
-            {{ s.email }}
-          </td>
-          <td>
-            {{ s.phone }}
-          </td>
-        </tr>
-        {% endfor %}
-      </table>
-    </center>
-  </body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Supervisors{% endblock %}
+
+{% block body %}
+<center>
+  <h1>Supervisors</h1>
+  <table class="data searchable sortable">
+    <tr>
+      <th>Supervisor</th><th>Title</th><th>Email</th><th>Phone</th>
+    </tr>
+    {% for s in supervisor_list %}
+    <tr class="link" onclick="window.document.location='/supervisors/{{ s.id }}'">
+      <td>
+        {{ s.last_name}}, {{ s.first_name }}
+      </td>
+      <td>
+        {{ s.status }}
+      </td>
+      <td>
+        {{ s.email }}
+      </td>
+      <td>
+        {{ s.phone }}
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</center>
+{% endblock %}
