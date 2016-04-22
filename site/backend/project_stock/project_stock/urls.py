@@ -29,5 +29,4 @@ urlpatterns = [
     url(r'^groups/(?P<pk>[0-9]+)', views.GroupDetailView.as_view(), name='group'),
 
     url(r'^admin/', admin.site.urls),
-    url(r'^example/$', views.example, name='example'),
 ]
