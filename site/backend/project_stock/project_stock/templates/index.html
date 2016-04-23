@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Project Stock{% endblock %}
+
+{% block body %}
+<center>
+  <h1>Newest Projects</h1>
+</center>
+<table class="data sortable">
+  <tr>
+    <th>Project</th>
+  </tr>
+  {% for p in project_list %}
+  <tr>
+    <td>
+      <a href="{% url 'project' p.id %}">
+        {{ p.name }}
+      </a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

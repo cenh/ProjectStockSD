@@ -3,6 +3,13 @@ from django.http import HttpResponse
 from .models import Project, Supervisor, Group, Publication
 from django.views import generic
 
+class IndexView(generic.ListView):
+    model = Project
+    template_name = 'index.html'
+
+    def get_queryset(self):
+        return Project.objects.order_by('pub_date')
+
 class ProjectView(generic.ListView):
     model = Project
     template_name = 'projects/index.html'

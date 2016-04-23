@@ -18,7 +18,7 @@ from django.contrib import admin
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.ProjectView.as_view(), name='project'),
+    url(r'^$', views.IndexView.as_view(), name='index'),
 
     url(r'^projects/$', views.ProjectView.as_view(), name='project'),
     url(r'^supervisors/$', views.SupervisorView.as_view(), name='supervisor'),
