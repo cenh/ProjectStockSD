@@ -2,18 +2,20 @@ import scrapy, base64, urllib2, re
 from scrapy.crawler import CrawlerProcess
 
 class DikuAnsatteItem(scrapy.Item):
-    name = scrapy.Field() # check
-    title = scrapy.Field() # check
-    profile_link = scrapy.Field() # check
-    photo = scrapy.Field() # check
-    email = scrapy.Field() # check
-    tel = scrapy.Field() # check
+    name = scrapy.Field()
+    title = scrapy.Field()
+    profile_link = scrapy.Field()
+    photo = scrapy.Field()
+    email = scrapy.Field()
+    tel = scrapy.Field()
     tel_internal = scrapy.Field()
     fax = scrapy.Field()
     cell = scrapy.Field()
-    workplace = scrapy.Field() # check
+
+    workplace = scrapy.Field() # maybe these two should be merged together?
     location = scrapy.Field()
 
+    # perhaps scrape website as well?
 
 class DikuAnsatteSpider(scrapy.Spider):
     name = 'diku'
@@ -45,45 +47,10 @@ class DikuAnsatteSpider(scrapy.Spider):
             name_tag = '//span[@class="person"]/text()'
             title_tag = '//p[@class="type"]/text()'
             photo_tag = '//div[@class="person_photo"]/img/@src'
-
-            workplace = response.xpath('//div[@class="address"]/p/text()').extract()
-            item['workplace'] = workplace[0] if len(workplace) > 0 else ''
-
-            email = response.xpath('//ul[@class="relations email"]/li/a/span/text()').extract()
-            item['email'] = email[0] if len(email) > 0 else ''
         else:
             name_tag = '//div[@id="forskerprofil_kontaktoplysninger"]/h1/text()'
             title_tag = '//p[@class="forskerprofil_titel"]/text()'
             photo_tag = '//div[@id="forskerprofil_kontaktoplysninger"]/img/@src'
-
-            email = response.xpath('//p[@class="forskerprofil_kontakt"]/a/text()').extract()
-            item['email'] = ''.join(email) if len(email) > 0 else ''
-
-            workplace = response.xpath('//p[@class="forskerprofil_adresse"]/text()').extract()
-            if workplace:
-                item['workplace'] = ', '.join(workplace)
-
-            contact_info = response.xpath('//p[@class="forskerprofil_kontakt"]/text()').extract()
-            for c in contact_info:
-                location = re.match('Kontor:\s+(.*)', c)
-                if location:
-                    item['location'] = location.group(1)
-
-                tel = re.match('Telefon:\s+(.*)', c)
-                if tel:
-                    item['tel'] = tel.group(1)
-
-                tel_internal = re.match('Telefon (Sekretariat):\s(.*)', c)
-                if tel_internal:
-                    item['tel_internal'] = tel_internal.group(1)
-
-                fax = re.match('Fax:\s+(.*)', c)
-                if fax:
-                    item['fax'] = fax.group(1)
-
-                cell = re.match('Mobil:\s+(.*)', c)
-                if cell:
-                    item['cell'] = cell.group(1)
 
         name = response.xpath(name_tag).extract()
         item['name'] = name[0] if name else ''
@@ -98,10 +65,70 @@ class DikuAnsatteSpider(scrapy.Spider):
         else:
             item['photo'] = ''
 
-        # the rest will need regexes I believe
+        # parse things they do not have in common, separately
+        if 'pure' in item['profile_link']:
+            return self.parse_pure(response)
+        else:
+            return self.parse_other(response)
+
+    def parse_pure(self, response):
+        item = response.meta['item']
+
+        tel = response.xpath('//span[@class="property person_contact_phone"]/text()').extract()
+        item['tel'] = tel[0] if len(tel) > 0 else ''
+
+        item['tel_internal'] = '' # doesn't seem to exist for pure links
+
+        fax = response.xpath('//span[@class="property person_contact_fax"]/text()').extract()
+        item['fax'] = fax[0] if len(fax) > 0 else ''
+
+        cell = response.xpath('//span[@class="property person_contact_mobilephone"]/text()').extract()
+        item['cell'] = cell[0] if len(cell) > 0 else ''
+
+        workplace = response.xpath('//div[@class="address"]/p/text()').extract()
+        item['workplace'] = workplace[0] if len(workplace) > 0 else ''
+
+        email = response.xpath('//ul[@class="relations email"]/li/a/span/text()').extract()
+        item['email'] = email[0] if len(email) > 0 else ''
+
+        item['location'] = '' # this also doesn't seem to exist
 
         self.items.append(item)
+        yield item
 
+    def parse_other(self, response):
+        item = response.meta['item']
+
+        email = response.xpath('//p[@class="forskerprofil_kontakt"]/a/text()').extract()
+        item['email'] = ''.join(email) if len(email) > 0 else ''
+
+        workplace = response.xpath('//p[@class="forskerprofil_adresse"]/text()').extract()
+        if workplace:
+            item['workplace'] = ', '.join(workplace)
+
+        contact_info = response.xpath('//p[@class="forskerprofil_kontakt"]/text()').extract()
+        for c in contact_info:
+            location = re.match('Kontor:\s+(.*)', c)
+            if location:
+                item['location'] = location.group(1)
+
+            tel = re.match('Telefon:\s+(.*)', c)
+            if tel:
+                item['tel'] = tel.group(1)
+
+            tel_internal = re.match('Telefon (Sekretariat):\s(.*)', c)
+            if tel_internal:
+                item['tel_internal'] = tel_internal.group(1)
+
+            fax = re.match('Fax:\s+(.*)', c)
+            if fax:
+                item['fax'] = fax.group(1)
+
+            cell = re.match('Mobil:\s+(.*)', c)
+            if cell:
+                item['cell'] = cell.group(1)
+
+        self.items.append(item)
         yield item
 
     def start(self):
