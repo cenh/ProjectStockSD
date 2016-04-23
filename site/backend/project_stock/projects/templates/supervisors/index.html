@@ -24,6 +24,10 @@
         {{ s.phone }}
       </td>
     </tr>
+    {% empty %}
+    <tr>
+      <td>No groups to show!</td>
+    </tr>
     {% endfor %}
   </table>
 </center>
