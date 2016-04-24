@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import Project, Supervisor, Group, Publication
 from django.views import generic
 from django.db.models import Count
+from django.utils import timezone
 
 class IndexView(generic.ListView):
     model = Project
@@ -14,8 +15,9 @@ class IndexView(generic.ListView):
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
         context = super(IndexView, self).get_context_data(**kwargs)
-        #context['supervisor_list'] = Supervisor.objects.annotate(num_projects=Count('Project')).order_by('-num_projects')[0:5]
-        context['supervisor_list'] = Supervisor.objects.order_by('last_name')[:5]
+        context['supervisor_list'] = Supervisor.objects.filter(project__deadline__gte=timezone.now()) \
+                                                       .annotate(num_projects=Count('project')) \
+                                                       .order_by('-num_projects')[0:5]
         context['random_project_list'] = Project.objects.order_by('?')[:1]
         context['project_bachelor'] = Project.objects.filter(type='B').order_by('-pub_date')[:5]
         context['project_master'] = Project.objects.filter(type='M').order_by('-pub_date')[:5]
@@ -27,7 +29,7 @@ class ProjectView(generic.ListView):
     template_name = 'projects/index.html'
 
     def get_queryset(self):
-        return Project.objects.order_by('name') #Descending
+        return Project.objects.order_by('name')
 
 class SupervisorView(generic.ListView):
     model = Supervisor
