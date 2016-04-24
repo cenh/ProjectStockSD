@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import RegexValidator
+from django.contrib.auth.models import User
 
 class Supervisor(models.Model):
     first_name = models.CharField(max_length=64)
@@ -17,6 +18,8 @@ class Supervisor(models.Model):
     # this is a base64 field. Easy to scrape and link but how to manage from admin page?
     # 2^25 should be about 32MB in characters
     photo = models.TextField(max_length=2**25, blank=True, null=True)
+
+    user = models.ForeignKey(User, models.SET_NULL, blank=True, null=True)
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name
