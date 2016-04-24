@@ -4,17 +4,73 @@
 
 {% block body %}
 <center>
-  <h1>Newest Projects</h1>
+  <h1>ProjectStock</h1>
 </center>
 <table class="data sortable">
   <tr>
-    <th>Project</th>
+    <th>Random Project</th>
   </tr>
-  {% for p in project_list %}
+  {% for r in random_project_list %}
   <tr>
     <td>
-      <a href="{% url 'project' p.id %}">
-        {{ p.name }}
+      <a href="{% url 'project' r.id %}">
+        {{ r.name }}
+      </a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+<table class="data sortable">
+  <tr>
+    <th>Newly published Bachelor projects</th>
+  </tr>
+  {% for b in project_bachelor %}
+  <tr>
+    <td>
+      <a href="{% url 'project' b.id %}">
+        {{ b.name }}
+      </a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+<table class="data sortable">
+  <tr>
+    <th>Newly published Master projects</th>
+  </tr>
+  {% for m in project_master %}
+  <tr>
+    <td>
+      <a href="{% url 'project' m.id %}">
+        {{ m.name }}
+      </a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+<table class="data sortable">
+  <tr>
+    <th>Newly published Master Thesis</th>
+  </tr>
+  {% for t in project_thesis %}
+  <tr>
+    <td>
+      <a href="{% url 'project' t.id %}">
+        {{ t.name }}
+      </a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+<table class="data sortable">
+  <tr>
+    <th>Supervisors with most active projects</th>
+  </tr>
+  {% for s in supervisor_list %}
+  <tr>
+    <td>
+      <a href="{% url 'supervisor' s.id %}">
+        {{ s.last_name }}, {{ s.first_name }}
       </a>
     </td>
   </tr>
