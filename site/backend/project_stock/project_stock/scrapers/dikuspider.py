@@ -1,16 +1,20 @@
 import scrapy, base64, urllib2, re
 from scrapy.crawler import CrawlerProcess
+from scrapy.utils.log import configure_logging
+
+# this does not work, why? I don't like scrapy's insane debug output
+configure_logging({'LOG_ENABLED': False, 'LOG_LEVEL': 'WARNING'}, install_root_handler=False)
 
 class DikuAnsatteItem(scrapy.Item):
     name = scrapy.Field()
-    title = scrapy.Field()
+    status = scrapy.Field() # this should be renamed, both here and in models, to title
     profile_link = scrapy.Field()
     photo = scrapy.Field()
     email = scrapy.Field()
-    tel = scrapy.Field()
-    tel_internal = scrapy.Field()
+    phone = scrapy.Field()
+    phone_internal = scrapy.Field()
     fax = scrapy.Field()
-    cell = scrapy.Field()
+    mobile = scrapy.Field()
 
     workplace = scrapy.Field() # maybe these two should be merged together?
     location = scrapy.Field()
@@ -56,7 +60,7 @@ class DikuAnsatteSpider(scrapy.Spider):
         item['name'] = name[0] if name else ''
 
         title = response.xpath(title_tag).extract()
-        item['title'] = title[0] if title else ''
+        item['status'] = title[0] if title else ''
 
         photo_url = response.xpath(photo_tag).extract()
         if photo_url:
@@ -74,16 +78,16 @@ class DikuAnsatteSpider(scrapy.Spider):
     def parse_pure(self, response):
         item = response.meta['item']
 
-        tel = response.xpath('//span[@class="property person_contact_phone"]/text()').extract()
-        item['tel'] = tel[0] if len(tel) > 0 else ''
+        phone = response.xpath('//span[@class="property person_contact_phone"]/text()').extract()
+        item['phone'] = phone[0] if len(phone) > 0 else ''
 
-        item['tel_internal'] = '' # doesn't seem to exist for pure links
+        item['phone_internal'] = '' # doesn't seem to exist for pure links
 
         fax = response.xpath('//span[@class="property person_contact_fax"]/text()').extract()
         item['fax'] = fax[0] if len(fax) > 0 else ''
 
-        cell = response.xpath('//span[@class="property person_contact_mobilephone"]/text()').extract()
-        item['cell'] = cell[0] if len(cell) > 0 else ''
+        mobile = response.xpath('//span[@class="property person_contact_mobilephone"]/text()').extract()
+        item['mobile'] = mobile[0] if len(mobile) > 0 else ''
 
         workplace = response.xpath('//div[@class="address"]/p/text()').extract()
         item['workplace'] = workplace[0] if len(workplace) > 0 else ''
@@ -112,21 +116,21 @@ class DikuAnsatteSpider(scrapy.Spider):
             if location:
                 item['location'] = location.group(1)
 
-            tel = re.match('Telefon:\s+(.*)', c)
-            if tel:
-                item['tel'] = tel.group(1)
+            phone = re.match('Telefon:\s+(.*)', c)
+            if phone:
+                item['phone'] = phone.group(1)
 
-            tel_internal = re.match('Telefon (Sekretariat):\s(.*)', c)
-            if tel_internal:
-                item['tel_internal'] = tel_internal.group(1)
+            phone_internal = re.match('Telefon (Sekretariat):\s(.*)', c)
+            if phone_internal:
+                item['phone_internal'] = phone_internal.group(1)
 
             fax = re.match('Fax:\s+(.*)', c)
             if fax:
                 item['fax'] = fax.group(1)
 
-            cell = re.match('Mobil:\s+(.*)', c)
-            if cell:
-                item['cell'] = cell.group(1)
+            mobile = re.match('Mobil:\s+(.*)', c)
+            if mobile:
+                item['mobile'] = mobile.group(1)
 
         self.items.append(item)
         yield item
