@@ -4,7 +4,7 @@ from django.core.validators import RegexValidator
 class Supervisor(models.Model):
     first_name = models.CharField(max_length=64)
     last_name = models.CharField(max_length=64)
-    email = models.CharField(max_length=128)
+    email = models.EmailField()
     website = models.URLField(max_length=128, blank=True, null=True)
     location = models.CharField(max_length=128, blank=True, null=True) # office
     workplace = models.CharField(max_length=128, blank=True, null=True)
