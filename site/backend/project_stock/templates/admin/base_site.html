@@ -1,9 +1,10 @@
 {% extends "admin/base.html" %}
+{% load static %}
 
 {% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
 
 {% block extrastyle %}
-<link rel="stylesheet" type="text/css" href="/static/style.css">
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 {% endblock %}
 
 {% block branding %}

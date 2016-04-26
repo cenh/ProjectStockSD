@@ -1,12 +1,13 @@
+{% load static %}
 <!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>{% block title %}Base title{% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
-    <link rel="stylesheet" type="text/css" href="/static/style.css">
-    <script src="/static/sorttable.js"></script>
-    <script src="/static/searchtable.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <script src="{% static 'sorttable.js' %}"></script>
+    <script src="{% static 'searchtable.js' %}"></script>
     {% block extrahead %}{% endblock %}
   </head>
   <body>
