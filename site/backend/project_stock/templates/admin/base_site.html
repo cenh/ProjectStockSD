@@ -2,8 +2,14 @@
 
 {% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
 
+{% block extrastyle %}
+<link rel="stylesheet" type="text/css" href="/static/style.css">
+{% endblock %}
+
 {% block branding %}
 <h1 id="site-name"><a href="{% url 'admin:index' %}">Project Stock administration</a></h1>
 {% endblock %}
 
-{% block nav-global %}{% endblock %}
+{% block overrideheader %}
+{% include "navbar.html" %}
+{% endblock %}
