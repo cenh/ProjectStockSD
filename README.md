@@ -60,9 +60,26 @@ Skift mappe til project_stock Django projektet og kør:
 `systemctl restart httpd mariadb` (over SSH som root) eller lokalt med CTRL-C + `python manage.py runserver`
 
 ## Git Tips
-### Se forskellen på HEAD (nyeste commit) og de *n* seneste commits:
+### Diff
+Se forskellen på HEAD (nyeste commit) og de *n* seneste commits:
 
 `git diff HEAD~n HEAD [fil]`
+
+### Branches
+Lav en gren for at implementere/fixe en issue (en god konvention er at bruge issue numre)
+
+`git checkout -b ny-gren`
+
+Flet master ind i den nye gren, hvis den afhænger af ændringer derfra (husk at forblive på den nye gren)
+
+`git merge master`
+
+Flet den ind i master når det er færdigt og sikkert
+
+`git checkout master`
+
+`git merge ny-gren`
+
 
 ## Materiale
 
