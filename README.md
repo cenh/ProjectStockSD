@@ -6,7 +6,7 @@ Velkommen til vores Project Stock repository!
 * [Kør Serveren Lokalt](https://github.com/cenh/ProjectStockSD#kør-serveren-lokalt)
 * [Migrations på serveren](https://github.com/cenh/ProjectStockSD#migrations-på-serveren)
 * [Git tips](https://github.com/cenh/ProjectStockSD#git-tips)
-* [Diverse materiale](https://github.com/cenh/ProjectStockSD#materiale)
+* [Materiale](https://github.com/cenh/ProjectStockSD#materiale)
 * [HTML Tags](https://github.com/cenh/ProjectStockSD#html-tags---ansatte)
 * [DIKU Test Server Links](https://github.com/cenh/ProjectStockSD#diku-test-server-links)
 
@@ -60,9 +60,26 @@ Skift mappe til project_stock Django projektet og kør:
 `systemctl restart httpd mariadb` (over SSH som root) eller lokalt med CTRL-C + `python manage.py runserver`
 
 ## Git Tips
-### Se forskellen på HEAD (nyeste commit) og de *n* seneste commits:
+### Diff
+Se forskellen på HEAD (nyeste commit) og de *n* seneste commits:
 
 `git diff HEAD~n HEAD [fil]`
+
+### Branches
+Lav en gren for at implementere/fixe en issue (en god konvention er at bruge issue numre)
+
+`git checkout -b ny-gren`
+
+Flet master ind i den nye gren, hvis den afhænger af ændringer derfra (husk at forblive på den nye gren)
+
+`git merge master`
+
+Flet den ind i master når det er færdigt og sikkert
+
+`git checkout master`
+
+`git merge ny-gren`
+
 
 ## Materiale
 

@@ -46,7 +46,7 @@
       <td>
         {% for p in project_list %}
         {% if p.supervisor == supervisor %}
-        <a href="/projects/{{ p.id }}">{{ p.name }}</a>
+        <a href="{% url 'project' p.id %}">{{ p.name }}</a><br>
         {% endif %}
         {% endfor %}
       </td>

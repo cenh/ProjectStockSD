@@ -1,9 +1,10 @@
+{% load admin_urls %}
 <div class="navbar">
   <ul>
-    <li><a href="/">Frontpage</a></li>
-    <li><a href="/projects/">Projects</a></li>
-    <li><a href="/supervisors/">Supervisors</a></li>
-    <li><a href="/groups/">Groups</a></li>
-    <li><a href="/admin/">Admin</a></li>
+    <li><a href="{% url 'index' %}">Frontpage</a></li>
+    <li><a href="{% url 'project' %}">Projects</a></li>
+    <li><a href="{% url 'supervisor' %}">Supervisors</a></li>
+    <li><a href="{% url 'group' %}">Groups</a></li>
+    <li><a href="{% url 'admin:index' %}">Admin</a></li>
   </ul>
 </div>
