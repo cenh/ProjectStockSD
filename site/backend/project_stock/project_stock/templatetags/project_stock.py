@@ -1,22 +1,26 @@
 from django.core.validators import EmailValidator, URLValidator
+from django.core.exceptions import ValidationError
 from django import template
+from django.template.defaultfilters import stringfilter
 
 register = template.Library()
 
-@register.simple_tag
+@register.filter
 @stringfilter
 def validate_email(email):
-    validator = EmailValidator()
-    if validator.regex.match(email):
+    try:
+        validator = EmailValidator()(email)
+    except ValidationError:
         return False
-    else:
-        return email
 
-@register.simple_tag
+    return email
+
+@register.filter
 @stringfilter
 def validate_url(url):
-    validator = URLValidator()
-    if validator.regex.match(url):
+    try:
+        validator = URLValidator()(url)
+    except ValidationError:
         return False
-    else:
-        return url
+
+    return url
