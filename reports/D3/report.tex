@@ -76,41 +76,49 @@ Som set på figur\ref{fig:issues} har vi til denne iteration oprettet 7 issues, 
 \item Views
 	\begin{itemize}
 	\item Forklaring: Implementation af views til at hente projekter, grupper, vejledere og publikationer.
-	\item Løst: Ja
 	\end{itemize}
 \item Templates
 	\begin{itemize}
 	\item Forklaring: Templates til at vise ovenstående views.
-	\item Løst: Ja
 	\end{itemize}
 \item Stylesheet css
 	\begin{itemize}
 	\item Forklaring: Implementation af et stylesheet i css, til at gøre vores hjemmeside en smule pænere.
-	\item Løst: Ja
 	\end{itemize}
 \item Profiler
 	\begin{itemize}
 	\item Forklaring: Profiler over projekter, grupper og vejledere. Altså en side, som viser information om et enkelt objekt.
-	\item Løst: Ja
 	\end{itemize}
 \item Scraping af DIKUs Ansatte
 	\begin{itemize}
 	\item Forklaring: En Scraper til at hente information om DIKUs Ansatte
-	\item Løst: Ja
 	\end{itemize}
 \item Linking af projekter og vejledere
 	\begin{itemize}
 	\item Forklaring: Link af projekter og vejledere, således at man kan vise alle projekter fra en enkelt vejleder. Dette er en videre implementering af profiler.
-	\item Løst: Ja
 	\end{itemize}
 \item Server viser ikke katalog over vejledere (Bug)
 	\begin{itemize}
 	\item Forklaring: Et bug gjorde, at vores server ikke viste et katalog over vejledere. Men det blev vist hvis man kørte Django lokalt. Bugget skyldtes Django settings.
-	\item Løst: Ja
 	\end{itemize}
 \end{enumerate}
 
+Alle opgaverne er blevet markeret som løst.
+
 \section{Programdesign}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{modelUML.png}
+	\caption{Oversigt over klasser i vores database.}
+	\label{fig:UML}
+\end{figure}
+
+Figur\ref{fig:UML} viser et diagram over de klasser vi overvejer at have i vores database, samt deres attributer. \\ 
+
+Vi bruger python biblioteket Django til, at holde styr på vores database og webside. Vi vil ikke gå i detaljer omkring Djangos komponenter, da Django har en helt masse små dele og komponenter som får det hele til at køre. 
+Udover Django har vi så en webscraper til at hente information fra DIKUs hjemmeside, som så bliver sat ind i databasen via. Django som objekter. \\ \\
+
+Vi har derudover hentet flere open-source javascripts (Med licenser der tillader at vi bruger dem). Disse javascripts giver os noget mere funktionalitet, såsom at kunne sortere vores tables med data, og et søgefelt til at søge i vores tables.
 
 \section{Kodning}
 Vi vil i dette afsnit diskutér nogle af de interessante aspekter fundet under kodningen, og en opsummering af kodekonventioner og idiomer vi bruger. \\ \\
