@@ -6,7 +6,7 @@ Velkommen til vores Project Stock repository!
 * [Kør Serveren Lokalt](https://github.com/cenh/ProjectStockSD#kør-serveren-lokalt)
 * [Migrations på serveren](https://github.com/cenh/ProjectStockSD#migrations-på-serveren)
 * [Git tips](https://github.com/cenh/ProjectStockSD#git-tips)
-* [Diverse materiale](https://github.com/cenh/ProjectStockSD#materiale)
+* [Materiale](https://github.com/cenh/ProjectStockSD#materiale)
 * [HTML Tags](https://github.com/cenh/ProjectStockSD#html-tags---ansatte)
 * [DIKU Test Server Links](https://github.com/cenh/ProjectStockSD#diku-test-server-links)
 
