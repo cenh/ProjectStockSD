@@ -153,4 +153,32 @@ Scrapy er dog kun tilgængeligt til Python 2.x lige i øjeblikket\footnote{\url{
 
 \section{Planlægning af næste iteration}
 Til næste iteration, vil vores hovedopgaver være at finde ud af hvordan vi skal scrape DIKU's liste over projekter, og begynde at overveje hvordan vi skal lave bruger registrering og verifikation af brugerne.
+Vi vil fokusere på tre \textit{use cases} i næste iteration. Disse \textit{use cases} er:
+\begin{enumerate}
+\subsection*{Forventes implementeret i næste iteration}
+	\item \label{enum:scraping} Fornuftig scraping af listen over projekter.
+
+	\item \label{enum:verifikation} Personer, der optræder på siden, skal kunne verificeres, hvis de eksempelvis ønsker at tilføje projekter eller foretage rettelser.
+
+\subsection*{Påbegyndes i næste iteration}
+
+	\item \label{enum:design} Arbejde mod det endelige design, som skal repræsentere informationerne. 
+\end{enumerate}
+
+\subsection{Underopgaver for de udvalgte \textit{use cases}}
+\subsubsection*{\textit{Use case} \ref{enum:scraping}}
+\begin{itemize}
+	\item Yderligere viden omkring hvordan information om projekterne er lagret.
+	\item Gøre scraping af ovenstående muligt.
+\end{itemize}
+
+\subsubsection*{\textit{Use case} \ref{enum:verifikation}}
+De specifikke detaljer, for verificeringen, skal overvejes og konkretiseres nærmere. Verificeringen skal foregå med mindst mulig adminstrativ vedligholdelse, men samtidig korrekt. Hvis den deles op i underopgaver er disse:
+\begin{itemize}
+	\item Der skal laves en password generering.
+	\item Muligheden for oprettelse af en bruger, med prædefinerede valg, ud fra det høstede data.
+\end{itemize}
+
+\subsubsection*{\textit{Use case} \ref{enum:design}}
+Da vi efterhånden har fået høstet de informationer vi har brug for, og fået lavet de diverse views, så de har deres grundlæggende funktioner. Skal vi begynde at overveje et brugervenligt design som kan repræsentere informationerne på en overskuelig måde. 
 \end{document}
