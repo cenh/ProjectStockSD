@@ -16,6 +16,7 @@
 \usepackage{framed}
 \usepackage{color}
 \usepackage{listings}
+\usepackage{float}
 \lstset{
 	frame=single,
 	breaklines=true,
@@ -60,13 +61,61 @@
 \newpage
 
 \section{Implementering af opgaver}
-Vi er i denne iteration begyndt at bruge GitHubs \textit{issue-tracking}\footnote{\url{https://en.wikipedia.org/wiki/Issue_tracking_system}} system til at holde styr på opgaver der skal udføres og fejl der skal rettes.
+Vi vil i dette afsnit redegøre for hvordan vi har planlagt og koordineret arbejde i denne iteration. Vi er i denne iteration begyndt at bruge GitHubs \textit{issue-tracking}\footnote{\url{https://en.wikipedia.org/wiki/Issue_tracking_system}} system til at holde styr på opgaver der skal udføres og fejl der skal rettes. Hvert \textit{issue} der bliver oprettet får tildelt en såkaldt 'milestone', altså en milepæl hvor opgaven skal løses inden. Vi har valgt at sætte deadlines for disse milepæle til at være deadlines for rapporterne. Derudover har vi en ekstra milepæl, som vi har kaldet 'Extras (Nice to Have)' der i bund og grund er opgaver, som ikke er nødvendige, men som kunne være fedt at få implementeret. Derudover kan man tilføje 'labels' til opgaverne, som fortæller i hvilken kategori opgaven hører indunder, dertil har vi oprettet nye labels udover GitHubs standard labels, såsom 'design', 'database/models', 'scraper' og andre. Disse labels skal hjælpe os med at holde styr på opgaverne, men også give et hurtigt overblik over hvor en opgave hører til. \\ \\
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{issues.png}
+	\caption{Oversigt over status for vores issues til milepælen D3.}
+	\label{fig:issues}
+\end{figure}
+
+Som set på figur\ref{fig:issues} har vi til denne iteration oprettet 7 issues, som skulle klares inden D3 skal afleveres. Disse issues kan dog ikke betragtes som 'use cases', men derimod som enkelte opgaver. Opgaverne eller issues til denne iteration er som følger:
+
+\begin{enumerate}
+\item Views
+	\begin{itemize}
+	\item Forklaring: Implementation af views til at hente projekter, grupper, vejledere og publikationer.
+	\item Løst: Ja
+	\end{itemize}
+\item Templates
+	\begin{itemize}
+	\item Forklaring: Templates til at vise ovenstående views.
+	\item Løst: Ja
+	\end{itemize}
+\item Stylesheet css
+	\begin{itemize}
+	\item Forklaring: Implementation af et stylesheet i css, til at gøre vores hjemmeside en smule pænere.
+	\item Løst: Ja
+	\end{itemize}
+\item Profiler
+	\begin{itemize}
+	\item Forklaring: Profiler over projekter, grupper og vejledere. Altså en side, som viser information om et enkelt objekt.
+	\item Løst: Ja
+	\end{itemize}
+\item Scraping af DIKUs Ansatte
+	\begin{itemize}
+	\item Forklaring: En Scraper til at hente information om DIKUs Ansatte
+	\item Løst: Ja
+	\end{itemize}
+\item Linking af projekter og vejledere
+	\begin{itemize}
+	\item Forklaring: Link af projekter og vejledere, således at man kan vise alle projekter fra en enkelt vejleder. Dette er en videre implementering af profiler.
+	\item Løst: Ja
+	\end{itemize}
+\item Server viser ikke katalog over vejledere (Bug)
+	\begin{itemize}
+	\item Forklaring: Et bug gjorde, at vores server ikke viste et katalog over vejledere. Men det blev vist hvis man kørte Django lokalt. Bugget skyldtes Django settings.
+	\item Løst: Ja
+	\end{itemize}
+\end{enumerate}
 
 \section{Programdesign}
 
 \section{Kodning}
-Vi har gjort os nogle nye overvejelse mht. hvordan vores scraper skal fungere. Vi indså at det ville blive for omfattende at lave en spider/crawler fra bunden, og vi har derfor undersøgt andre muligheder.
+Vi vil i dette afsnit diskutér nogle af de interessante aspekter fundet under kodningen, og en opsummering af kodekonventioner og idiomer vi bruger. \\ \\
+Vi har gjort os nogle nye overvejelse mht. hvordan vores scraper skal fungere. Vi indså at det ville blive for omfattende at lave en spider/crawler fra bunden, og vi har derfor undersøgt andre muligheder. \\ \\
+Mht. kodekonventioner er der ikke så meget, eftersom at python er ret streng med indentioner og syntaks så er der ikke så meget andet at gøre. Derudover så følger vi Djangos templates, så der er ikke så mange udfordringer i forhold til, hvordan vi hver især skriver kode. Vi prøver dog at holde funktionerne så simple så mulige, hvilket f.eks. kan ses i vores templates, hvor at vi har lavet en base-fil som indeholder alle de ting vi gerne vil importe (Såsom stylesheet, javascript biblioteker), og derefter indkludere vi denne base-fil i alle templates, derved sparer vi nogle linjers kode i hver template, men det gør også templatesene lettere at læse.
 
 \subsection{Spider/crawler og scraper}
 Vi har fundet et nyt framework til kodning af \textit{scrapers} og \textit{spiders/crawlers} kaldet Scrapy. Dette gør arbejdet en del nemmere, da den kombinere både en spider og scraper i én pakke. Selve spider-delen er indbygget, og man skal self kun stå for scraper-koden.\\
@@ -103,5 +152,5 @@ Scrapy er dog kun tilgængeligt til Python 2.x lige i øjeblikket\footnote{\url{
 \section{Formelle inspektioner}
 
 \section{Planlægning af næste iteration}
-
+Til næste iteration, vil vores hovedopgaver være at finde ud af hvordan vi skal scrape DIKU's liste over projekter, og begynde at overveje hvordan vi skal lave bruger registrering og verifikation af brugerne.
 \end{document}

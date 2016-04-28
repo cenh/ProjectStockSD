@@ -8,7 +8,7 @@
   <table class="data">
     <tr>
       <td>Supervisor</td>
-      <td><a href="/supervisors/{{ project.supervisor.id }}">{{ project.supervisor }}</a></td>
+      <td><a href="{% url 'supervisor' project.supervisor.id %}">{{ project.supervisor }}</a></td>
     </tr>
     <tr>
       <td>Type</td>
