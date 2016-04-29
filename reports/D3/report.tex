@@ -158,7 +158,9 @@ Det er dog problematisk at siden \url{http://diku.dk/Ansatte} har forskellige fo
 Scrapy er dog kun tilgængeligt til Python 2.x lige i øjeblikket\footnote{\url{http://doc.scrapy.org/en/latest/faq.html\#faq-python-versions}}, men en 3.x version bliver måske tilgængelig i fremtiden.\footnote{\url{http://doc.scrapy.org/en/latest/faq.html\#does-scrapy-work-with-python-3}}\\
 
 \section{Formelle inspektioner}
-
+Formelle inspektioner kan i grove træk beskrives som korrektur læsning for kode, og det er oplagt at gøre brug af dette, når man skriver store dokumenter med mange linjers kode. Som forfatter til koden, kan man stirre sig blind, eller opbygge systemer som for en selv kan virke fornuftige, men som man nemt kan miste overblikket over. Det er her en formel inspektion kan være nødvendig, så slåfejl og dårlige kodestykker bliver opfanget mens de stadig er lette at ændre. \\
+Denne situation føler vi dog ikke er tilfældet ved projektets nuværende tilstand. Vi har ikke ét dokument med mange linjer, men i stedet mange dokumenter med få linjer. Udover den upraktiske spredning af koden, autogenerer frameworket django også store dele af koden. Disse to ting besværliggør og obstruerer de formelle inspektioner i at være optimalt brug af ressourcer. \\
+Vi har derfor valgt ikke at lave nogle formelle inspektioner på nuværende tidspunkt i projektet.
 \section{Planlægning af næste iteration}
 Til næste iteration, vil vores hovedopgaver være at finde ud af hvordan vi skal scrape DIKU's liste over projekter, og begynde at overveje hvordan vi skal lave bruger registrering og verifikation af brugerne.
 Vi vil fokusere på tre \textit{use cases} i næste iteration. Disse \textit{use cases} er:
