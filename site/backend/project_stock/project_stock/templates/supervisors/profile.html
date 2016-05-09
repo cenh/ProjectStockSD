@@ -42,11 +42,21 @@
       <td>{{ supervisor.fax }}</td>
     </tr>
     <tr>
-      <td valign="top">Projects</td>
+      <td valign="top">Active projects</td>
       <td>
-        {% for p in project_list %}
-        {% if p.supervisor == supervisor %}
-        <a href="{% url 'project' p.id %}">{{ p.name }}</a><br>
+        {% for a in active_projects %}
+        {% if a.supervisor == supervisor %}
+        <a href="{% url 'project' a.id %}">{{ a.name }}</a><br>
+        {% endif %}
+        {% endfor %}
+      </td>
+    </tr>
+    <tr>
+      <td valign="top">Older projects</td>
+      <td>
+        {% for i in inactive_projects %}
+        {% if i.supervisor == supervisor %}
+        <a href="{% url 'project' i.id %}">{{ i.name }}</a><br>
         {% endif %}
         {% endfor %}
       </td>

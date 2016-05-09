@@ -18,10 +18,10 @@ class IndexView(generic.ListView):
         context['supervisor_list'] = Supervisor.objects.filter(project__deadline__gte=timezone.now()) \
                                                        .annotate(num_projects=Count('project')) \
                                                        .order_by('-num_projects')[0:5]
-        context['random_project_list'] = Project.objects.order_by('?')[:1]
-        context['project_bachelor'] = Project.objects.filter(type='B').order_by('-pub_date')[:5]
-        context['project_master'] = Project.objects.filter(type='M').order_by('-pub_date')[:5]
-        context['project_thesis'] = Project.objects.filter(type='T').order_by('-pub_date')[:5]
+        context['random_project_list'] = Project.objects.filter(deadline__gte=timezone.now()).order_by('?')[:1]
+        context['project_bachelor'] = Project.objects.filter(deadline__gte=timezone.now()).filter(type='B').order_by('-pub_date')[:5]
+        context['project_master'] = Project.objects.filter(deadline__gte=timezone.now()).filter(type='M').order_by('-pub_date')[:5]
+        context['project_thesis'] = Project.objects.filter(deadline__gte=timezone.now()).filter(type='T').order_by('-pub_date')[:5]
         return context
 
 class ProjectView(generic.ListView):
@@ -30,6 +30,12 @@ class ProjectView(generic.ListView):
 
     def get_queryset(self):
         return Project.objects.order_by('name')
+
+    def get_context_data(self, **kwargs):
+        context = super(ProjectView, self).get_context_data(**kwargs)
+        context['active_projects'] = Project.objects.filter(deadline__gte=timezone.now()).order_by('name')
+        context['inactive_projects'] = Project.objects.filter(deadline__lte=timezone.now()).exclude(deadline=timezone.now()).order_by('name')
+        return context
 
 class SupervisorView(generic.ListView):
     model = Supervisor
@@ -56,7 +62,8 @@ class SupervisorDetailView(generic.DetailView):
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
         context = super(SupervisorDetailView, self).get_context_data(**kwargs)
-        context['project_list'] = Project.objects.order_by('name')
+        context['active_projects'] = Project.objects.filter(deadline__gte=timezone.now()).order_by('name')
+        context['inactive_projects'] = Project.objects.filter(deadline__lte=timezone.now()).exclude(deadline=timezone.now()).order_by('name')
         context['group_list'] = Group.objects.order_by('id')
         return context
 
@@ -68,6 +75,5 @@ class GroupDetailView(generic.DetailView):
         # Call the base implementation first to get a context
         context = super(GroupDetailView, self).get_context_data(**kwargs)
         context['supervisor_list'] = Supervisor.objects.order_by('last_name')
-        context['project_list'] = Project.objects.order_by('name')
         return context
 
