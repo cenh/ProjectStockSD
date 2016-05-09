@@ -16,6 +16,7 @@
 \usepackage{framed}
 \usepackage{color}
 \usepackage{listings}
+\usepackage{float}
 \lstset{
 	frame=single,
 	breaklines=true,
@@ -60,13 +61,69 @@
 \newpage
 
 \section{Implementering af opgaver}
-Vi er i denne iteration begyndt at bruge GitHubs \textit{issue-tracking}\footnote{\url{https://en.wikipedia.org/wiki/Issue_tracking_system}} system til at holde styr på opgaver der skal udføres og fejl der skal rettes.
+Vi vil i dette afsnit redegøre for hvordan vi har planlagt og koordineret arbejde i denne iteration. Vi er i denne iteration begyndt at bruge GitHubs \textit{issue-tracking}\footnote{\url{https://en.wikipedia.org/wiki/Issue_tracking_system}} system til at holde styr på opgaver der skal udføres og fejl der skal rettes. Hvert \textit{issue} der bliver oprettet får tildelt en såkaldt 'milestone', altså en milepæl hvor opgaven skal løses inden. Vi har valgt at sætte deadlines for disse milepæle til at være deadlines for rapporterne. Derudover har vi en ekstra milepæl, som vi har kaldet 'Extras (Nice to Have)' der i bund og grund er opgaver, som ikke er nødvendige, men som kunne være fedt at få implementeret. Derudover kan man tilføje 'labels' til opgaverne, som fortæller i hvilken kategori opgaven hører indunder, dertil har vi oprettet nye labels udover GitHubs standard labels, såsom 'design', 'database/models', 'scraper' og andre. Disse labels skal hjælpe os med at holde styr på opgaverne, men også give et hurtigt overblik over hvor en opgave hører til. \\ \\
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{issues.png}
+	\caption{Oversigt over status for vores issues til milepælen D3.}
+	\label{fig:issues}
+\end{figure}
+
+Som set på figur\ref{fig:issues} har vi til denne iteration oprettet 7 issues, som skulle klares inden D3 skal afleveres. Disse issues kan dog ikke betragtes som 'use cases', men derimod som enkelte opgaver. Opgaverne eller issues til denne iteration er som følger:
+
+\begin{enumerate}
+\item Views
+	\begin{itemize}
+	\item Forklaring: Implementation af views til at hente projekter, grupper, vejledere og publikationer.
+	\end{itemize}
+\item Templates
+	\begin{itemize}
+	\item Forklaring: Templates til at vise ovenstående views.
+	\end{itemize}
+\item Stylesheet css
+	\begin{itemize}
+	\item Forklaring: Implementation af et stylesheet i css, til at gøre vores hjemmeside en smule pænere.
+	\end{itemize}
+\item Profiler
+	\begin{itemize}
+	\item Forklaring: Profiler over projekter, grupper og vejledere. Altså en side, som viser information om et enkelt objekt.
+	\end{itemize}
+\item Scraping af DIKUs Ansatte
+	\begin{itemize}
+	\item Forklaring: En Scraper til at hente information om DIKUs Ansatte
+	\end{itemize}
+\item Linking af projekter og vejledere
+	\begin{itemize}
+	\item Forklaring: Link af projekter og vejledere, således at man kan vise alle projekter fra en enkelt vejleder. Dette er en videre implementering af profiler.
+	\end{itemize}
+\item Server viser ikke katalog over vejledere (Bug)
+	\begin{itemize}
+	\item Forklaring: Et bug gjorde, at vores server ikke viste et katalog over vejledere. Men det blev vist hvis man kørte Django lokalt. Bugget skyldtes Django settings.
+	\end{itemize}
+\end{enumerate}
+
+Alle opgaverne er blevet markeret som løst.
 
 \section{Programdesign}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{modelUML.png}
+	\caption{Oversigt over klasser i vores database.}
+	\label{fig:UML}
+\end{figure}
+
+Figur\ref{fig:UML} viser et diagram over de klasser vi overvejer at have i vores database, samt deres attributer. \\
+
+Vi bruger python biblioteket Django til, at holde styr på vores database og webside. Vi vil ikke gå i detaljer omkring Djangos komponenter, da Django har en helt masse små dele og komponenter som får det hele til at køre.
+Udover Django har vi så en webscraper til at hente information fra DIKUs hjemmeside, som så bliver sat ind i databasen via. Django som objekter. \\ \\
+
+Vi har derudover hentet flere open-source javascripts (Med licenser der tillader at vi bruger dem). Disse javascripts giver os noget mere funktionalitet, såsom at kunne sortere vores tables med data, og et søgefelt til at søge i vores tables.
 
 \section{Kodning}
-Vi har gjort os nogle nye overvejelse mht. hvordan vores scraper skal fungere. Vi indså at det ville blive for omfattende at lave en spider/crawler fra bunden, og vi har derfor undersøgt andre muligheder.
+Vi vil i dette afsnit diskutér nogle af de interessante aspekter fundet under kodningen, og en opsummering af kodekonventioner og idiomer vi bruger. \\ \\
+Vi har gjort os nogle nye overvejelse mht. hvordan vores scraper skal fungere. Vi indså at det ville blive for omfattende at lave en spider/crawler fra bunden, og vi har derfor undersøgt andre muligheder. \\ \\
+Mht. kodekonventioner er der ikke så meget, eftersom at python er ret streng med indentioner og syntaks så er der ikke så meget andet at gøre. Derudover så følger vi Djangos templates, så der er ikke så mange udfordringer i forhold til, hvordan vi hver især skriver kode. Vi prøver dog at holde funktionerne så simple så mulige, hvilket f.eks. kan ses i vores templates, hvor at vi har lavet en base-fil som indeholder alle de ting vi gerne vil importe (Såsom stylesheet, javascript biblioteker), og derefter indkludere vi denne base-fil i alle templates, derved sparer vi nogle linjers kode i hver template, men det gør også templatesene lettere at læse.
 
 \subsection{Spider/crawler og scraper}
 Vi har fundet et nyt framework til kodning af \textit{scrapers} og \textit{spiders/crawlers} kaldet Scrapy. Dette gør arbejdet en del nemmere, da den kombinere både en spider og scraper i én pakke. Selve spider-delen er indbygget, og man skal self kun stå for scraper-koden.\\
@@ -101,7 +158,37 @@ Det er dog problematisk at siden \url{http://diku.dk/Ansatte} har forskellige fo
 Scrapy er dog kun tilgængeligt til Python 2.x lige i øjeblikket\footnote{\url{http://doc.scrapy.org/en/latest/faq.html\#faq-python-versions}}, men en 3.x version bliver måske tilgængelig i fremtiden.\footnote{\url{http://doc.scrapy.org/en/latest/faq.html\#does-scrapy-work-with-python-3}}\\
 
 \section{Formelle inspektioner}
-
+Formelle inspektioner kan i grove træk beskrives som korrektur læsning for kode, og det er oplagt at gøre brug af dette, når man skriver store dokumenter med mange linjers kode. Som forfatter til koden, kan man stirre sig blind, eller opbygge systemer som for en selv kan virke fornuftige, men som man nemt kan miste overblikket over. Det er her en formel inspektion kan være nødvendig, så slåfejl og dårlige kodestykker bliver opfanget mens de stadig er lette at ændre. \\
+Denne situation føler vi dog ikke er tilfældet ved projektets nuværende tilstand. Vi har ikke ét dokument med mange linjer, men i stedet mange dokumenter med få linjer. Udover den upraktiske spredning af koden, autogenerer frameworket django også store dele af koden. Disse to ting besværliggør og obstruerer de formelle inspektioner i at være optimalt brug af ressourcer. \\
+Vi har derfor valgt ikke at lave nogle formelle inspektioner på nuværende tidspunkt i projektet.
 \section{Planlægning af næste iteration}
+Til næste iteration, vil vores hovedopgaver være at finde ud af hvordan vi skal scrape DIKU's liste over projekter, og begynde at overveje hvordan vi skal lave bruger registrering og verifikation af brugerne.
+Vi vil fokusere på tre \textit{use cases} i næste iteration. Disse \textit{use cases} er:
+\begin{enumerate}
+\subsection*{Forventes implementeret i næste iteration}
+	\item \label{enum:scraping} Fornuftig scraping af listen over projekter.
 
+	\item \label{enum:verifikation} Personer, der optræder på siden, skal kunne verificeres, hvis de eksempelvis ønsker at tilføje projekter eller foretage rettelser.
+
+\subsection*{Påbegyndes i næste iteration}
+
+	\item \label{enum:design} Arbejde mod det endelige design, som skal repræsentere informationerne.
+\end{enumerate}
+
+\subsection{Underopgaver for de udvalgte \textit{use cases}}
+\subsubsection*{\textit{Use case} \ref{enum:scraping}}
+\begin{itemize}
+	\item Yderligere viden omkring hvordan information om projekterne er lagret.
+	\item Gøre scraping af ovenstående muligt.
+\end{itemize}
+
+\subsubsection*{\textit{Use case} \ref{enum:verifikation}}
+De specifikke detaljer, for verificeringen, skal overvejes og konkretiseres nærmere. Verificeringen skal foregå med mindst mulig adminstrativ vedligholdelse, men samtidig korrekt. Hvis den deles op i underopgaver er disse:
+\begin{itemize}
+	\item Der skal laves en password generering.
+	\item Muligheden for oprettelse af en bruger, med prædefinerede valg, ud fra det høstede data.
+\end{itemize}
+
+\subsubsection*{\textit{Use case} \ref{enum:design}}
+Da vi efterhånden har fået høstet de informationer vi har brug for, og fået lavet de diverse views, så de har deres grundlæggende funktioner. Skal vi begynde at overveje et brugervenligt design som kan repræsentere informationerne på en overskuelig måde.
 \end{document}

@@ -1,10 +1,13 @@
 from django.db import models
 from django.core.validators import RegexValidator
+from django.contrib.auth.models import User
+from django.utils.encoding import python_2_unicode_compatible
 
+@python_2_unicode_compatible
 class Supervisor(models.Model):
     first_name = models.CharField(max_length=64)
     last_name = models.CharField(max_length=64)
-    email = models.CharField(max_length=128)
+    email = models.EmailField()
     website = models.URLField(max_length=128, blank=True)
     location = models.CharField(max_length=128, blank=True) # office
     workplace = models.CharField(max_length=128, blank=True)
@@ -18,9 +21,12 @@ class Supervisor(models.Model):
     # 2^25 should be about 32MB in characters
     photo = models.TextField(max_length=2**25, blank=True)
 
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
+
     def __str__(self):
         return self.first_name + ' ' + self.last_name
 
+@python_2_unicode_compatible
 class Project(models.Model):
     supervisor = models.ForeignKey(Supervisor, on_delete=models.SET_NULL, blank=True, null=True)
     name = models.CharField(max_length=64)
@@ -41,6 +47,7 @@ class Project(models.Model):
     def __str__(self):
         return self.name
 
+@python_2_unicode_compatible
 class Publication(models.Model):
     author = models.ForeignKey(Supervisor, on_delete=models.SET_NULL, blank=True, null=True)
     title = models.TextField(max_length=128)
@@ -52,6 +59,7 @@ class Publication(models.Model):
     def __str__(self):
         return self.name
 
+@python_2_unicode_compatible
 class Group(models.Model):
     members = models.ManyToManyField(Supervisor)
     name = models.CharField(max_length=128)

@@ -1,11 +1,10 @@
-/* link */
-a
+h1
 {
-    color: green;
+    margin:10px 10px;
 }
 
 /* sortable tables' headers should indicate that they can be clicked */
-table.sortable th:hover
+table.sortable th:hover, table.sortable th:focus
 {
     cursor: pointer;
 }
@@ -21,7 +20,6 @@ table.data
 /* Data table headers and table cells */
 table.data th, table.data td
 {
-    border: 1px solid #ddd;
     text-align: left;
     padding: 8px;
 }
@@ -31,7 +29,7 @@ table.data th
 {
     padding-top: 12px;
     padding-bottom: 12px;
-    background-color: #4CAF50;
+    background-color: #447e9b/*#4CAF50*/;
     color: white;
 }
 
@@ -42,17 +40,20 @@ table.data tr:nth-child(even)
 }
 
 /* Data link class for rows that cannot be wrapped in <a> tags */
-table.data tr.link:hover
+table.data tr.link
 {
-    bachground-color: #E0FF33;
-    color: green;
+    color: #447e9b;
     cursor: pointer;
+}
+
+table.data tr.link:hover, table.data tr.link:focus
+{
+    color: #036;
 }
 
 /* Unordered list */
 div.navbar ul
 {
-    list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -62,6 +63,7 @@ div.navbar ul
 /* List item */
 div.navbar li
 {
+    list-style-type: none;
     float: left;
 }
 
@@ -71,11 +73,10 @@ div.navbar li a
     display: block;
     text-align: center;
     padding: 14px 16px;
-    text-decoration: none;
 }
 
 /* Hover list item link */
-div.navbar li a:hover
+div.navbar li a:hover, div.navbar li a:focus
 {
     background-color: #111;
 }
