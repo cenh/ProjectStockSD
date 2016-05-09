@@ -1,4 +1,4 @@
-{% load admin_urls %}
+{% load admin_static admin_urls %}
 <div class="navbar">
   <ul>
     <li><a href="{% url 'index' %}">Frontpage</a></li>
@@ -6,5 +6,14 @@
     <li><a href="{% url 'supervisor' %}">Supervisors</a></li>
     <li><a href="{% url 'group' %}">Groups</a></li>
     <li><a href="{% url 'admin:index' %}">Admin</a></li>
+
+    <div class="user-tools" style="float:right; font-size: 13px; text-align: center; padding: 14px 16px; line-height: 20px;">
+      {% if user.is_authenticated %}
+        {% if user.has_usable_password %}
+          <a href="{% url 'admin:password_change' %}">Change password</a>
+        {% endif %}
+        <a href="{% url 'admin:logout' %}">Log out</a>
+      {% endif %}
+    </div>
   </ul>
 </div>
