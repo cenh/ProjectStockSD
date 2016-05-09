@@ -4,39 +4,74 @@
 
 {% block body %}
 <center>
-  <h1>Projects</h1>
   {% include "search-filter.html" %}
+  <h1>Active projects</h1>
   <table class="data searchable sortable">
     <tr>
       <th>Project</th><th>Type</th><th>Supervisor</th><th>Subject</th><th>Start Date</th><th>Deadline</th><th>Published</th>
     </tr>
-    {% for p in project_list %}
-    <tr class="link" onclick="window.document.location.href='/projects/{{ p.id }}'">
+    {% for a in active_projects %}
+    <tr class="link" onclick="window.document.location.href='/projects/{{ a.id }}'">
       <td>
-        {{ p.name }}
+        {{ a.name }}
       </td>
       <td>
-        {{ p.get_type_display }}
+        {{ a.get_type_display }}
       </td>
       <td>
-        {{ p.supervisor }}
+        {{ a.supervisor }}
       </td>
       <td>
-        {{ p.subject }}
+        {{ a.subject }}
       </td>
       <td>
-        {{ p.start_date }}
+        {{ a.start_date }}
       </td>
       <td>
-        {{ p.deadline }}
+        {{ a.deadline }}
       </td>
       <td>
-        {{ p.pub_date }}
+        {{ a.pub_date }}
       </td>
     </tr>
     {% empty %}
     <tr>
-      <td>No projects to show!</td>
+      <td>No active projects to show!</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <h1>Inactive projects</h1>
+  <table class="data searchable sortable">
+    <tr>
+      <th>Project</th><th>Type</th><th>Supervisor</th><th>Subject</th><th>Start Date</th><th>Deadline</th><th>Published</th>
+    </tr>
+    {% for i in inactive_projects %}
+    <tr class="link" onclick="window.document.location.href='/projects/{{ i.id }}'">
+      <td>
+        {{ i.name }}
+      </td>
+      <td>
+        {{ i.get_type_display }}
+      </td>
+      <td>
+        {{ i.supervisor }}
+      </td>
+      <td>
+        {{ i.subject }}
+      </td>
+      <td>
+        {{ i.start_date }}
+      </td>
+      <td>
+        {{ i.deadline }}
+      </td>
+      <td>
+        {{ i.pub_date }}
+      </td>
+    </tr>
+    {% empty %}
+    <tr>
+      <td>No inactive projects to show!</td>
     </tr>
     {% endfor %}
   </table>
