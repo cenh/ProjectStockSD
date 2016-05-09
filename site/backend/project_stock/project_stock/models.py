@@ -42,6 +42,7 @@ class Project(models.Model):
     website = models.URLField(max_length=128, blank=True, default='')
     pub_date = models.DateField(auto_now_add=True)
     start_date = models.DateField(blank=True, null=True)
+    end_date = models.DateField(blank=True, null=True)
     deadline = models.DateField(blank=True, null=True)
 
     def __str__(self):

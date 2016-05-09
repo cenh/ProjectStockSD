@@ -8,7 +8,7 @@
   <h1>Active projects</h1>
   <table class="data searchable sortable">
     <tr>
-      <th>Project</th><th>Type</th><th>Supervisor</th><th>Subject</th><th>Start Date</th><th>Deadline</th><th>Published</th>
+      <th>Project</th><th>Type</th><th>Supervisor</th><th>Subject</th><th>Start Date</th><th>End Date</th><th>Deadline</th><th>Published</th>
     </tr>
     {% for a in active_projects %}
     <tr class="link" onclick="window.document.location.href='/projects/{{ a.id }}'">
@@ -28,6 +28,9 @@
         {{ a.start_date }}
       </td>
       <td>
+	{{ a.end_date }}
+      </td>
+      <td>
         {{ a.deadline }}
       </td>
       <td>
@@ -43,7 +46,7 @@
   <h1>Inactive projects</h1>
   <table class="data searchable sortable">
     <tr>
-      <th>Project</th><th>Type</th><th>Supervisor</th><th>Subject</th><th>Start Date</th><th>Deadline</th><th>Published</th>
+      <th>Project</th><th>Type</th><th>Supervisor</th><th>Subject</th><th>Start Date</th><th>End Date</th><th>Deadline</th><th>Published</th>
     </tr>
     {% for i in inactive_projects %}
     <tr class="link" onclick="window.document.location.href='/projects/{{ i.id }}'">
@@ -61,6 +64,9 @@
       </td>
       <td>
         {{ i.start_date }}
+      </td>
+      <td>
+	{{ i.end_date }}
       </td>
       <td>
         {{ i.deadline }}
