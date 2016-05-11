@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20160511 11:14:06.658" generator="Robot 3.0 (Python 2.7.6 on linux2)">
+<suite source="/home/kronborg/Documents/WebDemo/login_tests" id="s1" name="Login Tests">
+<suite source="/home/kronborg/Documents/WebDemo/login_tests/gherkin_login.robot" id="s1-s1" name="Gherkin Login">
+<test id="s1-s1-t1" name="Valid Login">
+<kw name="Given browser is opened to login page">
+<kw name="Open Browser To Login Page" library="resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20160511 11:14:06.853" level="INFO">Opening browser 'Firefox' to base url 'http://128.199.39.136/admin/login/?next=/admin/'</msg>
+<status status="PASS" endtime="20160511 11:14:11.888" starttime="20160511 11:14:06.852"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20160511 11:14:11.909" starttime="20160511 11:14:11.889"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20160511 11:14:11.911" starttime="20160511 11:14:11.909"></status>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Log in | Django site admin</arg>
+</arguments>
+<msg timestamp="20160511 11:14:11.947" level="INFO">Page title is 'Log in | Django site admin'.</msg>
+<status status="PASS" endtime="20160511 11:14:11.948" starttime="20160511 11:14:11.913"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:11.948" starttime="20160511 11:14:11.911"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:11.949" starttime="20160511 11:14:06.851"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:11.949" starttime="20160511 11:14:06.851"></status>
+</kw>
+<kw name="When user &quot;demo&quot; logs in with password &quot;mode&quot;">
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id_username</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20160511 11:14:11.952" level="INFO">Typing text 'demo' into text field 'id_username'</msg>
+<status status="PASS" endtime="20160511 11:14:12.223" starttime="20160511 11:14:11.952"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:12.223" starttime="20160511 11:14:11.951"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id_password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20160511 11:14:12.225" level="INFO">Typing text 'mode' into text field 'id_password'</msg>
+<status status="PASS" endtime="20160511 11:14:12.359" starttime="20160511 11:14:12.225"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:12.359" starttime="20160511 11:14:12.224"></status>
+</kw>
+<kw name="Submit Credentials" library="resource">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>submit;</arg>
+</arguments>
+<msg timestamp="20160511 11:14:12.361" level="INFO">Clicking button 'submit;'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20160511 11:14:12.620" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20160511 11:14:12.620" starttime="20160511 11:14:12.400"></status>
+</kw>
+<msg timestamp="20160511 11:14:12.623" level="FAIL">ValueError: Element locator 'submit;' did not match any elements.</msg>
+<status status="FAIL" endtime="20160511 11:14:12.623" starttime="20160511 11:14:12.360"></status>
+</kw>
+<status status="FAIL" endtime="20160511 11:14:12.623" starttime="20160511 11:14:12.360"></status>
+</kw>
+<status status="FAIL" endtime="20160511 11:14:12.624" starttime="20160511 11:14:11.950"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20160511 11:14:12.665" starttime="20160511 11:14:12.626"></status>
+</kw>
+<status status="FAIL" endtime="20160511 11:14:12.665" critical="yes" starttime="20160511 11:14:06.850">ValueError: Element locator 'submit;' did not match any elements.</status>
+</test>
+<doc>A test suite with a single Gherkin style test.
+
+This test is functionally identical to the example in
+valid_login.robot file.</doc>
+<status status="FAIL" endtime="20160511 11:14:12.668" starttime="20160511 11:14:06.696"></status>
+</suite>
+<suite source="/home/kronborg/Documents/WebDemo/login_tests/invalid_login.robot" id="s1-s2" name="Invalid Login">
+<kw type="setup" name="Open Browser To Login Page" library="resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20160511 11:14:12.684" level="INFO">Opening browser 'Firefox' to base url 'http://128.199.39.136/admin/login/?next=/admin/'</msg>
+<status status="PASS" endtime="20160511 11:14:18.016" starttime="20160511 11:14:12.683"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20160511 11:14:18.042" starttime="20160511 11:14:18.016"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20160511 11:14:18.044" starttime="20160511 11:14:18.042"></status>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Log in | Django site admin</arg>
+</arguments>
+<msg timestamp="20160511 11:14:18.076" level="INFO">Page title is 'Log in | Django site admin'.</msg>
+<status status="PASS" endtime="20160511 11:14:18.076" starttime="20160511 11:14:18.046"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:18.076" starttime="20160511 11:14:18.045"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:18.077" starttime="20160511 11:14:12.682"></status>
+</kw>
+<test id="s1-s2-t1" name="Invalid Username">
+<kw type="setup" name="Go To Login Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20160511 11:14:18.080" level="INFO">Opening url 'http://128.199.39.136/admin/login/?next=/admin/'</msg>
+<status status="PASS" endtime="20160511 11:14:18.330" starttime="20160511 11:14:18.080"></status>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Log in | Django site admin</arg>
+</arguments>
+<msg timestamp="20160511 11:14:18.346" level="INFO">Page title is 'Log in | Django site admin'.</msg>
+<status status="PASS" endtime="20160511 11:14:18.347" starttime="20160511 11:14:18.331"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:18.347" starttime="20160511 11:14:18.330"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:18.348" starttime="20160511 11:14:18.079"></status>
+</kw>
+<kw name="Login With Invalid Credentials Should Fail">
+<arguments>
+<arg>invalid</arg>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id_username</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20160511 11:14:18.351" level="INFO">Typing text 'invalid' into text field 'id_username'</msg>
+<status status="PASS" endtime="20160511 11:14:18.633" starttime="20160511 11:14:18.351"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:18.633" starttime="20160511 11:14:18.349"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id_password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20160511 11:14:18.635" level="INFO">Typing text 'acceptance' into text field 'id_password'</msg>
+<status status="PASS" endtime="20160511 11:14:18.881" starttime="20160511 11:14:18.635"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:18.882" starttime="20160511 11:14:18.634"></status>
+</kw>
+<kw name="Submit Credentials" library="resource">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>submit;</arg>
+</arguments>
+<msg timestamp="20160511 11:14:18.884" level="INFO">Clicking button 'submit;'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20160511 11:14:19.148" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20160511 11:14:19.148" starttime="20160511 11:14:18.945"></status>
+</kw>
+<msg timestamp="20160511 11:14:19.149" level="FAIL">ValueError: Element locator 'submit;' did not match any elements.</msg>
+<status status="FAIL" endtime="20160511 11:14:19.150" starttime="20160511 11:14:18.884"></status>
+</kw>
+<status status="FAIL" endtime="20160511 11:14:19.150" starttime="20160511 11:14:18.882"></status>
+</kw>
+<status status="FAIL" endtime="20160511 11:14:19.151" starttime="20160511 11:14:18.348"></status>
+</kw>
+<status status="FAIL" endtime="20160511 11:14:19.152" critical="yes" starttime="20160511 11:14:18.077">ValueError: Element locator 'submit;' did not match any elements.</status>
+</test>
+<test id="s1-s2-t2" name="Invalid Password">
+<kw type="setup" name="Go To Login Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20160511 11:14:19.156" level="INFO">Opening url 'http://128.199.39.136/admin/login/?next=/admin/'</msg>
+<status status="PASS" endtime="20160511 11:14:19.388" starttime="20160511 11:14:19.156"></status>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Log in | Django site admin</arg>
+</arguments>
+<msg timestamp="20160511 11:14:19.407" level="INFO">Page title is 'Log in | Django site admin'.</msg>
+<status status="PASS" endtime="20160511 11:14:19.408" starttime="20160511 11:14:19.389"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:19.408" starttime="20160511 11:14:19.388"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:19.408" starttime="20160511 11:14:19.155"></status>
+</kw>
+<kw name="Login With Invalid Credentials Should Fail">
+<arguments>
+<arg>${VALID USER}</arg>
+<arg>invalid</arg>
+</arguments>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id_username</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20160511 11:14:19.414" level="INFO">Typing text 'test' into text field 'id_username'</msg>
+<status status="PASS" endtime="20160511 11:14:19.540" starttime="20160511 11:14:19.412"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:19.541" starttime="20160511 11:14:19.410"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id_password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20160511 11:14:19.544" level="INFO">Typing text 'invalid' into text field 'id_password'</msg>
+<status status="PASS" endtime="20160511 11:14:19.679" starttime="20160511 11:14:19.543"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:19.679" starttime="20160511 11:14:19.541"></status>
+</kw>
+<kw name="Submit Credentials" library="resource">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>submit;</arg>
+</arguments>
+<msg timestamp="20160511 11:14:19.682" level="INFO">Clicking button 'submit;'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20160511 11:14:19.926" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20160511 11:14:19.927" starttime="20160511 11:14:19.719"></status>
+</kw>
+<msg timestamp="20160511 11:14:19.928" level="FAIL">ValueError: Element locator 'submit;' did not match any elements.</msg>
+<status status="FAIL" endtime="20160511 11:14:19.928" starttime="20160511 11:14:19.681"></status>
+</kw>
+<status status="FAIL" endtime="20160511 11:14:19.929" starttime="20160511 11:14:19.680"></status>
+</kw>
+<status status="FAIL" endtime="20160511 11:14:19.930" starttime="20160511 11:14:19.409"></status>
+</kw>
+<status status="FAIL" endtime="20160511 11:14:19.931" critical="yes" starttime="20160511 11:14:19.153">ValueError: Element locator 'submit;' did not match any elements.</status>
+</test>
+<test id="s1-s2-t3" name="Invalid Username And Password">
+<kw type="setup" name="Go To Login Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20160511 11:14:19.936" level="INFO">Opening url 'http://128.199.39.136/admin/login/?next=/admin/'</msg>
+<status status="PASS" endtime="20160511 11:14:20.192" starttime="20160511 11:14:19.935"></status>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Log in | Django site admin</arg>
+</arguments>
+<msg timestamp="20160511 11:14:20.206" level="INFO">Page title is 'Log in | Django site admin'.</msg>
+<status status="PASS" endtime="20160511 11:14:20.207" starttime="20160511 11:14:20.194"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:20.207" starttime="20160511 11:14:20.193"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:20.208" starttime="20160511 11:14:19.934"></status>
+</kw>
+<kw name="Login With Invalid Credentials Should Fail">
+<arguments>
+<arg>invalid</arg>
+<arg>whatever</arg>
+</arguments>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id_username</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20160511 11:14:20.211" level="INFO">Typing text 'invalid' into text field 'id_username'</msg>
+<status status="PASS" endtime="20160511 11:14:20.337" starttime="20160511 11:14:20.211"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:20.338" starttime="20160511 11:14:20.209"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id_password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20160511 11:14:20.340" level="INFO">Typing text 'whatever' into text field 'id_password'</msg>
+<status status="PASS" endtime="20160511 11:14:20.465" starttime="20160511 11:14:20.339"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:20.466" starttime="20160511 11:14:20.338"></status>
+</kw>
+<kw name="Submit Credentials" library="resource">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>submit;</arg>
+</arguments>
+<msg timestamp="20160511 11:14:20.468" level="INFO">Clicking button 'submit;'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20160511 11:14:20.706" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20160511 11:14:20.707" starttime="20160511 11:14:20.507"></status>
+</kw>
+<msg timestamp="20160511 11:14:20.707" level="FAIL">ValueError: Element locator 'submit;' did not match any elements.</msg>
+<status status="FAIL" endtime="20160511 11:14:20.708" starttime="20160511 11:14:20.468"></status>
+</kw>
+<status status="FAIL" endtime="20160511 11:14:20.709" starttime="20160511 11:14:20.467"></status>
+</kw>
+<status status="FAIL" endtime="20160511 11:14:20.709" starttime="20160511 11:14:20.208"></status>
+</kw>
+<status status="FAIL" endtime="20160511 11:14:20.710" critical="yes" starttime="20160511 11:14:19.932">ValueError: Element locator 'submit;' did not match any elements.</status>
+</test>
+<test id="s1-s2-t4" name="Empty Username">
+<kw type="setup" name="Go To Login Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20160511 11:14:20.715" level="INFO">Opening url 'http://128.199.39.136/admin/login/?next=/admin/'</msg>
+<status status="PASS" endtime="20160511 11:14:20.993" starttime="20160511 11:14:20.714"></status>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Log in | Django site admin</arg>
+</arguments>
+<msg timestamp="20160511 11:14:21.006" level="INFO">Page title is 'Log in | Django site admin'.</msg>
+<status status="PASS" endtime="20160511 11:14:21.007" starttime="20160511 11:14:20.995"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:21.007" starttime="20160511 11:14:20.994"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:21.008" starttime="20160511 11:14:20.713"></status>
+</kw>
+<kw name="Login With Invalid Credentials Should Fail">
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id_username</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20160511 11:14:21.012" level="INFO">Typing text '' into text field 'id_username'</msg>
+<status status="PASS" endtime="20160511 11:14:21.102" starttime="20160511 11:14:21.012"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:21.103" starttime="20160511 11:14:21.011"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id_password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20160511 11:14:21.107" level="INFO">Typing text 'acceptance' into text field 'id_password'</msg>
+<status status="PASS" endtime="20160511 11:14:21.244" starttime="20160511 11:14:21.106"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:21.244" starttime="20160511 11:14:21.103"></status>
+</kw>
+<kw name="Submit Credentials" library="resource">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>submit;</arg>
+</arguments>
+<msg timestamp="20160511 11:14:21.247" level="INFO">Clicking button 'submit;'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20160511 11:14:21.483" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20160511 11:14:21.484" starttime="20160511 11:14:21.283"></status>
+</kw>
+<msg timestamp="20160511 11:14:21.485" level="FAIL">ValueError: Element locator 'submit;' did not match any elements.</msg>
+<status status="FAIL" endtime="20160511 11:14:21.485" starttime="20160511 11:14:21.246"></status>
+</kw>
+<status status="FAIL" endtime="20160511 11:14:21.486" starttime="20160511 11:14:21.245"></status>
+</kw>
+<status status="FAIL" endtime="20160511 11:14:21.486" starttime="20160511 11:14:21.009"></status>
+</kw>
+<status status="FAIL" endtime="20160511 11:14:21.487" critical="yes" starttime="20160511 11:14:20.711">ValueError: Element locator 'submit;' did not match any elements.</status>
+</test>
+<test id="s1-s2-t5" name="Empty Password">
+<kw type="setup" name="Go To Login Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20160511 11:14:21.492" level="INFO">Opening url 'http://128.199.39.136/admin/login/?next=/admin/'</msg>
+<status status="PASS" endtime="20160511 11:14:21.749" starttime="20160511 11:14:21.491"></status>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Log in | Django site admin</arg>
+</arguments>
+<msg timestamp="20160511 11:14:21.767" level="INFO">Page title is 'Log in | Django site admin'.</msg>
+<status status="PASS" endtime="20160511 11:14:21.767" starttime="20160511 11:14:21.750"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:21.768" starttime="20160511 11:14:21.749"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:21.768" starttime="20160511 11:14:21.490"></status>
+</kw>
+<kw name="Login With Invalid Credentials Should Fail">
+<arguments>
+<arg>${VALID USER}</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id_username</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20160511 11:14:21.772" level="INFO">Typing text 'test' into text field 'id_username'</msg>
+<status status="PASS" endtime="20160511 11:14:21.885" starttime="20160511 11:14:21.771"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:21.885" starttime="20160511 11:14:21.770"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id_password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20160511 11:14:21.887" level="INFO">Typing text '' into text field 'id_password'</msg>
+<status status="PASS" endtime="20160511 11:14:21.992" starttime="20160511 11:14:21.887"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:21.992" starttime="20160511 11:14:21.886"></status>
+</kw>
+<kw name="Submit Credentials" library="resource">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>submit;</arg>
+</arguments>
+<msg timestamp="20160511 11:14:21.995" level="INFO">Clicking button 'submit;'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20160511 11:14:22.236" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20160511 11:14:22.237" starttime="20160511 11:14:22.029"></status>
+</kw>
+<msg timestamp="20160511 11:14:22.238" level="FAIL">ValueError: Element locator 'submit;' did not match any elements.</msg>
+<status status="FAIL" endtime="20160511 11:14:22.238" starttime="20160511 11:14:21.994"></status>
+</kw>
+<status status="FAIL" endtime="20160511 11:14:22.239" starttime="20160511 11:14:21.993"></status>
+</kw>
+<status status="FAIL" endtime="20160511 11:14:22.239" starttime="20160511 11:14:21.769"></status>
+</kw>
+<status status="FAIL" endtime="20160511 11:14:22.240" critical="yes" starttime="20160511 11:14:21.489">ValueError: Element locator 'submit;' did not match any elements.</status>
+</test>
+<test id="s1-s2-t6" name="Empty Username And Password">
+<kw type="setup" name="Go To Login Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20160511 11:14:22.245" level="INFO">Opening url 'http://128.199.39.136/admin/login/?next=/admin/'</msg>
+<status status="PASS" endtime="20160511 11:14:22.497" starttime="20160511 11:14:22.244"></status>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Log in | Django site admin</arg>
+</arguments>
+<msg timestamp="20160511 11:14:22.517" level="INFO">Page title is 'Log in | Django site admin'.</msg>
+<status status="PASS" endtime="20160511 11:14:22.517" starttime="20160511 11:14:22.499"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:22.518" starttime="20160511 11:14:22.498"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:22.518" starttime="20160511 11:14:22.243"></status>
+</kw>
+<kw name="Login With Invalid Credentials Should Fail">
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id_username</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20160511 11:14:22.522" level="INFO">Typing text '' into text field 'id_username'</msg>
+<status status="PASS" endtime="20160511 11:14:22.607" starttime="20160511 11:14:22.521"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:22.607" starttime="20160511 11:14:22.520"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id_password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20160511 11:14:22.610" level="INFO">Typing text '' into text field 'id_password'</msg>
+<status status="PASS" endtime="20160511 11:14:22.704" starttime="20160511 11:14:22.609"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:22.704" starttime="20160511 11:14:22.608"></status>
+</kw>
+<kw name="Submit Credentials" library="resource">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>submit;</arg>
+</arguments>
+<msg timestamp="20160511 11:14:22.707" level="INFO">Clicking button 'submit;'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20160511 11:14:22.951" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20160511 11:14:22.951" starttime="20160511 11:14:22.743"></status>
+</kw>
+<msg timestamp="20160511 11:14:22.952" level="FAIL">ValueError: Element locator 'submit;' did not match any elements.</msg>
+<status status="FAIL" endtime="20160511 11:14:22.952" starttime="20160511 11:14:22.706"></status>
+</kw>
+<status status="FAIL" endtime="20160511 11:14:22.952" starttime="20160511 11:14:22.705"></status>
+</kw>
+<status status="FAIL" endtime="20160511 11:14:22.952" starttime="20160511 11:14:22.519"></status>
+</kw>
+<status status="FAIL" endtime="20160511 11:14:22.953" critical="yes" starttime="20160511 11:14:22.242">ValueError: Element locator 'submit;' did not match any elements.</status>
+</test>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20160511 11:14:22.995" starttime="20160511 11:14:22.956"></status>
+</kw>
+<doc>A test suite containing tests related to invalid login.
+
+These tests are data-driven by their nature. They use a single
+keyword, specified with Test Template setting, that is called
+with different arguments to cover different scenarios.
+
+This suite also demonstrates using setups and teardowns in
+different levels.</doc>
+<status status="FAIL" endtime="20160511 11:14:22.995" starttime="20160511 11:14:12.672"></status>
+</suite>
+<suite source="/home/kronborg/Documents/WebDemo/login_tests/valid_login.robot" id="s1-s3" name="Valid Login">
+<test id="s1-s3-t1" name="Valid Login">
+<kw name="Open Browser To Login Page" library="resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20160511 11:14:23.016" level="INFO">Opening browser 'Firefox' to base url 'http://128.199.39.136/admin/login/?next=/admin/'</msg>
+<status status="PASS" endtime="20160511 11:14:28.114" starttime="20160511 11:14:23.016"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20160511 11:14:28.134" starttime="20160511 11:14:28.115"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20160511 11:14:28.136" starttime="20160511 11:14:28.134"></status>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Log in | Django site admin</arg>
+</arguments>
+<msg timestamp="20160511 11:14:28.168" level="INFO">Page title is 'Log in | Django site admin'.</msg>
+<status status="PASS" endtime="20160511 11:14:28.169" starttime="20160511 11:14:28.138"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:28.169" starttime="20160511 11:14:28.136"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:28.170" starttime="20160511 11:14:23.015"></status>
+</kw>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>test</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id_username</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20160511 11:14:28.173" level="INFO">Typing text 'test' into text field 'id_username'</msg>
+<status status="PASS" endtime="20160511 11:14:28.454" starttime="20160511 11:14:28.172"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:28.455" starttime="20160511 11:14:28.170"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>acceptance</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id_password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20160511 11:14:28.458" level="INFO">Typing text 'acceptance' into text field 'id_password'</msg>
+<status status="PASS" endtime="20160511 11:14:28.615" starttime="20160511 11:14:28.457"></status>
+</kw>
+<status status="PASS" endtime="20160511 11:14:28.616" starttime="20160511 11:14:28.456"></status>
+</kw>
+<kw name="Submit Credentials" library="resource">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>submit;</arg>
+</arguments>
+<msg timestamp="20160511 11:14:28.618" level="INFO">Clicking button 'submit;'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20160511 11:14:28.875" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20160511 11:14:28.875" starttime="20160511 11:14:28.657"></status>
+</kw>
+<msg timestamp="20160511 11:14:28.876" level="FAIL">ValueError: Element locator 'submit;' did not match any elements.</msg>
+<status status="FAIL" endtime="20160511 11:14:28.876" starttime="20160511 11:14:28.618"></status>
+</kw>
+<status status="FAIL" endtime="20160511 11:14:28.877" starttime="20160511 11:14:28.616"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20160511 11:14:28.944" starttime="20160511 11:14:28.878"></status>
+</kw>
+<status status="FAIL" endtime="20160511 11:14:28.945" critical="yes" starttime="20160511 11:14:23.014">ValueError: Element locator 'submit;' did not match any elements.</status>
+</test>
+<doc>A test suite with a single test for valid login.
+
+This test has a workflow that is created using keywords in
+the imported resource file.</doc>
+<status status="FAIL" endtime="20160511 11:14:28.947" starttime="20160511 11:14:23.005"></status>
+</suite>
+<status status="FAIL" endtime="20160511 11:14:28.955" starttime="20160511 11:14:06.659"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="8" pass="0">Critical Tests</stat>
+<stat fail="8" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="8" id="s1" name="Login Tests" pass="0">Login Tests</stat>
+<stat fail="1" id="s1-s1" name="Gherkin Login" pass="0">Login Tests.Gherkin Login</stat>
+<stat fail="6" id="s1-s2" name="Invalid Login" pass="0">Login Tests.Invalid Login</stat>
+<stat fail="1" id="s1-s3" name="Valid Login" pass="0">Login Tests.Valid Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
