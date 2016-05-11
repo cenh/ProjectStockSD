@@ -1,11 +1,8 @@
 from .scrapers.dikuspider import DikuAnsatteSpider
 from django.core.exceptions import MultipleObjectsReturned
 from models import Supervisor
-import sys
 
 '''
-Creating supervisors this way will set the missing attributes to None, why?
-
 Usage:
 python2 manage.py shell
 
@@ -19,7 +16,7 @@ def main():
     spider.start()
 
     for i in spider.items:
-        if i['status'] in ['Lektor', 'Professor']:
+        if i['status'] in ['Lektor', 'Professor'] or i['status'].lower().contains('phd') or i['status'].lower().contains('postdoc'):
             try:
                 email = Supervisor.objects.get(email=i['email'])
             except MultipleObjectsReturned:
