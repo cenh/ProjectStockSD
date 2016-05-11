@@ -88,3 +88,9 @@ class GroupDetailView(generic.DetailView):
         context['supervisor_list'] = Supervisor.objects.order_by('last_name')
         return context
 
+class RegistrationView(generic.ListView):
+    model = Supervisor
+    template_name = 'registration/index.html'
+
+    def get_queryset(self):
+        return Supervisor.objects.order_by('email')

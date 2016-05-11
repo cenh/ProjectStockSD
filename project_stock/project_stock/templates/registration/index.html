@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Registration{% endblock %}
+
+{% block body %}
+<center>
+  <div class="register">
+    <label for="select">Select your email from our list: </label>
+    <div class="input"> <select id="select">
+      {% for s in supervisor_list %}
+      <option value="{{ s.id }}">{{ s.email }}</option>
+      {% endfor %}
+    </select> </div>
+    <label for="user">Choose a username: </label>
+    <div class="input"> <input type="text" name="username" id="user"> </div>
+    <label for="pwd">Choose a password: </label>
+    <div class="input"> <input type="password" name="password" id="pwd"> </div>
+    <button type="submit" value="submit" class="btn">Submit</button>
+    </div>
+</center>
+{% endblock %}

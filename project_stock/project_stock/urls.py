@@ -16,5 +16,7 @@ urlpatterns = [
     url(r'^projects/(?P<pk>[0-9]+)', views.ProjectDetailView.as_view(), name='project'),
     url(r'^groups/(?P<pk>[0-9]+)', views.GroupDetailView.as_view(), name='group'),
 
+    url(r'^registration/$', views.RegistrationView.as_view(), name='registration'),
+
     url(r'^admin/', admin.site.urls),
 ]
