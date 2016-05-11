@@ -29,7 +29,7 @@ table.data th
 {
     padding-top: 12px;
     padding-bottom: 12px;
-    background-color: #447e9b/*#4CAF50*/;
+    background-color: #447e9b;
     color: white;
 }
 
@@ -85,7 +85,8 @@ div.navbar li a:hover, div.navbar li a:focus
 /* Search bar */
 input[type=search]
 {
-    width: 30%;
+    width: 300px;
+    height: 40px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
@@ -95,4 +96,31 @@ input[type=search]
     background-position: 10px 10px;
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
+}
+
+/* Button magic */
+.btn
+{
+  -webkit-border-radius: 60;
+  -moz-border-radius: 60;
+  border-radius: 60px;
+  font-family: Arial;
+  color: #036;
+  font-size: 20px;
+  background: #3498db;
+  padding: 10px 20px 10px 20px;
+  border: solid #1f628d 0px;
+  text-decoration: none;
+}
+
+/* More button magic */
+.btn:hover
+{
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
 }
