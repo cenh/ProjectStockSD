@@ -7,12 +7,12 @@
     <li><a href="{% url 'group' %}">Groups</a></li>
     <li><a href="{% url 'admin:index' %}">Admin</a></li>
 
-    <div class="user-tools" style="float:right; font-size: 13px; text-align: center; padding: 14px 16px; line-height: 20px;">
+    <div class="user-tools" style="float:right;">
       {% if user.is_authenticated %}
         {% if user.has_usable_password %}
-          <a href="{% url 'admin:password_change' %}">Change password</a>
+          <li><a href="{% url 'admin:password_change' %}">Change password</a></li>
         {% endif %}
-        <a href="{% url 'admin:logout' %}">Log out</a>
+        <li><a href="{% url 'admin:logout' %}">Log out</a></li>
       {% endif %}
     </div>
   </ul>

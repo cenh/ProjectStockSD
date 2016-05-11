@@ -1,9 +1,20 @@
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from django.http import HttpResponse
 from .models import Project, Supervisor, Group, Publication
 from django.views import generic
 from django.db.models import Count
 from django.utils import timezone
+from django.template import RequestContext
+
+def not_found(request):
+    response = render_to_response('404.html', context_instance=RequestContext(request))
+    response.status_code = 404
+    return response
+
+def bad_request(request):
+    response = render_to_response('500.html', context_instance=RequestContext(request))
+    response.status_code = 500
+    return response
 
 class IndexView(generic.ListView):
     model = Project
