@@ -35,7 +35,9 @@ class IndexView(generic.ListView):
         context['project_thesis'] = Project.objects.filter(deadline__gte=timezone.now()).filter(type='T').order_by('-pub_date')[:5]
         return context
 
-class ProjectView(generic.ListView):
+'''Views in list form for projects, supervisors, and groups.'''
+
+class ProjectListView(generic.ListView):
     model = Project
     template_name = 'projects/index.html'
 
@@ -43,24 +45,26 @@ class ProjectView(generic.ListView):
         return Project.objects.order_by('name')
 
     def get_context_data(self, **kwargs):
-        context = super(ProjectView, self).get_context_data(**kwargs)
+        context = super(ProjectListView, self).get_context_data(**kwargs)
         context['active_projects'] = Project.objects.filter(deadline__gte=timezone.now()).order_by('name')
         context['inactive_projects'] = Project.objects.filter(deadline__lte=timezone.now()).exclude(deadline=timezone.now()).order_by('name')
         return context
 
-class SupervisorView(generic.ListView):
+class SupervisorListView(generic.ListView):
     model = Supervisor
     template_name = 'supervisors/index.html'
 
     def get_queryset(self):
         return Supervisor.objects.order_by('last_name')
 
-class GroupView(generic.ListView):
+class GroupListView(generic.ListView):
     model = Group
     template_name = 'groups/index.html'
 
     def get_queryset(self):
         return Group.objects.order_by('name')
+
+'''Views for showing an individual page for a project, supervisor, and group.'''
 
 class ProjectDetailView(generic.DetailView):
     model = Project

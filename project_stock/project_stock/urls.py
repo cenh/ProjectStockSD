@@ -8,9 +8,9 @@ handler500 = 'project_stock.views.bad_request'
 urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='index'),
 
-    url(r'^projects/$', views.ProjectView.as_view(), name='project'),
-    url(r'^supervisors/$', views.SupervisorView.as_view(), name='supervisor'),
-    url(r'^groups/$', views.GroupView.as_view(), name='group'),
+    url(r'^projects/$', views.ProjectListView.as_view(), name='project'),
+    url(r'^supervisors/$', views.SupervisorListView.as_view(), name='supervisor'),
+    url(r'^groups/$', views.GroupListView.as_view(), name='group'),
 
     url(r'^supervisors/(?P<pk>[0-9]+)', views.SupervisorDetailView.as_view(), name='supervisor'),
     url(r'^projects/(?P<pk>[0-9]+)', views.ProjectDetailView.as_view(), name='project'),
