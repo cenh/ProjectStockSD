@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Group, Project, Publication, Supervisor
+from project_stock.models import Group, Project, Publication, Supervisor
 from django.core.exceptions import ValidationError
 
 class TestSupervisor(TestCase):
