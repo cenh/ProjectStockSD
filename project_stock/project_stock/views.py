@@ -1,6 +1,5 @@
 from django.shortcuts import render, render_to_response
-from django.http import HttpResponse
-from .models import Project, Supervisor, Group, Publication
+from .models import Project, Supervisor, Group
 from django.views import generic
 from django.db.models import Count
 from django.utils import timezone
