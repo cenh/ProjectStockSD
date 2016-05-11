@@ -21,6 +21,15 @@
       <td>Description</td>
       <td>{{ group.description }}</td>
     </tr>
+    <tr>
+      <td>Members</td>
+      <td>
+	{% for s in group.members.all %}
+	<a href="{% url 'supervisor' s.id %}">{{ s.last_name }}, {{ s.first_name }} ( {{ s.status }})</a><br>
+	{% empty %}
+	  There are no members of this group!
+	{% endfor %}
+      </td>
   </table>
 </center>
 {% endblock %}

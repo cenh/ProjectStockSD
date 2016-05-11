@@ -85,7 +85,7 @@ class GroupDetailView(generic.DetailView):
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
         context = super(GroupDetailView, self).get_context_data(**kwargs)
-        context['supervisor_list'] = Supervisor.objects.order_by('last_name')
+        context['supervisor_list'] = Supervisor.objects.order_by('id')
         return context
 
 class RegistrationView(generic.ListView):

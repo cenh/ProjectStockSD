@@ -4,7 +4,7 @@
 
 {% block body %}
 <center>
-  <h1>Supervisor: {{ supervisor.first_name }} {{ supervisor.last_name }}</h1>
+  <h1>{{ supervisor.first_name }} {{ supervisor.last_name }}</h1>
   {% if supervisor.photo %}
   <img src="data:;base64,{{ supervisor.photo }}" height="256" alt="Photo of {{ supervisor.first_name }} {{ supervisor.last_name }}" />
   {% endif %}
@@ -12,6 +12,18 @@
     <tr>
       <td>Email</td>
       <td><a href="mailto:{{ supervisor.email }}">{{ supervisor.email }}</a></td>
+    </tr>
+    <tr>
+      <td>Groups</td>
+      <td>
+      {% for g in group_list %}
+      {% for m in g.members.all %}
+      {% if m.id == supervisor.id %}
+      <a href="{% url 'group' g.id %}">{{ g.name }}</a> <br>
+      {% endif %}
+      {% endfor %}
+      {% endfor %}
+      </td>
     </tr>
     <tr>
       <td>Website</td>
