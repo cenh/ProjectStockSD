@@ -36,7 +36,7 @@ class Project(models.Model):
                     ('C', 'Project with compay'),
                     ('O', 'Other'))
     type = models.CharField(max_length=1, choices=type_choices)
-    subject = models.CharField(max_length=128, default='')
+    subject = models.CharField(max_length=128, blank=True, default='')
     description_short = models.TextField(max_length=256, blank=True, verbose_name='Short description', default='')
     description_long = models.TextField(blank=True, verbose_name='Long description', default='')
     website = models.URLField(max_length=128, blank=True, default='')
