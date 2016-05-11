@@ -7,14 +7,14 @@ Documentation     A resource file with reusable keywords and variables.
 Library           Selenium2Library
 
 *** Variables ***
-${SERVER}         http://128.199.39.136/
+${SERVER}         localhost:7272
 ${BROWSER}        Firefox
 ${DELAY}          0
-${VALID USER}     test
-${VALID PASSWORD}    acceptance
-${LOGIN URL}      http://128.199.39.136/admin/login/?next=/admin/
-${WELCOME URL}    http://128.199.39.136/
-${ERROR URL}      http://128.199.39.136/admin/login/?next=/admin/
+${VALID USER}     demo
+${VALID PASSWORD}    mode
+${LOGIN URL}      http://${SERVER}/
+${WELCOME URL}    http://${SERVER}/welcome.html
+${ERROR URL}      http://${SERVER}/error.html
 
 *** Keywords ***
 Open Browser To Login Page
@@ -24,7 +24,7 @@ Open Browser To Login Page
     Login Page Should Be Open
 
 Login Page Should Be Open
-    Title Should Be    Log in | Django site admin
+    Title Should Be    Login Page
 
 Go To Login Page
     Go To    ${LOGIN URL}
@@ -32,14 +32,14 @@ Go To Login Page
 
 Input Username
     [Arguments]    ${username}
-    Input Text    id_username    ${username}
+    Input Text    username_field    ${username}
 
 Input Password
     [Arguments]    ${password}
-    Input Text    id_password   ${password}
+    Input Text    password_field    ${password}
 
 Submit Credentials
-    Click Button    submit;
+    Click Button    login_button
 
 Welcome Page Should Be Open
     Location Should Be    ${WELCOME URL}
