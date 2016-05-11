@@ -84,6 +84,9 @@ DATABASES = {
         'OPTIONS': {
             'read_default_file': os.path.join(BASE_DIR, 'project_stock/config.cnf'),
         },
+        'TEST': {
+            'NAME': 'test_projectstock',
+        },
     }
 }
 
