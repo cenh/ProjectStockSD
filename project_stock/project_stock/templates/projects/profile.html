@@ -46,11 +46,11 @@
       <td>{{ project.description_long }}</td>
     </tr>
     {% endblock %}
-    {% if project.file_upload %}
+    {% for f in project.file_upload %}
     <tr>
       <td>File</td>
-      <td><a href="{{ project.file_upload.url }}">{{ project.file_upload.file }}</a></td>
+      <td><a href="{{ f.url }}">{{ f.file }}</a></td>
     </tr>
-    {% endif %}
+    {% endfor %}
   </table>
 </center>
