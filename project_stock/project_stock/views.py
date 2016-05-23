@@ -16,6 +16,7 @@ def bad_request(request):
     return response
 
 class IndexView(generic.ListView):
+    """Index view to be served as the index page"""
     model = Project
     template_name = 'index.html'
 
@@ -34,9 +35,8 @@ class IndexView(generic.ListView):
         context['project_thesis'] = Project.objects.filter(deadline__gte=timezone.now()).filter(type='T').order_by('-pub_date')[:5]
         return context
 
-'''Views in list form for projects, supervisors, and groups.'''
-
 class ProjectListView(generic.ListView):
+    """List view for projects"""
     model = Project
     template_name = 'projects/index.html'
 
@@ -50,6 +50,7 @@ class ProjectListView(generic.ListView):
         return context
 
 class SupervisorListView(generic.ListView):
+    """List view for supervisors"""
     model = Supervisor
     template_name = 'supervisors/index.html'
 
@@ -57,19 +58,20 @@ class SupervisorListView(generic.ListView):
         return Supervisor.objects.order_by('last_name')
 
 class GroupListView(generic.ListView):
+    """List view for groups"""
     model = Group
     template_name = 'groups/index.html'
 
     def get_queryset(self):
         return Group.objects.order_by('name')
 
-'''Views for showing an individual page for a project, supervisor, and group.'''
-
 class ProjectDetailView(generic.DetailView):
+    """View for showing an individual detail page for a project"""
     model = Project
     template_name = 'projects/profile.html'
 
 class SupervisorDetailView(generic.DetailView):
+    """View for showing an individual detail page for a supervisor"""
     model = Supervisor
     template_name = 'supervisors/profile.html'
 
@@ -82,6 +84,7 @@ class SupervisorDetailView(generic.DetailView):
         return context
 
 class GroupDetailView(generic.DetailView):
+    """View for showing an individual detail page for a group"""
     model = Group
     template_name = 'groups/profile.html'
 
