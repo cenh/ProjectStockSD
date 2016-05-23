@@ -45,6 +45,12 @@
       <td>Description</td>
       <td>{{ project.description_long }}</td>
     </tr>
+    {% endblock %}
+    {% for f in project.file_upload %}
+    <tr>
+      <td>File</td>
+      <td><a href="{{ f.url }}">{{ f.file }}</a></td>
+    </tr>
+    {% endfor %}
   </table>
 </center>
-{% endblock %}

@@ -3,22 +3,42 @@
 {% block title %}Project Stock{% endblock %}
 
 {% block body %}
+
 <br>
-<table class="data searchable sortable" style="float: left">
-  <tr>
-    <th>Random Project</th>
-  </tr>
-  {% for r in random_project_list %}
-  <tr>
-    <td>
-      <a href="{% url 'project' r.id %}">
-        {{ r.name }} ({{ r.get_type_display  }})
-      </a>
-    </td>
-  </tr>
-  {% endfor %}
+<table class="data" style="float: left">
+    <tr>
+      <th>Random project</th><th>Type</th><th>Supervisor</th><th>Subject</th><th>Start Date</th><th>End Date</th><th>Deadline</th><th>Published</th>
+    </tr>
+    {% for r in random_project_list %}
+    <tr class="link" onclick="window.document.location.href='/projects/{{ r.id }}'">
+      <td>
+        {{ r.name }}
+      </td>
+      <td>
+        {{ r.get_type_display }}
+      </td>
+      <td>
+        {{ r.supervisor }}
+      </td>
+      <td>
+        {{ r.subject }}
+      </td>
+      <td>
+        {{ r.start_date }}
+      </td>
+      <td>
+	{{ r.end_date }}
+      </td>
+      <td>
+        {{ r.deadline }}
+      </td>
+      <td>
+        {{ r.pub_date }}
+      </td>
+    </tr>
+    {% endfor %}
 </table>
-<table class="data searchable sortable" style="float: left">
+<table class="front" style="float: left">
   <tr>
     <th>Newly published Bachelor projects</th>
   </tr>
@@ -32,7 +52,7 @@
   </tr>
   {% endfor %}
 </table>
-<table class="data searchable sortable" style="float: left">
+<table class="front" style="float: left">
   <tr>
     <th>Newly published Master projects</th>
   </tr>
@@ -46,7 +66,7 @@
   </tr>
   {% endfor %}
 </table>
-<table class="data searchable sortable" style="float: left">
+<table class="front" style="float: left">
   <tr>
     <th>Newly published Master Thesis</th>
   </tr>
@@ -60,7 +80,7 @@
   </tr>
   {% endfor %}
 </table>
-<table class="data searchable sortable" style="float: left">
+<table class="front" style="float: left">
   <tr>
     <th>Supervisors with most active projects</th>
   </tr>

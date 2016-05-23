@@ -4,7 +4,7 @@ h1
 }
 
 /* sortable tables' headers should indicate that they can be clicked */
-table.sortable th:hover, table.sortable th:focus
+table.sortable th:hover, table.sortable th:focus, table.front th:focus
 {
     cursor: pointer;
 }
@@ -18,14 +18,14 @@ table.data
 }
 
 /* Data table headers and table cells */
-table.data th, table.data td
+table.data th, table.data td, table.front th, table.front td
 {
     text-align: left;
     padding: 8px;
 }
 
 /* Data table ONLY table headers */
-table.data th
+table.data th, table.front th, table.random th
 {
     padding-top: 12px;
     padding-bottom: 12px;
@@ -34,19 +34,19 @@ table.data th
 }
 
 /* Change color for uneven data cells */
-table.data tr:nth-child(even)
+table.data tr:nth-child(even), table.front tr:nth-child(even)
 {
     background-color: #f2f2f2
 }
 
 /* Data link class for rows that cannot be wrapped in <a> tags */
-table.data tr.link
+table.data tr.link, table.front tr.link
 {
     color: #447e9b;
     cursor: pointer;
 }
 
-table.data tr.link:hover, table.data tr.link:focus
+table.data tr.link:hover, table.data tr.link:focus, table.front tr.link:hover, table.front tr.link:focus
 {
     color: #036;
 }
@@ -124,4 +124,19 @@ input[type=search]
     background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
     background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
     text-decoration: none;
+}
+
+table.random
+{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* Front table */
+table.front
+{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
 }
