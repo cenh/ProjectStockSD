@@ -14,3 +14,6 @@ wiki without running the demo yourself.
 __ http://robotframework.org
 __ https://github.com/rtomac/robotframework-selenium2library/wiki
 __ https://bitbucket.org/robotframework/webdemo/wiki/Home
+
+Godt sted at finde hjælp
+http://seleniummaster.com/sitecontent/index.php/selenium-robot-framework-menu/selenium-robot-framework-python-menu/200-robot-framework-selenium2library-keywords
