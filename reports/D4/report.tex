@@ -122,7 +122,9 @@ Som det kan ses ovenstående har vi mere eller mindre løst alle opgaver, dog fi
 
 \section{Afprøving}
 For at foretage \textit{acceptance testing} af vores produkt har vi benyttet et \textit{acceptance test framework}. Vi har valgt \textit{'Robot framework'}, og til dette \textit{framework} benytter vi biblioteket \textit{'Selinium2Library'}. \\
-Vi har hørt om dette \textit{framework} ved workshop nr. 2, der handlede om værktøjer.
+Vi har hørt om dette \textit{framework} ved workshop nr. 2, der handlede om værktøjer.\\
+Den primære afprøvning som vi laver med robot, er at teste at links på siden virker og at man kan bruge disse til at bevæge sig rundt. Den ene test er f.eks. en automatiseret gennemgang af alle links der fører til projekterne. \\
+På siden der viser alle projekterne er de vist i en tabel, robot går så tabelens række og søjler igennem, og klikker på alle links for at sikre at de virker. Og vi kan derfor bekræfte at alle links virker, da antallet af links robot finder og prøver af, stemmer overens med det antal af links der er, samt at testen ender det forventede sted når den klikker på et link.
 
 \subsection{Testresultater}
 
@@ -131,5 +133,6 @@ Vi foretaget en omstrukturering af vores mappehieraki for vores \textit{Django}-
 Derudover er der foretaget en ændring af navnene på nogle af klasser, funktioner og variable, for at gøre navngivningen mere ensartet.
 
 \section{Fremtidige planer}
-
+For at opfylde de \textit{use cases}, der blev opstillet i starten af forløbet, har vi oprettet \textit{issuses} på Github. Disse \textit{issues} beskriver nogle af de problemer, der skal løses for at kunne opfylde kravene for produktet. En start kunne derfor være at for løst disse \textit{issues}. \\
+Der er dele af koden, der ikke er unittestet, her ville de være optimalt, hvis skrevet unittests for alle klasser og funktioner.
 \end{document}
