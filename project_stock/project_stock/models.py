@@ -4,10 +4,6 @@ from django.contrib.auth.models import User
 from django.utils.encoding import python_2_unicode_compatible
 from django.core.files.storage import FileSystemStorage
 
-# File_loc indicates location to store files, and photo_loc indicates location to store photos
-file_loc = FileSystemStorage(location='/media/stock/file/%Y/%m/%d')
-photo_loc = FileSystemStorage(location='/media/stock/photo/%Y/%m/%d')
-
 @python_2_unicode_compatible
 class Supervisor(models.Model):
     first_name = models.CharField(max_length=64)
@@ -49,7 +45,7 @@ class Project(models.Model):
     start_date = models.DateField(blank=True, null=True)
     end_date = models.DateField(blank=True, null=True)
     deadline = models.DateField(blank=True, null=True)
-    file_upload = models.FileField(upload_to=file_loc, max_length=100, null=True, blank=True) # Don't want insanely long file names
+    file_upload = models.FileField(upload_to='files/%Y/%m/%d', max_length=100, null=True, blank=True, default='')
 
     def __str__(self):
         return self.name
