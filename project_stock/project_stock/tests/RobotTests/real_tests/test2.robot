@@ -6,8 +6,10 @@ Documentation     A test suite with a single test for a working link.
 Resource          resource.robot
 
 *** Test Cases ***
-Valid Login
-    Open Browser To Login Page
-    Click A Link
-    Choen Project Should Be Open
+Clickable link
+    Open Browser To Overview Page
+    ${TableLinks}=      Get Matching Xpath Count     //html/body/center/table/tbody/tr/td
+    : FOR     ${INDEX}     IN RANGE     1    ${TableLinks}
+    \     Click Element       xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]
+    \     Go To Project Page
     [Teardown]    Close Browser

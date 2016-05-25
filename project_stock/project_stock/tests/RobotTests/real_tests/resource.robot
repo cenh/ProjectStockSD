@@ -16,7 +16,7 @@ ${OVERVIEW URL}      http://projectstock.karen.gg/projects/
 ${CORRECT URL}    http://projectstock.karen.gg/projects/13
 
 *** Keywords ***
-Open Browser To Project Page
+Open Browser To Overview Page
     Open Browser    ${OVERVIEW URL}    ${BROWSER}
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
@@ -30,14 +30,10 @@ Go To Project Page
     Project Page Should Be Open
 
 Click A Link
-    Click Link            Beer brewing
-    Click Link            Link=${http://projectstock.karen.gg/projects/13}
-    Click Link            xpath=//a[@href=http://projectstock.karen.gg/projects/13']
-    Click Element         xpath=//a[@href='/projects/13']
+    Click Element         xpath=//html/body/center/table[1]/tbody/tr[3]/td[1]
 
 
 
 Chosen Project Should Be Open
     Location Should Be    ${CORRECT URL}
     Title Should Be    Beer brewing
-
