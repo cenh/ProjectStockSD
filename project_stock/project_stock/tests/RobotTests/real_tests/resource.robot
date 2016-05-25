@@ -12,35 +12,28 @@ ${BROWSER}        Firefox
 ${DELAY}          0
 ${VALID USER}     test
 ${VALID PASSWORD}    acceptance
-${LOGIN URL}      http://128.199.39.136/admin/login/?next=/admin/
-${WELCOME URL}    http://128.199.39.136/
-${ERROR URL}      http://128.199.39.136/admin/login/?next=/admin/
+${OVERVIEW URL}      http://projectstock.karen.gg/projects/
+${CORRECT URL}    http://projectstock.karen.gg/projects/13
 
 *** Keywords ***
-Open Browser To Login Page
-    Open Browser    ${LOGIN URL}    ${BROWSER}
+Open Browser To Overview Page
+    Open Browser    ${OVERVIEW URL}    ${BROWSER}
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
-    Login Page Should Be Open
+    Project Page Should Be Open
 
-Login Page Should Be Open
-    Title Should Be    Log in | Django site admin
+Project Page Should Be Open
+    Title Should Be    Projects
 
-Go To Login Page
-    Go To    ${LOGIN URL}
-    Login Page Should Be Open
+Go To Project Page
+    Go To    ${OVERVIEW URL}
+    Project Page Should Be Open
 
-Input Username
-    [Arguments]    ${username}
-    Input Text    id_username    ${username}
+Click A Link
+    Click Element         xpath=//html/body/center/table[1]/tbody/tr[3]/td[1]
 
-Input Password
-    [Arguments]    ${password}
-    Input Text    id_password   ${password}
 
-Submit Credentials
-    Click Button    submit;
 
-Welcome Page Should Be Open
-    Location Should Be    ${WELCOME URL}
-    Title Should Be    Welcome Page
+Chosen Project Should Be Open
+    Location Should Be    ${CORRECT URL}
+    Title Should Be    Beer brewing

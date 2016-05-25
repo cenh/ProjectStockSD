@@ -70,6 +70,11 @@ class ProjectDetailView(generic.DetailView):
     model = Project
     template_name = 'projects/profile.html'
 
+    def get_context_date(self, **kwargs):
+        context = super(ProjectDetailView, self).get_context_data(**kwargs)
+        context['file_upload_list'] = Project.objects.exclude(file_upload__isnull=True)
+        return context
+
 class SupervisorDetailView(generic.DetailView):
     """View for showing an individual detail page for a supervisor"""
     model = Supervisor

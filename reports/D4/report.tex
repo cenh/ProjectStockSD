@@ -31,7 +31,7 @@
 
 \title{
   \vspace{3cm}
-  \Huge{D3} \\
+  \Huge{D4} \\
   \Large{Software Udvikling 2016}
 }
 
@@ -61,4 +61,104 @@
 \newpage
 
 \section{Ændrede krav og implementering af opgaver}
+Kravene til vores produkt er ikke blevet ændret ift. til de \textit{use cases}, der blev specificeret i starten af forløbet. Disse \textit{use cases} blev beskrevet i delaflevering D1. \\
+Koordinering af arbejdet i denne iteration er foregået som hidtil. Vi har talt sammen om opgaverne ved de ugentlige møder, samt oprettet \textit{isuses} på Github. \\ \\
+Vi har til denne iteration færdiggjort flere af vores oprettede issues. Vi planlagde 10 forskellige issues, hvoraf nogle af dem er mindre opgaver, mens andre er større. Opgaverne kan ses her:
+
+\begin{enumerate}
+\item Navigation
+	\begin{itemize}
+	\item Forklaring: Man skal kunne navigere let rundt på siden, imellem projekter, vejledere og grupper.
+        \item Løst: Ja. sider er blevet oprettet til projekter, vejledere og grupper. Samt en menu som bliver vedhæftet til alle sider.
+	\end{itemize}
+\item Login system
+	\begin{itemize}
+	\item Forklaring: En oprettet bruger skal kunne logge ind på siden, og kunne ændre projekter, vejledere og andet.
+        \item Løst: Ja. Ved brug af Djangos login system.
+	\end{itemize}
+\item Scraping af DIKU Test Server
+	\begin{itemize}
+	\item Forklaring: DIKU Test Server indeholder flere projekter af forskellige typer, som kan bruges til scraping.
+        \item Løst: Nej. Opgave ej løst til denne iteration, grundet andre prioteringer.
+	\end{itemize}
+\item Grupper og publikationer models
+	\begin{itemize}
+	\item Forklaring: Vi skulle oprette models til de forskellige grupper der er på DIKU, og publikationer til vejledere.
+        \item Løst: Ja. Models er blevet implementeret.
+	\end{itemize}
+\item Grupper og publikationer views
+	\begin{itemize}
+	\item Forklaring: Views til grupper og publikationer, så de kan blive brugt på websiden.
+        \item Løst: Ja. Views er blevet oprettet og implementeret.
+	\end{itemize}
+\item Grupper templates
+	\begin{itemize}
+	\item Forklaring: Vi skal have templates til grupper, både en general side med alle grupper, men også en profil side som går mere i dybden med hver gruppe.
+        \item Løst: Ja. Template er blevet oprettet og implementeret.
+	\end{itemize}
+\item Smarter import af menu
+	\begin{itemize}
+	\item Forklaring: Tidligere løsning af menu/navigation var ikke så køn, så en pænere løsning er brugbar.
+        \item Løst: Ja. Brug af Django import gav en pænere løsning.
+	\end{itemize}
+\item Forside
+	\begin{itemize}
+	\item Forklaring: En forside til websiden, med forskellig information såsom nyeste oprettede projekter, vejledere med flest projekter og andet.
+        \item Løst: Ja. En forside er blevet implementeret, den viser de nyeste 5 projekter fra hver kategori, et tilfældigt projekt og de 5 vejledere med flest projekter.
+	\end{itemize}
+\item Mere mock-data
+	\begin{itemize}
+	\item Forklaring: Mere mock-data gør det lettere for os at teste implementeringerne på websiden.
+        \item Løst: Ja. Flere test projekter er blevet oprettet. test vejledere er ikke nødvendige eftersom vi allerede har scrapet DIKUs liste med ansatte.
+	\end{itemize}
+\item Testing
+	\begin{itemize}
+	\item Forklaring:
+        \item Løst:
+	\end{itemize}
+\end{enumerate}
+\~
+Som det kan ses ovenstående har vi mere eller mindre løst alle opgaver, dog fik ikke løst vores opgave med at få scrapet DIKUs test server. Det blev for omfattende og der var andre opgaver som vi hellere vil have løst i denne iteration.
+
+\section{Afprøving}
+For at foretage \textit{acceptance testing} af vores produkt har vi benyttet et \textit{acceptance test framework}. Vi har valgt \textit{'Robot framework'}, og til dette \textit{framework} benytter vi biblioteket \textit{'Selinium2Library'}. \\
+Vi har hørt om dette \textit{framework} ved workshop nr. 2, der handlede om værktøjer.\\
+Den primære afprøvning som vi laver med robot, er at teste at links på siden virker og at man kan bruge disse til at bevæge sig rundt. Den ene test er f.eks. en automatiseret gennemgang af alle links der fører til projekterne. \\
+
+
+\subsection{Testresultater}
+På siden som viser projekterne, har vi alle elementerne i en tabel. Vi får robot til at gå igennem tabelens rækker og søjler, og klikker på alle links for at sikre os at de virker. Samtidig kan vi bekræfte at alle links virker, da antallet af links robot finder og prøver af, stemmer overens med det antal af links der er. \\
+Eksempelvis ved vi at projektet \textit{Functional Programming} uanset hvilken del af projektets række i tabellen man klikker på, skal henvise til \textit{http://projectstock.karen.gg/projects/9}. \\
+Det kan vi prøve efter ved at få robot til at klikke på alle links i rækken og se at de alle ender på den ønskede side. \\
+Processen som sker for \textit{Functional Programming}, gentager vi for alle projekter på siden, og ligeledes alle elementer i tabellen. Og kan til slut konkludere at hele siden fungerer som ønsket\\
+
+
+\section{Refaktorering}
+Vi foretaget en omstrukturering af vores mappehieraki for vores \textit{Django}-projekt. \textit{Templates}, bruges i \textit{Django} til at danne HTML-sider. Mappe der indeholder \textit{templates} er blevet omstruktureret således at hver model har fået en mappe, der indeholder de tilhørende \texttt{.html}-filer. \\
+Derudover er der foretaget en ændring af navnene på nogle af klasser, funktioner og variable, for at gøre navngivningen mere ensartet.
+
+\section{Fremtidige planer}
+
+For at opfylde de \textit{use cases}, der blev opstillet i starten af forløbet, har vi oprettet \textit{issuses} på Github. Disse \textit{issues} beskriver nogle af de problemer, der skal løses for at kunne opfylde kravene for produktet. En start kunne derfor være at for løst disse \textit{issues}. \\
+Disse \textit{issues} har fået forskellige \textit{keywords}, der beskriver hvilke kategorier de tilhører:
+\begin{itemize}
+	\item{design}
+	\item{enhancement}
+	\item{database/models}
+	\item{scraper}
+	\item{testing}
+\end{itemize}
+På nuværende tidspunkt er de vigtigste uløste \textit{issues}: 'Registrering af brugere' og 'Rettigheder for brugere'. For at uddybe, hvad der mere konkret menes med disse \textit{issue}-titler referes her til denne \textit{use case} for produktet:
+\begin{itemize}
+ \item[]{Personer, der optræder på siden, skal kunne verificeres, hvis de eksempelvis ønsker at tilføje projekter eller foretage rettelser.}
+\end{itemize}
+Der er \textit{use cases} der ikke er blevet opfyldt og som ikke er blevet beskrevet som et \text{issue}. Disse \textit{use cases} er:
+
+\begin{itemize}
+\item{Systemet skal vise en status på en vejleders arbejdsbyrde.}
+\item{En vejleder eller en person knyttet til en \textit{business-club}, skal kunne tilføje et projekt til projektkataloget.}
+\item{[Denne \textit{use case} er halvt løst.] Systemet skal kunne filtrere vejledere i forhold til \textit{keyswords} i forskningspublikationer (titler).}
+\end{itemize}
+
+Der er dele af koden, der ikke er unittestet, her ville de være optimalt, hvis skrevet unittests for alle klasser og funktioner.
 \end{document}
