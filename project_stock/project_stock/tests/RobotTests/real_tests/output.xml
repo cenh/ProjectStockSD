@@ -1,0 +1,3477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20160525 11:23:54.336" generator="Robot 3.0 (Python 2.7.6 on linux2)">
+<suite source="/home/kronborg/ProjectStockSD/project_stock/project_stock/tests/RobotTests/real_tests/test2.robot" id="s1" name="Test2">
+<test id="s1-t1" name="Clickable link">
+<kw name="Open Browser To Overview Page" library="resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20160525 11:23:54.525" level="INFO">Opening browser 'Firefox' to base url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:23:59.996" starttime="20160525 11:23:54.525"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20160525 11:24:00.028" starttime="20160525 11:23:59.997"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20160525 11:24:00.030" starttime="20160525 11:24:00.028"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:00.060" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:00.060" starttime="20160525 11:24:00.032"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:00.060" starttime="20160525 11:24:00.030"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:00.061" starttime="20160525 11:23:54.524"></status>
+</kw>
+<kw name="Get Matching Xpath Count" library="Selenium2Library">
+<doc>Returns number of elements matching `xpath`</doc>
+<arguments>
+<arg>//html/body/center/table/tbody/tr/td</arg>
+</arguments>
+<assign>
+<var>${TableLinks}</var>
+</assign>
+<msg timestamp="20160525 11:24:00.255" level="INFO">${TableLinks} = 104</msg>
+<status status="PASS" endtime="20160525 11:24:00.255" starttime="20160525 11:24:00.061"></status>
+</kw>
+<kw type="for" name="${INDEX} IN RANGE [ 1 | ${TableLinks} ]">
+<kw type="foritem" name="${INDEX} = 1">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:00.257" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[1]'.</msg>
+<status status="PASS" endtime="20160525 11:24:00.756" starttime="20160525 11:24:00.256"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:00.759" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:01.123" starttime="20160525 11:24:00.758"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:01.152" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:01.153" starttime="20160525 11:24:01.125"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:01.153" starttime="20160525 11:24:01.124"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:01.153" starttime="20160525 11:24:00.757"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:01.154" starttime="20160525 11:24:00.256"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 2">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:01.155" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[2]'.</msg>
+<status status="PASS" endtime="20160525 11:24:01.503" starttime="20160525 11:24:01.154"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:01.505" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:01.955" starttime="20160525 11:24:01.505"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:01.975" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:01.975" starttime="20160525 11:24:01.957"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:01.976" starttime="20160525 11:24:01.956"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:01.976" starttime="20160525 11:24:01.504"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:01.976" starttime="20160525 11:24:01.154"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 3">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:01.977" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[3]'.</msg>
+<status status="PASS" endtime="20160525 11:24:02.287" starttime="20160525 11:24:01.977"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:02.290" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:02.587" starttime="20160525 11:24:02.289"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:02.602" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:02.602" starttime="20160525 11:24:02.588"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:02.603" starttime="20160525 11:24:02.587"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:02.603" starttime="20160525 11:24:02.288"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:02.603" starttime="20160525 11:24:01.976"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 4">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:02.605" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[4]'.</msg>
+<status status="PASS" endtime="20160525 11:24:02.910" starttime="20160525 11:24:02.604"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:02.913" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:03.192" starttime="20160525 11:24:02.912"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:03.205" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:03.206" starttime="20160525 11:24:03.193"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:03.206" starttime="20160525 11:24:03.192"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:03.207" starttime="20160525 11:24:02.911"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:03.207" starttime="20160525 11:24:02.604"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 5">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:03.208" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[5]'.</msg>
+<status status="PASS" endtime="20160525 11:24:03.519" starttime="20160525 11:24:03.208"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:03.521" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:03.889" starttime="20160525 11:24:03.520"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:03.903" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:03.904" starttime="20160525 11:24:03.890"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:03.904" starttime="20160525 11:24:03.890"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:03.904" starttime="20160525 11:24:03.519"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:03.904" starttime="20160525 11:24:03.207"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 6">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:03.906" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[6]'.</msg>
+<status status="PASS" endtime="20160525 11:24:04.207" starttime="20160525 11:24:03.905"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:04.211" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:04.478" starttime="20160525 11:24:04.210"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:04.492" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:04.492" starttime="20160525 11:24:04.480"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:04.493" starttime="20160525 11:24:04.478"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:04.493" starttime="20160525 11:24:04.208"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:04.493" starttime="20160525 11:24:03.905"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 7">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:04.495" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[7]'.</msg>
+<status status="PASS" endtime="20160525 11:24:04.800" starttime="20160525 11:24:04.494"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:04.803" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:05.129" starttime="20160525 11:24:04.802"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:05.143" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:05.143" starttime="20160525 11:24:05.130"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:05.144" starttime="20160525 11:24:05.129"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:05.144" starttime="20160525 11:24:04.801"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:05.144" starttime="20160525 11:24:04.493"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 8">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:05.146" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[8]'.</msg>
+<status status="PASS" endtime="20160525 11:24:05.472" starttime="20160525 11:24:05.145"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:05.475" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:05.943" starttime="20160525 11:24:05.474"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:05.963" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:05.963" starttime="20160525 11:24:05.945"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:05.964" starttime="20160525 11:24:05.944"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:05.964" starttime="20160525 11:24:05.473"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:05.964" starttime="20160525 11:24:05.145"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 9">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:05.966" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[9]'.</msg>
+<status status="PASS" endtime="20160525 11:24:06.503" starttime="20160525 11:24:05.965"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:06.506" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:06.825" starttime="20160525 11:24:06.505"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:06.847" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:06.847" starttime="20160525 11:24:06.826"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:06.848" starttime="20160525 11:24:06.826"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:06.848" starttime="20160525 11:24:06.504"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:06.848" starttime="20160525 11:24:05.965"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 10">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:06.849" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[10]'.</msg>
+<status status="PASS" endtime="20160525 11:24:07.183" starttime="20160525 11:24:06.849"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:07.186" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:07.565" starttime="20160525 11:24:07.185"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:07.584" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:07.585" starttime="20160525 11:24:07.567"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:07.586" starttime="20160525 11:24:07.566"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:07.586" starttime="20160525 11:24:07.184"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:07.586" starttime="20160525 11:24:06.848"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 11">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:07.588" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[11]'.</msg>
+<status status="PASS" endtime="20160525 11:24:07.926" starttime="20160525 11:24:07.587"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:07.933" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:08.297" starttime="20160525 11:24:07.933"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:08.314" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:08.315" starttime="20160525 11:24:08.298"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:08.315" starttime="20160525 11:24:08.298"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:08.315" starttime="20160525 11:24:07.927"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:08.316" starttime="20160525 11:24:07.587"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 12">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:08.317" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[12]'.</msg>
+<status status="PASS" endtime="20160525 11:24:08.679" starttime="20160525 11:24:08.316"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:08.681" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:08.993" starttime="20160525 11:24:08.680"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:09.017" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:09.018" starttime="20160525 11:24:08.994"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:09.019" starttime="20160525 11:24:08.994"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:09.019" starttime="20160525 11:24:08.679"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:09.019" starttime="20160525 11:24:08.316"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 13">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:09.021" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[13]'.</msg>
+<status status="PASS" endtime="20160525 11:24:09.326" starttime="20160525 11:24:09.020"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:09.329" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:09.614" starttime="20160525 11:24:09.328"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:09.627" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:09.628" starttime="20160525 11:24:09.615"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:09.629" starttime="20160525 11:24:09.614"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:09.629" starttime="20160525 11:24:09.327"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:09.629" starttime="20160525 11:24:09.019"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 14">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:09.631" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[14]'.</msg>
+<status status="PASS" endtime="20160525 11:24:09.939" starttime="20160525 11:24:09.630"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:09.941" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:10.301" starttime="20160525 11:24:09.940"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:10.315" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:10.315" starttime="20160525 11:24:10.302"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:10.316" starttime="20160525 11:24:10.302"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:10.316" starttime="20160525 11:24:09.940"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:10.316" starttime="20160525 11:24:09.629"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 15">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:10.318" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[15]'.</msg>
+<status status="PASS" endtime="20160525 11:24:10.645" starttime="20160525 11:24:10.317"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:10.648" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:10.994" starttime="20160525 11:24:10.647"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:11.015" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:11.015" starttime="20160525 11:24:10.996"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:11.016" starttime="20160525 11:24:10.994"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:11.016" starttime="20160525 11:24:10.646"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:11.016" starttime="20160525 11:24:10.316"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 16">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:11.018" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[16]'.</msg>
+<status status="PASS" endtime="20160525 11:24:11.341" starttime="20160525 11:24:11.017"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:11.345" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:11.618" starttime="20160525 11:24:11.343"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:11.632" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:11.632" starttime="20160525 11:24:11.619"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:11.633" starttime="20160525 11:24:11.618"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:11.633" starttime="20160525 11:24:11.341"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:11.633" starttime="20160525 11:24:11.016"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 17">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:11.635" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[17]'.</msg>
+<status status="PASS" endtime="20160525 11:24:11.952" starttime="20160525 11:24:11.634"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:11.954" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:12.248" starttime="20160525 11:24:11.954"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:12.262" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:12.262" starttime="20160525 11:24:12.249"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:12.262" starttime="20160525 11:24:12.248"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:12.263" starttime="20160525 11:24:11.953"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:12.263" starttime="20160525 11:24:11.634"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 18">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:12.265" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[18]'.</msg>
+<status status="PASS" endtime="20160525 11:24:12.587" starttime="20160525 11:24:12.264"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:12.590" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:12.999" starttime="20160525 11:24:12.589"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:13.015" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:13.015" starttime="20160525 11:24:13.001"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:13.016" starttime="20160525 11:24:13.000"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:13.016" starttime="20160525 11:24:12.588"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:13.016" starttime="20160525 11:24:12.263"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 19">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:13.018" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[19]'.</msg>
+<status status="PASS" endtime="20160525 11:24:13.359" starttime="20160525 11:24:13.017"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:13.363" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:13.743" starttime="20160525 11:24:13.361"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:13.787" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:13.787" starttime="20160525 11:24:13.744"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:13.788" starttime="20160525 11:24:13.743"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:13.788" starttime="20160525 11:24:13.360"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:13.788" starttime="20160525 11:24:13.017"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 20">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:13.790" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[20]'.</msg>
+<status status="PASS" endtime="20160525 11:24:14.093" starttime="20160525 11:24:13.789"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:14.095" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:14.386" starttime="20160525 11:24:14.094"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:14.401" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:14.401" starttime="20160525 11:24:14.387"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:14.401" starttime="20160525 11:24:14.387"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:14.402" starttime="20160525 11:24:14.093"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:14.402" starttime="20160525 11:24:13.789"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 21">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:14.403" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[21]'.</msg>
+<status status="PASS" endtime="20160525 11:24:14.709" starttime="20160525 11:24:14.402"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:14.711" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:14.993" starttime="20160525 11:24:14.710"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:15.008" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:15.008" starttime="20160525 11:24:14.995"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:15.008" starttime="20160525 11:24:14.994"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:15.009" starttime="20160525 11:24:14.709"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:15.009" starttime="20160525 11:24:14.402"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 22">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:15.010" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[22]'.</msg>
+<status status="PASS" endtime="20160525 11:24:15.300" starttime="20160525 11:24:15.010"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:15.303" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:15.631" starttime="20160525 11:24:15.302"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:15.646" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:15.647" starttime="20160525 11:24:15.632"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:15.647" starttime="20160525 11:24:15.631"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:15.648" starttime="20160525 11:24:15.301"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:15.648" starttime="20160525 11:24:15.009"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 23">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:15.650" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[23]'.</msg>
+<status status="PASS" endtime="20160525 11:24:15.965" starttime="20160525 11:24:15.649"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:15.968" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:16.305" starttime="20160525 11:24:15.967"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:16.319" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:16.319" starttime="20160525 11:24:16.306"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:16.320" starttime="20160525 11:24:16.305"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:16.320" starttime="20160525 11:24:15.965"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:16.320" starttime="20160525 11:24:15.648"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 24">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:16.322" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[24]'.</msg>
+<status status="PASS" endtime="20160525 11:24:16.649" starttime="20160525 11:24:16.321"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:16.651" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:16.992" starttime="20160525 11:24:16.650"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:17.007" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:17.008" starttime="20160525 11:24:16.994"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:17.008" starttime="20160525 11:24:16.993"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:17.008" starttime="20160525 11:24:16.649"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:17.009" starttime="20160525 11:24:16.320"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 25">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:17.010" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[25]'.</msg>
+<status status="PASS" endtime="20160525 11:24:17.515" starttime="20160525 11:24:17.009"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:17.517" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:18.113" starttime="20160525 11:24:17.516"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:18.135" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:18.136" starttime="20160525 11:24:18.115"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:18.136" starttime="20160525 11:24:18.114"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:18.136" starttime="20160525 11:24:17.516"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:18.136" starttime="20160525 11:24:17.009"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 26">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:18.138" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[26]'.</msg>
+<status status="PASS" endtime="20160525 11:24:18.473" starttime="20160525 11:24:18.137"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:18.476" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:18.806" starttime="20160525 11:24:18.475"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:18.822" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:18.823" starttime="20160525 11:24:18.807"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:18.823" starttime="20160525 11:24:18.806"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:18.823" starttime="20160525 11:24:18.474"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:18.823" starttime="20160525 11:24:18.137"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 27">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:18.825" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[27]'.</msg>
+<status status="PASS" endtime="20160525 11:24:19.157" starttime="20160525 11:24:18.824"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:19.159" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:19.461" starttime="20160525 11:24:19.158"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:19.480" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:19.480" starttime="20160525 11:24:19.462"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:19.480" starttime="20160525 11:24:19.461"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:19.481" starttime="20160525 11:24:19.157"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:19.481" starttime="20160525 11:24:18.824"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 28">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:19.483" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[28]'.</msg>
+<status status="PASS" endtime="20160525 11:24:19.836" starttime="20160525 11:24:19.482"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:19.839" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:20.288" starttime="20160525 11:24:19.838"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:20.301" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:20.302" starttime="20160525 11:24:20.289"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:20.303" starttime="20160525 11:24:20.288"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:20.303" starttime="20160525 11:24:19.837"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:20.303" starttime="20160525 11:24:19.481"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 29">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:20.305" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[29]'.</msg>
+<status status="PASS" endtime="20160525 11:24:20.648" starttime="20160525 11:24:20.304"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:20.650" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:20.991" starttime="20160525 11:24:20.649"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:21.005" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:21.006" starttime="20160525 11:24:20.992"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:21.006" starttime="20160525 11:24:20.991"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:21.007" starttime="20160525 11:24:20.649"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:21.007" starttime="20160525 11:24:20.304"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 30">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:21.009" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[30]'.</msg>
+<status status="PASS" endtime="20160525 11:24:21.352" starttime="20160525 11:24:21.008"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:21.354" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:21.718" starttime="20160525 11:24:21.353"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:21.731" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:21.732" starttime="20160525 11:24:21.719"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:21.732" starttime="20160525 11:24:21.718"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:21.733" starttime="20160525 11:24:21.352"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:21.733" starttime="20160525 11:24:21.007"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 31">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:21.734" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[31]'.</msg>
+<status status="PASS" endtime="20160525 11:24:22.074" starttime="20160525 11:24:21.733"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:22.077" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:22.434" starttime="20160525 11:24:22.076"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:22.448" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:22.449" starttime="20160525 11:24:22.436"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:22.449" starttime="20160525 11:24:22.435"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:22.449" starttime="20160525 11:24:22.075"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:22.449" starttime="20160525 11:24:21.733"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 32">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:22.451" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[32]'.</msg>
+<status status="PASS" endtime="20160525 11:24:22.761" starttime="20160525 11:24:22.450"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:22.765" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:23.075" starttime="20160525 11:24:22.764"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:23.089" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:23.090" starttime="20160525 11:24:23.076"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:23.090" starttime="20160525 11:24:23.076"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:23.090" starttime="20160525 11:24:22.762"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:23.091" starttime="20160525 11:24:22.450"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 33">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:23.092" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[33]'.</msg>
+<status status="PASS" endtime="20160525 11:24:23.409" starttime="20160525 11:24:23.091"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:23.411" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:23.746" starttime="20160525 11:24:23.411"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:23.757" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:23.758" starttime="20160525 11:24:23.747"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:23.758" starttime="20160525 11:24:23.746"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:23.759" starttime="20160525 11:24:23.410"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:23.759" starttime="20160525 11:24:23.091"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 34">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:23.761" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[34]'.</msg>
+<status status="PASS" endtime="20160525 11:24:24.077" starttime="20160525 11:24:23.760"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:24.081" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:24.736" starttime="20160525 11:24:24.079"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:24.753" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:24.754" starttime="20160525 11:24:24.737"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:24.754" starttime="20160525 11:24:24.736"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:24.754" starttime="20160525 11:24:24.078"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:24.754" starttime="20160525 11:24:23.759"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 35">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:24.756" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[35]'.</msg>
+<status status="PASS" endtime="20160525 11:24:25.121" starttime="20160525 11:24:24.755"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:25.124" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:25.499" starttime="20160525 11:24:25.123"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:25.521" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:25.521" starttime="20160525 11:24:25.500"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:25.522" starttime="20160525 11:24:25.500"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:25.522" starttime="20160525 11:24:25.122"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:25.522" starttime="20160525 11:24:24.755"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 36">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:25.524" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[36]'.</msg>
+<status status="PASS" endtime="20160525 11:24:25.884" starttime="20160525 11:24:25.523"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:25.886" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:26.211" starttime="20160525 11:24:25.885"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:26.227" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:26.228" starttime="20160525 11:24:26.213"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:26.228" starttime="20160525 11:24:26.212"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:26.229" starttime="20160525 11:24:25.884"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:26.229" starttime="20160525 11:24:25.523"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 37">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:26.230" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[37]'.</msg>
+<status status="PASS" endtime="20160525 11:24:26.559" starttime="20160525 11:24:26.229"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:26.561" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:26.912" starttime="20160525 11:24:26.560"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:26.932" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:26.932" starttime="20160525 11:24:26.913"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:26.932" starttime="20160525 11:24:26.912"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:26.933" starttime="20160525 11:24:26.559"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:26.933" starttime="20160525 11:24:26.229"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 38">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:26.934" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[38]'.</msg>
+<status status="PASS" endtime="20160525 11:24:27.265" starttime="20160525 11:24:26.933"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:27.267" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:27.626" starttime="20160525 11:24:27.266"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:27.640" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:27.640" starttime="20160525 11:24:27.628"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:27.640" starttime="20160525 11:24:27.627"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:27.641" starttime="20160525 11:24:27.266"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:27.641" starttime="20160525 11:24:26.933"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 39">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:27.642" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[39]'.</msg>
+<status status="PASS" endtime="20160525 11:24:27.951" starttime="20160525 11:24:27.641"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:27.954" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:28.278" starttime="20160525 11:24:27.953"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:28.299" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:28.300" starttime="20160525 11:24:28.279"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:28.300" starttime="20160525 11:24:28.278"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:28.300" starttime="20160525 11:24:27.952"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:28.300" starttime="20160525 11:24:27.641"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 40">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:28.302" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[40]'.</msg>
+<status status="PASS" endtime="20160525 11:24:28.643" starttime="20160525 11:24:28.301"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:28.648" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:28.943" starttime="20160525 11:24:28.645"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:28.957" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:28.957" starttime="20160525 11:24:28.944"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:28.958" starttime="20160525 11:24:28.944"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:28.958" starttime="20160525 11:24:28.644"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:28.958" starttime="20160525 11:24:28.301"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 41">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:28.960" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[41]'.</msg>
+<status status="PASS" endtime="20160525 11:24:29.301" starttime="20160525 11:24:28.959"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:29.302" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:29.661" starttime="20160525 11:24:29.302"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:29.680" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:29.681" starttime="20160525 11:24:29.663"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:29.681" starttime="20160525 11:24:29.662"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:29.681" starttime="20160525 11:24:29.301"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:29.682" starttime="20160525 11:24:28.958"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 42">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:29.683" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[42]'.</msg>
+<status status="PASS" endtime="20160525 11:24:30.001" starttime="20160525 11:24:29.682"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:30.003" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:30.353" starttime="20160525 11:24:30.002"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:30.367" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:30.368" starttime="20160525 11:24:30.354"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:30.368" starttime="20160525 11:24:30.354"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:30.368" starttime="20160525 11:24:30.002"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:30.369" starttime="20160525 11:24:29.682"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 43">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:30.370" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[43]'.</msg>
+<status status="PASS" endtime="20160525 11:24:30.701" starttime="20160525 11:24:30.369"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:30.703" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:31.365" starttime="20160525 11:24:30.703"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:31.392" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:31.393" starttime="20160525 11:24:31.366"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:31.393" starttime="20160525 11:24:31.365"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:31.394" starttime="20160525 11:24:30.702"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:31.394" starttime="20160525 11:24:30.369"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 44">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:31.396" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[44]'.</msg>
+<status status="PASS" endtime="20160525 11:24:31.806" starttime="20160525 11:24:31.395"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:31.808" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:32.176" starttime="20160525 11:24:31.808"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:32.198" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:32.198" starttime="20160525 11:24:32.177"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:32.199" starttime="20160525 11:24:32.176"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:32.199" starttime="20160525 11:24:31.807"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:32.199" starttime="20160525 11:24:31.394"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 45">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:32.201" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[45]'.</msg>
+<status status="PASS" endtime="20160525 11:24:32.524" starttime="20160525 11:24:32.200"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:32.526" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:32.857" starttime="20160525 11:24:32.525"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:32.872" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:32.872" starttime="20160525 11:24:32.859"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:32.873" starttime="20160525 11:24:32.858"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:32.873" starttime="20160525 11:24:32.524"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:32.873" starttime="20160525 11:24:32.200"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 46">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:32.876" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[46]'.</msg>
+<status status="PASS" endtime="20160525 11:24:33.205" starttime="20160525 11:24:32.874"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:33.208" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:33.553" starttime="20160525 11:24:33.207"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:33.568" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:33.568" starttime="20160525 11:24:33.554"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:33.569" starttime="20160525 11:24:33.553"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:33.569" starttime="20160525 11:24:33.205"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:33.570" starttime="20160525 11:24:32.874"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 47">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:33.571" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[47]'.</msg>
+<status status="PASS" endtime="20160525 11:24:33.926" starttime="20160525 11:24:33.570"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:33.929" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:34.344" starttime="20160525 11:24:33.928"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:34.358" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:34.359" starttime="20160525 11:24:34.345"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:34.359" starttime="20160525 11:24:34.344"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:34.360" starttime="20160525 11:24:33.927"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:34.360" starttime="20160525 11:24:33.570"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 48">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:34.362" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[48]'.</msg>
+<status status="PASS" endtime="20160525 11:24:34.660" starttime="20160525 11:24:34.361"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:34.664" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:34.991" starttime="20160525 11:24:34.662"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:35.007" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:35.008" starttime="20160525 11:24:34.992"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:35.008" starttime="20160525 11:24:34.991"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:35.009" starttime="20160525 11:24:34.661"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:35.009" starttime="20160525 11:24:34.360"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 49">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:35.012" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[49]'.</msg>
+<status status="PASS" endtime="20160525 11:24:35.360" starttime="20160525 11:24:35.010"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:35.362" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:35.655" starttime="20160525 11:24:35.361"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:35.670" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:35.671" starttime="20160525 11:24:35.656"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:35.671" starttime="20160525 11:24:35.655"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:35.671" starttime="20160525 11:24:35.360"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:35.672" starttime="20160525 11:24:35.009"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 50">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:35.673" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[50]'.</msg>
+<status status="PASS" endtime="20160525 11:24:35.973" starttime="20160525 11:24:35.672"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:35.975" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:36.267" starttime="20160525 11:24:35.974"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:36.281" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:36.281" starttime="20160525 11:24:36.268"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:36.282" starttime="20160525 11:24:36.268"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:36.282" starttime="20160525 11:24:35.973"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:36.282" starttime="20160525 11:24:35.672"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 51">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:36.284" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[51]'.</msg>
+<status status="PASS" endtime="20160525 11:24:36.584" starttime="20160525 11:24:36.283"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:36.586" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:36.897" starttime="20160525 11:24:36.585"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:36.911" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:36.912" starttime="20160525 11:24:36.898"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:36.912" starttime="20160525 11:24:36.897"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:36.913" starttime="20160525 11:24:36.584"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:36.913" starttime="20160525 11:24:36.283"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 52">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:36.914" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[52]'.</msg>
+<status status="PASS" endtime="20160525 11:24:37.205" starttime="20160525 11:24:36.914"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:37.208" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:37.681" starttime="20160525 11:24:37.207"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:37.699" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:37.699" starttime="20160525 11:24:37.682"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:37.700" starttime="20160525 11:24:37.681"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:37.700" starttime="20160525 11:24:37.206"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:37.701" starttime="20160525 11:24:36.913"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 53">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:37.703" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[53]'.</msg>
+<status status="PASS" endtime="20160525 11:24:38.291" starttime="20160525 11:24:37.702"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:38.294" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:38.645" starttime="20160525 11:24:38.293"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:38.671" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:38.672" starttime="20160525 11:24:38.646"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:38.672" starttime="20160525 11:24:38.646"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:38.672" starttime="20160525 11:24:38.292"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:38.672" starttime="20160525 11:24:37.701"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 54">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:38.674" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[54]'.</msg>
+<status status="PASS" endtime="20160525 11:24:39.020" starttime="20160525 11:24:38.673"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:39.023" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:39.367" starttime="20160525 11:24:39.022"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:39.387" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:39.387" starttime="20160525 11:24:39.369"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:39.388" starttime="20160525 11:24:39.368"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:39.388" starttime="20160525 11:24:39.021"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:39.388" starttime="20160525 11:24:38.673"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 55">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:39.390" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[55]'.</msg>
+<status status="PASS" endtime="20160525 11:24:39.707" starttime="20160525 11:24:39.389"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:39.710" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:40.048" starttime="20160525 11:24:39.709"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:40.074" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:40.074" starttime="20160525 11:24:40.049"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:40.074" starttime="20160525 11:24:40.048"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:40.075" starttime="20160525 11:24:39.708"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:40.075" starttime="20160525 11:24:39.389"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 56">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:40.077" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[56]'.</msg>
+<status status="PASS" endtime="20160525 11:24:40.467" starttime="20160525 11:24:40.076"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:40.470" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:40.813" starttime="20160525 11:24:40.469"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:40.830" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:40.831" starttime="20160525 11:24:40.814"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:40.831" starttime="20160525 11:24:40.814"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:40.831" starttime="20160525 11:24:40.468"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:40.832" starttime="20160525 11:24:40.075"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 57">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:40.833" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[57]'.</msg>
+<status status="PASS" endtime="20160525 11:24:41.188" starttime="20160525 11:24:40.832"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:41.189" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:41.506" starttime="20160525 11:24:41.189"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:41.521" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:41.522" starttime="20160525 11:24:41.507"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:41.522" starttime="20160525 11:24:41.506"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:41.522" starttime="20160525 11:24:41.188"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:41.523" starttime="20160525 11:24:40.832"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 58">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:41.524" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[58]'.</msg>
+<status status="PASS" endtime="20160525 11:24:41.862" starttime="20160525 11:24:41.523"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:41.864" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:42.196" starttime="20160525 11:24:41.864"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:42.216" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:42.216" starttime="20160525 11:24:42.200"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:42.217" starttime="20160525 11:24:42.198"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:42.217" starttime="20160525 11:24:41.863"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:42.217" starttime="20160525 11:24:41.523"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 59">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:42.219" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[59]'.</msg>
+<status status="PASS" endtime="20160525 11:24:42.530" starttime="20160525 11:24:42.218"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:42.533" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:42.846" starttime="20160525 11:24:42.532"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:42.860" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:42.861" starttime="20160525 11:24:42.847"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:42.861" starttime="20160525 11:24:42.846"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:42.862" starttime="20160525 11:24:42.530"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:42.862" starttime="20160525 11:24:42.217"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 60">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:42.863" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[60]'.</msg>
+<status status="PASS" endtime="20160525 11:24:43.159" starttime="20160525 11:24:42.863"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:43.161" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:43.456" starttime="20160525 11:24:43.160"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:43.469" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:43.469" starttime="20160525 11:24:43.458"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:43.470" starttime="20160525 11:24:43.457"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:43.470" starttime="20160525 11:24:43.160"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:43.470" starttime="20160525 11:24:42.862"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 61">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:43.472" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[61]'.</msg>
+<status status="PASS" endtime="20160525 11:24:43.797" starttime="20160525 11:24:43.471"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:43.800" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:44.215" starttime="20160525 11:24:43.799"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:44.232" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:44.232" starttime="20160525 11:24:44.216"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:44.233" starttime="20160525 11:24:44.215"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:44.233" starttime="20160525 11:24:43.798"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:44.233" starttime="20160525 11:24:43.470"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 62">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:44.235" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[62]'.</msg>
+<status status="PASS" endtime="20160525 11:24:44.919" starttime="20160525 11:24:44.234"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:44.921" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:45.261" starttime="20160525 11:24:44.921"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:45.278" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:45.278" starttime="20160525 11:24:45.262"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:45.279" starttime="20160525 11:24:45.262"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:45.279" starttime="20160525 11:24:44.920"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:45.279" starttime="20160525 11:24:44.234"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 63">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:45.281" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[63]'.</msg>
+<status status="PASS" endtime="20160525 11:24:45.632" starttime="20160525 11:24:45.280"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:45.636" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:46.026" starttime="20160525 11:24:45.635"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:46.047" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:46.047" starttime="20160525 11:24:46.028"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:46.048" starttime="20160525 11:24:46.027"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:46.048" starttime="20160525 11:24:45.633"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:46.048" starttime="20160525 11:24:45.280"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 64">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:46.050" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[64]'.</msg>
+<status status="PASS" endtime="20160525 11:24:46.399" starttime="20160525 11:24:46.049"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:46.401" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:46.783" starttime="20160525 11:24:46.400"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:46.809" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:46.809" starttime="20160525 11:24:46.784"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:46.809" starttime="20160525 11:24:46.783"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:46.810" starttime="20160525 11:24:46.399"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:46.810" starttime="20160525 11:24:46.049"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 65">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:46.812" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[65]'.</msg>
+<status status="PASS" endtime="20160525 11:24:47.216" starttime="20160525 11:24:46.811"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:47.218" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:47.588" starttime="20160525 11:24:47.217"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:47.604" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:47.604" starttime="20160525 11:24:47.589"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:47.605" starttime="20160525 11:24:47.588"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:47.605" starttime="20160525 11:24:47.216"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:47.605" starttime="20160525 11:24:46.810"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 66">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:47.607" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[66]'.</msg>
+<status status="PASS" endtime="20160525 11:24:47.955" starttime="20160525 11:24:47.606"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:47.957" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:48.256" starttime="20160525 11:24:47.957"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:48.268" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:48.269" starttime="20160525 11:24:48.257"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:48.270" starttime="20160525 11:24:48.257"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:48.270" starttime="20160525 11:24:47.955"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:48.270" starttime="20160525 11:24:47.606"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 67">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:48.272" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[67]'.</msg>
+<status status="PASS" endtime="20160525 11:24:48.593" starttime="20160525 11:24:48.271"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:48.595" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:48.920" starttime="20160525 11:24:48.595"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:48.933" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:48.933" starttime="20160525 11:24:48.922"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:48.934" starttime="20160525 11:24:48.921"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:48.934" starttime="20160525 11:24:48.594"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:48.934" starttime="20160525 11:24:48.270"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 68">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:48.936" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[68]'.</msg>
+<status status="PASS" endtime="20160525 11:24:49.242" starttime="20160525 11:24:48.935"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:49.245" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:49.539" starttime="20160525 11:24:49.244"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:49.553" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:49.553" starttime="20160525 11:24:49.540"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:49.554" starttime="20160525 11:24:49.539"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:49.554" starttime="20160525 11:24:49.243"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:49.554" starttime="20160525 11:24:48.934"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 69">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:49.556" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[69]'.</msg>
+<status status="PASS" endtime="20160525 11:24:49.852" starttime="20160525 11:24:49.555"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:49.854" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:50.164" starttime="20160525 11:24:49.853"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:50.177" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:50.177" starttime="20160525 11:24:50.165"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:50.178" starttime="20160525 11:24:50.164"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:50.178" starttime="20160525 11:24:49.852"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:50.178" starttime="20160525 11:24:49.554"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 70">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:50.180" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[70]'.</msg>
+<status status="PASS" endtime="20160525 11:24:50.482" starttime="20160525 11:24:50.179"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:50.485" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:50.809" starttime="20160525 11:24:50.484"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:50.827" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:50.828" starttime="20160525 11:24:50.810"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:50.828" starttime="20160525 11:24:50.810"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:50.828" starttime="20160525 11:24:50.483"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:50.829" starttime="20160525 11:24:50.179"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 71">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:50.830" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[71]'.</msg>
+<status status="PASS" endtime="20160525 11:24:51.345" starttime="20160525 11:24:50.829"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:51.347" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:51.831" starttime="20160525 11:24:51.346"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:51.857" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:51.858" starttime="20160525 11:24:51.834"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:51.858" starttime="20160525 11:24:51.832"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:51.858" starttime="20160525 11:24:51.346"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:51.859" starttime="20160525 11:24:50.829"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 72">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:51.860" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[72]'.</msg>
+<status status="PASS" endtime="20160525 11:24:52.210" starttime="20160525 11:24:51.859"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:52.212" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:52.606" starttime="20160525 11:24:52.211"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:52.642" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:52.642" starttime="20160525 11:24:52.608"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:52.643" starttime="20160525 11:24:52.607"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:52.643" starttime="20160525 11:24:52.210"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:52.643" starttime="20160525 11:24:51.859"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 73">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:52.644" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[73]'.</msg>
+<status status="PASS" endtime="20160525 11:24:52.994" starttime="20160525 11:24:52.644"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:52.997" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:53.304" starttime="20160525 11:24:52.996"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:53.331" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:53.332" starttime="20160525 11:24:53.305"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:53.332" starttime="20160525 11:24:53.304"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:53.333" starttime="20160525 11:24:52.994"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:53.333" starttime="20160525 11:24:52.643"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 74">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:53.335" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[74]'.</msg>
+<status status="PASS" endtime="20160525 11:24:53.709" starttime="20160525 11:24:53.334"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:53.711" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:54.046" starttime="20160525 11:24:53.710"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:54.060" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:54.060" starttime="20160525 11:24:54.047"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:54.061" starttime="20160525 11:24:54.046"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:54.061" starttime="20160525 11:24:53.710"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:54.061" starttime="20160525 11:24:53.333"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 75">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:54.063" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[75]'.</msg>
+<status status="PASS" endtime="20160525 11:24:54.418" starttime="20160525 11:24:54.062"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:54.421" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:54.786" starttime="20160525 11:24:54.419"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:54.803" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:54.804" starttime="20160525 11:24:54.787"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:54.804" starttime="20160525 11:24:54.786"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:54.804" starttime="20160525 11:24:54.418"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:54.804" starttime="20160525 11:24:54.061"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 76">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:54.806" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[76]'.</msg>
+<status status="PASS" endtime="20160525 11:24:55.108" starttime="20160525 11:24:54.805"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:55.110" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:55.439" starttime="20160525 11:24:55.110"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:55.454" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:55.455" starttime="20160525 11:24:55.440"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:55.455" starttime="20160525 11:24:55.440"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:55.455" starttime="20160525 11:24:55.108"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:55.455" starttime="20160525 11:24:54.805"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 77">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:55.457" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[77]'.</msg>
+<status status="PASS" endtime="20160525 11:24:55.853" starttime="20160525 11:24:55.456"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:55.856" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:56.211" starttime="20160525 11:24:55.855"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:56.227" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:56.227" starttime="20160525 11:24:56.213"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:56.227" starttime="20160525 11:24:56.212"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:56.228" starttime="20160525 11:24:55.853"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:56.228" starttime="20160525 11:24:55.456"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 78">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:56.230" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[78]'.</msg>
+<status status="PASS" endtime="20160525 11:24:56.546" starttime="20160525 11:24:56.229"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:56.548" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:56.859" starttime="20160525 11:24:56.547"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:56.873" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:56.874" starttime="20160525 11:24:56.861"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:56.874" starttime="20160525 11:24:56.860"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:56.875" starttime="20160525 11:24:56.546"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:56.875" starttime="20160525 11:24:56.228"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 79">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:56.876" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[79]'.</msg>
+<status status="PASS" endtime="20160525 11:24:57.184" starttime="20160525 11:24:56.875"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:57.186" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:57.496" starttime="20160525 11:24:57.185"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:57.519" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:57.519" starttime="20160525 11:24:57.497"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:57.520" starttime="20160525 11:24:57.496"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:57.520" starttime="20160525 11:24:57.184"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:57.520" starttime="20160525 11:24:56.875"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 80">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:57.523" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[80]'.</msg>
+<status status="PASS" endtime="20160525 11:24:58.256" starttime="20160525 11:24:57.521"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:58.258" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:58.706" starttime="20160525 11:24:58.258"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:58.723" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:58.723" starttime="20160525 11:24:58.708"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:58.724" starttime="20160525 11:24:58.707"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:58.724" starttime="20160525 11:24:58.257"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:58.724" starttime="20160525 11:24:57.521"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 81">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:58.726" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[81]'.</msg>
+<status status="PASS" endtime="20160525 11:24:59.120" starttime="20160525 11:24:58.725"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:59.124" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:24:59.478" starttime="20160525 11:24:59.122"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:24:59.496" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:24:59.497" starttime="20160525 11:24:59.480"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:59.497" starttime="20160525 11:24:59.479"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:59.498" starttime="20160525 11:24:59.121"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:24:59.498" starttime="20160525 11:24:58.724"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 82">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:24:59.500" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[82]'.</msg>
+<status status="PASS" endtime="20160525 11:24:59.906" starttime="20160525 11:24:59.499"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:24:59.909" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:25:00.341" starttime="20160525 11:24:59.908"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:25:00.375" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:25:00.376" starttime="20160525 11:25:00.342"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:00.376" starttime="20160525 11:25:00.342"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:00.376" starttime="20160525 11:24:59.907"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:00.376" starttime="20160525 11:24:59.498"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 83">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:25:00.377" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[83]'.</msg>
+<status status="PASS" endtime="20160525 11:25:00.944" starttime="20160525 11:25:00.377"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:25:00.946" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:25:01.362" starttime="20160525 11:25:00.946"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:25:01.378" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:25:01.379" starttime="20160525 11:25:01.363"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:01.379" starttime="20160525 11:25:01.362"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:01.379" starttime="20160525 11:25:00.945"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:01.380" starttime="20160525 11:25:00.376"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 84">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:25:01.381" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[84]'.</msg>
+<status status="PASS" endtime="20160525 11:25:01.738" starttime="20160525 11:25:01.380"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:25:01.740" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:25:02.159" starttime="20160525 11:25:01.739"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:25:02.173" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:25:02.173" starttime="20160525 11:25:02.160"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:02.174" starttime="20160525 11:25:02.160"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:02.174" starttime="20160525 11:25:01.739"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:02.174" starttime="20160525 11:25:01.380"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 85">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:25:02.176" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[85]'.</msg>
+<status status="PASS" endtime="20160525 11:25:02.507" starttime="20160525 11:25:02.175"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:25:02.509" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:25:02.897" starttime="20160525 11:25:02.508"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:25:02.910" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:25:02.911" starttime="20160525 11:25:02.898"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:02.911" starttime="20160525 11:25:02.897"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:02.912" starttime="20160525 11:25:02.507"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:02.912" starttime="20160525 11:25:02.174"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 86">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:25:02.914" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[86]'.</msg>
+<status status="PASS" endtime="20160525 11:25:03.239" starttime="20160525 11:25:02.913"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:25:03.241" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:25:03.554" starttime="20160525 11:25:03.240"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:25:03.567" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:25:03.568" starttime="20160525 11:25:03.555"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:03.568" starttime="20160525 11:25:03.554"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:03.569" starttime="20160525 11:25:03.240"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:03.569" starttime="20160525 11:25:02.912"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 87">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:25:03.570" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[87]'.</msg>
+<status status="PASS" endtime="20160525 11:25:03.882" starttime="20160525 11:25:03.569"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:25:03.886" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:25:04.211" starttime="20160525 11:25:03.884"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:25:04.225" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:25:04.225" starttime="20160525 11:25:04.212"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:04.226" starttime="20160525 11:25:04.211"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:04.226" starttime="20160525 11:25:03.883"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:04.226" starttime="20160525 11:25:03.569"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 88">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:25:04.228" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[88]'.</msg>
+<status status="PASS" endtime="20160525 11:25:04.975" starttime="20160525 11:25:04.227"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:25:04.977" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:25:05.326" starttime="20160525 11:25:04.976"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:25:05.342" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:25:05.343" starttime="20160525 11:25:05.328"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:05.343" starttime="20160525 11:25:05.326"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:05.343" starttime="20160525 11:25:04.975"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:05.343" starttime="20160525 11:25:04.227"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 89">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:25:05.346" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[89]'.</msg>
+<status status="PASS" endtime="20160525 11:25:05.729" starttime="20160525 11:25:05.344"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:25:05.733" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:25:06.066" starttime="20160525 11:25:05.732"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:25:06.083" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:25:06.084" starttime="20160525 11:25:06.067"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:06.084" starttime="20160525 11:25:06.066"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:06.084" starttime="20160525 11:25:05.729"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:06.085" starttime="20160525 11:25:05.344"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 90">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:25:06.086" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[90]'.</msg>
+<status status="PASS" endtime="20160525 11:25:06.437" starttime="20160525 11:25:06.085"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:25:06.439" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:25:06.792" starttime="20160525 11:25:06.438"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:25:06.808" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:25:06.809" starttime="20160525 11:25:06.793"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:06.809" starttime="20160525 11:25:06.793"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:06.809" starttime="20160525 11:25:06.437"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:06.809" starttime="20160525 11:25:06.085"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 91">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:25:06.811" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[91]'.</msg>
+<status status="PASS" endtime="20160525 11:25:07.186" starttime="20160525 11:25:06.810"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:25:07.188" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:25:07.561" starttime="20160525 11:25:07.188"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:25:07.574" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:25:07.574" starttime="20160525 11:25:07.562"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:07.575" starttime="20160525 11:25:07.561"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:07.576" starttime="20160525 11:25:07.187"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:07.576" starttime="20160525 11:25:06.810"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 92">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:25:07.578" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[92]'.</msg>
+<status status="PASS" endtime="20160525 11:25:07.959" starttime="20160525 11:25:07.577"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:25:07.961" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:25:08.260" starttime="20160525 11:25:07.960"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:25:08.277" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:25:08.277" starttime="20160525 11:25:08.261"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:08.277" starttime="20160525 11:25:08.260"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:08.278" starttime="20160525 11:25:07.959"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:08.278" starttime="20160525 11:25:07.576"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 93">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:25:08.279" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[93]'.</msg>
+<status status="PASS" endtime="20160525 11:25:08.615" starttime="20160525 11:25:08.279"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:25:08.618" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:25:09.030" starttime="20160525 11:25:08.618"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:25:09.041" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:25:09.042" starttime="20160525 11:25:09.031"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:09.042" starttime="20160525 11:25:09.030"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:09.042" starttime="20160525 11:25:08.616"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:09.042" starttime="20160525 11:25:08.278"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 94">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:25:09.044" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[94]'.</msg>
+<status status="PASS" endtime="20160525 11:25:09.388" starttime="20160525 11:25:09.043"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:25:09.391" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:25:09.774" starttime="20160525 11:25:09.390"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:25:09.786" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:25:09.786" starttime="20160525 11:25:09.775"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:09.787" starttime="20160525 11:25:09.774"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:09.787" starttime="20160525 11:25:09.389"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:09.788" starttime="20160525 11:25:09.043"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 95">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:25:09.789" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[95]'.</msg>
+<status status="PASS" endtime="20160525 11:25:10.087" starttime="20160525 11:25:09.788"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:25:10.089" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:25:10.401" starttime="20160525 11:25:10.089"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:25:10.416" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:25:10.417" starttime="20160525 11:25:10.402"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:10.417" starttime="20160525 11:25:10.401"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:10.418" starttime="20160525 11:25:10.088"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:10.418" starttime="20160525 11:25:09.788"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 96">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:25:10.419" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[96]'.</msg>
+<status status="PASS" endtime="20160525 11:25:10.733" starttime="20160525 11:25:10.419"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:25:10.737" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:25:11.084" starttime="20160525 11:25:10.736"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:25:11.101" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:25:11.102" starttime="20160525 11:25:11.085"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:11.102" starttime="20160525 11:25:11.085"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:11.103" starttime="20160525 11:25:10.734"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:11.103" starttime="20160525 11:25:10.418"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 97">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:25:11.105" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[97]'.</msg>
+<status status="PASS" endtime="20160525 11:25:11.637" starttime="20160525 11:25:11.104"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:25:11.639" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:25:12.177" starttime="20160525 11:25:11.638"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:25:12.201" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:25:12.201" starttime="20160525 11:25:12.178"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:12.202" starttime="20160525 11:25:12.177"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:12.202" starttime="20160525 11:25:11.637"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:12.202" starttime="20160525 11:25:11.103"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 98">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:25:12.204" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[98]'.</msg>
+<status status="PASS" endtime="20160525 11:25:12.573" starttime="20160525 11:25:12.203"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:25:12.575" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:25:12.991" starttime="20160525 11:25:12.574"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:25:13.006" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:25:13.007" starttime="20160525 11:25:12.992"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:13.007" starttime="20160525 11:25:12.991"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:13.007" starttime="20160525 11:25:12.573"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:13.007" starttime="20160525 11:25:12.203"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 99">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:25:13.009" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[99]'.</msg>
+<status status="PASS" endtime="20160525 11:25:13.364" starttime="20160525 11:25:13.008"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:25:13.367" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:25:13.681" starttime="20160525 11:25:13.366"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:25:13.702" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:25:13.702" starttime="20160525 11:25:13.684"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:13.703" starttime="20160525 11:25:13.682"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:13.703" starttime="20160525 11:25:13.364"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:13.703" starttime="20160525 11:25:13.008"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 100">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:25:13.705" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[100]'.</msg>
+<status status="PASS" endtime="20160525 11:25:14.067" starttime="20160525 11:25:13.704"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:25:14.070" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:25:14.445" starttime="20160525 11:25:14.069"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:25:14.465" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:25:14.466" starttime="20160525 11:25:14.447"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:14.467" starttime="20160525 11:25:14.446"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:14.467" starttime="20160525 11:25:14.068"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:14.467" starttime="20160525 11:25:13.703"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 101">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:25:14.469" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[101]'.</msg>
+<status status="PASS" endtime="20160525 11:25:14.860" starttime="20160525 11:25:14.468"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:25:14.863" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:25:15.248" starttime="20160525 11:25:14.862"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:25:15.261" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:25:15.261" starttime="20160525 11:25:15.250"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:15.262" starttime="20160525 11:25:15.249"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:15.262" starttime="20160525 11:25:14.861"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:15.262" starttime="20160525 11:25:14.468"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 102">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:25:15.264" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[102]'.</msg>
+<status status="PASS" endtime="20160525 11:25:15.568" starttime="20160525 11:25:15.263"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:25:15.571" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:25:15.925" starttime="20160525 11:25:15.570"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:25:15.941" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:25:15.942" starttime="20160525 11:25:15.926"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:15.942" starttime="20160525 11:25:15.925"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:15.943" starttime="20160525 11:25:15.569"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:15.943" starttime="20160525 11:25:15.262"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 103">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//html/body/center/table/tbody/tr/td)[${INDEX}]</arg>
+</arguments>
+<msg timestamp="20160525 11:25:15.944" level="INFO">Clicking element 'xpath=(//html/body/center/table/tbody/tr/td)[103]'.</msg>
+<status status="PASS" endtime="20160525 11:25:16.256" starttime="20160525 11:25:15.944"></status>
+</kw>
+<kw name="Go To Project Page" library="resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${OVERVIEW URL}</arg>
+</arguments>
+<msg timestamp="20160525 11:25:16.260" level="INFO">Opening url 'http://projectstock.karen.gg/projects/'</msg>
+<status status="PASS" endtime="20160525 11:25:16.610" starttime="20160525 11:25:16.259"></status>
+</kw>
+<kw name="Project Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Projects</arg>
+</arguments>
+<msg timestamp="20160525 11:25:16.625" level="INFO">Page title is 'Projects'.</msg>
+<status status="PASS" endtime="20160525 11:25:16.625" starttime="20160525 11:25:16.611"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:16.625" starttime="20160525 11:25:16.611"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:16.626" starttime="20160525 11:25:16.257"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:16.626" starttime="20160525 11:25:15.943"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:16.626" starttime="20160525 11:24:00.255"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20160525 11:25:16.682" starttime="20160525 11:25:16.627"></status>
+</kw>
+<status status="PASS" endtime="20160525 11:25:16.682" critical="yes" starttime="20160525 11:23:54.523"></status>
+</test>
+<doc>A test suite with a single test for a working link.
+
+This test has a workflow that is created using keywords in
+the imported resource file.</doc>
+<status status="PASS" endtime="20160525 11:25:16.685" starttime="20160525 11:23:54.338"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Test2" pass="1">Test2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
