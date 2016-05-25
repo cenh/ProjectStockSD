@@ -9,11 +9,14 @@ Library           Selenium2Library
 *** Variables ***
 ${SERVER}         http://128.199.39.136/
 ${BROWSER}        Firefox
-${DELAY}          0
+${DELAY}          2
 ${VALID USER}     test
 ${VALID PASSWORD}    acceptance
 ${OVERVIEW URL}      http://projectstock.karen.gg/projects/
-${CORRECT URL}    http://projectstock.karen.gg/projects/13
+${CORRECT URL}       http://projectstock.karen.gg/projects/13
+${SUPERVISOR URL}    http://projectstock.karen.gg/supervisors/
+${CORRECT SUPERVISOR}     http://projectstock.karen.gg/supervisors/2
+${DIKU URL}          http://diku.dk/ansatte?pure=da/persons/162114
 
 *** Keywords ***
 Open Browser To Overview Page
@@ -21,6 +24,17 @@ Open Browser To Overview Page
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
     Project Page Should Be Open
+
+
+Open Browser To Supervisor Page
+    Open Browser    ${SUPERVISOR URL}    ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed    ${DELAY}
+
+Go To Diku Page
+    Go To   ${DIKU URL}  
+    Set Selenium Speed    ${DELAY}
+
 
 Project Page Should Be Open
     Title Should Be    Projects
