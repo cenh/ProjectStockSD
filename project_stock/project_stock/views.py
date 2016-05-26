@@ -45,9 +45,17 @@ class ProjectListView(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super(ProjectListView, self).get_context_data(**kwargs)
-        context['active_projects'] = Project.objects.filter(deadline__gte=timezone.now()).order_by('name')
-        context['inactive_projects'] = Project.objects.filter(deadline__lte=timezone.now()).exclude(deadline=timezone.now()).order_by('name')
+        context['active_projects'] = Project.objects.filter(deadline__gte=timezone.now()).order_by('-pub_date')
+        context['inactive_projects'] = Project.objects.filter(deadline__lte=timezone.now()).exclude(deadline=timezone.now()).order_by('-pub_date')[:25]
         return context
+
+class InactiveProjectListView(generic.ListView):
+    """List view of inactive projects"""
+    model = Project
+    template_name = 'projects/inactive.html'
+
+    def get_queryset(self):
+        return Project.objects.filter(deadline__lte=timezone.now()).exclude(deadline=timezone.now()).order_by('-pub_date')
 
 class SupervisorListView(generic.ListView):
     """List view for supervisors"""

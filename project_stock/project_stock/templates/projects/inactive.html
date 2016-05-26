@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Inactive projects{% endblock %}
+
+{% block body %}
+<center>
+  {% include "search-filter.html" %}
+  <table class="data searchable sortable">
+    <tr>
+      <th>Project</th><th>Type</th><th>Supervisor</th><th>Subject</th><th>Start Date</th><th>End Date</th><th>Deadline</th><th>Published</th>
+    </tr>
+    {% for p in project_list %}
+    <tr class="link" onclick="window.document.location.href='/projects/{{ p.id }}'">
+      <td>
+        {{ p.name }}
+      </td>
+      <td>
+        {{ p.get_type_display }}
+      </td>
+      <td>
+        {{ p.supervisor }}
+      </td>
+      <td>
+        {{ p.subject }}
+      </td>
+      <td>
+        {{ p.start_date }}
+      </td>
+      <td>
+	{{ p.end_date }}
+      </td>
+      <td>
+        {{ p.deadline }}
+      </td>
+      <td>
+        {{ p.pub_date }}
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</center>
+{% endblock %}

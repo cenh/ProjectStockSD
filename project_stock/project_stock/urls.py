@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='index'),
 
     url(r'^projects/$', views.ProjectListView.as_view(), name='project'),
+    url(r'^projects/inactive$', views.InactiveProjectListView.as_view(), name='inactive_project'),
     url(r'^supervisors/$', views.SupervisorListView.as_view(), name='supervisor'),
     url(r'^groups/$', views.GroupListView.as_view(), name='group'),
 
