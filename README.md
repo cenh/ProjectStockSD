@@ -60,6 +60,30 @@ Skift mappe til project_stock Django projektet og kør:
 `systemctl restart httpd mariadb` (over SSH som root) eller lokalt med CTRL-C + `python manage.py runserver`
 
 ## Git Tips
+### Undgå merge commits
+Da folk tit spørger hvorfor der kommer merge commits og jeg ikke kan svare på det, har jeg lavet lidt research :-)
+
+##### Et eksempel på en unødvendig merge commit:
+1. Vi laver en `git pull` for at være opdateret med origin/master. God stil
+2. Vi skriver en masse pæn og effektiv kode og committer med gode commit beskeder. Se hvordan [her](http://chris.beams.io/posts/git-commit/) og [her](http://who-t.blogspot.dk/2009/12/on-commit-messages.html)
+3. Vi vil gerne offentliggøre vores flotte commits så vi laver en `git push` - **afvist**
+
+Vores `git push` bliver afvist, da nogen har lavet ændringer siden vi pullede. Derfor skal det merges, da origin er foran vores lokale branch.
+
+Løsningen er [rebasing](http://stackoverflow.com/a/16666418/2373926).
+
+Forskellige forslag til at implementere løsningen er beskrevet kort og godt [her](http://kernowsoul.com/blog/2012/06/20/4-ways-to-avoid-merge-commits-in-git/).
+
+Det introducerer dog et nyt problem: Merge commits som vi gerne vil have, bliver også omskrevet via en rebase. Løsningen er beskrevet [her](https://adamcod.es/2014/12/10/git-pull-correct-workflow.html) i det sidste afsnit.
+
+Til sidst endte jeg op med 2 kommandoer der skriver til .gitconfig og dermed gør ændringerne vedvarende:
+
+`git config --global branch.autosetuprebase always` hvilket sørger for at det bliver en `git pull --rebase` automatisk
+
+og
+
+`git config --global pull.rebase preserve` hvilket sørger for at `git pull --rebase` køres med `--rebase=preserve`
+
 ### Diff
 Se forskellen på HEAD (nyeste commit) og de *n* seneste commits:
 
