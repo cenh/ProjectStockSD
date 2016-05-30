@@ -1,9 +1,10 @@
-from django.conf.urls import include, url, handler404, handler500
+from django.conf.urls import include, url, handler403, handler404, handler500
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib import admin
 from . import views
 
+handler403 = 'project_stock.views.forbidden_request'
 handler404 = 'project_stock.views.not_found'
 handler500 = 'project_stock.views.bad_request'
 

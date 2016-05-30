@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}403 - Forbidden{% endblock %}
+
+{% block body %}
+<script>
+  function goBack()
+  {
+    window.history.back();
+  }
+</script>
+<center>
+  <h1>403 - Forbidden</h1>
+  <h2>AYY DUDE, I COULDN'T FIND THE PAGE YOU WERE LOOKING FOR!</h2>
+  <button class="btn" onclick="goBack()">Go Back</button>
+</center>
+{% endblock %}

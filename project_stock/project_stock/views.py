@@ -15,6 +15,11 @@ def bad_request(request):
     response.status_code = 500
     return response
 
+def forbidden_request(request):
+    response = render_to_response('status/403.html', context_instance=RequestContext(request))
+    response.status_code = 403
+    return response
+
 class IndexView(generic.ListView):
     """Index view to be served as the index page"""
     model = Project
