@@ -1,9 +1,18 @@
-import scrapy, base64, urllib2, re
+import scrapy, base64, urllib2, re, os
 from scrapy.crawler import CrawlerProcess
 from scrapy.utils.log import configure_logging
 
+
 # this does not work, why? I don't like scrapy's insane debug output
 configure_logging({'LOG_ENABLED': False, 'LOG_LEVEL': 'WARNING'}, install_root_handler=False)
+
+
+def extract_info(response, x_path):
+    info = response.xpath(x_path).extract_first()
+    if info is None:
+        return ''
+    else:
+        return info
 
 class DikuAnsatteItem(scrapy.Item):
     name = scrapy.Field()
@@ -26,7 +35,7 @@ class DikuAnsatteSpider(scrapy.Spider):
     allowed_domains = ['diku.dk']
     start_urls = [
         'http://www.diku.dk/Ansatte',
-    ]
+     ]
     items = []
 
     def parse(self, response):
@@ -56,11 +65,9 @@ class DikuAnsatteSpider(scrapy.Spider):
             title_tag = '//p[@class="forskerprofil_titel"]/text()'
             photo_tag = '//div[@id="forskerprofil_kontaktoplysninger"]/img/@src'
 
-        name = response.xpath(name_tag).extract()
-        item['name'] = name[0] if name else ''
+        item['name'] = extract_info(response, name_tag)
 
-        title = response.xpath(title_tag).extract()
-        item['status'] = title[0] if title else ''
+        item['status'] = extract_info(response, title_tag)
 
         photo_url = response.xpath(photo_tag).extract()
         if photo_url:
@@ -78,22 +85,17 @@ class DikuAnsatteSpider(scrapy.Spider):
     def parse_pure(self, response):
         item = response.meta['item']
 
-        phone = response.xpath('//span[@class="property person_contact_phone"]/text()').extract()
-        item['phone'] = phone[0] if len(phone) > 0 else ''
+        item['phone'] = extract_info(response, '//span[@class="property person_contact_phone"]/text()')
 
         item['phone_internal'] = '' # doesn't seem to exist for pure links
 
-        fax = response.xpath('//span[@class="property person_contact_fax"]/text()').extract()
-        item['fax'] = fax[0] if len(fax) > 0 else ''
+        item['fax'] = extract_info(response, '//span[@class="property person_contact_fax"]/text()')
 
-        mobile = response.xpath('//span[@class="property person_contact_mobilephone"]/text()').extract()
-        item['mobile'] = mobile[0] if len(mobile) > 0 else ''
+        item['mobile'] = extract_info(response, '//span[@class="property person_contact_mobilephone"]/text()')
 
-        workplace = response.xpath('//div[@class="address"]/p/text()').extract()
-        item['workplace'] = workplace[0] if len(workplace) > 0 else ''
+        item['workplace'] = extract_info(response, '//div[@class="address"]/p/text()')
 
-        email = response.xpath('//ul[@class="relations email"]/li/a/span/text()').extract()
-        item['email'] = email[0] if len(email) > 0 else ''
+        item['email'] = extract_info(response, '//ul[@class="relations email"]/li/a/span/text()')
 
         item['location'] = '' # this also doesn't seem to exist
 
@@ -145,4 +147,5 @@ class DikuAnsatteSpider(scrapy.Spider):
 
 # testing
 if __name__ == '__main__':
-    DikuAnsatteSpider().start()
+    spider = DikuAnsatteSpider()
+    spider.start()
