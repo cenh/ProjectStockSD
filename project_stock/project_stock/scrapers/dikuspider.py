@@ -7,12 +7,20 @@ from scrapy.utils.log import configure_logging
 configure_logging({'LOG_ENABLED': False, 'LOG_LEVEL': 'WARNING'}, install_root_handler=False)
 
 
-def extract_info(response, x_path):
+def extract_from_xpath(response, x_path):
     info = response.xpath(x_path).extract_first()
     if info is None:
         return ''
     else:
         return info
+
+def extract_from_regex(regex, raw_string):
+    match = re.match(regex, raw_string)
+    if match is None:
+        return ''
+    else:
+        return match.group(1)
+
 
 class DikuAnsatteItem(scrapy.Item):
     name = scrapy.Field()
@@ -41,16 +49,17 @@ class DikuAnsatteSpider(scrapy.Spider):
     def parse(self, response):
         for sel in response.xpath('//table[@id="medarbejdertable"]/tbody/tr'):
             for a in sel.xpath('td/a'):
-                name = a.xpath('text()').extract()
+                name = extract_from_xpath(a, 'text()')
+
                 if not name or name[0] == 'E-mail':
                     break
 
-                item = DikuAnsatteItem()
-
-                item['profile_link'] = response.urljoin(a.xpath('@href').extract()[0])
-                request = scrapy.Request(item['profile_link'], callback=self.parse_detail)
-                request.meta['item'] = item
-                yield request
+                else:
+                    item = DikuAnsatteItem()
+                    item['profile_link'] = response.urljoin(a.xpath('@href').extract()[0])
+                    request = scrapy.Request(item['profile_link'], callback=self.parse_detail)
+                    request.meta['item'] = item
+                    yield request
 
     def parse_detail(self, response):
         item = response.meta['item']
@@ -65,9 +74,9 @@ class DikuAnsatteSpider(scrapy.Spider):
             title_tag = '//p[@class="forskerprofil_titel"]/text()'
             photo_tag = '//div[@id="forskerprofil_kontaktoplysninger"]/img/@src'
 
-        item['name'] = extract_info(response, name_tag)
+        item['name'] = extract_from_xpath(response, name_tag)
 
-        item['status'] = extract_info(response, title_tag)
+        item['status'] = extract_from_xpath(response, title_tag)
 
         photo_url = response.xpath(photo_tag).extract()
         if photo_url:
@@ -82,20 +91,22 @@ class DikuAnsatteSpider(scrapy.Spider):
         else:
             return self.parse_other(response)
 
+        #    return self.parse_other(response)
+
     def parse_pure(self, response):
         item = response.meta['item']
 
-        item['phone'] = extract_info(response, '//span[@class="property person_contact_phone"]/text()')
+        item['phone'] = extract_from_xpath(response, '//span[@class="property person_contact_phone"]/text()')
 
         item['phone_internal'] = '' # doesn't seem to exist for pure links
 
-        item['fax'] = extract_info(response, '//span[@class="property person_contact_fax"]/text()')
+        item['fax'] = extract_from_xpath(response, '//span[@class="property person_contact_fax"]/text()')
 
-        item['mobile'] = extract_info(response, '//span[@class="property person_contact_mobilephone"]/text()')
+        item['mobile'] = extract_from_xpath(response, '//span[@class="property person_contact_mobilephone"]/text()')
 
-        item['workplace'] = extract_info(response, '//div[@class="address"]/p/text()')
+        item['workplace'] = extract_from_xpath(response, '//div[@class="address"]/p/text()')
 
-        item['email'] = extract_info(response, '//ul[@class="relations email"]/li/a/span/text()')
+        item['email'] = extract_from_xpath(response, '//ul[@class="relations email"]/li/a/span/text()')
 
         item['location'] = '' # this also doesn't seem to exist
 
@@ -108,31 +119,24 @@ class DikuAnsatteSpider(scrapy.Spider):
         email = response.xpath('//p[@class="forskerprofil_kontakt"]/a/text()').extract()
         item['email'] = ''.join(email) if len(email) > 0 else ''
 
+        #List can contain more than one element.
         workplace = response.xpath('//p[@class="forskerprofil_adresse"]/text()').extract()
         if workplace:
             item['workplace'] = ', '.join(workplace)
 
+        #List can contain more than one element.
         contact_info = response.xpath('//p[@class="forskerprofil_kontakt"]/text()').extract()
         for c in contact_info:
-            location = re.match('Kontor:\s+(.*)', c)
-            if location:
-                item['location'] = location.group(1)
 
-            phone = re.match('Telefon:\s+(.*)', c)
-            if phone:
-                item['phone'] = phone.group(1)
+            item['location'] = extract_from_regex('Kontor:\s+(.*)', c)
 
-            phone_internal = re.match('Telefon (Sekretariat):\s(.*)', c)
-            if phone_internal:
-                item['phone_internal'] = phone_internal.group(1)
+            item['phone'] = extract_from_regex('Telefon:\s+(.*)', c)
 
-            fax = re.match('Fax:\s+(.*)', c)
-            if fax:
-                item['fax'] = fax.group(1)
+            item['phone_internal'] = extract_from_regex('Telefon (Sekretariat):\s(.*)', c)
 
-            mobile = re.match('Mobil:\s+(.*)', c)
-            if mobile:
-                item['mobile'] = mobile.group(1)
+            item['fax'] = extract_from_regex('Fax:\s+(.*)', c)
+
+            item['mobile'] = extract_from_regex('Mobil:\s+(.*)', c)
 
         self.items.append(item)
         yield item
@@ -140,10 +144,9 @@ class DikuAnsatteSpider(scrapy.Spider):
     def start(self):
         process = CrawlerProcess({
             'USER_AGENT': 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)'
-        })
+            })
         process.crawl(self)
         process.start()
-
 
 # testing
 if __name__ == '__main__':
