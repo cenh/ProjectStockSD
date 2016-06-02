@@ -22,6 +22,8 @@ def extract_from_regex(regex, raw_string):
         return match.group(1)
 
 
+
+
 class DikuAnsatteItem(scrapy.Item):
     name = scrapy.Field()
     status = scrapy.Field() # this should be renamed, both here and in models, to title
@@ -39,27 +41,39 @@ class DikuAnsatteItem(scrapy.Item):
     # perhaps scrape website as well?
 
 class DikuAnsatteSpider(scrapy.Spider):
-    name = 'diku'
-    allowed_domains = ['diku.dk']
-    start_urls = [
-        'http://www.diku.dk/Ansatte',
-     ]
+    name = 'diku' #Required by Scrapy attribute.
+    #allowed_domains = ['diku.dk']
+    #url = 'http://www.diku.dk/Ansatte'
+    test_file_path = os.path.dirname(os.path.abspath(__file__)) + '/supervisordetail-test.html'
+    url_local = 'file://127.0.0.1' + test_file_path
+    url = url_local
+    start_urls = [url]
     items = []
 
+
+
     def parse(self, response):
-        for sel in response.xpath('//table[@id="medarbejdertable"]/tbody/tr'):
-            for a in sel.xpath('td/a'):
-                name = extract_from_xpath(a, 'text()')
+        if self.url == 'http://www.diku.dk/Ansatte':
+            for sel in response.xpath('//table[@id="medarbejdertable"]/tbody/tr'):
+                for a in sel.xpath('td/a'):
+                    name = a.xpath('text()').extract()
+                    if not name or name[0] == 'E-mail':
+                        break
 
-                if not name or name[0] == 'E-mail':
-                    break
-
-                else:
                     item = DikuAnsatteItem()
+
                     item['profile_link'] = response.urljoin(a.xpath('@href').extract()[0])
                     request = scrapy.Request(item['profile_link'], callback=self.parse_detail)
                     request.meta['item'] = item
                     yield request
+        else:
+            item = DikuAnsatteItem()
+            item['profile_link'] = 'pure' #Really bad for unit testing.
+            request = scrapy.Request(self.url_local, callback=self.parse_detail)
+            request.meta['item'] = item
+            yield request
+
+
 
     def parse_detail(self, response):
         item = response.meta['item']
@@ -91,7 +105,6 @@ class DikuAnsatteSpider(scrapy.Spider):
         else:
             return self.parse_other(response)
 
-        #    return self.parse_other(response)
 
     def parse_pure(self, response):
         item = response.meta['item']
@@ -152,3 +165,5 @@ class DikuAnsatteSpider(scrapy.Spider):
 if __name__ == '__main__':
     spider = DikuAnsatteSpider()
     spider.start()
+    print "\n \n \n len(spider) is \n \n \n"
+    print len(spider.items)
