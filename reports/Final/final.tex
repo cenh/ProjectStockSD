@@ -17,10 +17,27 @@
 \usepackage{color}
 \usepackage{listings}
 \usepackage{float}
+\usepackage{dirtree}
 \lstset{
 	frame=single,
 	breaklines=true,
 	postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}}
+}
+\newcounter{nodeCdepth}
+\newenvironment{nodeC}
+{\ifnum\value{nodeCdepth}=0
+    \gdef\listfordirtree{}%
+    \let\item\nodeCitem
+    \fi
+    \stepcounter{nodeCdepth}}
+{\addtocounter{nodeCdepth}{-1}%
+    \ifnum\value{nodeCdepth}=0
+    \expandafter\dirtree\expandafter{\listfordirtree}%
+    \fi}
+\newcommand{\nodeCitem}[1]{%
+    \xdef\listfordirtree{%
+        \unexpanded\expandafter{\listfordirtree}%
+        .\thenodeCdepth\space\unexpanded{#1}. }%
 }
 %% Change `ku-farve` to `nat-farve` to use SCIENCE's old colors or
 %% `natbio-farve` to use SCIENCE's new colors and logo.
@@ -108,10 +125,35 @@ I forløbets start opstillede vi nogle \textit{use cases}, for at imødekomme de
 \section{Design}
 \label{sec:design}
 % Lasse
+\subsection{Struktur}
+Et Django-projekt har en struktur der ser således ud:\\
+\begin{nodeC}
+    \item{project\_stock}
+    \begin{nodeC}
+        \item{manage.py}
+        \item{project\_stock}
+        \begin{nodeC}
+            \item{\_\_init\_\_py}
+            \item{admin.py}
+            \item{apps.py}
+            \item{models.py}
+            \item{settings.py}
+            \item{tests.py}
+            \item{urls.py}
+            \item{views.py}
+            \item{wsgi}
+        \end{nodeC}
+    \end{nodeC}
+\end{nodeC}~\\
+Nogle af disse filer følger med når man starter et projekt fra bunden, bl.a. \_\_init\_\_.py, settings.py, urls.py og wsgi.py
+
+\subsection{Modularitet}
 
 \section{Afprøvning}
 \label{sec:afproevning}
-% Mads
+Til afprøvning og test af projektet gjorde vi os nogle forskellige overvejelser, vi var bl.a. i tvivl om hvorvidt vi skulle anvende Fitnesse eller robot frameworket. Vi endte med at bruge robot til at skrive automatiske acceptancetests. Disse tests er yderligere beskrevet i Bilag E ''Testrapport''.
+Selvom vi bruger django som er et færdiggjort og stort framework, har vi valgt at unit-teste dele af projektet, for at sikre fejlbarheden så vidt som muligt. Django-funktionerne har vi i grove træk testet ved at opsætte to scenarier for de forskellige framework funktioner, ét scenarie som får forkerte specifikationer og ét scenarie som får de korrekte. Således kan vi se om de fejler eller kører som ønsket og forventet. Disse tests er også yderligere beskrevet i Bilag E. 
+Vi har valgt ikke at sikre applikationens opfyldelse af krav ved tests. Det har vi gjort grundet, at vi prioriterede færdigudvikling af projektet over hvad vi vil mene er overflødig test. Her menes der, at vi kan se og ved at hjemmesiden opfylder de stillede krav fra det tidligere krav-afsnit. Det ved vi fordi, vi har brugt og manuelt bevæget os rundt på hjemmesidee, løbende har opdaget fejl og mangler og har fået dem implementeret. 
 
 \section{Udviklingsmiljø}
 \label{sec:udvikling}
@@ -200,6 +242,10 @@ Vi vil diskutere hvilke krav som vi ikke nåede at implementere, men som vi gern
 \subsection{Bilag B}
 \label{sec:bilagB}
 % Lasse
+Arkivet \texttt{Exam.zip} er vedlagt og indeholder alt der skal bruges for at køre webapplikationen.
+Alternativt kan arkivet hentes her:\\
+\url{https://github.com/cenh/ProjectStockSD/archive/0.1.1.zip}
+
 
 \subsection{Bilag C}
 \label{sec:bilagC}
