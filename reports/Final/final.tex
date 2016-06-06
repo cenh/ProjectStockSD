@@ -117,15 +117,48 @@ I forløbets start opstillede vi nogle \textit{use cases}, for at imødekomme de
 
 \section{Udviklingsmiljø}
 \label{sec:udvikling}
-% Christian
+Vi vil i dette afsnit beskrive vores opsætning af versionsstyring, og hvordan vi har opbygget vores struktur for projektet. Endvidere hvilke værktøjer vi har brugt og hvordan vi har brugt dem.
+
+\subsection{Opsætning og struktur}
+Vi har brugt versionsstyringsværktøjet \textit{git} til dette projekt, git holder styr på de filer du har lagt ind i dit \textit{repository}, filernes ændringer og sørger for at man let kan dele filerne imellem flere udviklere. Et repository er i en software udviklings sammenhæng en mappe hvori man gemmer alle de filer, som tilsammen udgør et projekt. \\
+Vores repository er struktureret sådan, at vi gemmer vores rapporter og andet i en separet mappe, fra selve vores produkt, dog stadig i samme repository. På denne måde kan vi også bruge versionsstyring til at skrive sammen.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.55]{repostruct.png}
+	 \caption{Abstrakt struktur af vores repository}
+	 \label{fig:repostruct}
+\end{figure}
+~\\
+Figur \ref{fig:repostruct} viser strukturen af vores repository, vi har valgt at lave figuren abstrakt og undladt visse mapper, dels fordi vi skriver i frameworket \textit{Django}, som har en del filer og mapper som skal være der, men som vi ikke rigtig selv har brugt særligt meget. Filen \textit{manage.py} er vigtig eftersom, det er den fil som styrer selve hjemmesiden, det er med den fil man starter en webserver, opdaterer ens database og andet. Hjemmesiden indeholder en masse Django specifikke filer, sådan som et database schema, templates til selve hjemmesiden og meget andet.
+
+\subsection{Git}
+Vi har igennem projektet fået arbejdet meget med git, og vi har alle lært en del omkring git. I starten af projektet fik vi mange merge-conflicts hvilket betyder, at git ikke ved hvilke ændringer i hvilke filer er de rigtige ændringer, hvilket sker hvis der er blevet ændret i samme fil ved samme sted. Vi undersøgte problemet, og fandt frem til nogle git-opsætninger som hjalp med at undgå disse merge-conflicts. Derudover har vi skrevet tips til at bruge git ind i vores \textit{README.md}, som beskriver små tips til hvordan man kan benytte git mere effektivt. \\ \\
+Vi har brugt vores README.md rigtig meget igennem projektet til at dele tanker, tips og bare generelle informationer specifikt til projektet. Dette kan være alt fra, hvilke hjemmesider vi kan scrape, og hvordan man kan scrape det, til at dele youtube videoer der beskriver Django.
+
+\subsection{Udviklingsmiljø} 
+Vi har til projektet besluttet ikke at bruge et specifikt IDE til at udvikle i. Grunden til dette er, at vi alle har forskellige præferencer og arbejder bedst på forskellige måder. Nogen af os vil gerne have en simpel IDE (\textit{Integrated Development Environments}, Text editor), såsom Emacs, som ikke kan så meget fra starten af, men hvor man kan tilføje funktioner og værktøjer for at tilpasse IDEen, og andre fra gruppen ville hellere have en større IDE, såsom Atom, som fra start kan en hel del mere. \\ \\
+Vi besluttede os for at vi hver især arbejder mere effektivt og bedre, hvis vi udvikler i det miljø der passer os bedst indviduelt. Det vil sige, at nogle medlemmerne af vores gruppe, selv har stået for at kunne afprøve programmet, lave refaktorering og afvikling af hjemmesiden. At kunne gøre brug af værktøjer til refaktorering har ikke været et stort problem til vores projekt, da som tidligere nævnt er Django meget specifik, og klasser, funktioner og andet skal se ud på en meget bestemt måde. Det samme gælder for kode kreation, som bliver håndteret af manage.py. 
 
 \section{Diskussion og reflektion}
 \label{sec:diskussion}
 % Alle
 
+
+\section{Videreudvikling}
+\label{sec:udvikling}
+% Christian
+
 \section{Konklusion}
 \label{sec:konklusion}
 % Christian
+
+\section{Litteraturliste}
+\label{sec:litteratur}
+\begin{itemize}
+\item Martin, R.C., Martin, M. (2007). \textit{Agile Principles, Patterns, and practices in C\#}. Upper saddle river, NJ: Prentice Hall.
+\item Steve McConnell (2004). \textit{Code Complete, 2nd edition}.
+\end{itemize}
 
 \section{Bilag}
 \label{sec:bilag}
