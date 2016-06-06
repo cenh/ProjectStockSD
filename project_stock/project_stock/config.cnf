@@ -1,0 +1,6 @@
+[client]
+database = "projectstock"
+user = "projectstock"
+password = "newprojectstockpassword"
+host = "128.199.39.136"
+default-character-set = "utf8"
