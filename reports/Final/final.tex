@@ -222,14 +222,14 @@ nemt bruge dem igen. Det kan vi fordi de tilgår elementer i den tabel, som hjem
 stedet for at tilgå de specifikke elementer cellerne indeholder. For testen er det altså ligegyldigt hvad der står i
 tabellen, bare siden har samme struktur. Skulle selve strukturen af sitet dog ændres, kan vi forholdsvis nemt omskrive
 testene til at tilgå elementer på en ny måde, da det blot er kodedelen som beskriver hvilket element der skal tilgås, som
-skal omskrives. \\ 
+skal omskrives. \\
 Da vores tests, som beskrevet ovenfor, er forholdsvis automatiske og agile, kan vi nemt anvende dem når vi tilføjer ting
 til sitet, eller ændrer på de ting som i forvejen er tilstede. Det har givet mulighed for ubesværet at teste, mens vi har
 arbejdet på projektet. \\
 Selvom vi bruger django, som er et færdiggjort og stort framework, har vi valgt at unit-teste dele af projektet, for at
 sikre fejlbarheden så vidt som muligt. Django-funktionerne har vi i grove træk testet ved at opsætte to scenarier for de
 forskellige framework funktioner, ét scenarie som får forkerte specifikationer og ét scenarie som får de korrekte. Således
-kan vi se om de fejler eller kører som ønsket og forventet. Disse tests er også yderligere beskrevet i Bilag E. 
+kan vi se om de fejler eller kører som ønsket og forventet. Disse tests er også yderligere beskrevet i Bilag E.
 
 \section{Udviklingsmiljø}
 \label{sec:udvikling}
@@ -248,10 +248,7 @@ Vores repository er struktureret sådan, at vi gemmer vores rapporter og andet i
 ~\\
 Figur \ref{fig:repostruct} viser strukturen af vores repository, vi har valgt at lave figuren abstrakt og undladt visse mapper, dels fordi vi skriver i frameworket \textit{Django}, som har en del filer og mapper som skal være der, men som vi ikke rigtig selv har brugt særligt meget. Filen \textit{manage.py} er vigtig eftersom, det er den fil som styrer selve hjemmesiden, det er med den fil man starter en webserver, opdaterer ens database og andet. Hjemmesiden indeholder en masse Django specifikke filer, sådan som et database schema, templates til selve hjemmesiden og meget andet.
 
-\subsection{Git}
-\label{subsec:Git}
-Vi har igennem projektet fået arbejdet meget med git, og vi har alle lært en del omkring git. I starten af projektet fik vi mange merge-conflicts hvilket betyder, at git ikke ved hvilke ændringer i hvilke filer er de rigtige ændringer, hvilket sker hvis der er blevet ændret i samme fil ved samme sted. Vi undersøgte problemet, og fandt frem til nogle git-opsætninger som hjalp med at undgå disse merge-conflicts. Derudover har vi skrevet tips til at bruge git ind i vores \textit{README.md}, som beskriver små tips til hvordan man kan benytte git mere effektivt. \\ \\
-Vi har brugt vores README.md rigtig meget igennem projektet til at dele tanker, tips og bare generelle informationer specifikt til projektet. Dette kan være alt fra, hvilke hjemmesider vi kan scrape, og hvordan man kan scrape det, til at dele youtube videoer der beskriver Django.
+
 
 \subsection{Udviklingsmiljø}
 Vi har til projektet besluttet ikke at bruge et specifikt IDE til at udvikle i. Grunden til dette er, at vi alle har forskellige præferencer og arbejder bedst på forskellige måder. Nogen af os vil gerne have en simpel IDE (\textit{Integrated Development Environments}, Text editor), såsom Emacs, som ikke kan så meget fra starten af, men hvor man kan tilføje funktioner og værktøjer for at tilpasse IDEen, og andre fra gruppen ville hellere have en større IDE, såsom Atom, som fra start kan en hel del mere. \\ \\
@@ -261,7 +258,18 @@ Vi besluttede os for at vi hver især arbejder mere effektivt og bedre, hvis vi 
 \label{sec:diskussion}
 
 \subsection{Udviklingsprocessen}
-Vi har som gruppe bestræbt os på at mødes mindst én gang om ugen. Dette selvorganiserede møde, er ud over de ugentlige møder med instruktorerne. På disse selvorganiserede ugentlige møder har vi diskuteret, hvad vi manglede at lave. Hvem der skulle have hovedansvaret for de enkelte af projektets elementer, samt arbejdet med delafleveringerne og projektet. Disse møder har fungeret godt, det har været effektivt at kunne kommunikere \textit{face-to-face}. Derudover har vi brugt \textit{GitHub}s forskellige funktionaliteter til intern kommunikation. Udover den information vi har skrevet i \texttt{README.md}-filen (der findes i roden af vores \textit{GitHub} \textit{repository}), som beskrevet i afsnit \ref{subsection:Git}  
+Vi har som gruppe bestræbt os på at mødes mindst én gang om ugen. Dette selvorganiserede møde, er ud over de ugentlige møder med instruktorerne. På disse selvorganiserede ugentlige møder har vi; uddelegeret arbejdsopgaver, diskuteret og arbejdet med forskellige værktøjer og \textit{frameworks}.\\
+Disse møder har fungeret godt, det har været mere effektivt at kunne kommunikere \textit{face-to-face} i stedet for skriftligt.
+
+
+\subsubsection{Git}
+\label{subsec:Git}
+Vi har igennem projektet arbejdet meget med Git, og vi har alle lært en del om Git. I starten af forløbet fik vi mange \textit{merge conflicts}. Disse opstår, når f.eks. flere har foretaget ændringer i samme linje kode, og Git ikke kan "gætte", hvilke af disse ændringer, der skal vælges. Vi undersøgte problemet, og fandt frem til nogle Git-opsætninger som hjalp med at undgå disse \textit{merge conflicts}. \\
+Vi har ligeldes benyttet flere af \textit{GitHub}s forskellige funktionaliteter, til intern kommunikation. I roden på vores \textit{GitHub} \textit{repository} findes filen \texttt{README.md}. Denne fil har været brugt til vidensdeling.
+Her har vi skrevet tips til at bruge Git, og hvordan man kan benytte Git mere effektivt. \\
+Ligeledes har vi brugt denne \texttt{README.md}-fil til at dele tanker, tips og bare generelle informationer, der er relevante for projektet. Dette kan være alt fra, hvilke hjemmesider vi kan scrape, og hvordan man kan scrape det, til at dele \textit{Youtube} videoer, der beskriver \textit{Django}.
+
+vi benyttet \textit{GitHub}-funktionaliteten \textit{issues}.
 
 \subsection{Testing}
 \subsubsection{\textit{Test-first} og \textit{TDD}}
