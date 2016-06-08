@@ -248,11 +248,12 @@ Vores repository er struktureret sådan, at vi gemmer vores rapporter og andet i
 ~\\
 Figur \ref{fig:repostruct} viser strukturen af vores repository, vi har valgt at lave figuren abstrakt og undladt visse mapper, dels fordi vi skriver i frameworket \textit{Django}, som har en del filer og mapper som skal være der, men som vi ikke rigtig selv har brugt særligt meget. Filen \textit{manage.py} er vigtig eftersom, det er den fil som styrer selve hjemmesiden, det er med den fil man starter en webserver, opdaterer ens database og andet. Hjemmesiden indeholder en masse Django specifikke filer, sådan som et database schema, templates til selve hjemmesiden og meget andet.
 
-
-
 \subsection{Udviklingsmiljø}
 Vi har til projektet besluttet ikke at bruge et specifikt IDE til at udvikle i. Grunden til dette er, at vi alle har forskellige præferencer og arbejder bedst på forskellige måder. Nogen af os vil gerne have en simpel IDE (\textit{Integrated Development Environments}, Text editor), såsom Emacs, som ikke kan så meget fra starten af, men hvor man kan tilføje funktioner og værktøjer for at tilpasse IDEen, og andre fra gruppen ville hellere have en større IDE, såsom Atom, som fra start kan en hel del mere. \\ \\
 Vi besluttede os for at vi hver især arbejder mere effektivt og bedre, hvis vi udvikler i det miljø der passer os bedst indviduelt. Det vil sige, at nogle medlemmerne af vores gruppe, selv har stået for at kunne afprøve programmet, lave refaktorering og afvikling af hjemmesiden. At kunne gøre brug af værktøjer til refaktorering har ikke været et stort problem til vores projekt, da som tidligere nævnt er Django meget specifik, og klasser, funktioner og andet skal se ud på en meget bestemt måde. Det samme gælder for kode kreation, som bliver håndteret af manage.py.
+
+\subsection{Github}
+Vi har brugt \textit{issues} og \textit{milepæle} på Github platformen, til at holde styr på hvilke arbejdsopgaver eller use cases vi gerne vil have klaret inden en given iteration er færdig. Milepælene er sat efter delafleveringerne og den endelig rapport, derudover har vi en ekstra milepæl, som bliver brugt til at holde styr på opgaver vi godt kunne tænke os at implementere, men som ikke er strengt nødvendige kaldet 'nice to haves'. Et medlem kan derfor sætte sig på en opgave, så alle andre kan se hvem der arbejder på hvad.
 
 \section{Diskussion og reflektion} % Alle
 \label{sec:diskussion}
@@ -261,22 +262,23 @@ Vi besluttede os for at vi hver især arbejder mere effektivt og bedre, hvis vi 
 Vi har som gruppe bestræbt os på at mødes mindst én gang om ugen. Dette selvorganiserede møde, er ud over de ugentlige møder med instruktorerne. På disse selvorganiserede ugentlige møder har vi; uddelegeret arbejdsopgaver, diskuteret og arbejdet med forskellige værktøjer og \textit{frameworks}.\\
 Disse møder har fungeret godt, det har været mere effektivt at kunne kommunikere \textit{face-to-face} i stedet for skriftligt.
 
-
 \subsubsection{Git}
 \label{subsec:Git}
 Vi har igennem projektet arbejdet meget med Git, og herunder den online service GitHub, og vi har alle lært en del om Git. I starten af forløbet fik vi mange \textit{merge conflicts}. Disse opstår, når f.eks. flere har foretaget ændringer i samme linje kode, og Git ikke kan "gætte", hvilke af disse ændringer, der skal vælges. Vi undersøgte problemet, og fandt frem til nogle Git-opsætninger som hjalp med at undgå disse \textit{merge conflicts}. \\
 Vi har ligeldes benyttet flere af \textit{GitHub}s forskellige funktionaliteter, til intern kommunikation. I roden på vores GitHub \textit{repository} findes filen \texttt{README.md}. Denne fil har været brugt til vidensdeling.
 Her har vi skrevet tips til at bruge Git, og hvordan man kan benytte Git mere effektivt. \\
-Ligeledes har vi brugt denne \texttt{README.md}-fil til at dele tanker, tips og bare generelle informationer, der er relevante for projektet. Dette kan være alt fra, hvilke hjemmesider vi kan scrape, og hvordan man kan scrape det, til at dele \textit{Youtube} videoer, der beskriver \textit{Django}.
-
-vi benyttet \textit{GitHub}-funktionaliteten \textit{issues}.
+Ligeledes har vi brugt denne \texttt{README.md}-fil til at dele tanker, tips og bare generelle informationer, der er relevante for projektet. Dette kan være alt fra, hvilke hjemmesider vi kan scrape, og hvordan man kan scrape det, til at dele \textit{Youtube} videoer, der beskriver \textit{Django}. \\ \\
+Vi benyttet GitHub til at holde styr på arbejdsopgaver, som minder om use cases. Dette er gjort ved at oprette milepæle og \textit{issues}, milepælene er blevet sat til de forskellige delafleveringer/iterationer, inkl. den endelig rapport og en ekstra milepæl til 'nice to have' features. Derefter er der blevet oprettet issues til hver milepæl som afspejler hvad vi gerne vil have lavet færdig inden den næste iteration. Derved kan vi også holde styr på hvem laver hvad, da man kan tilføje medlemmer af gruppen til et issue, men man kan også diskutere løsninger og andet, selvom vi ikke sidder sammen og arbejder.
+Vores issues minder om use cases, men de kan også være bugs eller anden implementation som ikke nødvendigvis er en use case. \\
+Igennem forløbet har vi været gode til at få lavet de opgaver vi havde sat os for at skulle løse, dog er der nogle enkelte issues, som ikke er blevet lukket inden forløbets afslutning, disse implementationer har vi valgt at beskrive senere i rapporten. \\ \\
+Vi begyndte først rigtig at bruge de her funktioner til Github, såsom issues og milepæle, efter 1-2 måneder inden i forløbet. Set tilbage ville vi gerne have startet med det tidligere, dog er vi glade for at vi begyndte at bruge, da det har hjulpet os en hel del med at holde styr på opgaverne.
 
 \subsection{Testing}
 \subsubsection{\textit{Test-first} og \textit{TDD}}
 I vores arbejde med projektet, har vi ikke benyttet princippet \textit{test-first}, der b.la. kendes fra metodologien \textit{Extreme Programming (XP)}.
-Vi har senere erfaret, at det kunne have været nyttigt, i visse tilfælde, havde vi benyttet en \textit{test-first} tilgang. Dels fordi det ville være nemmere at \textit{unit teste} vores kode, og dels fordi det formentlig havde ført til at vi havde skrevet kode, der var mere afkoblet. \\
-Vores begrundelse for ikke benytte \textit{test-first}, var at det var svært at forene med \textit{Django frameworkets} faste krav for, hvordan koden skal struktureres. \\
-Derimod kunne vi godt have have benyttet en \textit{test-first} tilgang til vores \textit{web scraper}. Koden for vores \textit{scraper} findes i filen \texttt{dikuspider.py}.
+Vi har senere erfaret, at det kunne have været nyttigt, i visse tilfælde, havde vi benyttet en test-first tilgang. Dels fordi det ville være nemmere at \textit{unit teste} vores kode, og dels fordi det formentlig havde ført til at vi havde skrevet kode, der var mere afkoblet. \\
+Vores begrundelse for ikke benytte test-first, var at det var svært at forene med \textit{Django frameworkets} faste krav for, hvordan koden skal struktureres. \\
+Derimod kunne vi godt have have benyttet en test-first tilgang til vores \textit{web scraper}. Koden for vores \textit{scraper} findes i filen \texttt{dikuspider.py}.
 
 \subsection{\textit{Web scraper}}
 Den \textit{web scraper} vi har udviklet, er designet til at høste data fra siden \url{http://diku.dk/Ansatte}, samt profilsiderne for Datalogisk Instituts ansatte. Der linkes til disse profilsider fra \url{http://diku.dk/Ansatte}.\\
