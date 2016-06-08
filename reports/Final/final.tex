@@ -50,7 +50,7 @@
   \vspace{3cm}
   \Huge{Eksamensrapport} \\
   \Large{Software Udvikling 2016 - Project-Stock}
-}
+	}
 
 \author{
 	\Large{Stefan Friis Tofte} - \textbf{jwr342} - \texttt{stefan.f.tofte@gmail.com}
@@ -61,6 +61,7 @@
 	\and
 	\Large{Christian E.N. Hansen} - \textbf{vmk541} - \texttt{cralle@outlook.com}
 }
+
 
 \begin{document}
 
@@ -189,7 +190,12 @@ Vi besluttede os for at vi hver især arbejder mere effektivt og bedre, hvis vi 
 I vores arbejde med projektet, har vi ikke benyttet princippet \textit{test-first}, der b.la. kendes fra metodologien \textit{Extreme Programming (XP)}.
 Vi har senere erfaret, at det kunne have været nyttigt, i visse tilfælde, havde vi benyttet en \textit{test-first} tilgang. Dels fordi det ville være nemmere at \textit{unit teste} vores kode, og dels fordi det formentlig havde ført til at vi havde skrevet kode, der var mere afkoblet. \\
 Vores begrundelse for ikke benytte \textit{test-first}, var at det var svært at forene med \textit{Django frameworkets} faste krav for, hvordan koden skal struktureres. \\
-Derimod kunne vi godt have have benyttet en \textit{test-first} tilgang til vores \textit{web scraper}. Koden for denne findes i filen \texttt{dikuspider.py}.   
+Derimod kunne vi godt have have benyttet en \textit{test-first} tilgang til vores \textit{web scraper}. Koden for vores \textit{scraper} findes i filen \texttt{dikuspider.py}.
+
+\subsection{\textit{Web scraper}}
+Den \textit{web scraper} vi har udviklet, er designet til at høste data fra siden \url{http://diku.dk/ansatte}, samt profilsiderne for Datalogisk Instituts ansatte. Der linkes til disse profilsider fra \url{http://diku.dk/ansatte}.\\
+Vi har vurderet, at det ville være svært og formentlig unødigvendigt at designe en abstrakt \textit{scraper}, som ville være i stand til at høste data fra mange forskellige websteder. At ekstrahere data fra et specifikt websted, afhænger i høj grad af, hvordan dette websted er opbygget. Er den information man er interesseret i, f.eks. placeret i  HTML-tabeller, skal man vide hvilke \textit{id tags} man skal ledes efter. Ligeledes skal man vide, hvordan denne information er formatteret. \\
+Da vi ikke har fundet andre websteder, hvor man kan høste information om de ansatte, vurderede vi at ikke ville være i overenstemmelse med agile tankegang at prøve at designe en abstrakt \textit{scraper}.
 
 \section{Videreudvikling}
 \label{sec:udvikling}
@@ -266,9 +272,9 @@ Alternativt kan arkivet hentes her:\\
 \subsection{Bilag C}
 \label{sec:bilagC}
 \subsubsection{R1: Krav}
-Vi foretog i dette \textit{sprint} et \textit{review} af 'gruppe 4's delaflevering 1. Her gav vi dem følgende kommentarer, her præsenteret som stikord til os selv, der blev uddybet, mundtligt:
+\textit{\textbf{Meta:}} Vi foretog i dette \textit{sprint} et \textit{review} af 'gruppe 4's delaflevering 1. Her gav vi dem følgende kommentarer, her præsenteret som stikord til os selv, der blev uddybet, mundtligt. \\
 
-\textbf{Afklaring af krav}
+\textit{\textbf{Review:}} \textbf{Afklaring af krav}
 Beskriver den nuværende problemstilling fint ("shopping" problemet).
 
 User stories:
@@ -294,7 +300,12 @@ Udførlig beskrivelse.
 
 
 \subsubsection{R2: Design}
+\textit{\textbf{Meta:}} Vi foretog i dette \textit{sprint} et \textit{review} af 'gruppe 4's delaflevering 2.\\
 
+\textit{\textbf{Review:}}
+Afsnittet "Afprøvning" er godt. Jeres test-metoder er veldokumenterede.
+Figur 2 i afsnittet "Abstraktion og designmønstre" er lidt forvirrende og misvisende.
+Tabllen, der indeholder hvilke brugere, der har hvilke rettigheder i underafsnittet "CRUD-modellen" hjælper meget på forståelsen.
 
 \subsubsection{R3: Kode}
 \subsubsection{R4: Release}
