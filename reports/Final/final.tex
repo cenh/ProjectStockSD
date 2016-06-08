@@ -203,16 +203,29 @@ Denne side ville opfylde krav 3 fra \hyperref[sec:corefuncs]{\ref*{sec:corefuncs
 
 \subsubsection{Adminpanel}
 
+\newpage
 \section{Afprøvning}
 \label{sec:afproevning}
-Til afprøvning og test af projektet gjorde vi os nogle forskellige overvejelser, vi var bl.a. i tvivl om hvorvidt vi skulle anvende Fitnesse eller robot frameworket. Vi endte med at bruge robot til at skrive automatiske acceptancetests. Disse tests er yderligere beskrevet i Bilag E ''Testrapport''.
-
-Selvom vi bruger django som er et færdiggjort og stort framework, har vi valgt at unit-teste dele af projektet, for at sikre fejlbarheden så vidt som muligt. Django-funktionerne har vi i grove træk testet ved at opsætte to scenarier for de forskellige framework funktioner, ét scenarie som får forkerte specifikationer og ét scenarie som får de korrekte. Således kan vi se om de fejler eller kører som ønsket og forventet. Disse tests er også yderligere beskrevet i Bilag E.
-Vi har valgt ikke at sikre applikationens opfyldelse af krav ved tests. Det har vi gjort grundet, at vi prioriterede færdigudvikling af projektet over hvad vi vil mene er overflødig test. Her menes der, at vi kan se og ved at hjemmesiden opfylder de stillede krav fra det tidligere krav-afsnit. Det ved vi fordi, vi har brugt og manuelt bevæget os rundt på hjemmesidee, løbende har opdaget fejl og mangler og har fået dem implementeret.
-
-Selvom vi bruger django som er et færdiggjort og stort framework, har vi valgt at unit-teste dele af projektet, for at sikre fejlbarheden så vidt som muligt. Django-funktionerne har vi i grove træk testet ved at opsætte to scenarier for de forskellige framework funktioner, ét scenarie som får forkerte specifikationer og ét scenarie som får de korrekte. Således kan vi se om de fejler eller kører som ønsket og forventet. Disse tests er også yderligere beskrevet i Bilag E.
-Vi har valgt ikke at sikre applikationens opfyldelse af krav ved tests. Det har vi gjort grundet, at vi prioriterede færdigudvikling af projektet over hvad vi vil mene er overflødig test. Her menes der, at vi kan se og ved at hjemmesiden opfylder de stillede krav fra det tidligere krav-afsnit. Det ved vi fordi, vi har brugt og manuelt bevæget os rundt på hjemmesidee, løbende har opdaget fejl og mangler og har fået dem implementeret.
-
+Til afprøvning og test af projektet gjorde vi os nogle forskellige overvejelser, vi var bl.a. i tvivl om hvorvidt vi
+skulle anvende Fitnesse eller robot frameworket. Vi endte med at bruge robot til at skrive automatiske acceptancetests.
+Disse tests er yderligere beskrevet i Bilag E ''Testrapport''.
+Vi har valgt ikke at sikre applikationens opfyldelse af krav ved tests. Det har vi gjort grundet, at vi prioriterede
+færdigudvikling af projektet over hvad vi vil mene er overflødig test. Her menes der, at vi kan se og ved at hjemmesiden
+opfylder de stillede krav fra det tidligere krav-afsnit. Det ved vi fordi, vi har brugt og manuelt bevæget os rundt på
+hjemmesiden, løbende har opdaget fejl og mangler og har fået dem implementeret. 
+Til fremtidig brug er vores acceptance-tests skrevet således at selvom der skulle opstå ændringer på hjemmesiden, kan vi
+nemt bruge dem igen. Det kan vi fordi de tilgår elementer i den tabel, som hjemmesiden repræsenterer information i, i
+stedet for at tilgå de specifikke elementer cellerne indeholder. For testen er det altså ligegyldigt hvad der står i
+tabellen, bare siden har samme struktur. Skulle selve strukturen af sitet dog ændres, kan vi forholdsvis nemt omskrive
+testene til at tilgå elementer på en ny måde, da det blot er kodedelen som beskriver hvilket element der skal tilgås, som
+skal omskrives. \\ 
+Da vores tests, som beskrevet ovenfor, er forholdsvis automatiske og agile, kan vi nemt anvende dem når vi tilføjer ting
+til sitet, eller ændrer på de ting som i forvejen er tilstede. Det har givet mulighed for ubesværet at teste, mens vi har
+arbejdet på projektet. \\
+Selvom vi bruger django, som er et færdiggjort og stort framework, har vi valgt at unit-teste dele af projektet, for at
+sikre fejlbarheden så vidt som muligt. Django-funktionerne har vi i grove træk testet ved at opsætte to scenarier for de
+forskellige framework funktioner, ét scenarie som får forkerte specifikationer og ét scenarie som får de korrekte. Således
+kan vi se om de fejler eller kører som ønsket og forventet. Disse tests er også yderligere beskrevet i Bilag E. 
 \section{Udviklingsmiljø}
 \label{sec:udvikling}
 Vi vil i dette afsnit beskrive vores opsætning af versionsstyring, og hvordan vi har opbygget vores struktur for projektet. Endvidere hvilke værktøjer vi har brugt og hvordan vi har brugt dem.
