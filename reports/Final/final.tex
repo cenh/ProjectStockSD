@@ -85,7 +85,7 @@
 \section{Problembeskrivelse}
 \label{sec:problem}
 Vores projekt er udviklet som en løsning på den til dels besværlige proces, som det kan være at tilmelde sig bachelorprojekter. Jyrki, som er medansvarlig for bachelorprojekterne, ønskede en mindre manuel løsning end den forhenværende. Det største problem i den tidligere løsning opstod når elever skulle gå fra professor til professor og få afslag. Yderligere har problemer som den nye reform gjort det endnu vigtigere at få en hurtigere og smartere metode. \\
-Vi har derfor lavet en side, som ved automatisk scraping af informationer fra DIKUs hjemmeside, kan præsentere en opdateret visning af de forskellige ledige projekter og vejledere, samt deres arbejdsbyrde. Opsumeret har vi altså fået implementeret alle "Quality requirements". \\
+Vi har derfor lavet en side, som ved automatisk scraping af informationer fra DIKU's hjemmeside, kan præsentere en opdateret visning af de forskellige ledige projekter og vejledere, samt deres arbejdsbyrde. Opsumeret har vi altså fået implementeret alle "Quality requirements". \\
 % mellemrum efter " bliver slettet, derfor {}
 Vi kunne til gengæld ikke opfylde alle de funktionelle krav, da et punkt som f.eks. "There should be a mechanism to check the quality of industrial projects"{} er for subjektivt og vi hverken har erfaring eller viden omkring dette. \\
 Ligeledes har vi også valgt ikke at implementere en løsning, hvor studerende kan lave et "ønske-opslag"{} om uaktuelle emner, i håb om at nogle vejledere vil lave et projekt om det.
@@ -401,7 +401,7 @@ Tabllen, der indeholder hvilke brugere, der har hvilke rettigheder i underafsnit
 
 	Test 2 & Denne tests funktion er at teste om man kan tilgå vejledere fra vejleder siden, og om disse informationer er vist korrekt. Som eksempel bruger vi navnet ''Torben'', scriptet går så listen af vejledere igennem, finder et resultat i tabellen hvor ''Torben'' indgår, og tager et screenshot af Torbens informationer. & Denne test er lidt mere manuel da den kræver at vi gennemser oplysningerne fra screenshottet. Men \textit{Robot} returnerer at testen er passed, da det lykkes den at finde en vejleder ved navn ''Torben'' og tage et screenshot af hans side.\\ \hline
 
-	Test 3 & Denne test hjælper på sin vis den forhenværende test. Dens funktion er at sikre at de scrapede informationer er korrekte. Det gør den ved først at gå ind på DIKUs hjemmeside og finde oplysninger på en vejleder. Herefter går den så på vores side, finder samme vejleder og ser om de 2 stykker information er de samme ved en \textit{Robot}-funktion kaldt \textit{IsEqual} & Denne test som den eneste returner en bool, og da denne er true, viser det at de to stykker information er sande, og scraperen derfor virker korrekt. \newline
+	Test 3 & Denne test hjælper på sin vis den forhenværende test. Dens funktion er at sikre at de scrapede informationer er korrekte. Det gør den ved først at gå ind på DIKU's hjemmeside og finde oplysninger på en vejleder. Herefter går den så på vores side, finder samme vejleder og ser om de 2 stykker information er de samme ved en \textit{Robot}-funktion kaldt \textit{IsEqual} & Denne test som den eneste returner en bool, og da denne er true, viser det at de to stykker information er sande, og scraperen derfor virker korrekt. \newline
 	Ligeledes hjælper det os med, ikke at skulle tjekke test 2 manuelt, når vi ved at de oplysninger der fremgår på siderne er sande. \\ \hline
 	\end{tabular}
 \end{center}
