@@ -313,6 +313,7 @@ Tabllen, der indeholder hvilke brugere, der har hvilke rettigheder i underafsnit
 
 \newpage
 \subsection{Bilag E}
+\subsubsection*{Acceptance-tests}
 \begin{center}
 	\begin{tabular}{|p{0.08\textwidth}|p{0.44\textwidth}|p{0.44\textwidth}|}
 		\hline
@@ -324,6 +325,20 @@ Tabllen, der indeholder hvilke brugere, der har hvilke rettigheder i underafsnit
 
 	Test 3 & Denne test hjælper på sin vis den forhenværende test. Dens funktion er at sikre at de scrapede informationer er korrekte. Det gør den ved først at gå ind på Diku's hjemmeside og finde oplysninger på en vejleder. Herefter går den så på vores side, finder samme vejleder og ser om de 2 stykker information er de samme ved en \textit{Robot}-funktion kaldt \textit{IsEqual} & Denne test som den eneste returner en bool, og da denne er true, viser det at de to stykker information er sande, og scraperen derfor virker korrekt. \newline
 	Ligeledes hjælper det os med, ikke at skulle tjekke test 2 manuelt, når vi ved at de oplysninger der fremgår på siderne er sande. \\ \hline
+	\end{tabular}
+\end{center}
+\newpage
+\subsubsection*{Unit-tests}
+\begin{center}
+	\begin{tabular}{|p{0.08\textwidth}|p{0.44\textwidth}|p{0.44\textwidth}|}
+		\hline
+	\textbf{Test\#} & \textbf{Testbeskrivelse} & \textbf{Testresultat} \\ \hline
+
+	Test 1 & Den første test tester om Django generer projekter korrekt. Det gør vi ved at give den kombinationer af inputs, så der er fejlbare projekter og korrekte projekter. Vi beder så Django generere projekter baseret på både de fejlbare og korrekte informationer, og vi ser så at funktionerne fejler og kører som ønsket. & Resultaterne for denne test er simple. Funktionerne returnerer den ønskede kombination af true og false, og vi kan se at de virker som ønsket.  \\ \hline
+
+	Test 2 & Denne test sikrer at delene på \textit{Supervisor}-siden bliver generet af Django korrekt. På samme måde som test 1, giver vi Django 2 sæt oplysninger. Ét som gør det muligt for funktionerne at køre, og ét der ikke gør. På denne måde kan vi se hvilke dele der gør det muligt, og hvilke dele der forhindrer Django i at køre som ønsket. &  Resultaterne for denne test, er ligesom test 1. De returnerer true og false som forventet, og dette viser at Django's funktioner er korrekte. \\ \hline
+
+	Test 3 & Den sidste unit-test tester om Django kan tilgå sig selv, ved at sende requests til de forskellige dele af projektet og returnerer true hvis den får det rigtige output. Den består af fem underfunktioner, som tilgår de forskellige primære views. Hver af disse funktioner returner en ''status\_code'' som fortæller hvordan funktionen forløb. Hvis denne status\_code er i mellem 200 og 400 betyder det at henvisningen er som ønsket. & Ved gennemløb af alle requests ser vi de forskellige funktioners ''status\_code'' værdier, og da de alle returnerer værdier imellem de ønskede 200 - 400, passerer testen. \\ \hline
 	\end{tabular}
 \end{center}
 \end{document}
