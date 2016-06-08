@@ -298,5 +298,21 @@ Udførlig beskrivelse.
 
 \subsubsection{R3: Kode}
 \subsubsection{R4: Release}
+\subsection{Bilag D}
 
+\newpage
+\subsection{Bilag E}
+\begin{center}
+	\begin{tabular}{|p{0.08\textwidth}|p{0.44\textwidth}|p{0.44\textwidth}|}
+		\hline
+	\textbf{Test\#} & \textbf{Testbeskrivelse} & \textbf{Testresultat} \\ \hline
+
+	Test 1 & Denne test består at et \textit{Robot}-script som finder alle ''clickable links'' på siden der viser projekter, og sikrer at disse henviser til de rigtige steder. Den tjekker om det passer ved at sammenligne den side den ender på, med den side vi mener det skulle være & Scriptet klikker på alle 104 links, og ser at de alle henviser som de skal og returnerer ''\textit{All tests passed}'' i \textit{Robot}-rapporten.  \\ \hline
+
+	Test 2 & Denne tests funktion er at teste om man kan tilgå vejledere fra vejleder siden, og om disse informationer er vist korrekt. Som eksempel bruger vi navnet ''Torben'', scriptet går så listen af vejledere igennem, finder et resultat i tabellen hvor ''Torben'' indgår, og tager et screenshot af Torbens informationer. & Denne test er lidt mere manuel da den kræver at vi gennemser oplysningerne fra screenshottet. Men \textit{Robot} returnerer at testen er passed, da det lykkes den at finde en vejleder ved navn ''Torben'' og tage et screenshot af hans side.\\ \hline
+
+	Test 3 & Denne test hjælper på sin vis den forhenværende test. Dens funktion er at sikre at de scrapede informationer er korrekte. Det gør den ved først at gå ind på Diku's hjemmeside og finde oplysninger på en vejleder. Herefter går den så på vores side, finder samme vejleder og ser om de 2 stykker information er de samme ved en \textit{Robot}-funktion kaldt \textit{IsEqual} & Denne test som den eneste returner en bool, og da denne er true, viser det at de to stykker information er sande, og scraperen derfor virker korrekt. \newline
+	Ligeledes hjælper det os med, ikke at skulle tjekke test 2 manuelt, når vi ved at de oplysninger der fremgår på siderne er sande. \\ \hline
+	\end{tabular}
+\end{center}
 \end{document}
