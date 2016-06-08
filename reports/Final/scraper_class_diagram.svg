@@ -1,0 +1,411 @@
+<svg version="1.1" x="0" y="0" id="ip6lhk0u1" diagram-revision="6" width="625" height="476.5" xmlns="http://www.w3.org/2000/svg" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs/>
+  <g id="Class-ip6lhk0u-ko1" transform="translate(30,235)">
+    <desc>root/umlClass/class?version=4&amp;author=Cinergix</desc>
+    <g id="image">
+      <g id="graphics">
+        <rect x="1" y="1" width="241.85" height="41.5" fill="none" stroke="#35a6e2" stroke-width="2" stroke-opacity="0" stroke-linejoin="round" stroke-linecap="round"/>
+        <rect x="1" y="42.5" width="241.85" height="75" fill="none" stroke="#35a6e2" stroke-width="2" stroke-opacity="0" stroke-linejoin="round" stroke-linecap="round"/>
+        <rect x="1" y="117.5" width="241.85" height="108.5" fill="none" stroke="#35a6e2" stroke-width="2" stroke-opacity="0" stroke-linejoin="round" stroke-linecap="round"/>
+        <rect x="1" y="1" width="241.85" height="225" fill="#ffffff" stroke="#35a6e2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+        <path d="M 1 42.5 L 242.85 42.5 M 1 117.5 L 242.85 117.5 " fill="none" stroke="#35a6e2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+      </g>
+      <text x="0" y="0" width="116.25" height="16.75" transform="translate(62.8,4)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;font-weight:bold;">&lt;&lt;scrapy.Spider&gt;&gt;</tspan>
+      </text>
+      <text x="0" y="0" width="117.65" height="16.75" transform="translate(62.1,20.75)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;font-weight:bold;">DikuAnsatteSpider</tspan>
+      </text>
+      <text x="0" y="0" width="156.65" height="16.75" transform="translate(6,45.5)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;">items : [DikuAnsatteItem]</tspan>
+      </text>
+      <text x="0" y="0" width="60.55" height="16.75" transform="translate(6,62.25)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;">name : str</tspan>
+      </text>
+      <text x="0" y="0" width="92.3" height="16.75" transform="translate(6,79)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;">start_urls : [str]</tspan>
+      </text>
+      <text x="0" y="0" width="141.1" height="16.75" transform="translate(6,95.75)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;">allowed_domains : [str]</tspan>
+      </text>
+      <text x="0" y="0" width="80.15" height="16.75" transform="translate(6,120.5)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;">start() : None</tspan>
+      </text>
+      <text x="0" y="0" width="200.6" height="16.75" transform="translate(6,137.25)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;">parse(response) : scrapy.Request</tspan>
+      </text>
+      <text x="0" y="0" width="210.65" height="16.75" transform="translate(6,154)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;">parse_detail( arg list ) : scrapy.Item</tspan>
+      </text>
+      <text x="0" y="0" width="204.95" height="16.75" transform="translate(6,170.75)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;">parse_pure( arg list ) : scrapy.Item</tspan>
+      </text>
+      <text x="0" y="0" width="162.2" height="16.75" transform="translate(6,187.5)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;">parse_other() : scrapy.Item</tspan>
+      </text>
+      <text x="0" y="0" width="3.6" height="16.75" transform="translate(6,204.25)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;"/>
+      </text>
+    </g>
+  </g>
+  <g id="Class-ip6lhk0u-ko2" transform="translate(400,220)">
+    <desc>root/umlClass/class?version=4&amp;author=Cinergix</desc>
+    <g id="image">
+      <g id="graphics">
+        <rect x="1" y="1" width="218" height="41.5" fill="none" stroke="#35a6e2" stroke-width="2" stroke-opacity="0" stroke-linejoin="round" stroke-linecap="round"/>
+        <rect x="1" y="42.5" width="218" height="209" fill="none" stroke="#35a6e2" stroke-width="2" stroke-opacity="0" stroke-linejoin="round" stroke-linecap="round"/>
+        <rect x="1" y="1" width="218" height="250.5" fill="#ffffff" stroke="#35a6e2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+        <path d="M 1 42.5 L 219 42.5 " fill="none" stroke="#35a6e2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+      </g>
+      <text x="0" y="0" width="104.95" height="16.75" transform="translate(56.5,4)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;font-weight:bold;">&lt;&lt;scrapy.Item&gt;&gt;</tspan>
+      </text>
+      <text x="0" y="0" width="106.35" height="16.75" transform="translate(55.8,20.75)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;font-weight:bold;">DikuAnsatteItem</tspan>
+      </text>
+      <text x="0" y="0" width="117.35" height="16.75" transform="translate(6,45.5)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;">name : scrapy.Field</tspan>
+      </text>
+      <text x="0" y="0" width="120.6" height="16.75" transform="translate(6,62.25)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;">status : scrapy.Field</tspan>
+      </text>
+      <text x="0" y="0" width="151.3" height="16.75" transform="translate(6,79)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;">profile_link : scrapy.Field</tspan>
+      </text>
+      <text x="0" y="0" width="120.25" height="16.75" transform="translate(6,95.75)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;">photo : scrapy.Field</tspan>
+      </text>
+      <text x="0" y="0" width="116.2" height="16.75" transform="translate(6,112.5)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;">email : scrapy.Field</tspan>
+      </text>
+      <text x="0" y="0" width="122.5" height="16.75" transform="translate(6,129.25)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;">phone : scrapy.Field</tspan>
+      </text>
+      <text x="0" y="0" width="175.65" height="16.75" transform="translate(6,146)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;">phone_internal : scrapy.Field</tspan>
+      </text>
+      <text x="0" y="0" width="102.5" height="16.75" transform="translate(6,162.75)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;">fax : scrapy.Field</tspan>
+      </text>
+      <text x="0" y="0" width="125" height="16.75" transform="translate(6,179.5)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;">mobile : scrapy.Field</tspan>
+      </text>
+      <text x="0" y="0" width="147" height="16.75" transform="translate(6,196.25)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;">workplace : scrapy.Field</tspan>
+      </text>
+      <text x="0" y="0" width="132.95" height="16.75" transform="translate(6,213)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;">location : scrapy.Field</tspan>
+      </text>
+      <text x="0" y="0" width="3.6" height="16.75" transform="translate(6,229.75)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;"/>
+      </text>
+    </g>
+  </g>
+  <g id="Class-ip6lhk0u-ko6" transform="translate(5,5)">
+    <desc>root/umlClass/class?version=4&amp;author=Cinergix</desc>
+    <g id="image">
+      <g id="graphics">
+        <rect x="1" y="1" width="290.25" height="31" fill="none" stroke="#35a6e2" stroke-width="2" stroke-opacity="0" stroke-linejoin="round" stroke-linecap="round"/>
+        <rect x="1" y="32" width="290.25" height="58.25" fill="none" stroke="#35a6e2" stroke-width="2" stroke-opacity="0" stroke-linejoin="round" stroke-linecap="round"/>
+        <rect x="1" y="90.25" width="290.25" height="52" fill="none" stroke="#35a6e2" stroke-width="2" stroke-opacity="0" stroke-linejoin="round" stroke-linecap="round"/>
+        <rect x="1" y="1" width="290.25" height="141.25" fill="#ffffff" stroke="#35a6e2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+        <path d="M 1 32 L 291.25 32 M 1 90.25 L 291.25 90.25 " fill="none" stroke="#35a6e2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+      </g>
+      <text x="0" y="0" width="83.75" height="16.75" transform="translate(103.25,4)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;font-weight:bold;">scrapy.Spider</tspan>
+      </text>
+      <text x="0" y="0" width="60.55" height="16.75" transform="translate(6,35)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;">name : str</tspan>
+      </text>
+      <text x="0" y="0" width="92.3" height="16.75" transform="translate(6,51.75)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;">start_urls : [str]</tspan>
+      </text>
+      <text x="0" y="0" width="141.1" height="16.75" transform="translate(6,68.5)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;">allowed_domains : [str]</tspan>
+      </text>
+      <text x="0" y="0" width="266.55" height="16.75" transform="translate(6,93.25)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;" xml:space="preserve">parse(arg list) :  scrapy.Item/scrapy.Request</tspan>
+      </text>
+      <text x="0" y="0" width="3.6" height="16.75" transform="translate(6,110)">
+        <tspan x="0" y="13.920019531249999" style="font-family:Lato;font-size:14px;fill:#4b4b4b;"/>
+      </text>
+    </g>
+  </g>
+  <g id="Connector-ip6lhk0u-ko7" transform="translate(-245,-580)">
+    <g id="graphics">
+      <path d="M 395 815 L 395 730 " fill="none" stroke="#f6902a" stroke-width="1.5"/>
+    </g>
+    <g id="toIcon" transform="translate(395,730)">
+      <metadata id="metadata3277">
+        <aaa:RDF xmlns:aaa="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+      </metadata>
+      <aaa:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttolerance="10" gridtolerance="10" guidetolerance="10" aab:pageopacity="0" aab:pageshadow="2" aab:window-width="1366" aab:window-height="706" id="namedview3273" showgrid="true" aab:zoom="45.254834" aab:cx="5.3422801" aab:cy="5.5253458" aab:window-x="-8" aab:window-y="-8" aab:window-maximized="1" aab:current-layer="Layer_1" xmlns:aaa="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:aab="http://www.inkscape.org/namespaces/inkscape"/>
+      <polygon points="0,0 -8,8 8,8 " id="polygon3271" transform="translate(0.00396088,0.7512019)" style="fill:#ffffff;stroke-width:1.5;stroke:#f6902a;" stroke="#f6902a" stroke-width="1.5"/>
+    </g>
+  </g>
+  <g id="Connector-ip6lhk0u-ko8" transform="translate(-245,-580)">
+    <g id="graphics">
+      <path d="M 645 925 L 520 925 " fill="none" stroke="#f6902a" stroke-width="1.5"/>
+    </g>
+    <g id="toIcon" transform="translate(520,925) rotate(-90)">
+      <polygon stroke="#f6902a" points="6,6 0,0 -6,6 0,12 " style="fill:#f6902a;stroke-width:1.5;stroke:#f6902a;" stroke-width="1.5" fill="#f6902a"/>
+    </g>
+  </g>
+  <creately-doc sync="false" revision="7" owner-name="Lasse H" format-version="1.0" id="ip6lhk0u1" updated-user="Lasse H" projectid="root">
+    <creatorUid>PHP89CDF-1714-4B27-B482-DC4BE91B3B73</creatorUid>
+    <docname>class_diagram</docname>
+    <notes/>
+    <date-updated>Wed Jun 8 2016 11:16:00 AM</date-updated>
+    <save-type/>
+    <description/>
+    <libraries>
+      <lib-ID>
+        <id>uml-class</id>
+      </lib-ID>
+    </libraries>
+    <koDefIDList>
+      <def-ID>root/umlClass/class?version=4&amp;author=Cinergix</def-ID>
+      <def-ID>root/umlClass/conn/associate</def-ID>
+      <def-ID>root/umlClass/conn/extends</def-ID>
+      <def-ID>root/umlClass/conn/aggregation</def-ID>
+      <def-ID>root/umlClass/conn/composition</def-ID>
+      <def-ID>root/umlClass/conn/packageConnection</def-ID>
+    </koDefIDList>
+    <connectors>
+      <connector model-type="CONNECTOR" show-obj-one-img="false" end-point-two-y="730" id="Connector-ip6lhk0u-ko7" zorder="3" end-point-two-x="395" end-point-one-y="815" end-point-one-x="395" show-obj-two-img="false" bi-directional="false">
+        <connection-def-id>Just a line</connection-def-id>
+        <fromIconSource/>
+        <anchPntIDObjTwo>flowPort_3</anchPntIDObjTwo>
+        <connection-desc/>
+        <anchPntIDObjOne/>
+        <object-one-id>Class-ip6lhk0u-ko1</object-one-id>
+        <group-id/>
+        <style alpha="NaN" line-color="16158762" line-style="" line-thickness="1.5"/>
+        <object-two-id>Class-ip6lhk0u-ko6</object-two-id>
+        <anchor-points/>
+        <connection-name/>
+        <compatibleConnDefs>
+          <String>root/umlClass/conn/associate</String>
+          <String>root/umlClass/conn/extends</String>
+          <String>root/umlClass/conn/aggregation</String>
+          <String>root/umlClass/conn/composition</String>
+          <String>root/umlClass/conn/packageConnection</String>
+          <String>Just a line</String>
+        </compatibleConnDefs>
+        <text wrapping="false" position="CONNECTOR_PATH_CENTER" text-rotation="NaN">
+          <content/>
+          <text-formats>
+            <text-format under-line="false" color="4934475" block-indent="0" end-index="-1" begin-index="-1" left-margin="0" bullet="false" align="center" leading="0" kerning="false" display="block" font="Lato" bold="false" letter-spacing="0" right-margin="0" order="0" indent="0" size="14" italic="false">
+              <url/>
+              <target/>
+            </text-format>
+          </text-formats>
+        </text>
+        <isLocked>false</isLocked>
+        <isVisible>false</isVisible>
+        <ownerDiagID>ip6lhk0u1</ownerDiagID>
+        <comments/>
+        <drawStyle>0</drawStyle>
+        <anchorsCustomized>false</anchorsCustomized>
+        <text-data-list>
+          <line-text location="0.5" isPrimary="true" position="" id="ip6lhk0u-tf5">
+            <text/>
+            <text-formats>
+              <text-format under-line="false" color="4934475" block-indent="0" end-index="-1" begin-index="-1" left-margin="0" bullet="false" align="center" leading="0" kerning="false" display="block" font="Lato" bold="false" letter-spacing="0" right-margin="0" order="0" indent="0" size="14" italic="false">
+                <url/>
+                <target/>
+              </text-format>
+            </text-formats>
+          </line-text>
+        </text-data-list>
+        <toIconSource>ArrowHead8</toIconSource>
+      </connector>
+      <connector model-type="CONNECTOR" show-obj-one-img="false" end-point-two-y="925" id="Connector-ip6lhk0u-ko8" zorder="4" end-point-two-x="520" end-point-one-y="925" end-point-one-x="645" show-obj-two-img="false" bi-directional="false">
+        <connection-def-id>root/umlClass/conn/composition</connection-def-id>
+        <fromIconSource/>
+        <anchPntIDObjTwo>flowPort_2</anchPntIDObjTwo>
+        <connection-desc/>
+        <anchPntIDObjOne/>
+        <object-one-id>Class-ip6lhk0u-ko2</object-one-id>
+        <group-id/>
+        <style alpha="NaN" line-color="16158762" line-style="" line-thickness="1.5"/>
+        <object-two-id>Class-ip6lhk0u-ko1</object-two-id>
+        <anchor-points/>
+        <connection-name/>
+        <compatibleConnDefs>
+          <String>root/umlClass/conn/associate</String>
+          <String>root/umlClass/conn/extends</String>
+          <String>root/umlClass/conn/aggregation</String>
+          <String>root/umlClass/conn/composition</String>
+          <String>root/umlClass/conn/packageConnection</String>
+          <String>Just a line</String>
+        </compatibleConnDefs>
+        <text wrapping="false" position="CONNECTOR_PATH_CENTER" text-rotation="NaN">
+          <content/>
+          <text-formats>
+            <text-format under-line="false" color="4934475" block-indent="0" end-index="-1" begin-index="-1" left-margin="0" bullet="false" align="center" leading="0" kerning="false" display="block" font="Lato" bold="false" letter-spacing="0" right-margin="0" order="0" indent="0" size="14" italic="false">
+              <url/>
+              <target/>
+            </text-format>
+          </text-formats>
+        </text>
+        <isLocked>false</isLocked>
+        <isVisible>false</isVisible>
+        <ownerDiagID>ip6lhk0u1</ownerDiagID>
+        <comments/>
+        <drawStyle>0</drawStyle>
+        <anchorsCustomized>false</anchorsCustomized>
+        <text-data-list>
+          <line-text location="0.5" isPrimary="true" position="" id="ip6lhk0u-tf10">
+            <text/>
+            <text-formats>
+              <text-format under-line="false" color="4934475" block-indent="0" end-index="-1" begin-index="-1" left-margin="0" bullet="false" align="center" leading="0" kerning="false" display="block" font="Lato" bold="false" letter-spacing="0" right-margin="0" order="0" indent="0" size="14" italic="false">
+                <url/>
+                <target/>
+              </text-format>
+            </text-formats>
+          </line-text>
+        </text-data-list>
+        <toIconSource>/Generic/DiamondFillArrow.svg</toIconSource>
+      </connector>
+    </connectors>
+    <tags>class,uml,tech,software</tags>
+    <resources/>
+    <source-tool/>
+    <published>false</published>
+    <save-comments/>
+    <inSync>false</inSync>
+    <date-created>Wed Jun 8 2016 11:16:00 AM</date-created>
+    <kodefs/>
+    <dtLastEdit>LAST_EDIT_CREATION</dtLastEdit>
+    <editHash/>
+    <viewHash/>
+    <revisionUserId>PHP89CDF-1714-4B27-B482-DC4BE91B3B73</revisionUserId>
+    <creator/>
+    <embedHash>rEiMQqmes3TGvQn2aTB9rCuk=</embedHash>
+    <comments/>
+    <diagramTypeId>class-diagram</diagramTypeId>
+    <revision-user>ninjalf2@gmail.com</revision-user>
+    <canvas-width>1500</canvas-width>
+    <objects>
+      <object name="" type="NORMAL" locked="false" visible="true" id="Class-ip6lhk0u-ko1" model-type="NORMAL" zorder="0">
+        <dimension x="275" scale-y="Infinity" angle="0" y="815" scale-x="Infinity" width="243.85" height="224.65">
+          <matrix ty="0" b="0" d="1" c="0" tx="0" a="1"/>
+          <default-bounds x="0" y="0" width="243.85" height="224.65"/>
+        </dimension>
+        <kobject-def-id>root/umlClass/class?version=4&amp;author=Cinergix</kobject-def-id>
+        <text wrapping="false" position="COVER" text-rotation="NaN">
+          <content>&lt;&lt;scrapy.Spider&gt;&gt;(~!nl!~)DikuAnsatteSpider(~!nl!~)--(~!nl!~)items : [DikuAnsatteItem](~!nl!~)name : str(~!nl!~)start_urls : [str](~!nl!~)allowed_domains : [str](~!nl!~)--(~!nl!~)start() : None(~!nl!~)parse(response) : scrapy.Request(~!nl!~)parse_detail( arg list ) : scrapy.Item(~!nl!~)parse_pure( arg list ) : scrapy.Item(~!nl!~)parse_other() : scrapy.Item(~!nl!~)</content>
+          <text-formats>
+            <text-format under-line="false" color="4934475" block-indent="0" end-index="155" begin-index="0" left-margin="0" bullet="false" align="left" leading="2" kerning="false" display="block" font="Lato" bold="false" letter-spacing="0" right-margin="0" order="0" indent="0" size="14" italic="false">
+              <url/>
+              <target/>
+            </text-format>
+            <text-format under-line="false" color="4934475" block-indent="0" end-index="169" begin-index="155" left-margin="0" bullet="false" align="left" leading="2" kerning="true" display="block" font="Lato" bold="false" letter-spacing="0" right-margin="0" order="1" indent="0" size="14" italic="false">
+              <url/>
+              <target/>
+            </text-format>
+            <text-format under-line="false" color="4934475" block-indent="0" end-index="197" begin-index="169" left-margin="0" bullet="false" align="left" leading="2" kerning="false" display="block" font="Lato" bold="false" letter-spacing="0" right-margin="0" order="2" indent="0" size="14" italic="false">
+              <url/>
+              <target/>
+            </text-format>
+            <text-format under-line="false" color="4934475" block-indent="0" end-index="208" begin-index="197" left-margin="0" bullet="false" align="left" leading="2" kerning="true" display="block" font="Lato" bold="false" letter-spacing="0" right-margin="0" order="3" indent="0" size="14" italic="false">
+              <url/>
+              <target/>
+            </text-format>
+            <text-format under-line="false" color="4934475" block-indent="0" end-index="234" begin-index="208" left-margin="0" bullet="false" align="left" leading="2" kerning="false" display="block" font="Lato" bold="false" letter-spacing="0" right-margin="0" order="4" indent="0" size="14" italic="false">
+              <url/>
+              <target/>
+            </text-format>
+            <text-format under-line="false" color="4934475" block-indent="0" end-index="245" begin-index="234" left-margin="0" bullet="false" align="left" leading="2" kerning="true" display="block" font="Lato" bold="false" letter-spacing="0" right-margin="0" order="5" indent="0" size="14" italic="false">
+              <url/>
+              <target/>
+            </text-format>
+            <text-format under-line="false" color="4934475" block-indent="0" end-index="274" begin-index="245" left-margin="0" bullet="false" align="left" leading="2" kerning="false" display="block" font="Lato" bold="false" letter-spacing="0" right-margin="0" order="6" indent="0" size="14" italic="false">
+              <url/>
+              <target/>
+            </text-format>
+          </text-formats>
+        </text>
+        <collapse expanded-y-pos="NaN" expanded-width="NaN" collapsed="false" collapsed-x-pos="NaN" expanded-x-pos="NaN" collapsed-y-pos="NaN" collapsed-width="NaN" collapsed-height="NaN" expanded-height="NaN"/>
+        <style alpha="1" line-color="3516130" fill-color="16777215" fill="true" fill-gradient="GRADIENT_FILL_SOLID" line-style="LINESTYLE_NAME_SOLID" line-thickness="2"/>
+        <container-id/>
+        <comments/>
+        <children/>
+        <libraries/>
+        <group-id/>
+        <data-items>
+          <data-item type="" name="classStyle" value="Fixed"/>
+          <data-item type="" name="DiagramLinkURL" value=""/>
+          <data-item type="" name="classData" value="&lt;&lt;scrapy.Spider>>(~!nl!~)DikuAnsatteSpider(~!nl!~)--(~!nl!~)items : [DikuAnsatteItem](~!nl!~)name : str(~!nl!~)start_urls : [str](~!nl!~)allowed_domains : [str](~!nl!~)--(~!nl!~)start() : None(~!nl!~)parse(response) : scrapy.Request(~!nl!~)parse_detail( arg list ) : scrapy.Item(~!nl!~)parse_pure( arg list ) : scrapy.Item(~!nl!~)parse_other() : scrapy.Item(~!nl!~)"/>
+        </data-items>
+      </object>
+      <object name="" type="NORMAL" locked="false" visible="true" id="Class-ip6lhk0u-ko2" model-type="NORMAL" zorder="1">
+        <dimension x="645" scale-y="Infinity" angle="0" y="800" scale-x="Infinity" width="220" height="252.5">
+          <matrix ty="0" b="0" d="0.640045166015625" c="0" tx="0" a="0.4212799072265625"/>
+          <default-bounds x="0" y="0" width="522.2" height="394.5"/>
+        </dimension>
+        <kobject-def-id>root/umlClass/class?version=4&amp;author=Cinergix</kobject-def-id>
+        <text wrapping="false" position="COVER" text-rotation="NaN">
+          <content>&lt;&lt;scrapy.Item&gt;&gt;(~!nl!~)DikuAnsatteItem(~!nl!~)--(~!nl!~)name : scrapy.Field(~!nl!~)status : scrapy.Field(~!nl!~)profile_link : scrapy.Field(~!nl!~)photo : scrapy.Field(~!nl!~)email : scrapy.Field(~!nl!~)phone : scrapy.Field(~!nl!~)phone_internal : scrapy.Field(~!nl!~)fax : scrapy.Field(~!nl!~)mobile : scrapy.Field(~!nl!~)workplace : scrapy.Field(~!nl!~)location : scrapy.Field(~!nl!~)</content>
+          <text-formats>
+            <text-format under-line="false" color="4934475" block-indent="0" end-index="288" begin-index="0" left-margin="0" bullet="false" align="left" leading="2" kerning="false" display="block" font="Lato" bold="false" letter-spacing="0" right-margin="0" order="0" indent="0" size="14" italic="false">
+              <url/>
+              <target/>
+            </text-format>
+          </text-formats>
+        </text>
+        <collapse expanded-y-pos="NaN" expanded-width="NaN" collapsed="false" collapsed-x-pos="NaN" expanded-x-pos="NaN" collapsed-y-pos="NaN" collapsed-width="NaN" collapsed-height="NaN" expanded-height="NaN"/>
+        <style alpha="1" line-color="3516130" fill-color="16777215" fill="true" fill-gradient="GRADIENT_FILL_SOLID" line-style="LINESTYLE_NAME_SOLID" line-thickness="2"/>
+        <container-id/>
+        <comments/>
+        <children/>
+        <libraries/>
+        <group-id/>
+        <data-items>
+          <data-item type="" name="classStyle" value="Fixed"/>
+          <data-item type="" name="DiagramLinkURL" value=""/>
+          <data-item type="" name="classData" value="&lt;&lt;scrapy.Item>>(~!nl!~)DikuAnsatteItem(~!nl!~)--(~!nl!~)name : scrapy.Field(~!nl!~)status : scrapy.Field(~!nl!~)profile_link : scrapy.Field(~!nl!~)photo : scrapy.Field(~!nl!~)email : scrapy.Field(~!nl!~)phone : scrapy.Field(~!nl!~)phone_internal : scrapy.Field(~!nl!~)fax : scrapy.Field(~!nl!~)mobile : scrapy.Field(~!nl!~)workplace : scrapy.Field(~!nl!~)location : scrapy.Field(~!nl!~)"/>
+        </data-items>
+      </object>
+      <object name="" type="NORMAL" locked="false" visible="true" id="Class-ip6lhk0u-ko6" model-type="NORMAL" zorder="2">
+        <dimension x="250" scale-y="Infinity" angle="0" y="585" scale-x="Infinity" width="292.25" height="143.25">
+          <matrix ty="0" b="0" d="0.7383880615234375" c="0" tx="0" a="1"/>
+          <default-bounds x="0" y="0" width="292.25" height="194"/>
+        </dimension>
+        <kobject-def-id>root/umlClass/class?version=4&amp;author=Cinergix</kobject-def-id>
+        <text wrapping="false" position="COVER" text-rotation="NaN">
+          <content>scrapy.Spider(~!nl!~)--(~!nl!~)name : str(~!nl!~)start_urls : [str](~!nl!~)allowed_domains : [str](~!nl!~)--(~!nl!~)parse(arg list) :  scrapy.Item/scrapy.Request(~!nl!~)</content>
+          <text-formats>
+            <text-format under-line="false" color="4934475" block-indent="0" end-index="16" begin-index="0" left-margin="0" bullet="false" align="left" leading="2" kerning="false" display="block" font="Lato" bold="false" letter-spacing="0" right-margin="0" order="0" indent="0" size="14" italic="false">
+              <url/>
+              <target/>
+            </text-format>
+            <text-format under-line="false" color="4934475" block-indent="0" end-index="70" begin-index="16" left-margin="0" bullet="false" align="left" leading="2" kerning="true" display="block" font="Lato" bold="false" letter-spacing="0" right-margin="0" order="1" indent="0" size="14" italic="false">
+              <url/>
+              <target/>
+            </text-format>
+            <text-format under-line="false" color="4934475" block-indent="0" end-index="120" begin-index="70" left-margin="0" bullet="false" align="left" leading="2" kerning="false" display="block" font="Lato" bold="false" letter-spacing="0" right-margin="0" order="2" indent="0" size="14" italic="false">
+              <url/>
+              <target/>
+            </text-format>
+          </text-formats>
+        </text>
+        <collapse expanded-y-pos="NaN" expanded-width="NaN" collapsed="false" collapsed-x-pos="NaN" expanded-x-pos="NaN" collapsed-y-pos="NaN" collapsed-width="NaN" collapsed-height="NaN" expanded-height="NaN"/>
+        <style alpha="1" line-color="3516130" fill-color="16777215" fill="true" fill-gradient="GRADIENT_FILL_SOLID" line-style="LINESTYLE_NAME_SOLID" line-thickness="2"/>
+        <container-id/>
+        <comments/>
+        <children/>
+        <libraries/>
+        <group-id/>
+        <data-items>
+          <data-item type="" name="classStyle" value="Fixed"/>
+          <data-item type="" name="DiagramLinkURL" value=""/>
+          <data-item type="" name="classData" value="scrapy.Spider(~!nl!~)--(~!nl!~)name : str(~!nl!~)start_urls : [str](~!nl!~)allowed_domains : [str](~!nl!~)--(~!nl!~)parse(arg list) :  scrapy.Item/scrapy.Request(~!nl!~)"/>
+        </data-items>
+      </object>
+    </objects>
+    <app-version/>
+    <canvas-height>1500</canvas-height>
+  </creately-doc>
+</svg>

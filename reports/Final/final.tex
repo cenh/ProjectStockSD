@@ -97,7 +97,8 @@ Vi foretog en løs priotering af produktets \textit{use cases}. Vi vurderede, hv
 
 \subsection*{\textit{Use cases}}
 
-\subsubsection*{Kernefunktionalitetter}
+\subsubsection{Kernefunktionaliteter}
+\label{sec:corefuncs}
 \begin{enumerate}
 	\item Det skal være muligt at se et katalog over projekter.
 	\item Systemet skal kunne præsentere \textit{up-to-date} oplysninger om potentielle vejledere, herunder:
@@ -110,6 +111,7 @@ Vi foretog en løs priotering af produktets \textit{use cases}. Vi vurderede, hv
 \end{enumerate}
 
 \subsubsection*{\textit{'Nice-to-have'}-funktionaliteter}
+\label{sec:nicefuncs}
 \begin{enumerate}
   \item Systemet skal kunne vise projekter knyttet til specifikke \textit{keywords}.
 
@@ -132,7 +134,6 @@ Et Django-projekt har en struktur der ser således ud:\\
         \item{project\_stock}
         \begin{nodeC}
             \item{\_\_init\_\_py}
-            \item{admin.py}
             \item{apps.py}
             \item{models.py}
             \item{settings.py}
@@ -143,9 +144,64 @@ Et Django-projekt har en struktur der ser således ud:\\
         \end{nodeC}
     \end{nodeC}
 \end{nodeC}~\\
-Nogle af disse filer følger med når man starter et projekt fra bunden, bl.a. \_\_init\_\_.py, settings.py, urls.py og wsgi.py
+Nogle af disse filer følger med når man starter et projekt fra bunden, bl.a. \_\_init\_\_.py, settings.py, urls.py og wsgi.py\\
+% Forklaring følger
+\\
+Vores specifikke struktur kan findes i bilag under ...
 
 \subsection{Modularitet}
+Django er bygget op således at alle . Altså kan man tilføje/fjerne \texttt{models.py} for at tilføje/fjerne projektets databasestruktur. Ligeledes kan man tilføje/fjerne \texttt{tests.py} afhængigt af om man vil have tests. Alternativt kan man lave en undermappe der hedder tests og placere sine \texttt{test\_*.py} filer her. Dette er en funktion indbygget i Pythons \texttt{unittest} modul, som automatisk leder i denne mappe efter navne der starter med "test".
+Dette har vi gjort for at dele vores unit tests op og dermed gøre dem lettere overskuelige. F.eks. har vi både en fil til at teste vores models og en til at teste vores views, \texttt{test\_models.py} og \texttt{test\_views.py}.
+% Forklar views og models tidligere? i introduktion måske?
+
+\subsection{Scraper(e)}
+Vi har en funktionel scraper, der kan gemme information fra diku.dk/Ansatte, og alle underlinks for alle ansatte på siden.\\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{scraper_class_diagram.png}
+    \caption{Scraper klassediagram}
+    \label{fig:scraper_class_diagram}
+\end{figure}
+
+\subsection{Frontend}
+Under designet af vores frontend har der ikke været fokus på det æstætiske eller brugervenlighe, men i stedet på hvor meget information vi kan distribuere til studerende som muligt. Vi påstår ikke at et flot og brugervenligt design ikke er vigtigt, men vi ville helst opfylde så mange krav så muligt, og æstætik var ikke en prioritet.\\
+\\
+Herunder har vi de mest essentielle sider i vore webapplikation.
+
+\subsubsection{Projekter og vejledere}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.33]{frontend_projects.png}
+    \caption{Oversigten over projekter på siden}
+    \label{fig:frontend_projects}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.33]{frontend_supervisors.png}
+    \caption{Oversigten over vejledere på siden (ikke alle vejledere kan ses på billedet)}
+    \label{fig:frontend_supervisors}
+\end{figure}
+~\\
+\hyperref[fig:frontend_projects]{Figur \ref*{fig:frontend_projects}} og \hyperref[fig:frontend_supervisors]{figur \ref*{fig:frontend_supervisors}} viser de to vigtigste sider i vores webapplikation. Disse to sider viser information omkring projekter og vejledere, og opfylder dermed henholdsvis krav 1 og 2 fra \hyperref[sec:corefuncs]{\ref*{sec:corefuncs} \nameref*{sec:corefuncs}}.\\
+
+\subsubsection{Groups}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.33]{frontend_groups.png}
+    \caption{Oversigten over grupper på siden}
+    \label{fig:frontend_groups}
+\end{figure}
+Her kan studerende se en oversigt over grupper med vejledere inden for et specifikt felt og dermed finde adskillige vejledere inden for feltet som den studerende interesserer sig for.
+Denne side opfylder krav 1 under \hyperref[sec:nicefuncs]{\ref*{sec:nicefuncs} \nameref*{sec:nicefuncs}}.
+
+\subsubsection{Registrering}
+Her kan en vejleder registrere sig på siden, men kun hvis vejlederen allerede står som vejleder på siden, enten indhentet vha. scraperen eller indtastet manuelt af en "superuser".\\
+% forklar superuser
+Siden er ikke helt funktionel, da den ikke rigtigt gør noget, men dette ville ikke kræve meget ekstra arbejde,.
+Denne side ville opfylde krav 3 fra \hyperref[sec:corefuncs]{\ref*{sec:corefuncs} \nameref*{sec:corefuncs}}, hvis den havde været færdigimplementeret.\\
+
+\subsubsection{Adminpanel}
 
 \section{Afprøvning}
 \label{sec:afproevning}
