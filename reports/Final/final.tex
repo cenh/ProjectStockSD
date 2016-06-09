@@ -253,7 +253,7 @@ Vi har til projektet besluttet ikke at bruge et specifikt IDE til at udvikle i. 
 Vi besluttede os for at vi hver især arbejder mere effektivt og bedre, hvis vi udvikler i det miljø der passer os bedst indviduelt. Det vil sige, at nogle medlemmerne af vores gruppe, selv har stået for at kunne afprøve programmet, lave refaktorering og afvikling af hjemmesiden. At kunne gøre brug af værktøjer til refaktorering har ikke været et stort problem til vores projekt, da som tidligere nævnt er Django meget specifik, og klasser, funktioner og andet skal se ud på en meget bestemt måde. Det samme gælder for kode kreation, som bliver håndteret af manage.py.
 
 \subsection{Github}
-Vi har brugt \textit{issues} og \textit{milepæle} på Github platformen, til at holde styr på hvilke arbejdsopgaver eller use cases vi gerne vil have klaret inden en given iteration er færdig. Milepælene er sat efter delafleveringerne og den endelig rapport, derudover har vi en ekstra milepæl, som bliver brugt til at holde styr på opgaver vi godt kunne tænke os at implementere, men som ikke er strengt nødvendige kaldet 'nice to haves'. Et medlem kan derfor sætte sig på en opgave, så alle andre kan se hvem der arbejder på hvad.
+Vi har brugt \textit{issues} og \textit{milepæle} på Github platformen, til at holde styr på hvilke arbejdsopgaver eller use cases vi gerne vil have klaret inden en given iteration er færdig. Milepælene er sat efter delafleveringerne og den endelig rapport, derudover har vi en ekstra milepæl, som bliver brugt til at holde styr på opgaver vi godt kunne tænke os at implementere, men som ikke er strengt nødvendige kaldet 'nice to haves'. Et medlem kan derfor sætte sig på en opgave, så alle andre kan se hvem der arbejder på hvad. Der kan læses mere om, hvordan vi har brugt Git og hvilke udfordringer vi har haft i afsnit \ref{subsec:Git}.
 
 \section{Diskussion og reflektion} % Alle
 \label{sec:diskussion}
@@ -262,7 +262,7 @@ Vi har brugt \textit{issues} og \textit{milepæle} på Github platformen, til at
 Vi har som gruppe bestræbt os på at mødes mindst én gang om ugen. Dette selvorganiserede møde, er ud over de ugentlige møder med instruktorerne. På disse selvorganiserede ugentlige møder har vi; uddelegeret arbejdsopgaver, diskuteret og arbejdet med forskellige værktøjer og \textit{frameworks}.\\
 Disse møder har fungeret godt, det har været mere effektivt at kunne kommunikere \textit{face-to-face} i stedet for skriftligt.
 
-\subsubsection{Git}
+\subsection{Git}
 \label{subsec:Git}
 Vi har igennem projektet arbejdet meget med Git, og herunder den online service GitHub, og vi har alle lært en del om Git. I starten af forløbet fik vi mange \textit{merge conflicts}. Disse opstår, når f.eks. flere har foretaget ændringer i samme linje kode, og Git ikke kan "gætte", hvilke af disse ændringer, der skal vælges. Vi undersøgte problemet, og fandt frem til nogle Git-opsætninger som hjalp med at undgå disse \textit{merge conflicts}. \\
 Vi har ligeldes benyttet flere af \textit{GitHub}s forskellige funktionaliteter, til intern kommunikation. I roden på vores GitHub \textit{repository} findes filen \texttt{README.md}. Denne fil har været brugt til vidensdeling.
@@ -284,6 +284,9 @@ Derimod kunne vi godt have have benyttet en test-first tilgang til vores \textit
 Den \textit{web scraper} vi har udviklet, er designet til at høste data fra siden \url{http://diku.dk/Ansatte}, samt profilsiderne for Datalogisk Instituts ansatte. Der linkes til disse profilsider fra \url{http://diku.dk/Ansatte}.\\
 Vi har vurderet, at det ville være svært og formentlig unødigvendigt at designe en abstrakt \textit{scraper}, som ville være i stand til at høste data fra mange forskellige websteder. At ekstrahere data fra et specifikt websted, afhænger i høj grad af, hvordan dette websted er opbygget. Er den information man er interesseret i, f.eks. placeret i  HTML-tabeller, skal man vide hvilke \textit{id tags} man skal ledes efter. Ligeledes skal man vide, hvordan denne information er formatteret. \\
 Da vi ikke har fundet andre websteder, hvor man kan høste information om de ansatte, vurderede vi at ikke ville være i overenstemmelse med agile tankegang at prøve at designe en abstrakt \textit{scraper}.
+
+\subsection{Distrubution af arbejdet}
+Arbejdet med projektets forskellige elementer er blevet fordelt således, at hvert element er blevet udført af en eller to af gruppens medlemmer. En fordel ved denne metode er, at det er nemmere at uddelegere arbejdet, og at gruppens medlemmer skal fokusere på færre ting. Men samtidig kan det betyde at koden kan indeholde flere fejl. Ligeledes kan det betyde at det kan være sværere for udefrakommende personer eller de andre gruppemedlemmer at forstå de enkelte dele af projektet. Da man kan tendens til at skrive enten kode eller rapport på en måde, der kun er foreståelig for en selv.    
 
 \section{Videreudvikling}
 \label{sec:udvikling}
