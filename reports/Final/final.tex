@@ -150,6 +150,11 @@ Nogle af disse filer følger med når man starter et projekt fra bunden, bl.a. \
 \\
 Vores specifikke struktur kan findes i bilag under ...
 
+\subsection{Generelt om Django frameworket}
+Django frameworket er opbygget efter designmønstret \textit{Model-View-Controller (MVC)}. Udviklerne har dog valgt navnekonventionen \textit{Model-Template-View (MTV)} \cite{djangoFAQ}. I Django er \textit{model} ansvarlig for at tilgå og validere data fra f.eks. en database. Her kan Django frameworket hjælpe således, at et felt i Django-model svarer til et felt i en databasetabel. \\
+Et \textit{view} er en Python-funktion, der tager en web-forespørgsel (\textit{request}) og returnerer web-respons \cite{djangoView}. \\
+\textit{Template} benyttes til dynamisk at genere HTML-sider, der b.la. til visuelt at præsentere information for brugeren. Django har sit eget indbyggede \textit{template language} \cite{djangoTemplate}. Vi har benyttet dette \textit{template language} i vores projekt.  
+
 \subsection{Modularitet}
 Django er bygget op således, at (næsten) alle moduler kan tilføjes, ændres og fjernes som man ønsker, uden at det betyder noget for den overordnede applikation. Altså kan man f.eks. tilføje/fjerne \texttt{models.py} for at tilføje/fjerne projektets databasestruktur eller tilføje/fjerne \texttt{tests.py} afhængigt af om man vil have tests eller ej. Alternativt kan man lave en undermappe der hedder tests og placere sine \texttt{test\_*.py} filer her. Dette er en funktion indbygget i Pythons \texttt{unittest} modul, som automatisk leder i denne mappe efter navne der starter med "test".
 Dette har vi gjort for at dele vores unit tests op og dermed gøre dem lettere overskuelige. F.eks. har vi både en fil til at teste vores models og en til at teste vores views, \texttt{test\_models.py} og \texttt{test\_views.py}.
@@ -169,7 +174,7 @@ Scraperen er implementeret vha. et eksternt Python bibliotek kaldet Scrapy.
 % mere forklaring
 
 \subsection{Frontend}
-Under designet af vores frontend har der ikke været fokus på det æstætiske eller brugervenlighed, men i stedet på hvor meget information vi kan distribuere til de studerende. Vi påstår ikke at et flot og brugervenligt design ikke er vigtigt, men vi ville helst opfylde så mange krav så muligt, og æstætik var ikke en prioritet.\\
+Under designet af vores frontend har der ikke været fokus på det æstetiske eller brugervenlighed, men i stedet på hvor meget information vi kan distribuere til de studerende. Vi påstår ikke at et flot og brugervenligt design ikke er vigtigt, men vi ville helst opfylde så mange krav så muligt, og æstetik var ikke en prioritet.\\
 \\
 Herunder har vi de mest essentielle sider i vores webapplikation.
 
@@ -313,6 +318,15 @@ Vi vil diskutere hvilke krav som vi ikke nåede at implementere, men som vi gern
 	\emph{Code Complete},
 	2nd edition,
 	2004.
+	
+\bibitem{djangoFAQ}
+	\url{https://docs.djangoproject.com/en/1.9/faq/general/}
+
+\bibitem{djangoView}	
+	\url{https://docs.djangoproject.com/ja/1.9/topics/http/views/}
+
+\bibitem{djangoTemplate}
+	\url{https://docs.djangoproject.com/en/1.9/topics/templates/}
 
 \end{thebibliography}
 
