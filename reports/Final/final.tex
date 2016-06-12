@@ -218,27 +218,35 @@ Denne side ville opfylde krav 3 fra \hyperref[sec:corefuncs]{\ref*{sec:corefuncs
 \newpage
 \section{Afprøvning}
 \label{sec:afproevning}
-Til afprøvning og test af projektet gjorde vi os nogle forskellige overvejelser, vi var bl.a. i tvivl om hvorvidt vi
-skulle anvende Fitnesse eller robot frameworket. Vi endte med at bruge robot til at skrive automatiske acceptancetests.
-Disse tests er yderligere beskrevet i Bilag E.\\
-Vi har valgt ikke at sikre applikationens opfyldelse af krav ved tests. Det har vi gjort grundet, at vi prioriterede
-færdigudvikling af projektet over hvad vi vil mene er overflødig test. Her menes der, at vi kan se og ved at hjemmesiden
-opfylder de stillede krav fra det tidligere krav-afsnit. Det ved vi fordi, vi har brugt og manuelt bevæget os rundt på
-hjemmesiden, løbende har opdaget fejl og mangler og har fået dem implementeret. \\
-Til fremtidig brug er vores acceptance-tests skrevet således at selvom der skulle opstå ændringer på hjemmesiden, kan vi
-nemt bruge dem igen. Det kan vi fordi de tilgår elementer i den tabel, som hjemmesiden repræsenterer information i, i
-stedet for at tilgå de specifikke elementer cellerne indeholder. For testen er det altså ligegyldigt hvad der står i
-tabellen, bare siden har samme struktur. Skulle selve strukturen af sitet dog ændres, kan vi forholdsvis nemt omskrive
-testene til at tilgå elementer på en ny måde, da det blot er kodedelen som beskriver hvilket element der skal tilgås, som
-skal omskrives. \\
-Da vores tests, som beskrevet ovenfor, er forholdsvis automatiske og agile, kan vi nemt anvende dem når vi tilføjer ting
-til sitet, eller ændrer på de ting som i forvejen er tilstede. Det har givet mulighed for ubesværet at teste, mens vi har
-arbejdet på projektet. \\
-Selvom vi bruger django, som er et færdiggjort og stort framework, har vi valgt at unit-teste dele af projektet, for at
-sikre fejlbarheden så vidt som muligt. Django-funktionerne har vi i grove træk testet ved at opsætte to scenarier for de
-forskellige framework funktioner, ét scenarie som får forkerte specifikationer og ét scenarie som får de korrekte. Således
-kan vi se om de fejler eller kører som ønsket og forventet. Disse tests er også yderligere beskrevet i Bilag E.
+\subsection{Acceptance tests}
+Til afprøvning og test af projektet gjorde vi os nogle forskellige overvejelser, vi var bl.a. i tvivl om hvorvidt vi skulle anvende Fitnesse eller robot frameworket. Vi endte med at bruge robot til at skrive automatiske acceptancetests. I samspil med robot, bruger vi et bibliotek kaldt \textit{Selenium2Library}, som gør det muligt at tilgå elementer på hjemmeside vha. html og xml.
+Disse tests er yderligere beskrevet i Bilag D.\\
 
+\subsection{Videreudvikling og vedligeholdelse}
+Vi har valgt ikke at sikre applikationens opfyldelse af krav ved tests. Det har vi gjort grundet, at vi prioriterede færdigudvikling af projektet over hvad vi vil mene er overflødig test. Her menes der, at vi kan se og ved at hjemmesiden opfylder de stillede krav fra det tidligere krav-afsnit. Det ved vi fordi, vi har brugt og manuelt bevæget os rundt på hjemmesiden, løbende har opdaget fejl og mangler og har fået dem implementeret. \\
+Til fremtidig brug er vores acceptance-tests skrevet således at selvom der skulle opstå ændringer på hjemmesiden, kan vi nemt bruge dem igen. Det kan vi fordi de tilgår elementer i den tabel, som hjemmesiden repræsenterer information i, i stedet for at tilgå de specifikke elementer cellerne indeholder. For testen er det altså ligegyldigt hvad der står i tabellen, bare siden har samme struktur. Skulle selve strukturen af sitet dog ændres, kan vi forholdsvis nemt omskrive testene til at tilgå elementer på en ny måde, da det blot er kodedelen som beskriver hvilket element der skal tilgås, som skal omskrives. \\
+Da vores tests, som beskrevet ovenfor, er forholdsvis automatiske og agile, kan vi nemt anvende dem når vi tilføjer ting til sitet, eller ændrer på de ting som i forvejen er tilstede. Det har givet mulighed for ubesværet at teste, mens vi har arbejdet på projektet. \\
+
+\subsection{Unit-tests}
+Selvom vi bruger django, som er et færdiggjort og stort framework, har vi valgt at unit-teste dele af projektet, for at sikre fejlbarheden så vidt som muligt. Django-funktionerne har vi i grove træk testet ved at opsætte to scenarier for de forskellige framework funktioner, ét scenarie som får forkerte specifikationer og ét scenarie som får de korrekte. Således kan vi se om de fejler eller kører som ønsket og forventet. Disse tests er også yderligere beskrevet i Bilag D.
+
+\subsection{Kørsel af test}
+For at efterprøve vores tests, kan de køres på følgende vis
+\begin{enumerate}
+  \item Installer robot vha. pip installer og følgende kommando\\
+  \texttt{pip install robotframework}
+  \item Find ind i test mappen via følgende sti \\ \texttt{ProjectStockSD/project\_stock/project\_stock/tests/RobotTests/real\_tests} 
+  \item Kør den valgte test ved at skrive \texttt{robot valgte test} eksempelvis
+  \texttt{robot ProjectsTest.robot}
+  \item Hvis robot er installeret korrekt skulle terminalen gerne se således ud 
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{test.png}
+        \caption{Konsol output efter robot test}
+        \label{fig:console output}
+    \end{figure}~
+  \item Yderligere kan man se udvidet information om testen i de generede filer \texttt{log.html} og \texttt{report.html} uddrag af disse kan også findes i Bilag D 
+\end{enumerate}
 \section{Udviklingsmiljø}
 \label{sec:udvikling}
 Vi vil i dette afsnit beskrive vores opsætning af versionsstyring, og hvordan vi har opbygget vores struktur for projektet. Endvidere hvilke værktøjer vi har brugt og hvordan vi har brugt dem.
@@ -416,7 +424,7 @@ Tabllen, der indeholder hvilke brugere, der har hvilke rettigheder i underafsnit
 \subsection{Bilag D}
 
 \newpage
-\subsection{Bilag E}
+\subsection{Bilag D}
 \subsubsection*{Acceptance-tests}
 \begin{center}
 	\begin{tabular}{|p{0.08\textwidth}|p{0.44\textwidth}|p{0.44\textwidth}|}
@@ -427,7 +435,7 @@ Tabllen, der indeholder hvilke brugere, der har hvilke rettigheder i underafsnit
 
 	Test 2 & Denne tests funktion er at teste om man kan tilgå vejledere fra vejleder siden, og om disse informationer er vist korrekt. Som eksempel bruger vi navnet ''Torben'', scriptet går så listen af vejledere igennem, finder et resultat i tabellen hvor ''Torben'' indgår, og tager et screenshot af Torbens informationer. & Denne test er lidt mere manuel da den kræver at vi gennemser oplysningerne fra screenshottet. Men \textit{Robot} returnerer at testen er passed, da det lykkes den at finde en vejleder ved navn ''Torben'' og tage et screenshot af hans side.\\ \hline
 
-	Test 3 & Denne test hjælper på sin vis den forhenværende test. Dens funktion er at sikre at de scrapede informationer er korrekte. Det gør den ved først at gå ind på DIKU's hjemmeside og finde oplysninger på en vejleder. Herefter går den så på vores side, finder samme vejleder og ser om de 2 stykker information er de samme ved en \textit{Robot}-funktion kaldt \textit{IsEqual} & Denne test som den eneste returner en bool, og da denne er true, viser det at de to stykker information er sande, og scraperen derfor virker korrekt. \newline
+	Test 3 & Denne test hjælper på sin vis den forhenværende test. Dens funktion er at sikre at de scrapede informationer er korrekte. Det gør den ved først at gå ind på Diku's hjemmeside og finde oplysninger på en vejleder. Herefter går den så på vores side, finder samme vejleder og ser om de 2 stykker information er de samme ved en \textit{Robot}-funktion kaldt \textit{IsEqual} & Denne test som den eneste returner en bool, og da denne er true, viser det at de to stykker information er sande, og scraperen derfor virker korrekt. \newline
 	Ligeledes hjælper det os med, ikke at skulle tjekke test 2 manuelt, når vi ved at de oplysninger der fremgår på siderne er sande. \\ \hline
 	\end{tabular}
 \end{center}
@@ -444,5 +452,20 @@ Tabllen, der indeholder hvilke brugere, der har hvilke rettigheder i underafsnit
 
 	Test 3 & Den sidste unit-test tester om Django kan tilgå sig selv, ved at sende requests til de forskellige dele af projektet og returnerer true hvis den får det rigtige output. Den består af fem underfunktioner, som tilgår de forskellige primære views. Hver af disse funktioner returner en ''status\_code'' som fortæller hvordan funktionen forløb. Hvis denne status\_code er i mellem 200 og 400 betyder det at henvisningen er som ønsket. & Ved gennemløb af alle requests ser vi de forskellige funktioners ''status\_code'' værdier, og da de alle returnerer værdier imellem de ønskede 200 - 400, passerer testen. \\ \hline
 	\end{tabular}
+\subsubsection*{Robot resultater}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{report.png}
+        \caption{Robot testens rapport}
+        \label{fig:robot report}
+    \end{figure}~
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{log.png}
+        \caption{Robot testens log}
+        \label{fig:robot log}
+    \end{figure}~
+\end{center}
+\end{document}
 \end{center}
 \end{document}
