@@ -80,7 +80,10 @@
 
 \section{Indledning}
 \label{sec:indledning}
-% Christian
+Hvert år skal datalogi studerende på DIKU finde et projekt til at afslutte deres bachelor eller kandidat. Dette kan være en besværlig proces, at finde en vejleder eller et emne som passer til ens ønsker. De studerende har enten skulle gå fra dør til dør og spørge en vejleder, om de har et projekt til en eller være tilstede til en enkel forelæsning hvor nogle vejledere præsenterer deres projekter. \\ \\
+Vi som studerende har en vis interesse i at få et bedre system på plads, hvori studerende kan finde et katalog med vejledere og projekter, da vi selv kommer til at stå i en situation hvor vi skal finde et kandidat eller bachelor projekt. En måde at se hvilke projekter vejlederne har liggende, men også så man kan se hvilke projekter de har haft tidligere. \\ \\
+Vores løsning til dette problem er en dynamisk hjemmeside, hvori vejledere selv kan ligge projekter op, informere om deadlines og meget andet. Hjemmesiden er skrevet i det objekt-orienteret programmeringssprog \textit{Python} samt open-source frameworket \textit{Django}. \\ \\
+Vi vil igennem rapporten gå igennem de krav vi har opstillet, vores design-proces, afprøvning, udviklingsmiljø og til sidst vil vi diskutere hvad der mangler at blive lavet på vores projekt, og blandt andet hvordan vi har arbejdet sammen.
 
 \section{Problembeskrivelse}
 \label{sec:problem}
@@ -258,7 +261,7 @@ Vi har til projektet besluttet ikke at bruge et specifikt IDE til at udvikle i. 
 Vi besluttede os for at vi hver især arbejder mere effektivt og bedre, hvis vi udvikler i det miljø der passer os bedst indviduelt. Det vil sige, at nogle medlemmerne af vores gruppe, selv har stået for at kunne afprøve programmet, lave refaktorering og afvikling af hjemmesiden. At kunne gøre brug af værktøjer til refaktorering har ikke været et stort problem til vores projekt, da som tidligere nævnt er Django meget specifik, og klasser, funktioner og andet skal se ud på en meget bestemt måde. Det samme gælder for kode kreation, som bliver håndteret af manage.py.
 
 \subsection{Github}
-Vi har brugt \textit{issues} og \textit{milepæle} på Github platformen, til at holde styr på hvilke arbejdsopgaver eller use cases vi gerne vil have klaret inden en given iteration er færdig. Milepælene er sat efter delafleveringerne og den endelig rapport, derudover har vi en ekstra milepæl, som bliver brugt til at holde styr på opgaver vi godt kunne tænke os at implementere, men som ikke er strengt nødvendige kaldet 'nice to haves'. Et medlem kan derfor sætte sig på en opgave, så alle andre kan se hvem der arbejder på hvad. Der kan læses mere om, hvordan vi har brugt Git og hvilke udfordringer vi har haft i afsnit \ref{subsec:Git}.
+Vi har brugt \textit{issues} og \textit{milepæle} på Github platformen, til at holde styr på hvilke arbejdsopgaver eller use cases vi gerne vil have klaret inden en given iteration er færdig. Milepælene er sat efter delafleveringerne og den endelig rapport, derudover har vi en ekstra milepæl, som bliver brugt til at holde styr på opgaver vi godt kunne tænke os at implementere, men som ikke er strengt nødvendige kaldet 'nice to haves'. Et medlem kan derfor sætte sig på en opgave, så alle andre kan se hvem der arbejder på hvad. Der kan læses mere om, hvordan vi har brugt Git og hvilke udfordringer vi har haft i afsnit \ref{sec:git}.
 
 \section{Diskussion og reflektion} % Alle
 \label{sec:diskussion}
@@ -268,7 +271,7 @@ Vi har som gruppe bestræbt os på at mødes mindst én gang om ugen. Dette selv
 Disse møder har fungeret godt, det har været mere effektivt at kunne kommunikere \textit{face-to-face} i stedet for skriftligt.
 
 \subsection{Git}
-\label{subsec:Git}
+\label{sec:git}
 Vi har igennem projektet arbejdet meget med Git, og herunder den online service GitHub, og vi har alle lært en del om Git. I starten af forløbet fik vi mange \textit{merge conflicts}. Disse opstår, når f.eks. flere har foretaget ændringer i samme linje kode, og Git ikke kan "gætte", hvilke af disse ændringer, der skal vælges. Vi undersøgte problemet, og fandt frem til nogle Git-opsætninger som hjalp med at undgå disse \textit{merge conflicts}. \\
 Vi har ligeldes benyttet flere af \textit{GitHub}s forskellige funktionaliteter, til intern kommunikation. I roden på vores GitHub \textit{repository} findes filen \texttt{README.md}. Denne fil har været brugt til vidensdeling.
 Her har vi skrevet tips til at bruge Git, og hvordan man kan benytte Git mere effektivt. \\
@@ -294,7 +297,7 @@ Da vi ikke har fundet andre websteder, hvor man kan høste information om de ans
 Arbejdet med projektets forskellige elementer er blevet fordelt således, at hvert element er blevet udført af en eller to af gruppens medlemmer. En fordel ved denne metode er, at det er nemmere at uddelegere arbejdet, og at gruppens medlemmer skal fokusere på færre ting. Men samtidig kan det betyde at koden kan indeholde flere fejl. Ligeledes kan det betyde at det kan være sværere for udefrakommende personer eller de andre gruppemedlemmer at forstå de enkelte dele af projektet. Da man kan tendens til at skrive enten kode eller rapport på en måde, der kun er foreståelig for en selv.
 
 \section{Videreudvikling}
-\label{sec:udvikling}
+\label{sec:videreudvikling}
 Vi vil diskutere hvilke krav som vi ikke nåede at implementere, men som vi gerne ville have lavet givet mere tid. Dette kan ses som en liste over brugs-scenarier eller \textit{use cases}, som et hold af udvikler skulle modtage, hvis de overtog vores projekt efter afslutningen af vores projekt. \\ \\
 \begin{itemize}
 \item Verifikation og oprettelse af vejledere i systemet. Vi nåede ikke at lave et færdigt system til at lade vejledere registere sig i vores system, så de selv kan ligge projekter op på hjemmesiden.
