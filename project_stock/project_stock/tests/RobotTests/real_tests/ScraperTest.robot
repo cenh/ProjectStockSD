@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     A test suite with a single test for a working link.
+Documentation     A test suite with a single test for comparing scraper results.
 ...
 ...               This test has a workflow that is created using keywords in
 ...               the imported resource file.

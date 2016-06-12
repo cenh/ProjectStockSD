@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20160525 14:09:51.549" generator="Robot 3.0 (Python 2.7.6 on linux2)">
+<robot generated="20160612 15:25:03.086" generator="Robot 3.0 (Python 2.7.6 on linux2)">
 <suite source="/home/kronborg/ProjectStockSD/project_stock/project_stock/tests/RobotTests/real_tests/ScraperTest.robot" id="s1" name="ScraperTest">
 <test id="s1-t1" name="IsEqual">
 <kw name="Open Browser To Supervisor Page" library="resource">
@@ -9,21 +9,21 @@
 <arg>${SUPERVISOR URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20160525 14:09:51.756" level="INFO">Opening browser 'Firefox' to base url 'http://projectstock.karen.gg/supervisors/'</msg>
-<status status="PASS" endtime="20160525 14:09:56.976" starttime="20160525 14:09:51.755"></status>
+<msg timestamp="20160612 15:25:03.316" level="INFO">Opening browser 'Firefox' to base url 'http://projectstock.karen.gg/supervisors/'</msg>
+<status status="PASS" endtime="20160612 15:25:09.625" starttime="20160612 15:25:03.315"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20160525 14:09:56.998" starttime="20160525 14:09:56.977"></status>
+<status status="PASS" endtime="20160612 15:25:09.644" starttime="20160612 15:25:09.626"></status>
 </kw>
 <kw name="Set Selenium Speed" library="Selenium2Library">
 <doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
 <arguments>
 <arg>${DELAY}</arg>
 </arguments>
-<status status="PASS" endtime="20160525 14:09:57.000" starttime="20160525 14:09:56.999"></status>
+<status status="PASS" endtime="20160612 15:25:09.646" starttime="20160612 15:25:09.645"></status>
 </kw>
-<status status="PASS" endtime="20160525 14:09:57.000" starttime="20160525 14:09:51.754"></status>
+<status status="PASS" endtime="20160612 15:25:09.647" starttime="20160612 15:25:03.314"></status>
 </kw>
 <kw name="Get Text" library="Selenium2Library">
 <doc>Returns the text value of element identified by `locator`.</doc>
@@ -33,8 +33,8 @@
 <assign>
 <var>${string1}</var>
 </assign>
-<msg timestamp="20160525 14:10:01.169" level="INFO">${string1} = torbenm@di.ku.dk</msg>
-<status status="PASS" endtime="20160525 14:10:01.169" starttime="20160525 14:09:57.001"></status>
+<msg timestamp="20160612 15:25:09.870" level="INFO">${string1} = torbenm@di.ku.dk</msg>
+<status status="PASS" endtime="20160612 15:25:09.871" starttime="20160612 15:25:09.647"></status>
 </kw>
 <kw name="Go To Diku Page" library="resource">
 <kw name="Go To" library="Selenium2Library">
@@ -42,17 +42,17 @@
 <arguments>
 <arg>${DIKU URL}</arg>
 </arguments>
-<msg timestamp="20160525 14:10:01.171" level="INFO">Opening url 'http://diku.dk/ansatte?pure=da/persons/162114'</msg>
-<status status="PASS" endtime="20160525 14:10:06.132" starttime="20160525 14:10:01.170"></status>
+<msg timestamp="20160612 15:25:09.874" level="INFO">Opening url 'http://diku.dk/ansatte?pure=da/persons/162114'</msg>
+<status status="PASS" endtime="20160612 15:25:14.500" starttime="20160612 15:25:09.873"></status>
 </kw>
 <kw name="Set Selenium Speed" library="Selenium2Library">
 <doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
 <arguments>
 <arg>${DELAY}</arg>
 </arguments>
-<status status="PASS" endtime="20160525 14:10:06.134" starttime="20160525 14:10:06.133"></status>
+<status status="PASS" endtime="20160612 15:25:14.502" starttime="20160612 15:25:14.500"></status>
 </kw>
-<status status="PASS" endtime="20160525 14:10:06.135" starttime="20160525 14:10:01.169"></status>
+<status status="PASS" endtime="20160612 15:25:14.502" starttime="20160612 15:25:09.871"></status>
 </kw>
 <kw name="Get Text" library="Selenium2Library">
 <doc>Returns the text value of element identified by `locator`.</doc>
@@ -62,8 +62,8 @@
 <assign>
 <var>${string2}</var>
 </assign>
-<msg timestamp="20160525 14:10:10.232" level="INFO">${string2} = torbenm@di.ku.dk</msg>
-<status status="PASS" endtime="20160525 14:10:10.232" starttime="20160525 14:10:06.135"></status>
+<msg timestamp="20160612 15:25:14.759" level="INFO">${string2} = torbenm@di.ku.dk</msg>
+<status status="PASS" endtime="20160612 15:25:14.759" starttime="20160612 15:25:14.503"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
@@ -71,19 +71,19 @@
 <arg>${string1}</arg>
 <arg>${string2}</arg>
 </arguments>
-<status status="PASS" endtime="20160525 14:10:10.235" starttime="20160525 14:10:10.233"></status>
+<status status="PASS" endtime="20160612 15:25:14.761" starttime="20160612 15:25:14.760"></status>
 </kw>
 <kw type="teardown" name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20160525 14:10:12.276" starttime="20160525 14:10:10.236"></status>
+<status status="PASS" endtime="20160612 15:25:14.828" starttime="20160612 15:25:14.762"></status>
 </kw>
-<status status="PASS" endtime="20160525 14:10:12.276" critical="yes" starttime="20160525 14:09:51.753"></status>
+<status status="PASS" endtime="20160612 15:25:14.829" critical="yes" starttime="20160612 15:25:03.313"></status>
 </test>
-<doc>A test suite with a single test for a working link.
+<doc>A test suite with a single test for comparing scraper results.
 
 This test has a workflow that is created using keywords in
 the imported resource file.</doc>
-<status status="PASS" endtime="20160525 14:10:12.278" starttime="20160525 14:09:51.550"></status>
+<status status="PASS" endtime="20160612 15:25:14.832" starttime="20160612 15:25:03.088"></status>
 </suite>
 <statistics>
 <total>
