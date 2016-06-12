@@ -153,7 +153,7 @@ Vores specifikke struktur kan findes i bilag under ...
 \subsection{Generelt om Django frameworket}
 Django frameworket er opbygget efter designmønstret \textit{Model-View-Controller (MVC)}. Udviklerne har dog valgt navnekonventionen \textit{Model-Template-View (MTV)} \cite{djangoFAQ}. I Django er \textit{model} ansvarlig for at tilgå og validere data fra f.eks. en database. Her kan Django frameworket hjælpe således, at et felt i Django-model svarer til et felt i en databasetabel. \\
 Et \textit{view} er en Python-funktion, der tager en web-forespørgsel (\textit{request}) og returnerer web-respons \cite{djangoView}. \\
-\textit{Template} benyttes til dynamisk at genere HTML-sider, der b.la. til visuelt at præsentere information for brugeren. Django har sit eget indbyggede \textit{template language} \cite{djangoTemplate}. Vi har benyttet dette \textit{template language} i vores projekt.  
+\textit{Template} benyttes til dynamisk at genere HTML-sider, der b.la. til visuelt at præsentere information for brugeren. Django har sit eget indbyggede \textit{template language} \cite{djangoTemplate}. Vi har benyttet dette \textit{template language} i vores projekt.
 
 \subsection{Modularitet}
 Django er bygget op således, at (næsten) alle moduler kan tilføjes, ændres og fjernes som man ønsker, uden at det betyder noget for den overordnede applikation. Altså kan man f.eks. tilføje/fjerne \texttt{models.py} for at tilføje/fjerne projektets databasestruktur eller tilføje/fjerne \texttt{tests.py} afhængigt af om man vil have tests eller ej. Alternativt kan man lave en undermappe der hedder tests og placere sine \texttt{test\_*.py} filer her. Dette er en funktion indbygget i Pythons \texttt{unittest} modul, som automatisk leder i denne mappe efter navne der starter med "test".
@@ -291,7 +291,7 @@ Vi har vurderet, at det ville være svært og formentlig unødigvendigt at desig
 Da vi ikke har fundet andre websteder, hvor man kan høste information om de ansatte, vurderede vi at ikke ville være i overenstemmelse med agile tankegang at prøve at designe en abstrakt \textit{scraper}.
 
 \subsection{Distrubution af arbejdet}
-Arbejdet med projektets forskellige elementer er blevet fordelt således, at hvert element er blevet udført af en eller to af gruppens medlemmer. En fordel ved denne metode er, at det er nemmere at uddelegere arbejdet, og at gruppens medlemmer skal fokusere på færre ting. Men samtidig kan det betyde at koden kan indeholde flere fejl. Ligeledes kan det betyde at det kan være sværere for udefrakommende personer eller de andre gruppemedlemmer at forstå de enkelte dele af projektet. Da man kan tendens til at skrive enten kode eller rapport på en måde, der kun er foreståelig for en selv.    
+Arbejdet med projektets forskellige elementer er blevet fordelt således, at hvert element er blevet udført af en eller to af gruppens medlemmer. En fordel ved denne metode er, at det er nemmere at uddelegere arbejdet, og at gruppens medlemmer skal fokusere på færre ting. Men samtidig kan det betyde at koden kan indeholde flere fejl. Ligeledes kan det betyde at det kan være sværere for udefrakommende personer eller de andre gruppemedlemmer at forstå de enkelte dele af projektet. Da man kan tendens til at skrive enten kode eller rapport på en måde, der kun er foreståelig for en selv.
 
 \section{Videreudvikling}
 \label{sec:udvikling}
@@ -318,11 +318,11 @@ Vi vil diskutere hvilke krav som vi ikke nåede at implementere, men som vi gern
 	\emph{Code Complete},
 	2nd edition,
 	2004.
-	
+
 \bibitem{djangoFAQ}
 	\url{https://docs.djangoproject.com/en/1.9/faq/general/}
 
-\bibitem{djangoView}	
+\bibitem{djangoView}
 	\url{https://docs.djangoproject.com/ja/1.9/topics/http/views/}
 
 \bibitem{djangoTemplate}
@@ -379,33 +379,34 @@ Alternativt kan arkivet hentes her:\\
 \subsubsection{R1: Krav}
 
 \subsubsection*{\textit{Meta:}}
-Vi foretog i dette \textit{sprint} et \textit{review} af 'gruppe 4's delaflevering 1. Her gav vi dem følgende kommentarer, her præsenteret som stikord til os selv, der blev uddybet, mundtligt. \\
+Vi foretog i dette \textit{sprint} et \textit{review} af 'gruppe 4's delaflevering 1. Her gav vi dem følgende kommentarer, her præsenteret som stikord til os selv, der blev uddybet, mundtligt.
 
-\subsubsection*{\textit{Review:}}
-\textbf{Afklaring af krav}
+\subsubsection*{\textit{Review:}} 
+\textbf{Afklaring af krav} \\
 Beskriver den nuværende problemstilling fint ("shopping" problemet).
-User stories:
-- Hvad med business-clubs?
-\textbf{Opsætning af udviklingsmiljø}
-Udførlig beskrivelse.
-\textbf{Den næste iteration}
-- Uklart hvornår en underopgave, knyttet til en user story, er godkendt. Menes der her tests der passeres?
-- Lidt uklare termer for uindvidede ("Forbind dette nye view med et url.")
-- Underopgaverne til use case 1 og 2 er nærmest identiske.
-- Use case 3(a), hvad menes med: "Tjek at databasens "Counselor" model har kontaktoplysninger, tilføj og tilpas efter behov."
-- Use case 3(c), hvilke informationer skal mere præcist være knyttet til en vejleder.
-\textbf{Generelt}
+User stories: \\
+- Hvad med business-clubs?\\
+\textbf{Opsætning af udviklingsmiljø} \\
+Udførlig beskrivelse.\\
+\textbf{Den næste iteration} \\
+- Uklart hvornår en underopgave, knyttet til en user story, er godkendt. Menes der her tests der passeres? \\
+- Lidt uklare termer for uindvidede ("Forbind dette nye view med et url.") \\
+- Underopgaverne til use case 1 og 2 er nærmest identiske. \\
+- Use case 3(a), hvad menes med: "Tjek at databasens "Counselor" model har \\ kontaktoplysninger, tilføj og tilpas efter behov." \\
+- Use case 3(c), hvilke informationer skal mere præcist være knyttet til en vejleder.\\
+\textbf{Generelt} \\
 - Generelt virker de \textit{use cases} I har valgt at implementere i næste iteration overkommelige, udfra hvad I hidtil har nået. \\
 - I har ikke lagt fokus på høstning af data. I nævner ikke eksplicit, hvor jeres data kommer fra. \\
 - Verificering af vejledere. Loginsystem?
 
-
 \subsubsection{R2: Design}
-\textit{\textbf{Meta:}} Vi foretog i dette \textit{sprint} et \textit{review} af 'gruppe 4's delaflevering 2.\\
+\subsubsection*{\textit{Meta:}}
+Vi foretog i dette \textit{sprint} et \textit{review} af 'gruppe 4's delaflevering 2.
 
-\textit{\textbf{Review:}}
-Afsnittet "Afprøvning" er godt. Jeres test-metoder er veldokumenterede.
-Figur 2 i afsnittet "Abstraktion og designmønstre" er lidt forvirrende og misvisende.
+\subsubsection*{\textit{Review:}}
+Afsnittet "Afprøvning" er godt. \\
+Jeres test-metoder er veldokumenterede. \\
+Figur 2 i afsnittet "Abstraktion og designmønstre" er lidt forvirrende og misvisende. \\
 Tabllen, der indeholder hvilke brugere, der har hvilke rettigheder i underafsnittet "CRUD-modellen" hjælper meget på forståelsen.
 
 \subsubsection{R3: Kode}
