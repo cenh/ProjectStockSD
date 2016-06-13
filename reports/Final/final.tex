@@ -18,7 +18,7 @@
 \usepackage{listings}
 \usepackage{float}
 \usepackage{dirtree}
-%\usepackage[none]{hyphenat}
+\usepackage[none]{hyphenat}
 \usepackage{cite}
 \lstset{
 	frame=single,
@@ -51,8 +51,10 @@
 \title{
   \vspace{3cm}
   \Huge{Eksamensrapport} \\
-  \Large{Software Udvikling 2016 - Project-Stock}
-	}
+  \Large{Software Udvikling 2016 - Hold 01, Project-Stock 3} \\
+  \large{Repository: ProjectStockSD} \\
+  \Large{Vejledere: Patrick Krøll Brandt \& Jonathan Schrøder Holm Hansen}
+}
 
 \author{
 	\Large{Stefan Friis Tofte} - \textbf{jwr342} - \texttt{stefan.f.tofte@gmail.com}
@@ -236,26 +238,28 @@ Vi bruger Djangos indbyggede adminpanel, dog med nogle få ændringer, til at h�
 \section{Afprøvning}
 \label{sec:afproevning}
 \subsection{Acceptance tests}
-Til afprøvning og test af projektet gjorde vi os nogle forskellige overvejelser. Vi var bl.a. i tvivl om hvorvidt vi skulle anvende Fitnesse eller Robot frameworket. Vi endte med at bruge Robot til at skrive automatiske acceptance-tests. I samspil med Robot, bruger vi et bibliotek kaldt \textit{Selenium2Library}, som gør det muligt at tilgå elementer på hjemmesider vha. HTML og XML.
+Til afprøvning og test af projektet gjorde vi os nogle forskellige overvejelser. Vi var bl.a. i tvivl om hvorvidt vi skulle anvende Fitnesse eller Robot frameworket. Vi endte med at bruge Robot til at skrive automatiske \textit{acceptance-tests}. I samspil med Robot, bruger vi et bibliotek kaldt \textit{Selenium2Library}, som gør det muligt at tilgå elementer på hjemmesider vha. HTML og XML.
 Disse tests er yderligere beskrevet i \nameref{sec:bilag_tests}.
 
 \subsection{Videreudvikling og vedligeholdelse}
-Vi har valgt ikke at sikre applikationens opfyldelse af krav ved tests. Dette er grundet, at vi prioriterede færdigudvikling af projektet over hvad vi vil mene er overflødig test. Her menes der, at vi kan se at hjemmesiden opfylder de stillede krav fra sektion \hyperref[sec:krav]{\ref*{sec:krav}: \nameref*{sec:krav}}. Det ved vi, da vi har brugt hjemmesiden ved manuelt at bevæget os rundt og løbende opdaget fejl og mangler, og derefter rettet/implementeret dem. \\
-Til fremtidig brug er vores acceptance-tests skrevet således, at selvom der skulle opstå ændringer på hjemmesiden, kan vi nemt bruge dem igen. Dette er fordi de tilgår elementer i den tabel, som hjemmesiden repræsenterer information i, i stedet for at tilgå de specifikke elementer cellerne indeholder. For testen er det altså ligegyldigt hvad der står i tabellen, bare siden har samme struktur. Skulle selve strukturen af sitet dog ændres, kan vi forholdsvis nemt omskrive testene til at tilgå elementer på en ny måde, da det blot er kodedelen der beskriver hvilket element der skal tilgås, som skal omskrives. \\
+Vi har valgt at sikre dele af applikationens opfyldelse af krav ved tests. At det kun er dele som er blevet grundigt testet er grundet, at vi prioriterede færdigudvikling af projektet over hvad vi vil mene er overflødig test. Her menes der, at vi kan se at hjemmesiden opfylder de stillede krav fra sektion \hyperref[sec:krav]{\ref*{sec:krav}: \nameref*{sec:krav}}uden at teste alt. Det ved vi, da vi har brugt hjemmesiden, manuelt har bevæget os rundt på den og løbende har opdaget fejl og mangler, og derefter rettet/implementeret dem. Nøgle funktioner i Django er dog blevet testet, og ligeledes har vi skrevet unit-tests for nogle af de kravopfyldende opgaver. \\
+Til fremtidig brug og videreudvikling er vores acceptance-tests skrevet således, at selvom der skulle opstå ændringer på hjemmesiden, kan vi nemt bruge dem igen. Det kan vi fordi de tilgår generelle elementer i den tabel, som hjemmesiden repræsenterer information i. I stedet for at tilgå den specifikke information cellerne indeholder, som på et senere tidspunkt kunne ændre sig. Således undgår vi at testen fejler fordi indholdet bliver ændret. Dette er en stor fordel, da de tilgængelige projekter ofte udskiftes, og tests skulle omskrives hver gang, hvis ikke de var skrevet på denne vis. \\
+For testen er det altså ligegyldigt hvad der står i tabellen, bare siden har samme struktur. Skulle selve strukturen af sitet dog ændres, kan vi forholdsvis nemt omskrive testene til at tilgå elementer på en ny måde. Det kan vi fordi, vi kun skal ændre den del af koden som beskriver elementer der skal tilgås, da funktionerne fortsat er de samme. \\
+Vi har også valgt at begrænse os i testing, da vi fulgte følgende råd fra Code Complete\cite{cc} om \textit{Incomplete Testing} ''When you're planning tests, eliminate those that don't tell you anything new''. F.eks. har vi en stor liste af vejledere, alle høstet fra samme database. I stedet for at teste scraperens resultat for hver og en, tester vi kun én tilfældig vejleder, for at se, hvad vi vil mene er, et fyldestgørende resultat. \\
 Da vores tests, som beskrevet ovenfor, er forholdsvis automatiske og agile, kan vi nemt anvende dem når vi tilføjer ting til sitet, eller ændrer på de ting som i forvejen er til stede. Det har givet mulighed for ubesværet at teste, mens vi har arbejdet på projektet. \\
 
 \subsection{Unit-tests}
-Selvom vi bruger Django, hvilket er et omfattende og stabilt framework, har vi valgt at unit-teste dele af projektet, for at sikre fejlbarheden så vidt som muligt. Django-funktionerne har vi i grove træk testet ved at opsætte to scenarier for de forskellige framework-funktioner, ét scenarie som får forkerte specifikationer og ét scenarie som får de korrekte. Således kan vi se om de fejler eller kører som ønsket og forventet. Disse tests er også yderligere beskrevet i \nameref{sec:bilag_tests}.
+Vi bruger Django, hvilket er et omfattende og stabilt framework, men vi har også valgt at unit-teste dele af projektet, for at sikre fejlbarheden så vidt som muligt. Django-funktionerne har vi i grove træk testet ved at opsætte to scenarier for de forskellige framework-funktioner, ét scenarie som får forkerte specifikationer og ét scenarie som får de korrekte. Således kan vi se om de fejler eller kører som ønsket og forventet. Disse tests er også yderligere beskrevet i \nameref{sec:bilag_tests}.
 
 \subsection{Kørsel af test}
 For at efterprøve vores tests, kan de køres på følgende vis
 \begin{enumerate}
   \item Installer Robot vha. pip installer og følgende kommando\\
   \texttt{pip install robotframework}
-  \item Find ind i test mappen via følgende sti \\ \texttt{ProjectStockSD/project\_stock/project\_stock/tests/RobotTests/real\_tests}
-  \item Kør den valgte test ved at skrive \texttt{robot valgte test} eksempelvis
+  \item Find ind i test mappen via følgende sti \\ \texttt{ProjectStockSD/project\_stock/project\_stock/tests/RobotTests/real\_tests} 
+  \item Kør den valgte test ved at skrive \texttt{robot \_\_\_\_Test.robot} eksempelvis \\
   \texttt{robot ProjectsTest.robot}
-  \item Hvis robot er installeret korrekt skulle terminalen gerne se således ud
+  \item Hvis robot er installeret korrekt skulle terminalen gerne se således ud 
     \begin{figure}[H]
         \centering
         \includegraphics[scale=0.5]{test.png}
@@ -290,12 +294,13 @@ Vi besluttede os for at vi hver især arbejder mere effektivt og bedre, hvis vi 
 \subsection{GitHub}
 Vi har brugt GitHubs \textit{issue tracking system}\cite{issuetracking} og tildelt issues milepæle, for at holde styr på hvilke arbejdsopgaver eller use cases, vi gerne vil have klaret inden en given iteration er færdig. Milepælene svarer til delafleveringerne og den endelige rapport. Derudover har vi en ekstra milepæl, som bliver brugt til at holde styr på opgaver, vi godt kunne tænke os at implementere, men som ikke er strengt nødvendige. Denne milepæl har vi kaldt "nice to haves."{} Et medlem kan derfor sætte sig selv (eller andre) på en opgave, så alle andre kan se hvem der arbejder på hvad. Der kan læses mere om, hvordan vi har brugt Git og hvilke udfordringer vi har haft i afsnit \ref{sec:git}.
 
-\section{Diskussion og reflektion} % Alle
+\section{Diskussion og reflektion}
 \label{sec:diskussion}
-
+Vi vil i dette afsnit diskutere og reflektere over vores udviklingsprocessen og hvordan vi har arbejdet sammen.
 \subsection{Udviklingsprocessen}
 Vi har som gruppe bestræbt os på at mødes mindst én gang om ugen. Dette selvorganiserede møde er udover de ugentlige møder med instruktorerne. På disse selvorganiserede ugentlige møder har vi uddelegeret arbejdsopgaver og diskuteret og arbejdet med forskellige værktøjer og frameworks.\\
-Disse møder har fungeret godt, og det har været mere effektivt at kunne kommunikere ansigt til ansigt i stedet for skriftligt.
+Disse møder har fungeret godt, og det har været mere effektivt at kunne kommunikere ansigt til ansigt i stedet for skriftligt. \\ \\
+Vi har ikke brugt en bestemt softwareudviklingsproces, dog har vi hovedsagligt arbejdet agilt. Hvori vi har mødtes sammen et par gange om ugen, snakkede sammen om det arbejde vi har lavet og det arbejde vi skal lave. Vi startede med at lave en tidlig prototype af vores produkt, som vi igennem projektforløbet har udviklet på og tilføjet funktionalitet. Vi har ikke lagt en bestemt plan, hvori opgaver skulle være løst, men haft en mere løs plan hvori vi har skrevet hvornår vi forstiller os opgaver skulle være løst. Vi har derfor tilpasset os igennem forløbet, så vi kunne nå at få løst de opgaver vi så som mest vigtige. Vi har ligesom man typisk vil gøre under agile softwareudvikling afprøvet vores prototype tit og ofte, for at se hvordan prototypen håndterer nyt funktionalitet.
 
 \subsection{Git}
 \label{sec:git}
@@ -335,13 +340,18 @@ Bemærk at nedenstående ikke er use cases, men en beskrivelse af de ting der sk
 \begin{itemize}
 \item Verifikation og oprettelse af vejledere i systemet. Vi nåede ikke at lave et færdigt system til at lade vejledere registere sig i vores system, så de selv kan ligge projekter op på hjemmesiden.
 \item Man skal kunne se en liste over publikationer hos en vejleder, og en vejleder skal kunne ligge publikationer ind på sin side.
-%tilføj mindst en mere
+\item En vejleder skal kunne tilknytte keywords til projekter og publikationer så studerende eller andre besøgende kan filtrere på disse keywords. En midlertidig løsning er blevet implementeret hvori en besøgende kan søge i vores katalog.
 \end{itemize}
 
 \newpage
 \section{Konklusion}
 \label{sec:konklusion}
-% Christian
+Vi kan efter vores forløb konkludere følgende:
+\begin{itemize}
+\item Vi har fået lavet en hjemmeside, hvori man som vejleder kan ligge projekter op, og studerende kan gå ind på samme side og finde interessante projekter uden at skulle gå fra dør til dør.
+\item Vi har brugt GitHub platformen til at holde styr på de opgaver vi gerne vil have implementeret, men også brugt det til at dele ideer og tanker med hinanden. Endvidere også brugt milepæle til at se hvilke opgaver vi vil have lavet hvornår.
+\item Vores produkt opfylder de fleste af de krav vi havde sat os for at få løst, dog er der stadig en del implementation som skal laves, hvilket vi har beskrevet i vores afsnit om videreudvikling (afsnit: \ref{sec:videreudvikling}).
+\end{itemize}
 
 \newpage
 \begin{thebibliography}{9}
@@ -427,13 +437,11 @@ Bemærk at nedenstående ikke er use cases, men en beskrivelse af de ting der sk
 
 \subsection{Bilag B}
 \label{sec:bilagB}
-% Lasse
-Arkivet \texttt{Exam.zip} er vedlagt og indeholder alt der skal bruges for at køre webapplikationen.
-Alternativt kan arkivet hentes her:\\
-\url{https://github.com/cenh/ProjectStockSD/archive/0.1.1.zip}\\
+Man kan hente vores release på følgende link:
+\url{https://github.com/cenh/ProjectStockSD/releases/tag/0.1.1}\\
 \\
-Vi har en også server der kører webapplikationen her: \url{http://128.199.39.136/}
-
+I arkivet ligger der en fil kaldet INSTALL.md som vil forklarer hvordan man kører vores hjemmeside lokalt, men også hvordan man kører vores tests. \\ \\
+Alternativt har vi også sat en server op til at køre webapplikationen her: \url{http://128.199.39.136/}
 
 \subsection{Bilag C}
 \label{sec:bilagC}
