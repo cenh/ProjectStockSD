@@ -236,26 +236,28 @@ Vi bruger Djangos indbyggede adminpanel, dog med nogle få ændringer, til at h�
 \section{Afprøvning}
 \label{sec:afproevning}
 \subsection{Acceptance tests}
-Til afprøvning og test af projektet gjorde vi os nogle forskellige overvejelser. Vi var bl.a. i tvivl om hvorvidt vi skulle anvende Fitnesse eller Robot frameworket. Vi endte med at bruge Robot til at skrive automatiske acceptance-tests. I samspil med Robot, bruger vi et bibliotek kaldt \textit{Selenium2Library}, som gør det muligt at tilgå elementer på hjemmesider vha. HTML og XML.
+Til afprøvning og test af projektet gjorde vi os nogle forskellige overvejelser. Vi var bl.a. i tvivl om hvorvidt vi skulle anvende Fitnesse eller Robot frameworket. Vi endte med at bruge Robot til at skrive automatiske \textit{acceptance-tests}. I samspil med Robot, bruger vi et bibliotek kaldt \textit{Selenium2Library}, som gør det muligt at tilgå elementer på hjemmesider vha. HTML og XML.
 Disse tests er yderligere beskrevet i \nameref{sec:bilag_tests}.
 
 \subsection{Videreudvikling og vedligeholdelse}
-Vi har valgt ikke at sikre applikationens opfyldelse af krav ved tests. Dette er grundet, at vi prioriterede færdigudvikling af projektet over hvad vi vil mene er overflødig test. Her menes der, at vi kan se at hjemmesiden opfylder de stillede krav fra sektion \hyperref[sec:krav]{\ref*{sec:krav}: \nameref*{sec:krav}}. Det ved vi, da vi har brugt hjemmesiden ved manuelt at bevæget os rundt og løbende opdaget fejl og mangler, og derefter rettet/implementeret dem. \\
-Til fremtidig brug er vores acceptance-tests skrevet således, at selvom der skulle opstå ændringer på hjemmesiden, kan vi nemt bruge dem igen. Dette er fordi de tilgår elementer i den tabel, som hjemmesiden repræsenterer information i, i stedet for at tilgå de specifikke elementer cellerne indeholder. For testen er det altså ligegyldigt hvad der står i tabellen, bare siden har samme struktur. Skulle selve strukturen af sitet dog ændres, kan vi forholdsvis nemt omskrive testene til at tilgå elementer på en ny måde, da det blot er kodedelen der beskriver hvilket element der skal tilgås, som skal omskrives. \\
+Vi har valgt at sikre dele af applikationens opfyldelse af krav ved tests. At det kun er dele som er blevet grundigt testet er grundet, at vi prioriterede færdigudvikling af projektet over hvad vi vil mene er overflødig test. Her menes der, at vi kan se at hjemmesiden opfylder de stillede krav fra sektion \hyperref[sec:krav]{\ref*{sec:krav}: \nameref*{sec:krav}}uden at teste alt. Det ved vi, da vi har brugt hjemmesiden, manuelt har bevæget os rundt på den og løbende har opdaget fejl og mangler, og derefter rettet/implementeret dem. Nøgle funktioner i Django er dog blevet testet, og ligeledes har vi skrevet unit-tests for nogle af de kravopfyldende opgaver. \\
+Til fremtidig brug og videreudvikling er vores acceptance-tests skrevet således, at selvom der skulle opstå ændringer på hjemmesiden, kan vi nemt bruge dem igen. Det kan vi fordi de tilgår generelle elementer i den tabel, som hjemmesiden repræsenterer information i. I stedet for at tilgå den specifikke information cellerne indeholder, som på et senere tidspunkt kunne ændre sig. Således undgår vi at testen fejler fordi indholdet bliver ændret. Dette er en stor fordel, da de tilgængelige projekter ofte udskiftes, og tests skulle omskrives hver gang, hvis ikke de var skrevet på denne vis. \\
+For testen er det altså ligegyldigt hvad der står i tabellen, bare siden har samme struktur. Skulle selve strukturen af sitet dog ændres, kan vi forholdsvis nemt omskrive testene til at tilgå elementer på en ny måde. Det kan vi fordi, vi kun skal ændre den del af koden som beskriver elementer der skal tilgås, da funktionerne fortsat er de samme. \\
+Vi har også valgt at begrænse os i testing, da vi fulgte følgende råd fra Code Complete\cite{cc} om \textit{Incomplete Testing} ''When you're planning tests, eliminate those that don't tell you anything new''. F.eks. har vi en stor liste af vejledere, alle høstet fra samme database. I stedet for at teste scraperens resultat for hver og en, tester vi kun én tilfældig vejleder, for at se, hvad vi vil mene er, et fyldestgørende resultat. \\
 Da vores tests, som beskrevet ovenfor, er forholdsvis automatiske og agile, kan vi nemt anvende dem når vi tilføjer ting til sitet, eller ændrer på de ting som i forvejen er til stede. Det har givet mulighed for ubesværet at teste, mens vi har arbejdet på projektet. \\
 
 \subsection{Unit-tests}
-Selvom vi bruger Django, hvilket er et omfattende og stabilt framework, har vi valgt at unit-teste dele af projektet, for at sikre fejlbarheden så vidt som muligt. Django-funktionerne har vi i grove træk testet ved at opsætte to scenarier for de forskellige framework-funktioner, ét scenarie som får forkerte specifikationer og ét scenarie som får de korrekte. Således kan vi se om de fejler eller kører som ønsket og forventet. Disse tests er også yderligere beskrevet i \nameref{sec:bilag_tests}.
+Vi bruger Django, hvilket er et omfattende og stabilt framework, men vi har også valgt at unit-teste dele af projektet, for at sikre fejlbarheden så vidt som muligt. Django-funktionerne har vi i grove træk testet ved at opsætte to scenarier for de forskellige framework-funktioner, ét scenarie som får forkerte specifikationer og ét scenarie som får de korrekte. Således kan vi se om de fejler eller kører som ønsket og forventet. Disse tests er også yderligere beskrevet i \nameref{sec:bilag_tests}.
 
 \subsection{Kørsel af test}
 For at efterprøve vores tests, kan de køres på følgende vis
 \begin{enumerate}
   \item Installer Robot vha. pip installer og følgende kommando\\
   \texttt{pip install robotframework}
-  \item Find ind i test mappen via følgende sti \\ \texttt{ProjectStockSD/project\_stock/project\_stock/tests/RobotTests/real\_tests}
-  \item Kør den valgte test ved at skrive \texttt{robot valgte test} eksempelvis
+  \item Find ind i test mappen via følgende sti \\ \texttt{ProjectStockSD/project\_stock/project\_stock/tests/RobotTests/real\_tests} 
+  \item Kør den valgte test ved at skrive \texttt{robot ____Test.robot} eksempelvis \\
   \texttt{robot ProjectsTest.robot}
-  \item Hvis robot er installeret korrekt skulle terminalen gerne se således ud
+  \item Hvis robot er installeret korrekt skulle terminalen gerne se således ud 
     \begin{figure}[H]
         \centering
         \includegraphics[scale=0.5]{test.png}
