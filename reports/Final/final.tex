@@ -220,36 +220,26 @@ Siden er ikke helt funktionel, da den ikke rigtigt gør noget, men dette ville i
 Denne side ville opfylde krav 3 fra \hyperref[sec:corefuncs]{\ref*{sec:corefuncs}: \nameref*{sec:corefuncs}}, hvis den havde været færdigimplementeret. \hyperref[fig:frontend_registration]{Figur \ref*{fig:frontend_registration}} på side \pageref{fig:frontend_registration} viser et udkast af denne funktion.
 
 \subsubsection{Adminpanel}
-Vi bruger Djangos indbyggede adminpanel, dog med nogle få ændringer, til at håndtere indtastning af data manuelt. Bl.a. er adminpanelet blevet udvidet med en navigationsbar til at navigere rundt på siden. Denne fulgte ikke med Djangos adminpanel, og det kunne derfor være svært at komme tilbage til vores webapplikation når man først går ind i adminpanelet. Screenshots af adminpanelet, med og uden ændringer, kan ses på \hyperref[fig:frontend_admin_vanilla]{figur \ref*{fig:frontend_admin_vanilla}}, \ref{fig:frontend_admin_login} og \ref{fig:frontend_admin} i \nameref{sec:bilagG}.
+Vi bruger Djangos indbyggede adminpanel, dog med nogle få ændringer, til at håndtere indtastning af data manuelt. Bl.a. er adminpanelet blevet udvidet med en navigationsbar til at navigere rundt på siden. Denne fulgte ikke med Djangos adminpanel, og det kunne derfor være svært at komme tilbage til vores webapplikation når man først går ind i adminpanelet. Screenshots af adminpanelet, med og uden ændringer, kan ses på \hyperref[fig:frontend_admin_vanilla]{figur \ref*{fig:frontend_admin_vanilla}}, \ref{fig:frontend_admin_login} og \ref{fig:frontend_admin} i \nameref{sec:bilag_frontend}.
 
-\newpage
 \section{Afprøvning}
 \label{sec:afproevning}
 \subsection{Acceptance tests}
-Til afprøvning og test af projektet gjorde vi os nogle forskellige overvejelser. Vi var bl.a. i tvivl om hvorvidt vi skulle anvende Fitnesse eller Robot frameworket. Vi endte med at bruge robot til at skrive automatiske acceptance-tests. I samspil med robot, bruger vi et bibliotek kaldt \textit{Selenium2Library}, som gør det muligt at tilgå elementer på hjemmeside vha. html og xml.
-Disse tests er yderligere beskrevet i .\\
-Disse tests er yderligere beskrevet i \nameref{sec:bilagE}.\\
-\\
-Vi har valgt ikke at sikre applikationens opfyldelse af krav ved tests. Dette er grundet, at vi prioriterede færdigudvikling af projektet over hvad vi vil mene er overflødig test. Her menes der, at vi kan se at hjemmesiden opfylder de stillede krav fra sektion \hyperref[sec:krav]{\ref*{sec:krav}: \nameref*{sec:krav}}. Det ved vi, da vi har brugt hjemmesiden ved manuelt at bevæget os rundt og løbende opdaget fejl og mangler, og derefter rettet/implementeret dem. \\
-\\
-Til fremtidig brug er vores acceptance-tests skrevet således at selvom der skulle opstå ændringer på hjemmesiden, kan vi nemt bruge dem igen. Det kan vi fordi de tilgår elementer i den tabel, som hjemmesiden repræsenterer information i, i stedet for at tilgå de specifikke elementer cellerne indeholder. For testen er det altså ligegyldigt hvad der står i tabellen, bare siden har samme struktur. Skulle selve strukturen af sitet dog ændres, kan vi forholdsvis nemt omskrive testene til at tilgå elementer på en ny måde, da det blot er kodedelen der beskriver hvilket element der skal tilgås, som
-skal omskrives. \\
-Da vores tests, som beskrevet ovenfor, er forholdsvis automatiske og agile, kan vi nemt anvende dem når vi tilføjer ting til sitet, eller ændrer på de ting som i forvejen er til stede. Det har givet mulighed for ubesværet at teste, mens vi har arbejdet på projektet. \\
-\\
-Selvom vi bruger Django, hvilket er et omfattende og stabilt framework, har vi valgt at unit-teste dele af projektet, for at sikre fejlbarheden så vidt som muligt. Django-funktionerne har vi i grove træk testet ved at opsætte to scenarier for de forskellige framework-funktioner, ét scenarie som får forkerte specifikationer og ét scenarie som får de korrekte. Således kan vi se om de fejler eller kører som ønsket og forventet. Disse tests er også yderligere beskrevet i \nameref{sec:bilagE}.
+Til afprøvning og test af projektet gjorde vi os nogle forskellige overvejelser. Vi var bl.a. i tvivl om hvorvidt vi skulle anvende Fitnesse eller Robot frameworket. Vi endte med at bruge Robot til at skrive automatiske acceptance-tests. I samspil med Robot, bruger vi et bibliotek kaldt \textit{Selenium2Library}, som gør det muligt at tilgå elementer på hjemmesider vha. HTML og XML.
+Disse tests er yderligere beskrevet i \nameref{sec:bilag_tests}.
 
 \subsection{Videreudvikling og vedligeholdelse}
-Vi har valgt ikke at sikre applikationens opfyldelse af krav ved tests. Det har vi gjort grundet, at vi prioriterede færdigudvikling af projektet over hvad vi vil mene er overflødig test. Her menes der, at vi kan se og ved at hjemmesiden opfylder de stillede krav fra det tidligere krav-afsnit. Det ved vi fordi, vi har brugt og manuelt bevæget os rundt på hjemmesiden, løbende har opdaget fejl og mangler og har fået dem implementeret. \\
-Til fremtidig brug er vores acceptance-tests skrevet således at selvom der skulle opstå ændringer på hjemmesiden, kan vi nemt bruge dem igen. Det kan vi fordi de tilgår elementer i den tabel, som hjemmesiden repræsenterer information i, i stedet for at tilgå de specifikke elementer cellerne indeholder. For testen er det altså ligegyldigt hvad der står i tabellen, bare siden har samme struktur. Skulle selve strukturen af sitet dog ændres, kan vi forholdsvis nemt omskrive testene til at tilgå elementer på en ny måde, da det blot er kodedelen som beskriver hvilket element der skal tilgås, som skal omskrives. \\
-Da vores tests, som beskrevet ovenfor, er forholdsvis automatiske og agile, kan vi nemt anvende dem når vi tilføjer ting til sitet, eller ændrer på de ting som i forvejen er tilstede. Det har givet mulighed for ubesværet at teste, mens vi har arbejdet på projektet. \\
+Vi har valgt ikke at sikre applikationens opfyldelse af krav ved tests. Dette er grundet, at vi prioriterede færdigudvikling af projektet over hvad vi vil mene er overflødig test. Her menes der, at vi kan se at hjemmesiden opfylder de stillede krav fra sektion \hyperref[sec:krav]{\ref*{sec:krav}: \nameref*{sec:krav}}. Det ved vi, da vi har brugt hjemmesiden ved manuelt at bevæget os rundt og løbende opdaget fejl og mangler, og derefter rettet/implementeret dem. \\
+Til fremtidig brug er vores acceptance-tests skrevet således, at selvom der skulle opstå ændringer på hjemmesiden, kan vi nemt bruge dem igen. Dette er fordi de tilgår elementer i den tabel, som hjemmesiden repræsenterer information i, i stedet for at tilgå de specifikke elementer cellerne indeholder. For testen er det altså ligegyldigt hvad der står i tabellen, bare siden har samme struktur. Skulle selve strukturen af sitet dog ændres, kan vi forholdsvis nemt omskrive testene til at tilgå elementer på en ny måde, da det blot er kodedelen der beskriver hvilket element der skal tilgås, som skal omskrives. \\
+Da vores tests, som beskrevet ovenfor, er forholdsvis automatiske og agile, kan vi nemt anvende dem når vi tilføjer ting til sitet, eller ændrer på de ting som i forvejen er til stede. Det har givet mulighed for ubesværet at teste, mens vi har arbejdet på projektet. \\
 
 \subsection{Unit-tests}
-Selvom vi bruger django, som er et færdiggjort og stort framework, har vi valgt at unit-teste dele af projektet, for at sikre fejlbarheden så vidt som muligt. Django-funktionerne har vi i grove træk testet ved at opsætte to scenarier for de forskellige framework funktioner, ét scenarie som får forkerte specifikationer og ét scenarie som får de korrekte. Således kan vi se om de fejler eller kører som ønsket og forventet. Disse tests er også yderligere beskrevet i Bilag D.
+Selvom vi bruger Django, hvilket er et omfattende og stabilt framework, har vi valgt at unit-teste dele af projektet, for at sikre fejlbarheden så vidt som muligt. Django-funktionerne har vi i grove træk testet ved at opsætte to scenarier for de forskellige framework-funktioner, ét scenarie som får forkerte specifikationer og ét scenarie som får de korrekte. Således kan vi se om de fejler eller kører som ønsket og forventet. Disse tests er også yderligere beskrevet i \nameref{sec:bilag_tests}.
 
 \subsection{Kørsel af test}
 For at efterprøve vores tests, kan de køres på følgende vis
 \begin{enumerate}
-  \item Installer robot vha. pip installer og følgende kommando\\
+  \item Installer Robot vha. pip installer og følgende kommando\\
   \texttt{pip install robotframework}
   \item Find ind i test mappen via følgende sti \\ \texttt{ProjectStockSD/project\_stock/project\_stock/tests/RobotTests/real\_tests} 
   \item Kør den valgte test ved at skrive \texttt{robot valgte test} eksempelvis
@@ -261,7 +251,7 @@ For at efterprøve vores tests, kan de køres på følgende vis
         \caption{Konsol output efter robot test}
         \label{fig:console output}
     \end{figure}~
-  \item Yderligere kan man se udvidet information om testen i de generede filer \texttt{log.html} og \texttt{report.html} uddrag af disse kan også findes i Bilag D 
+  \item Yderligere kan man se udvidet information om testen i de generede filer \texttt{log.html} og \texttt{report.html}. Uddrag af disse kan også findes i \nameref{sec:bilag_tests}.
 \end{enumerate}
 \section{Udviklingsmiljø}
 \label{sec:udvikling}
@@ -384,7 +374,7 @@ Bemærk at nedenstående ikke er use cases, men en beskrivelse af de ting der sk
 
 \end{thebibliography}
 
-
+\newpage
 \section{Bilag}
 \label{sec:bilag}
 
@@ -417,8 +407,7 @@ Bemærk at nedenstående ikke er use cases, men en beskrivelse af de ting der sk
 		\hline
 	D4 & k & k \\ \hline
 	\end{tabular}
-\end{center}
-
+\end{center}~\\
 
 \subsection{Bilag B}
 \label{sec:bilagB}
@@ -464,8 +453,10 @@ Tabllen, der indeholder hvilke brugere, der har hvilke rettigheder i underafsnit
 
 \subsubsection{R3: Kode}
 \subsubsection{R4: Release}
+
+\newpage
 \subsection{Bilag D}
-\label{sec:bilagD}
+\label{sec:bilag_tests}
 \subsubsection*{Acceptance-tests}
 \begin{center}
 	\begin{tabular}{|p{0.08\textwidth}|p{0.44\textwidth}|p{0.44\textwidth}|}
@@ -499,17 +490,16 @@ Tabllen, der indeholder hvilke brugere, der har hvilke rettigheder i underafsnit
         \includegraphics[scale=0.5]{report.png}
         \caption{Robot testens rapport}
         \label{fig:robot report}
-    \end{figure}~
+    \end{figure}
     \begin{figure}[H]
         \centering
         \includegraphics[scale=0.5]{log.png}
         \caption{Robot testens log}
         \label{fig:robot log}
-    \end{figure}~
+    \end{figure}
 \end{center}
-\end{document}
-\end{center}
-\subsection{Bilag F}
+
+\subsection{Bilag E}
 \label{sec:bilag_struktur}
 Strukturen i vores Django-projekt er vist herunder.\\
 \texttt{\_\_init\_\_.py} filer er udeladt, samt andre filer der ligner hinanden.\\
@@ -562,8 +552,8 @@ Se evt. vedlagte arkiv \texttt{Exam.zip}.
     \end{nodeC}
 \end{nodeC}
 
-\subsection{Bilag G}
-\label{sec:bilagG}
+\subsection{Bilag F}
+\label{sec:bilag_frontend}
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.33]{frontend_groups.png}
