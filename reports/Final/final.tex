@@ -84,10 +84,6 @@
 \tableofcontents
 \newpage
 
-\section{Indledning}
-\label{sec:indledning}
-Denne rapport beskriver udviklingsprocessen og det produkt, der er fremkommet efter et semesters arbejde med projektet med titlen 'Project in Stock' (også omtalt 'Project Stock'). Projektet har været en del af kurset Softwareudvikling på Datalogisk Institut, Københavns Universitet.
-
 \section{Problembeskrivelse}
 \label{sec:problem}
 Hvert år skal datalogistuderende på DIKU (Datalogisk Institut, Københavns Universitet) finde et projekt, samt en vejleder, til det afsluttende projekt på deres bachelor- eller kandidatuddanelse. Det kan være en besværlig process, især for studerende, der ikke kender instituttets vejledere eller taler dansk.\\
@@ -150,7 +146,7 @@ Vi foretog en løs priotering af produktets use cases og vurderede, hvad der var
 \subsubsection{Kernefunktionaliteter}
 \label{sec:corefuncs}
 \begin{enumerate}
-	\item Det skal være muligt at se et katalog over projekter.
+	\item Det skal være muligt at se et katalog over projekter og vejledere.
 	\item Systemet skal kunne præsentere opdaterede oplysninger om potentielle vejledere, herunder:
 	\begin{itemize}
 		\item Tidligere projekter
@@ -158,6 +154,7 @@ Vi foretog en løs priotering af produktets use cases og vurderede, hvad der var
 		\item Kontaktoplysninger
 	\end{itemize}
 	\item Personer, der optræder på siden, skal kunne verificeres, hvis de eksempelvis ønsker at tilføje projekter eller foretage rettelser.
+	\item Vejledere skal kunne oprette projekter, som derefter vil indgå i kataloget over projekter.
 \end{enumerate}
 
 \subsubsection{"Nice-to-have"{}-funktionaliteter}
@@ -174,18 +171,14 @@ Vi foretog en løs priotering af produktets use cases og vurderede, hvad der var
 
 \section{Design}
 \label{sec:design}
-% Lasse
 \subsection{Generelt om Django frameworket}
 \label{sec:genereltdjango}
 Django frameworket er opbygget efter designmønstret \textit{Model-View-Controller (MVC)}\cite{mvc}. Udviklerne har dog valgt navnekonventionen \textit{Model-Template-View (MTV)} \cite{djangoFAQ}. I Django kan man tilgå og validere data fra f.eks. en database vha. \textit{models}\cite{models}. Her kan Django frameworket hjælpe således, at et felt i Django-model svarer til et felt i en databasetabel. \\
 Et \textit{view}\cite{djangoView} er en Python-funktion, der tager en web-forespørgsel og returnerer en web-respons i form af HTML som kan vises til brugeren. \\
 \textit{Templates} (skabeloner) benyttes til dynamisk at generere HTML-sider, for at spare kode og for nemt at kunne benytte variabelnavne, direkte i det HTML brugeren får vist i sin browser. Variablerne vil ikke dukke op i HTML-koden, men vil blive erstattet af variablens værdi. Django har sit eget indbyggede template sprog\cite{djangoTemplate}, som vi har benyttet i vores projekt.\\
 \\
-Django har en masse filer, der har ansvar for mange forskellige ting, så vi har derfor beskrevet filstrukturen i afsnit \ref{sec:struktur}.
+Django har en masse filer, der har ansvar for mange forskellige ting, så vi har derfor beskrevet filstrukturen herunder.\\
 
-\subsection{Struktur}
-\label{sec:struktur}
-Et Django-projekt har en struktur der ser således ud:\\
 \begin{nodeC}
     \item{project\_stock}
     \begin{nodeC}
@@ -205,7 +198,6 @@ Et Django-projekt har en struktur der ser således ud:\\
 \end{nodeC}~\\
 Nogle af disse filer er vigtigere end andre for at have en tilgængelig webapplikation, bl.a. settings.py, der definerer projektets indstillinger, urls.py, der definerer hvilke URL's som brugere kan tilgå og views, der definerer hvad brugeren kommer til at se.\\
 \\
-% Forklaring følger
 Filen \texttt{manage.py} er essentiel eftersom, at det er den fil som styrer selve hjemmesiden. Det er med den fil man opretter et Django-projekt, starter en lokal webserver, opdaterer ens database og meget andet.\\
 Vi har en fil der hedder \texttt{fillmockdata.py}, som står for at bruge scraperen til at høste data, hvorefter den indsætter det i databasen. Det er altså et interface mellem scraperen og det Django-specifikke databasekode.\\
 \\
@@ -300,14 +292,15 @@ For at efterprøve vores tests, kan de køres på følgende vis:
   \item Kør den valgte test ved at skrive \texttt{robot \_\_\_\_Test.robot}, eksempelvis \\
   \texttt{robot ProjectsTest.robot}
   \item Hvis Robot er installeret korrekt skulle terminalen gerne se ud som i \hyperref[fig:console_output]{figur \ref*{fig:console_output}}
-    \begin{figure}[H]
-        \centering
-        \includegraphics[scale=0.5]{test.png}
-        \caption{Konsol output efter robot test}
-        \label{fig:console_output}
-    \end{figure}~
   \item Yderligere kan man se udvidet information om testen i de generede filer \texttt{log.html} og \texttt{report.html}. Uddrag af disse kan også findes i \nameref{sec:bilag_tests}.
 \end{enumerate}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{test.png}
+    \caption{Konsol output efter robot test}
+    \label{fig:console_output}
+\end{figure}
+
 \section{Udviklingsmiljø}
 \label{sec:udvikling}
 Vi vil i dette afsnit beskrive vores opsætning af versionsstyring og struktur for projektet. Endvidere hvilke værktøjer vi har brugt og hvordan vi har brugt dem.
@@ -345,6 +338,8 @@ Vi har beskrevet de metodoliger vi har brugt under vores udviklingsproces i afsn
 
 \subsection{Metodologier}
 \label{sec:methodologies}
+Vi har i dette afsnit beskrevet nogle populære metodologier til softwareudvikling, som vi har brugt i løbet af projektet.\\
+Vi har beskrevet vores tilgang til testmetodologier i afsnit \ref{sec:testfirst}.
 \subsubsection{Parprogrammering}
 Da vi, som nævnt, har mødtes hver uge, har vi også benyttet os af metodologien parprogrammering. Parprogrammering består af at én person sidder og skriver kode på tastaturet, og den anden kigger efter fejl og tænker over, om det er rigtig kode der bliver skrevet. Det er vigtigt at det ikke bliver til at den ene bare kigger på, og at man ikke bruger det til de nemme programmeringsopgaver.\footnote{\emph{Code Complete} side 483-484}\\
 \\
@@ -352,17 +347,10 @@ Vi har brugt parprogrammering til de opgaver som vi ikke kunne løse alene, og u
 
 \subsubsection{Formelle inspektioner}
 Formelle inspektioner består af at koden bliver kigget igennem af personer der ikke selv har skrevet koden. Der bliver fokuseret på steder, hvor der har været problemer førhen, og på at \textbf{opdage} fejl og \textbf{ikke rette} dem.\\
-Det er vigtigt at personen (\textit{moderator}), der står for reviewet ikke også selv har skrevet kode, da man kan stirre sig blind på sine egne fejl, og dermed utilsigtet føre fokus et forkert sted hen.\\
+Det er vigtigt at personen (\textit{moderator}), der står for reviewet ikke også selv har skrevet kode, da man kan stirre sig blind på sine egne fejl, og dermed utilsigtet føre fokus et forkert sted hen. For at forbedre inspektioner kan data indsamles fra hver inspektion og herefter flettes ind i nye inspektioner.\footnote{\emph{Code Complete} side 485}\\
 \\
-For at forbedre inspektioner kan data indsamles fra hver inspektion og herefter flettes ind i nye inspektioner.\\
-\\
-Vi har ikke udført nogle formelle inspektioner, udover i review-sessionerne 3 og 4.\\%reference?
-I session 3 blev der ikke tilstrækkeligt forberedt fra hverken den ene eller den anden gruppe, hvilket skyldtes kommunikationsproblemer mellem grupperne og instruktorerne. Da det er et krav, at der skal være forberedt til reviews, førte dette til, at der ikke blev udført reviews i denne session.\\
-% forklar review 4
-\\
-\\
-Vi har beskrevet vores tilgang til testmetodologier i afsnit \ref{sec:testfirst}.
-
+Vi har ikke udført nogle formelle inspektioner, udover i review-sessionerne 3 og 4.\\
+I session 3 blev der ikke tilstrækkeligt forberedt fra hverken den ene eller den anden gruppe, hvilket skyldtes kommunikationsproblemer mellem grupperne og instruktorerne. Da det er et krav, at der skal være forberedt til reviews, førte dette til, at det blev en meget løs og uformel inspektion. Se evt. \nameref{sec:bilag_review} på side \pageref{sec:bilag_review}.\\
 
 \subsection{Git}
 \label{sec:git}
@@ -377,7 +365,7 @@ Vi benyttet GitHub til at holde styr på arbejdsopgaver, som minder om use cases
 Vores issues minder om use cases, men de kan også være bugs eller anden implementation som ikke nødvendigvis er en use case. \\
 \\
 Igennem forløbet har vi været gode til at få lavet de opgaver vi havde sat os for at skulle løse, selvom der er nogle enkelte issues, som ikke er blevet lukket inden forløbets afslutning. Disse implementationer har vi valgt at beskrive senere i rapporten. \\ \\
-Vi begyndte først rigtig at bruge de her GitHub-funktioner, såsom issues og milepæle, efter 1-2 måneder inde i forløbet. Set tilbage ville vi gerne have startet med det tidligere, da det maksimerer effektivitet, men vi kendte simpelthen ikke til det på det tidspunkt, og fik det faktisk anbefalet af en anden gruppe til en review-session. % reference til bilag?
+Vi begyndte først rigtig at bruge de her GitHub-funktioner, såsom issues og milepæle, efter 1-2 måneder inde i forløbet. Set tilbage ville vi gerne have startet med det tidligere, da det maksimerer effektivitet, men vi kendte simpelthen ikke til det på det tidspunkt, og fik det faktisk anbefalet af en anden gruppe til en review-session.
 
 \subsection{Testing}
 \subsubsection{Test-first og test-driven development}
@@ -460,7 +448,6 @@ Vi kan efter vores forløb konkludere følgende:
 
 \bibitem{mergecommits}
     GitHub. (2016). \textit{ProjectStockSD/README.md at 0.1.1}. Hentet 13. juni, 2016, fra\\\url{https://github.com/cenh/ProjectStockSD/blob/0.1.1/README.md#undgå-merge-commits}
-% der skal også datoer på links
 
 \end{thebibliography}
 
@@ -473,29 +460,29 @@ Vi kan efter vores forløb konkludere følgende:
 \begin{center}
 	\begin{tabular}{|p{0.05\textwidth}|p{0.5\textwidth}|p{0.45\textwidth}|}
 		\hline
-	\textbf{D\#} & \textbf{Færdigimplementerede use cases} & \textbf{Ændringer i designet} \\ \hline
+	\textbf{D\#} & \textbf{Færdigimplementerede brugsscenarier} & \textbf{Ændringer i designet} \\ \hline
 
-	D1 & Vi fik ikke færdiggjort nogen use cases i dette \textit{sprint}. & Ingen ændringer, da projektet påbegyndes her. \\ \hline
+	D1 & Første iteration, ingen brugsscenarier er lavet, men en masse overvejelser og diskussion er lavet. & Ingen ændringer da projektet lige er blevet påbegyndt. \\ \hline
 
 	D2 & 		\begin{minipage}[t]{0.4\textwidth}
 	\begin{itemize}
 		\item Det skal være muligt at se et katalog over projekter.
 		\end{itemize}
-		\end{minipage} & Vi begyndte at bruge Django (web framework). Vi tog dette valgt, efter at have snakket med andre grupper, og foretaget \textit{research} på nettet. Vi mente, at det kunne hjælpe os med at opfylde vores use cases. \\ \hline
+		\end{minipage} & Vi begyndte at bruge Django (Web framework). Dette valg tog vi efter at have afholdt R1 med en anden gruppe, og efter at have diskuteret det sammen i gruppen. Vi mente at Django vil give os en fordel med at implementere vores brugsscenarier. \\ \hline
 
 	D3 &
 	\begin{minipage}[t]{0.4\textwidth}
 	\begin{itemize}
-		\item Systemet skal kunne præsentere \textit{up-to-date} oplysninger om potentielle vejledere, herunder:
+		\item Systemet skal kunne præsentere opdaterede oplysninger om potentielle vejledere, herunder:
 		\begin{itemize}
 			\item Tidligere projekter.
-			\item Forskningspublikationer.
 			\item Kontaktoplysninger.
 		\end{itemize}
+		\item Høstning af vejlederes information fra DIKUs hjemmeside.
 	\end{itemize}
-	\end{minipage} & k \\
+	\end{minipage} & Vi besluttede os for ikke at bruge mere tid på at implementere publikationer. \\
 		\hline
-	D4 & k & k \\ \hline
+	D4 & Delvis verifikation af vejledere, samt mulighed for vejledere at logge ind på hjemmesiden og tilføje projekter. & Ingen ændringer til design er blevet lavet i denne iteration. \\ \hline
 	\end{tabular}
 \end{center}~\\
 
@@ -504,7 +491,7 @@ Vi kan efter vores forløb konkludere følgende:
 Man kan hente vores release på følgende link:
 \url{https://github.com/cenh/ProjectStockSD/releases/tag/0.1.1}\\
 \\
-I arkivet ligger der en fil kaldet INSTALL.md som vil forklarer hvordan man kører vores hjemmeside lokalt, men også hvordan man kører vores tests. \\ \\
+I arkivet ligger der en fil kaldet INSTALL.md, der forklarer, hvordan man kører vores hjemmeside lokalt, og også hvordan man kører vores tests. \\ \\
 Alternativt har vi også sat en server op til at køre webapplikationen her: \url{http://128.199.39.136/}
 
 \subsection{Bilag C}
@@ -512,11 +499,11 @@ Alternativt har vi også sat en server op til at køre webapplikationen her: \ur
 \subsubsection{R1: Krav}
 
 \subsubsection*{\textit{Meta:}}
-Vi foretog i dette \textit{sprint} et \textit{review} af 'gruppe 4's delaflevering 1. Her gav vi dem følgende kommentarer, her præsenteret som stikord til os selv, der blev uddybet, mundtligt.
+Vi foretog i dette \textit{sprint} et \textit{review} af 'gruppe 4's delaflevering 1. Her gav vi dem følgende kommentarer, her præsenteret som stikord til os selv, der blev uddybet mundtligt.
 
 \subsubsection*{\textit{Review:}}
 \textbf{Afklaring af krav} \\
-Beskriver den nuværende problemstilling fint ("shopping" problemet).
+Beskriver den nuværende problemstilling fint ("shopping"{}-problemet).
 User stories: \\
 - Hvad med business-clubs?\\
 \textbf{Opsætning af udviklingsmiljø} \\
@@ -543,6 +530,7 @@ Figur 2 i afsnittet "Abstraktion og designmønstre" er lidt forvirrende og misvi
 Tabllen, der indeholder hvilke brugere, der har hvilke rettigheder i underafsnittet "CRUD-modellen" hjælper meget på forståelsen.
 
 \subsubsection{R3: Kode}
+\label{sec:bilag_review}
 \subsubsection*{\textit{Meta:}}
 Vi foretog i dette \textit{sprint} et \textit{review} af 'gruppe 11's delaflevering 3. Under mødet foretog vi et løst review af 'gruppe 11's kode. Denne gennemgang blev ikke foretaget stringent, da der havde været nogle kommunikationsproblemer, så vi ikke havde udveklset uddrag af kode inden mødet.
 
@@ -615,7 +603,7 @@ I \texttt{Scraperv3.py}:
 \label{sec:bilag_struktur}
 Strukturen i vores Django-projekt er vist herunder.\\
 \texttt{\_\_init\_\_.py} filer er udeladt, samt andre filer der ligner hinanden.\\
-Se evt. vedlagte arkiv \texttt{Exam.zip}.
+Se evt. GitHub release-arkivet nævnt i \nameref{sec:bilagB}.
 \begin{nodeC}
     \item{project\_stock}
     \begin{nodeC}
