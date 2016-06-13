@@ -142,7 +142,7 @@ Django frameworket er opbygget efter designmønstret \textit{Model-View-Controll
 Et \textit{view}\cite{djangoView} er en Python-funktion, der tager en web-forespørgsel og returnerer en web-respons i form af HTML som kan vises til brugeren. \\
 \textit{Templates} (skabeloner) benyttes til dynamisk at generere HTML-sider, for at spare kode og for nemt at kunne benytte variabelnavne, direkte i det HTML brugeren får vist i sin browser. Variablerne vil ikke dukke op i HTML-koden, men vil blive erstattet af variablens værdi. Django har sit eget indbyggede template sprog\cite{djangoTemplate}, som vi har benyttet i vores projekt.\\
 \\
-Django har en masse filer, der har ansvar for mange forskellige ting, så vi har derfor beskrevet filstrukturen i sektion \hyperref[sec:struktur]{\ref*{sec:struktur}: \nameref*{sec:struktur}}.
+Django har en masse filer, der har ansvar for mange forskellige ting, så vi har derfor beskrevet filstrukturen i afsnit \ref{sec:struktur}.
 
 \subsection{Struktur}
 \label{sec:struktur}
@@ -170,12 +170,11 @@ Nogle af disse filer er vigtigere end andre for at have en tilgængelig webappli
 Filen \texttt{manage.py} er essentiel eftersom, at det er den fil som styrer selve hjemmesiden. Det er med den fil man opretter et Django-projekt, starter en lokal webserver, opdaterer ens database og meget andet.\\
 Vi har en fil der hedder \texttt{fillmockdata.py}, som står for at bruge scraperen til at høste data, hvorefter den indsætter det i databasen. Det er altså et interface mellem scraperen og det Django-specifikke databasekode.\\
 \\
-Vores specifikke struktur kan findes i bilag under ...
+Vores specifikke struktur kan findes i bilag under \nameref{sec:bilag_struktur}.
 
 \subsection{Modularitet}
 Django er bygget op således, at (næsten) alle moduler kan tilføjes, ændres og fjernes som man ønsker, uden at det betyder noget for den overordnede applikation. Altså kan man f.eks. tilføje/fjerne \texttt{models.py} for at tilføje/fjerne projektets databasestruktur eller tilføje/fjerne \texttt{tests.py} afhængigt af om man vil have tests eller ej. Alternativt kan man lave en undermappe der hedder tests og placere sine \texttt{test\_*.py} filer her. Dette er en funktion indbygget i Pythons \texttt{unittest} modul, som automatisk leder i denne mappe efter navne der starter med "test".
 Dette har vi gjort for at dele vores unit tests op og dermed gøre dem lettere overskuelige. F.eks. har vi både en fil til at teste vores models og en til at teste vores views, \texttt{test\_models.py} og \texttt{test\_views.py}.
-% Forklar views og models tidligere? i introduktion måske?
 
 \subsection{Scraper}
 Vi har en funktionel scraper, der kan gemme information fra \url{http://diku.dk/Ansatte}, og alle underlinks for alle ansatte på siden.\\
@@ -188,13 +187,13 @@ Scraperen er implementeret vha. et eksternt Python bibliotek kaldet Scrapy.
     \label{fig:scraper_class_diagram}
 \end{figure}~\\
 \hyperref[fig:scraper_class_diagram]{Figur \ref*{fig:scraper_class_diagram}} viser et UML-klassediagram over de klasser vi selv har implementeret (DikuAnsatteSpider og DikuAnsatteItem) og de Scrapy-klasser som de nedarver fra.\\
-En såkaldt spider har en variabel, \texttt{name} repræsenteret som en streng. Denne bliver ikke specifikt brugt til noget, men er påkrævet af Scrapy.\\
+En såkaldt spider har en variabel, \texttt{name} repræsenteret som en streng. Denne bruger vi ikke specifikt til noget, men er påkrævet af Scrapy.\\
 \texttt{start\_urls} er liste af strenge, der beskriver hvilke URLs spideren skal starte med at høste data fra. Mindst én start-URL er påkrævet.\\
 \texttt{allowed\_domains} er en liste af strenge der definerer hvilke domæner spideren er tilladt at høste fra.\\
 \texttt{items} er en liste af \texttt{scrapy.Item}'s, som indeholder alle høstede "items", altså ansatte. Denne variabel kan så tilgås og manipuleres med, for at få fat i medarbejdernes kontaktinformation, lokation, navn, titel, osv.\\
 \\
 Der skulle også have været en scraper til at høste projektdata, men da der ikke er et samlet sted med alle projekter, kunne det ikke lade sig gøre.
-% mere forklaring
+
 \subsection{Frontend}
 Under designet af vores frontend har der ikke været fokus på det æstetiske eller brugervenlighed, men i stedet på hvor meget information vi kan distribuere til de studerende. Vi påstår ikke at et flot og brugervenligt design ikke er vigtigt, men vi ville helst opfylde så mange krav så muligt, og æstetik var ikke en prioritet.\\
 \\
@@ -214,7 +213,7 @@ Herunder har vi de mest essentielle sider i vores webapplikation.
     \label{fig:frontend_supervisors}
 \end{figure}
 ~\\
-\hyperref[fig:frontend_projects]{Figur \ref*{fig:frontend_projects}} og \hyperref[fig:frontend_supervisors]{figur \ref*{fig:frontend_supervisors}} viser de to vigtigste sider i vores webapplikation. Disse to sider viser information omkring projekter og vejledere, og opfylder dermed henholdsvis krav 1 og 2 fra \hyperref[sec:corefuncs]{\ref*{sec:corefuncs}: \nameref*{sec:corefuncs}}. Klikker man på en vejleder eller et projekt, vil man blive vist detaljer omkring den specifikke vejleder eller projekt.
+\hyperref[fig:frontend_projects]{Figur \ref*{fig:frontend_projects}} og \hyperref[fig:frontend_supervisors]{figur \ref*{fig:frontend_supervisors}} viser de to vigtigste sider i vores webapplikation. Disse to sider viser information omkring projekter og vejledere, og opfylder dermed henholdsvis krav 1 og 2 fra afsnit \ref{sec:corefuncs}. Klikker man på en vejleder eller et projekt, vil man blive vist detaljer omkring den specifikke vejleder eller projekt.
 
 \begin{figure}[H]
     \centering
@@ -223,15 +222,16 @@ Herunder har vi de mest essentielle sider i vores webapplikation.
     \label{fig:profile}
 \end{figure}
 ~\\
-Figur \ref{fig:proflile} viser hvordan en vejleders profil-side ser ud. Denne profil er generet af vores scraper, som har høstet informationen fra DIKUs hjemmeside.
-\subsubsection{Groups}
+\hyperref[fig:profile]{Figur \ref*{fig:profile}} viser hvordan en vejleders profilside ser ud. Denne profil er generet af vores scraper, som har høstet informationen fra DIKU's hjemmeside.
+
+\subsubsection{Grupper}
 På denne side kan studerende se en oversigt over grupper med vejledere inden for et specifikt felt, og dermed finde adskillige vejledere inden for feltet, som den studerende interesserer sig for.
-Denne side er funktionel og opfylder krav 1 under \hyperref[sec:nicefuncs]{\ref*{sec:nicefuncs}: \nameref*{sec:nicefuncs}}. Dog er scraperen endnu ikke i stand til også at høste ansattes grupper. \hyperref[fig:frontend_groups]{Figur \ref*{fig:frontend_groups}} på side \pageref{fig:frontend_groups} viser et screenshot af denne side.
+Denne side er funktionel og opfylder krav 1 i afsnit \ref{sec:nicefuncs}. Dog er scraperen endnu ikke i stand til også at høste ansattes grupper. \hyperref[fig:frontend_groups]{Figur \ref*{fig:frontend_groups}} på side \pageref{fig:frontend_groups} viser et screenshot af denne side.
 
 \subsubsection{Registrering}
 Her kan en vejleder registrere sig på siden, men kun hvis vejlederen allerede står som vejleder på siden, enten indhentet vha. scraperen eller indtastet manuelt af en "superuser". En superuser er en bruger på siden der kan tilføje, slette og redigere i alt.\\
 Siden er ikke helt funktionel, da den ikke rigtigt gør noget, men dette ville ikke kræve meget ekstra arbejde at få lavet færdigt.
-Denne side ville opfylde krav 3 fra \hyperref[sec:corefuncs]{\ref*{sec:corefuncs}: \nameref*{sec:corefuncs}}, hvis den havde været færdigimplementeret. \hyperref[fig:frontend_registration]{Figur \ref*{fig:frontend_registration}} på side \pageref{fig:frontend_registration} viser et udkast af denne funktion.
+Denne side ville opfylde krav 3 fra \ref{sec:corefuncs}, hvis den havde været færdigimplementeret. \hyperref[fig:frontend_registration]{Figur \ref*{fig:frontend_registration}} på side \pageref{fig:frontend_registration} viser et udkast af denne funktion.
 
 \subsubsection{Adminpanel}
 Vi bruger Djangos indbyggede adminpanel, dog med nogle få ændringer, til at håndtere indtastning af data manuelt. Bl.a. er adminpanelet blevet udvidet med en navigationsbar til at navigere rundt på siden. Denne fulgte ikke med Djangos adminpanel, og det kunne derfor være svært at komme tilbage til vores webapplikation når man først går ind i adminpanelet. Screenshots af adminpanelet, med og uden ændringer, kan ses på \hyperref[fig:frontend_admin_vanilla]{figur \ref*{fig:frontend_admin_vanilla}}, \ref{fig:frontend_admin_login} og \ref{fig:frontend_admin} i \nameref{sec:bilag_frontend}.
@@ -243,29 +243,29 @@ Til afprøvning og test af projektet gjorde vi os nogle forskellige overvejelser
 Disse tests er yderligere beskrevet i \nameref{sec:bilag_tests}.
 
 \subsection{Videreudvikling og vedligeholdelse}
-Vi har valgt at sikre dele af applikationens opfyldelse af krav ved tests. At det kun er dele som er blevet grundigt testet er grundet, at vi prioriterede færdigudvikling af projektet over hvad vi vil mene er overflødig test. Her menes der, at vi kan se at hjemmesiden opfylder de stillede krav fra sektion \hyperref[sec:krav]{\ref*{sec:krav}: \nameref*{sec:krav}}uden at teste alt. Det ved vi, da vi har brugt hjemmesiden, manuelt har bevæget os rundt på den og løbende har opdaget fejl og mangler, og derefter rettet/implementeret dem. Nøgle funktioner i Django er dog blevet testet, og ligeledes har vi skrevet unit-tests for nogle af de kravopfyldende opgaver. \\
-Til fremtidig brug og videreudvikling er vores acceptance-tests skrevet således, at selvom der skulle opstå ændringer på hjemmesiden, kan vi nemt bruge dem igen. Det kan vi fordi de tilgår generelle elementer i den tabel, som hjemmesiden repræsenterer information i. I stedet for at tilgå den specifikke information cellerne indeholder, som på et senere tidspunkt kunne ændre sig. Således undgår vi at testen fejler fordi indholdet bliver ændret. Dette er en stor fordel, da de tilgængelige projekter ofte udskiftes, og tests skulle omskrives hver gang, hvis ikke de var skrevet på denne vis. \\
-For testen er det altså ligegyldigt hvad der står i tabellen, bare siden har samme struktur. Skulle selve strukturen af sitet dog ændres, kan vi forholdsvis nemt omskrive testene til at tilgå elementer på en ny måde. Det kan vi fordi, vi kun skal ændre den del af koden som beskriver elementer der skal tilgås, da funktionerne fortsat er de samme. \\
-Vi har også valgt at begrænse os i testing, da vi fulgte følgende råd fra Code Complete\cite{cc} om \textit{Incomplete Testing} ''When you're planning tests, eliminate those that don't tell you anything new''. F.eks. har vi en stor liste af vejledere, alle høstet fra samme database. I stedet for at teste scraperens resultat for hver og en, tester vi kun én tilfældig vejleder, for at se, hvad vi vil mene er, et fyldestgørende resultat. \\
+Vi har valgt at sikre dele af applikationens opfyldelse af krav ved tests. At det kun er dele som er blevet grundigt testet er grundet, at vi prioriterede færdigudvikling af projektet over hvad vi vil mene er overflødig test. Her menes der, at vi kan se at hjemmesiden opfylder de stillede krav fra sektion \hyperref[sec:krav]{\ref*{sec:krav}: \nameref*{sec:krav}} uden at teste alt. Det ved vi, da vi har brugt hjemmesiden ved manuelt at bevæget os rundt og løbende opdaget fejl og mangler, og derefter rettet/implementeret dem. Nøgle funktioner i Django er dog blevet testet, og ligeledes har vi skrevet unit-tests for nogle af de kravopfyldende opgaver. \\
+Til fremtidig brug og videreudvikling er vores acceptance-tests skrevet således, at selvom der skulle opstå ændringer på hjemmesiden, kan vi nemt bruge dem igen. Dette er fordi de tilgår elementer i den tabel, som hjemmesiden repræsenterer information i, i stedet for at tilgå den specifikke information cellerne indeholder, som på et senere tidspunkt kunne ændre sig. Således undgår vi at testen fejler fordi indholdet bliver ændret. Dette er en stor fordel, da de tilgængelige projekter ofte udskiftes, og tests skulle omskrives hver gang, hvis ikke de var skrevet på denne vis. \\
+For testen er det altså ligegyldigt hvad der står i tabellen, bare siden har samme struktur. Skulle selve strukturen af sitet dog ændres, kan vi forholdsvis nemt omskrive testene til at tilgå elementer på en ny måde, ved kun at ændre den del af koden som beskriver elementer der skal tilgås, da funktionerne fortsat vil være de samme. \\
+Vi har også valgt at begrænse os i testing, da vi fulgte følgende råd fra Code Complete\cite{cc} om \textit{Incomplete Testing}: "When you're planning tests, eliminate those that don't tell you anything new."{} F.eks. har vi en stor liste af vejledere, alle høstet fra samme database. I stedet for at teste scraperens resultat for hver og en, tester vi kun én tilfældig vejleder, for at se, hvad vi vil mene, er et fyldestgørende resultat. \\
 Da vores tests, som beskrevet ovenfor, er forholdsvis automatiske og agile, kan vi nemt anvende dem når vi tilføjer ting til sitet, eller ændrer på de ting som i forvejen er til stede. Det har givet mulighed for ubesværet at teste, mens vi har arbejdet på projektet. \\
 
 \subsection{Unit-tests}
 Vi bruger Django, hvilket er et omfattende og stabilt framework, men vi har også valgt at unit-teste dele af projektet, for at sikre fejlbarheden så vidt som muligt. Django-funktionerne har vi i grove træk testet ved at opsætte to scenarier for de forskellige framework-funktioner, ét scenarie som får forkerte specifikationer og ét scenarie som får de korrekte. Således kan vi se om de fejler eller kører som ønsket og forventet. Disse tests er også yderligere beskrevet i \nameref{sec:bilag_tests}.
 
 \subsection{Kørsel af test}
-For at efterprøve vores tests, kan de køres på følgende vis
+For at efterprøve vores tests, kan de køres på følgende vis:
 \begin{enumerate}
   \item Installer Robot vha. pip installer og følgende kommando\\
   \texttt{pip install robotframework}
-  \item Find ind i test mappen via følgende sti \\ \texttt{ProjectStockSD/project\_stock/project\_stock/tests/RobotTests/real\_tests}
-  \item Kør den valgte test ved at skrive \texttt{robot \_\_\_\_Test.robot} eksempelvis \\
+  \item Find ind i test mappen via følgende sti \\ \texttt{ProjectStockSD/project\_stock/project\_stock/tests/RobotTests/real\_tests} 
+  \item Kør den valgte test ved at skrive \texttt{robot \_\_\_\_Test.robot}, eksempelvis \\
   \texttt{robot ProjectsTest.robot}
-  \item Hvis robot er installeret korrekt skulle terminalen gerne se således ud
+  \item Hvis Robot er installeret korrekt skulle terminalen gerne se ud som i \hyperref[fig:console_output]{figur \ref*{fig:console_output}}
     \begin{figure}[H]
         \centering
         \includegraphics[scale=0.5]{test.png}
         \caption{Konsol output efter robot test}
-        \label{fig:console output}
+        \label{fig:console_output}
     \end{figure}~
   \item Yderligere kan man se udvidet information om testen i de generede filer \texttt{log.html} og \texttt{report.html}. Uddrag af disse kan også findes i \nameref{sec:bilag_tests}.
 \end{enumerate}
@@ -298,16 +298,38 @@ Vi har brugt GitHubs \textit{issue tracking system}\cite{issuetracking} og tilde
 \section{Diskussion og reflektion}
 \label{sec:diskussion}
 Vi vil i dette afsnit diskutere og reflektere over vores udviklingsprocessen og hvordan vi har arbejdet sammen.
+
 \subsection{Udviklingsprocessen}
-Vi har som gruppe bestræbt os på at mødes mindst én gang om ugen. Dette selvorganiserede møde er udover de ugentlige møder med instruktorerne. På disse selvorganiserede ugentlige møder har vi uddelegeret arbejdsopgaver og diskuteret og arbejdet med forskellige værktøjer og frameworks.\\
-Disse møder har fungeret godt, og det har været mere effektivt at kunne kommunikere ansigt til ansigt i stedet for skriftligt. \\ \\
-Vi har ikke brugt en bestemt softwareudviklingsproces, dog har vi hovedsagligt arbejdet agilt. Hvori vi har mødtes sammen et par gange om ugen, snakkede sammen om det arbejde vi har lavet og det arbejde vi skal lave. Vi startede med at lave en tidlig prototype af vores produkt, som vi igennem projektforløbet har udviklet på og tilføjet funktionalitet. Vi har ikke lagt en bestemt plan, hvori opgaver skulle være løst, men haft en mere løs plan hvori vi har skrevet hvornår vi forstiller os opgaver skulle være løst. Vi har derfor tilpasset os igennem forløbet, så vi kunne nå at få løst de opgaver vi så som mest vigtige. Vi har ligesom man typisk vil gøre under agile softwareudvikling afprøvet vores prototype tit og ofte, for at se hvordan prototypen håndterer nyt funktionalitet.
+Vi har som gruppe bestræbt os på at mødes mindst én gang om ugen. Dette selvorganiserede møde er udover de ugentlige møder med instruktorerne. På disse selvorganiserede ugentlige møder har vi uddelegeret arbejdsopgaver og diskuteret og arbejdet med forskellige værktøjer og frameworks. Disse møder har fungeret godt, og det har været mere effektivt at kunne kommunikere ansigt til ansigt i stedet for skriftligt.\\
+\\
+Vi har beskrevet de metodoliger vi har brugt under vores udviklingsproces i afsnit \ref{sec:methodologies}.
+
+\subsection{Metodologier}
+\label{sec:methodologies}
+\subsubsection{Parprogrammering}
+Da vi, som nævnt, har mødtes hver uge, har vi også benyttet os af metodologien parprogrammering. Parprogrammering består af at én person sidder og skriver kode på tastaturet, og den anden kigger efter fejl og tænker over, om det er rigtig kode der bliver skrevet. Det er vigtigt at det ikke bliver til at den ene bare kigger på, og at man ikke bruger det til de nemme programmeringsopgaver.\footnote{\emph{Code Complete} side 483-484}\\
+\\
+Vi har brugt parprogrammering til de opgaver som vi ikke kunne løse alene, og udover det har vi siddet ved hver vores computer.
+
+\subsubsection{Formelle inspektioner}
+Formelle inspektioner består af at koden bliver kigget igennem af personer der ikke selv har skrevet koden. Der bliver fokuseret på steder, hvor der har været problemer førhen, og på at \textbf{opdage} fejl og \textbf{ikke rette} dem.\\
+Det er vigtigt at personen (\textit{moderator}), der står for reviewet ikke også selv har skrevet kode, da man kan stirre sig blind på sine egne fejl, og dermed utilsigtet føre fokus et forkert sted hen.\\
+\\
+For at forbedre inspektioner kan data indsamles fra hver inspektion og herefter flettes ind i nye inspektioner.\\
+\\
+Vi har ikke udført nogle formelle inspektioner, udover i review-sessionerne 3 og 4.\\%reference?
+I session 3 blev der ikke tilstrækkeligt forberedt fra hverken den ene eller den anden gruppe, hvilket skyldtes kommunikationsproblemer mellem grupperne og instruktorerne. Da det er et krav, at der skal være forberedt til reviews, førte dette til, at der ikke blev udført reviews i denne session.\\
+% forklar review 4
+\\
+\\
+Vi har beskrevet vores tilgang til testmetodologier i afsnit \ref{sec:testfirst}.
+
 
 \subsection{Git}
 \label{sec:git}
 Vi har igennem projektet arbejdet meget med Git, herunder den online service GitHub, og dermed lært en del om Git. I starten af forløbet fik vi mange \textit{merge commits}. Git gemmer ændringer i commits, og en merge commit er en sammenfletning af to commits. Merge commits opstår når flere har foretaget ændringer i samme fil og ikke arbejder ud fra seneste commit. Git skal derfor flette de ændrede filer fra begge udviklere sammen.\\
 \\
-Vi undersøgte problemet, og fandt frem til nogle Git-opsætninger som hjalp med at undgå disse merge conflicts.\cite{mergecommits}\\
+Vi undersøgte problemet, og fandt frem til nogle Git-opsætninger som hjalp med at undgå mange af disse merge commits.\cite{mergecommits}\\
 \\
 Vi har ligeldes benyttet flere af GitHubs forskellige funktionaliteter til intern kommunikation. I roden på vores GitHub repository findes filen \texttt{README.md}. Denne fil har været brugt til vidensdeling.
 Her har vi bl.a. skrevet tips til at bruge Git mere effektivt og til at dele tanker og generelle informationer, der er relevante for projektet. Dette kan være alt fra, hvilke hjemmesider vi kan scrape, og hvordan man kan scrape det, til at dele YouTube videoer, der beskriver Django. \\ \\
@@ -320,7 +342,8 @@ Vi begyndte først rigtig at bruge de her GitHub-funktioner, såsom issues og mi
 
 \subsection{Testing}
 \subsubsection{Test-first og test-driven development}
-I vores arbejde med projektet, har vi hverken benyttet princippet \textit{test-first} eller \textit{test-driven development (TDD)}, der b.la. kendes fra metodologien \textit{Extreme Programming (XP)}. Test-first og TDD består af at lave tests, og dermed får fastlagt programmets og klassers struktur inden man begynder at kode.\\
+\label{sec:testfirst}
+I vores arbejde med projektet, har vi hverken benyttet princippet \textit{test-first development} eller \textit{test-driven development (TDD)}, der b.la. kendes fra metodologien \textit{Extreme Programming (XP)}. Test-first og TDD består af at lave tests, og dermed får fastlagt programmets og klassers struktur inden man begynder at kode.\footnote{\emph{Code Complete} side 531}\\
 \\
 Vi har senere erfaret, at det kunne have været nyttigt i visse tilfælde, hvis vi havde benyttet en test-first tilgang. Dels fordi det ville være nemmere at unit teste vores kode, og dels fordi det formentlig havde ført til at vi havde skrevet kode, der var mere afkoblet. \\
 Vores begrundelse for ikke at benytte test-first, var at det var svært at forene med Django frameworkets faste krav for, hvordan koden skal struktureres. \\
@@ -349,9 +372,9 @@ Bemærk at nedenstående ikke er use cases, men en beskrivelse af de ting der sk
 \label{sec:konklusion}
 Vi kan efter vores forløb konkludere følgende:
 \begin{itemize}
-\item Vi har fået lavet en hjemmeside, hvori man som vejleder kan ligge projekter op, og studerende kan gå ind på samme side og finde interessante projekter uden at skulle gå fra dør til dør.
-\item Vi har brugt GitHub platformen til at holde styr på de opgaver vi gerne vil have implementeret, men også brugt det til at dele ideer og tanker med hinanden. Endvidere også brugt milepæle til at se hvilke opgaver vi vil have lavet hvornår.
-\item Vores produkt opfylder de fleste af de krav vi havde sat os for at få løst, dog er der stadig en del implementation som skal laves, hvilket vi har beskrevet i vores afsnit om videreudvikling (afsnit: \ref{sec:videreudvikling}).
+\item Vi har fået lavet en hjemmeside, hvorpå man som vejleder kan ligge projekter op, og som studerende kan finde interessante projekter uden at skulle gå fra dør til dør.
+\item Vi har brugt GitHub platformen til at holde styr på de opgaver vi gerne vil have implementeret, men også brugt det til at dele ideer og tanker med hinanden. Endvidere har vi også brugt milepæle til at se hvilke opgaver vi ville have lavet hvornår.
+\item Vores produkt opfylder de fleste af de krav vi havde sat os for at få løst, selvom der dog stadig er en del implementation som skal laves.
 \end{itemize}
 
 \newpage
@@ -369,35 +392,36 @@ Vi kan efter vores forløb konkludere følgende:
 	2nd edition,
 	2004.
 
-\bibitem{djangoFAQ}
-	\url{https://docs.djangoproject.com/en/1.9/faq/general/}
-
-\bibitem{djangoView}
-	\url{https://docs.djangoproject.com/ja/1.9/topics/http/views/}
-
-\bibitem{djangoTemplate}
-	\url{https://docs.djangoproject.com/en/1.9/topics/templates/}
-
 \bibitem{scraping}
-    \url{https://en.wikipedia.org/wiki/Web_scraping}
-
-\bibitem{models}
-    \url{https://docs.djangoproject.com/en/1.9/topics/db/models/}
+    Wikipedia. (2016). \textit{Git (software)}. Hentet 13. juni, 2016, fra\\\url{https://en.wikipedia.org/wiki/Web_scraping}
 
 \bibitem{git}
-    \url{https://en.wikipedia.org/wiki/Git_(software)}
+    Wikipedia. (2016). \textit{Git (software)}. Hentet 13. juni, 2016, fra\\\url{https://en.wikipedia.org/wiki/Git_(software)}
 
-\bibitem{figure_djangoadmin}
-    \url{http://www.djangobook.com/en/2.0/chapter06.html}
 \bibitem{issuetracking}
-    \url{https://en.wikipedia.org/wiki/Issue_tracking_system}
-
-\bibitem{mergecommits}
-    \url{https://github.com/cenh/ProjectStockSD/blob/0.1.1/README.md#undgå-merge-commits}
-% der skal også datoer på links
+    Wikipedia. (2016). \textit{Issue tracking system}. Hentet 13. juni, 2016, fra\\\url{https://en.wikipedia.org/wiki/Issue_tracking_system}
 
 \bibitem{mvc}
-    \url{https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller}
+    Wikipedia. (2016). \textit{Model View Controller}. Hentet 13. juni, 2016, fra\\\url{https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller}
+
+\bibitem{djangoFAQ}
+    Django Software Foundation. (2016). \emph{FAQ: General}. Hentet 13. juni, 2016, fra\\\url{https://docs.djangoproject.com/en/1.9/faq/general/}
+
+\bibitem{djangoView}
+    Django Software Foundation. (2016). \textit{\textit{Writing views}}. Hentet 13. juni, 2016, fra\\\url{https://docs.djangoproject.com/ja/1.9/topics/http/views/}
+
+\bibitem{djangoTemplate}
+    Django Software Foundation. (2016). \textit{Templates}. Hentet 13. juni, 2016, fra\\\url{https://docs.djangoproject.com/en/1.9/topics/templates/}
+
+\bibitem{models}
+    Django Software Foundation. (2016). \textit{Models}. Hentet 13. juni, 2016, fra\\\url{https://docs.djangoproject.com/en/1.9/topics/db/models/}
+
+\bibitem{figure_djangoadmin}
+    The Django Book, Adrian Holovaty, Jacob Kaplan-Moss, et al., (2009). Hentet 13. juni, 2016, fra \url{http://www.djangobook.com/en/2.0/chapter06.html}
+
+\bibitem{mergecommits}
+    GitHub. (2016). \textit{ProjectStockSD/README.md at 0.1.1}. Hentet 13. juni, 2016, fra\\\url{https://github.com/cenh/ProjectStockSD/blob/0.1.1/README.md#undgå-merge-commits}
+% der skal også datoer på links
 
 \end{thebibliography}
 
