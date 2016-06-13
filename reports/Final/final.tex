@@ -84,10 +84,6 @@
 \tableofcontents
 \newpage
 
-\section{Indledning}
-\label{sec:indledning}
-Denne rapport beskriver udviklingsprocessen og det produkt, der er fremkommet efter et semesters arbejde med projektet med titlen 'Project in Stock' (også omtalt 'Project Stock'). Projektet har været en del af kurset Softwareudvikling på Datalogisk Institut, Københavns Universitet.
-
 \section{Problembeskrivelse}
 \label{sec:problem}
 Hvert år skal datalogistuderende på DIKU (Datalogisk Institut, Københavns Universitet) finde et projekt, samt en vejleder, til det afsluttende projekt på deres bachelor- eller kandidatuddanelse. Det kan være en besværlig process, især for studerende, der ikke kender instituttets vejledere eller taler dansk.\\
@@ -111,7 +107,7 @@ Vi foretog en løs priotering af produktets use cases og vurderede, hvad der var
 \subsubsection{Kernefunktionaliteter}
 \label{sec:corefuncs}
 \begin{enumerate}
-	\item Det skal være muligt at se et katalog over projekter.
+	\item Det skal være muligt at se et katalog over projekter og vejledere.
 	\item Systemet skal kunne præsentere opdaterede oplysninger om potentielle vejledere, herunder:
 	\begin{itemize}
 		\item Tidligere projekter
@@ -119,6 +115,7 @@ Vi foretog en løs priotering af produktets use cases og vurderede, hvad der var
 		\item Kontaktoplysninger
 	\end{itemize}
 	\item Personer, der optræder på siden, skal kunne verificeres, hvis de eksempelvis ønsker at tilføje projekter eller foretage rettelser.
+	\item Vejledere skal kunne oprette projekter, som derefter vil indgå i kataloget over projekter.
 \end{enumerate}
 
 \subsubsection{"Nice-to-have"{}-funktionaliteter}
@@ -434,29 +431,29 @@ Vi kan efter vores forløb konkludere følgende:
 \begin{center}
 	\begin{tabular}{|p{0.05\textwidth}|p{0.5\textwidth}|p{0.45\textwidth}|}
 		\hline
-	\textbf{D\#} & \textbf{Færdigimplementerede use cases} & \textbf{Ændringer i designet} \\ \hline
+	\textbf{D\#} & \textbf{Færdigimplementerede brugsscenarier} & \textbf{Ændringer i designet} \\ \hline
 
-	D1 & Vi fik ikke færdiggjort nogen use cases i dette \textit{sprint}. & Ingen ændringer, da projektet påbegyndes her. \\ \hline
+	D1 & Første iteration, ingen brugsscenarier er lavet, men en masse overvejelser og diskussion er lavet. & Ingen ændringer da projektet lige er blevet påbegyndt. \\ \hline
 
 	D2 & 		\begin{minipage}[t]{0.4\textwidth}
 	\begin{itemize}
 		\item Det skal være muligt at se et katalog over projekter.
 		\end{itemize}
-		\end{minipage} & Vi begyndte at bruge Django (web framework). Vi tog dette valgt, efter at have snakket med andre grupper, og foretaget \textit{research} på nettet. Vi mente, at det kunne hjælpe os med at opfylde vores use cases. \\ \hline
+		\end{minipage} & Vi begyndte at bruge Django (Web framework). Dette valg tog vi efter at have afholdt R1 med en anden gruppe, og efter at have diskuteret det sammen i gruppen. Vi mente at Django vil give os en fordel med at implementerer vores brugsscenarier. \\ \hline
 
 	D3 &
 	\begin{minipage}[t]{0.4\textwidth}
 	\begin{itemize}
-		\item Systemet skal kunne præsentere \textit{up-to-date} oplysninger om potentielle vejledere, herunder:
+		\item Systemet skal kunne præsentere up-to-date oplysninger om potentielle vejledere, herunder:
 		\begin{itemize}
 			\item Tidligere projekter.
-			\item Forskningspublikationer.
 			\item Kontaktoplysninger.
 		\end{itemize}
+		\item Høstning af vejlederes information fra DIKUs hjemmeside.
 	\end{itemize}
-	\end{minipage} & k \\
+	\end{minipage} & Vi besluttede os for ikke at bruge mere tid på at implementere publikationer. \\
 		\hline
-	D4 & k & k \\ \hline
+	D4 & Delvis verifikation af vejledere, samt mulighed for vejledere at logge ind på hjemmesiden og tilføje projekter. & Ingen ændringer til design er blevet lavet i denne iteration. \\ \hline
 	\end{tabular}
 \end{center}~\\
 
