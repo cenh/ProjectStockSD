@@ -18,7 +18,7 @@
 \usepackage{listings}
 \usepackage{float}
 \usepackage{dirtree}
-%\usepackage[none]{hyphenat}
+\usepackage[none]{hyphenat}
 \usepackage{cite}
 \lstset{
 	frame=single,
@@ -288,12 +288,13 @@ Vi besluttede os for at vi hver især arbejder mere effektivt og bedre, hvis vi 
 \subsection{GitHub}
 Vi har brugt GitHubs \textit{issue tracking system}\cite{issuetracking} og tildelt issues milepæle, for at holde styr på hvilke arbejdsopgaver eller use cases, vi gerne vil have klaret inden en given iteration er færdig. Milepælene svarer til delafleveringerne og den endelige rapport. Derudover har vi en ekstra milepæl, som bliver brugt til at holde styr på opgaver, vi godt kunne tænke os at implementere, men som ikke er strengt nødvendige. Denne milepæl har vi kaldt "nice to haves."{} Et medlem kan derfor sætte sig selv (eller andre) på en opgave, så alle andre kan se hvem der arbejder på hvad. Der kan læses mere om, hvordan vi har brugt Git og hvilke udfordringer vi har haft i afsnit \ref{sec:git}.
 
-\section{Diskussion og reflektion} % Alle
+\section{Diskussion og reflektion}
 \label{sec:diskussion}
-
+Vi vil i dette afsnit diskutere og reflektere over vores udviklingsprocessen og hvordan vi har arbejdet sammen.
 \subsection{Udviklingsprocessen}
 Vi har som gruppe bestræbt os på at mødes mindst én gang om ugen. Dette selvorganiserede møde er udover de ugentlige møder med instruktorerne. På disse selvorganiserede ugentlige møder har vi uddelegeret arbejdsopgaver og diskuteret og arbejdet med forskellige værktøjer og frameworks.\\
-Disse møder har fungeret godt, og det har været mere effektivt at kunne kommunikere ansigt til ansigt i stedet for skriftligt.
+Disse møder har fungeret godt, og det har været mere effektivt at kunne kommunikere ansigt til ansigt i stedet for skriftligt. \\ \\
+Vi har ikke brugt en bestemt softwareudviklingsproces, dog har vi hovedsagligt arbejdet agilt. Hvori vi har mødtes sammen et par gange om ugen, snakkede sammen om det arbejde vi har lavet og det arbejde vi skal lave. Vi startede med at lave en tidlig prototype af vores produkt, som vi igennem projektforløbet har udviklet på og tilføjet funktionalitet. Vi har ikke lagt en bestemt plan, hvori opgaver skulle være løst, men haft en mere løs plan hvori vi har skrevet hvornår vi forstiller os opgaver skulle være løst. Vi har derfor tilpasset os igennem forløbet, så vi kunne nå at få løst de opgaver vi så som mest vigtige. Vi har ligesom man typisk vil gøre under agile softwareudvikling afprøvet vores prototype tit og ofte, for at se hvordan prototypen håndterer nyt funktionalitet.
 
 \subsection{Git}
 \label{sec:git}
@@ -333,13 +334,18 @@ Bemærk at nedenstående ikke er use cases, men en beskrivelse af de ting der sk
 \begin{itemize}
 \item Verifikation og oprettelse af vejledere i systemet. Vi nåede ikke at lave et færdigt system til at lade vejledere registere sig i vores system, så de selv kan ligge projekter op på hjemmesiden.
 \item Man skal kunne se en liste over publikationer hos en vejleder, og en vejleder skal kunne ligge publikationer ind på sin side.
-%tilføj mindst en mere
+\item En vejleder skal kunne tilknytte keywords til projekter og publikationer så studerende eller andre besøgende kan filtrere på disse keywords. En midlertidig løsning er blevet implementeret hvori en besøgende kan søge i vores katalog.
 \end{itemize}
 
 \newpage
 \section{Konklusion}
 \label{sec:konklusion}
-% Christian
+Vi kan efter vores forløb konkludere følgende:
+\begin{itemize}
+\item Vi har fået lavet en hjemmeside, hvori man som vejleder kan ligge projekter op, og studerende kan gå ind på samme side og finde interessante projekter uden at skulle gå fra dør til dør.
+\item Vi har brugt GitHub platformen til at holde styr på de opgaver vi gerne vil have implementeret, men også brugt det til at dele ideer og tanker med hinanden. Endvidere også brugt milepæle til at se hvilke opgaver vi vil have lavet hvornår.
+\item Vores produkt opfylder de fleste af de krav vi havde sat os for at få løst, dog er der stadig en del implementation som skal laves, hvilket vi har beskrevet i vores afsnit om videreudvikling (afsnit: \ref{sec:videreudvikling}).
+\end{itemize}
 
 \newpage
 \begin{thebibliography}{9}
