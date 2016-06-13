@@ -166,14 +166,13 @@ Nogle af disse filer er vigtigere end andre for at have en tilgængelig webappli
 Filen \texttt{manage.py} er essentiel eftersom, at det er den fil som styrer selve hjemmesiden. Det er med den fil man opretter et Django-projekt, starter en lokal webserver, opdaterer ens database og meget andet.\\
 Vi har en fil der hedder \texttt{fillmockdata.py}, som står for at bruge scraperen til at høste data, hvorefter den indsætter det i databasen. Det er altså et interface mellem scraperen og det Django-specifikke databasekode.\\
 \\
-
 Vores specifikke struktur kan findes i bilag under ...
 
 \subsection{Generelt om Django frameworket}
 Django frameworket er opbygget efter designmønstret \textit{Model-View-Controller (MVC)}. Udviklerne har dog valgt navnekonventionen \textit{Model-Template-View (MTV)} \cite{djangoFAQ}. I Django er \textit{model} ansvarlig for at tilgå og validere data fra f.eks. en database. Her kan Django frameworket hjælpe således, at et felt i Django-model svarer til et felt i en databasetabel. \\
 Et \textit{view} er en Python-funktion, der tager en web-forespørgsel (\textit{request}) og returnerer web-respons \cite{djangoView}. \\
-\textit{Template} benyttes til dynamisk at genere HTML-sider, der b.la. til visuelt at præsentere information for brugeren. Django har sit eget indbyggede \textit{template language} \cite{djangoTemplate}. Vi har benyttet dette \textit{template language} i vores projekt.
-
+\textit{Template} benyttes til dynamisk at genere HTML-sider, der b.la. til visuelt at præsentere information for brugeren. Django har sit eget indbyggede \textit{template language} \cite{djangoTemplate}. Vi har benyttet dette \textit{template language} i vores projekt.\\
+\\
 Den specifikke struktur for vores projekt kan findes i \nameref{sec:bilag_struktur}.
 
 \subsection{Modularitet}
@@ -324,8 +323,7 @@ Den web scraper vi har udviklet, er designet til at høste data fra siden \url{h
 Vi har vurderet, at det ville være svært og formentlig unødigvendigt at designe en abstrakt scraper, som ville være i stand til at høste data fra mange forskellige websteder. At ekstrahere data fra et specifikt websted, afhænger i høj grad af, hvordan dette websted er opbygget. Er den information man er interesseret i, f.eks. placeret i  HTML-tabeller, skal man vide hvilke HTML-tags og -attributer man skal lede efter. Ligeledes skal man vide, hvordan denne information er formateret. \\
 Da vi ikke har fundet andre websteder, hvor man kan høste information om de ansatte, eller projekter, for den sags skyld, vurderede vi at ikke ville være i overenstemmelse med den agile tankegang at prøve at designe en abstrakt scraper.
 
-\subsection{Distrubution af arbejdet}
-
+\subsection{Distribution af arbejdet}
 Arbejdet med projektets forskellige elementer er blevet fordelt således, at hvert element er blevet udført af en eller to af gruppens medlemmer. En fordel ved denne metode er, at det er nemmere at uddelegere arbejdet, og at gruppens medlemmer skal fokusere på færre ting. Men samtidig kan det betyde at koden kan indeholde flere fejl. Ligeledes kan det betyde at det kan være sværere for udefrakommende personer eller de andre gruppemedlemmer at forstå de enkelte dele af projektet, da man kan have en tendens til at skrive enten kode eller rapport på en måde, der kun er foreståelig for én selv.
 
 \section{Videreudvikling}
@@ -457,7 +455,6 @@ Udførlig beskrivelse.\\
 - Use case 3(c), hvilke informationer skal mere præcist være knyttet til en vejleder.\\
 \textbf{Generelt} \\
 - Generelt virker de \textit{use cases} I har valgt at implementere i næste iteration overkommelige, udfra hvad I hidtil har nået. \\
-
 - I har ikke lagt fokus på høstning af data. I nævner ikke eksplicit, hvor jeres data kommer fra. \\
 - Verificering af vejledere. Loginsystem?
 
