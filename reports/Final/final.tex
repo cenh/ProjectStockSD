@@ -107,7 +107,46 @@ I forløbets start opstillede vi nogle \textit{use cases}, for at imødekomme de
 Vi foretog en løs priotering af produktets use cases og vurderede, hvad der var kernefunktionaliteter, og hvad der var \textit{"nice-to-have"}-funktionaliteter.
 
 \subsection*{Use cases}
-
+\begin{itemize}
+	\item Primær aktor: Studerende
+	\item Mål: Find information om projekt fra katalog
+	\begin{enumerate}
+		\item Den studerende går ind på 'Project Stock'-siden
+		\item Siden præsenterer muligheden for at se et katalog over projekter
+		\item Den studerende vælger at se kataloget med projekterne
+		\item Katalog bliver nu præsenteret på siden
+		\item Den studerende udvælger sig et projekt fra kataloget
+		\item Siden præsenterer information pågældene projekt.
+	\end{enumerate}
+	\item Udvidelser
+	\begin{itemize}
+	\item 2a Siden præsenterer ikke information som ønsket
+	\begin{itemize}
+		\item 2a1. Fejlbesked bliver præsenteret
+	\end{itemize}
+	\item 3a Den studerende vælger noget andet end at se kataloget
+	\begin{itemize}
+		\item 3a1. Siden præsenterer fortsat muligheden for at se kataloget
+	\end{itemize}
+  \end{itemize}
+	\item Variationer:
+	\begin{enumerate}
+		\item Studerende er
+		\begin{itemize}
+			\item bachelor-studerende
+			\item kandidat-studerende
+		\end{itemize}
+		\item Projekt kan være
+		\begin{itemize}
+			\item Datalogisk Institut projekt
+			\item Business club projekt
+		\end{itemize}
+		\item Søgt information er om
+		\begin{itemize}
+			\item vejleder i stedet for projekt
+		\end{itemize}
+	\end{enumerate}
+\end{itemize}
 \subsubsection{Kernefunktionaliteter}
 \label{sec:corefuncs}
 \begin{enumerate}
@@ -257,7 +296,7 @@ For at efterprøve vores tests, kan de køres på følgende vis:
 \begin{enumerate}
   \item Installer Robot vha. pip installer og følgende kommando\\
   \texttt{pip install robotframework}
-  \item Find ind i test mappen via følgende sti \\ \texttt{ProjectStockSD/project\_stock/project\_stock/tests/RobotTests/real\_tests} 
+  \item Find ind i test mappen via følgende sti \\ \texttt{ProjectStockSD/project\_stock/project\_stock/tests/RobotTests/real\_tests}
   \item Kør den valgte test ved at skrive \texttt{robot \_\_\_\_Test.robot}, eksempelvis \\
   \texttt{robot ProjectsTest.robot}
   \item Hvis Robot er installeret korrekt skulle terminalen gerne se ud som i \hyperref[fig:console_output]{figur \ref*{fig:console_output}}
