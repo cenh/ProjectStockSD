@@ -9,7 +9,7 @@ Library           Selenium2Library
 *** Variables ***
 ${SERVER}         http://128.199.39.136/
 ${BROWSER}        Firefox
-${DELAY}          2
+${DELAY}          0
 ${VALID USER}     test
 ${VALID PASSWORD}    acceptance
 ${OVERVIEW URL}      http://projectstock.karen.gg/projects/
@@ -32,7 +32,7 @@ Open Browser To Supervisor Page
     Set Selenium Speed    ${DELAY}
 
 Go To Diku Page
-    Go To   ${DIKU URL}  
+    Go To   ${DIKU URL}
     Set Selenium Speed    ${DELAY}
 
 
