@@ -89,8 +89,11 @@
 Hvert år skal datalogistuderende på DIKU (Datalogisk Institut, Københavns Universitet) finde et projekt, samt en vejleder, til det afsluttende projekt på deres bachelor- eller kandidatuddanelse. Det kan være en besværlig process, især for studerende, der ikke kender instituttets vejledere eller taler dansk.\\
 Den nuværende situation er, at de studerende skal gå fra dør til dør, for at finde en vejleder. Det er en ressourcekrævende process, både for de studerende og for vejlederene, at finde frem til det rette \textit{match}. Et match, hvor de studerende finder et projekt, de synes er interessant, samt en vejleder, der både har tid og er villig til at arbejde med dette projekt. \\
 Det er denne omstændelige process, der har frembragt ønsket om et 'Project in Stock'-system. Der har som formål at lette denne process. \\
-\textit{Product owner} Jyrki Katajainen, er medansvarlig for koordineringen af bachelorprojekter, og ønsker både en nemmere process og en mindre manuel løsning, end den nuværende.
-Vi har derfor lavet et websted, som ved brug af \textit{scraping}\cite{scraping} af informationer fra DIKU's hjemmeside, kan præsentere en opdateret visning af de forskellige ledige projekter og vejledere.
+Produktejer Jyrki Katajainen, er medansvarlig for koordineringen af bachelorprojekter, og ønsker både en nemmere process og en mindre manuel løsning, end den nuværende.
+Vi har derfor lavet et websted, som ved brug af høstning\cite{scraping} af informationer fra DIKU's hjemmeside, kan præsentere en opdateret visning af de forskellige ledige projekter og vejledere.
+
+\subsection{Afgrænsning}
+\label{sec:afgrænsning}
 Vi kunne ikke opfylde alle de funktionelle krav. \\
 Et krav som eksempelvis: "There should be a mechanism to check the quality of industrial projects", har vi vurderet, ville være for omfattende at implementere indenfor den tid, vi havde til rådighed. \\
 Ligeledes har vi også valgt ikke at implementere en løsning, hvor en studerende kan lave et "ønske-opslag" \ med en idé eller et emne, i håb om at en vejleder ville lave et projekt om det. \\
@@ -99,10 +102,10 @@ Vores løsning til dette problem er en dynamisk hjemmeside, hvori vejledere selv
 
 \section{Krav}
 \label{sec:krav}
-I forløbets start opstillede vi nogle \textit{use cases}, for at imødekomme de krav vores \textit{product owner} havde til det produkt, vi skulle udvikle. \\
-Vi foretog en løs priotering af produktets use cases og vurderede, hvad der var kernefunktionaliteter, og hvad der var \textit{"nice-to-have"}-funktionaliteter.
+I forløbets start opstillede vi nogle brugsscenarier\footnote{Vi bruger termet bruggscenarier som det engelske term \textit{use case}}, for at imødekomme de krav vores produktejer havde til det produkt, vi skulle udvikle. \\
+Vi foretog en løs priotering af produktets brugsscenarier og vurderede, hvad der var kernefunktionaliteter, og hvad der var \textit{"nice-to-have"}-funktionaliteter.
 
-\subsection*{Use cases}
+\subsection*{Brugsscenarier}
 \begin{itemize}
 	\item Primær aktor: Studerende
 	\item Mål: Find information om projekt fra katalog
@@ -325,7 +328,7 @@ Vi har til projektet besluttet ikke at bruge et specifikt IDE (Integrated Develo
 Vi besluttede os for at vi hver især arbejder mere effektivt og bedre, hvis vi udvikler det der passer os bedst indviduelt. Det vil sige, at nogle medlemmerne af vores gruppe selv har stået for at kunne afprøve programmet, lave refaktorering og afvikling af hjemmesiden. At kunne gøre brug af værktøjer til refaktorering, har ikke været et stort problem til vores projekt, da måderne at gøre ting på i Django, er meget specifikke. Derfor skal klasser, funktioner og andet se ud på en meget bestemt måde, hvilket vi fik sørget for i første omgang.
 
 \subsection{GitHub}
-Vi har brugt GitHubs \textit{issue tracking system}\cite{issuetracking} og tildelt issues milepæle, for at holde styr på hvilke arbejdsopgaver eller use cases, vi gerne vil have klaret inden en given iteration er færdig. Milepælene svarer til delafleveringerne og den endelige rapport. Derudover har vi en ekstra milepæl, som bliver brugt til at holde styr på opgaver, vi godt kunne tænke os at implementere, men som ikke er strengt nødvendige. Denne milepæl har vi kaldt "nice to haves."{} Et medlem kan derfor sætte sig selv (eller andre) på en opgave, så alle andre kan se hvem der arbejder på hvad. Der kan læses mere om, hvordan vi har brugt Git og hvilke udfordringer vi har haft i afsnit \ref{sec:git}.
+Vi har brugt GitHubs \textit{issue tracking system}\cite{issuetracking} og tildelt issues milepæle, for at holde styr på hvilke arbejdsopgaver eller brugsscenarier, vi gerne vil have klaret inden en given iteration er færdig. Milepælene svarer til delafleveringerne og den endelige rapport. Derudover har vi en ekstra milepæl, som bliver brugt til at holde styr på opgaver, vi godt kunne tænke os at implementere, men som ikke er strengt nødvendige. Denne milepæl har vi kaldt "nice to haves."{} Et medlem kan derfor sætte sig selv (eller andre) på en opgave, så alle andre kan se hvem der arbejder på hvad. Der kan læses mere om, hvordan vi har brugt Git og hvilke udfordringer vi har haft i afsnit \ref{sec:git}.
 
 \section{Diskussion og reflektion}
 \label{sec:diskussion}
@@ -361,8 +364,8 @@ Vi undersøgte problemet, og fandt frem til nogle Git-opsætninger som hjalp med
 Vi har ligeldes benyttet flere af GitHubs forskellige funktionaliteter til intern kommunikation. I roden på vores GitHub repository findes filen \texttt{README.md}. Denne fil har været brugt til vidensdeling.
 Her har vi bl.a. skrevet tips til at bruge Git mere effektivt og til at dele tanker og generelle informationer, der er relevante for projektet. Dette kan være alt fra, hvilke hjemmesider vi kan scrape, og hvordan man kan scrape det, til at dele YouTube videoer, der beskriver Django. \\ \\
 % teksten herunder er næsten identisk med GitHub afsnittet under Udviklingsmiljø
-Vi benyttet GitHub til at holde styr på arbejdsopgaver, som minder om use cases. Dette er gjort ved at oprette milepæle og \textit{issues}, milepælene er blevet sat til de forskellige delafleveringer/iterationer, inkl. den endelig rapport og en ekstra milepæl til 'nice to have' features. Derefter er der blevet oprettet issues til hver milepæl som afspejler hvad vi gerne vil have lavet færdig inden den næste iteration. Derved kan vi også holde styr på hvem laver hvad, da man kan tilføje medlemmer af gruppen til et issue, men man kan også diskutere løsninger og andet, selvom vi ikke sidder sammen og arbejder.
-Vores issues minder om use cases, men de kan også være bugs eller anden implementation som ikke nødvendigvis er en use case. \\
+Vi benyttet GitHub til at holde styr på arbejdsopgaver, som minder om brugsscenarier. Dette er gjort ved at oprette milepæle og \textit{issues}, milepælene er blevet sat til de forskellige delafleveringer/iterationer, inkl. den endelig rapport og en ekstra milepæl til 'nice to have' features. Derefter er der blevet oprettet issues til hver milepæl som afspejler hvad vi gerne vil have lavet færdig inden den næste iteration. Derved kan vi også holde styr på hvem laver hvad, da man kan tilføje medlemmer af gruppen til et issue, men man kan også diskutere løsninger og andet, selvom vi ikke sidder sammen og arbejder.
+Vores issues minder om brugsscenarier, men de kan også være bugs eller anden implementation som ikke nødvendigvis er en brugsscenarier. \\
 \\
 Igennem forløbet har vi været gode til at få lavet de opgaver vi havde sat os for at skulle løse, selvom der er nogle enkelte issues, som ikke er blevet lukket inden forløbets afslutning. Disse implementationer har vi valgt at beskrive senere i rapporten. \\ \\
 Vi begyndte først rigtig at bruge de her GitHub-funktioner, såsom issues og milepæle, efter 1-2 måneder inde i forløbet. Set tilbage ville vi gerne have startet med det tidligere, da det maksimerer effektivitet, men vi kendte simpelthen ikke til det på det tidspunkt, og fik det faktisk anbefalet af en anden gruppe til en review-session.
@@ -386,8 +389,8 @@ Arbejdet med projektets forskellige elementer er blevet fordelt således, at hve
 
 \section{Videreudvikling}
 \label{sec:videreudvikling}
-Vi vil diskutere de krav vi ikke nåede at implementere, men som vi gerne ville have lavet, givet mere tid. Dette kan ses som en liste over use cases, som et hold af udviklere skulle modtage, hvis de overtog projektet efter os.\\
-Bemærk at nedenstående ikke er use cases, men en beskrivelse af de ting der skal være en del af de use cases, som udviklerne skulle tilsendes.\\
+Vi vil diskutere de krav vi ikke nåede at implementere, men som vi gerne ville have lavet, givet mere tid. Dette kan ses som en liste over brugsscenarier, som et hold af udviklere skulle modtage, hvis de overtog projektet efter os.\\
+Bemærk at nedenstående ikke er brugsscenarier, men en beskrivelse af de ting der skal være en del af de brugsscenarier, som udviklerne skulle tilsendes.\\
 \begin{itemize}
 \item Verifikation og oprettelse af vejledere i systemet. Vi nåede ikke at lave et færdigt system til at lade vejledere registere sig i vores system, så de selv kan ligge projekter op på hjemmesiden.
 \item Man skal kunne se en liste over publikationer hos en vejleder, og en vejleder skal kunne ligge publikationer ind på sin side.
@@ -511,9 +514,9 @@ Udførlig beskrivelse.\\
 \textbf{Den næste iteration} \\
 - Uklart hvornår en underopgave, knyttet til en user story, er godkendt. Menes der her tests der passeres? \\
 - Lidt uklare termer for uindvidede ("Forbind dette nye view med et url.") \\
-- Underopgaverne til use case 1 og 2 er nærmest identiske. \\
-- Use case 3(a), hvad menes med: "Tjek at databasens "Counselor" model har \\ kontaktoplysninger, tilføj og tilpas efter behov." \\
-- Use case 3(c), hvilke informationer skal mere præcist være knyttet til en vejleder.\\
+- Underopgaverne til use cases 1 og 2 er nærmest identiske. \\
+- use case 3(a), hvad menes med: "Tjek at databasens "Counselor" model har \\ kontaktoplysninger, tilføj og tilpas efter behov." \\
+- use case 3(c), hvilke informationer skal mere præcist være knyttet til en vejleder.\\
 \textbf{Generelt} \\
 - Generelt virker de \textit{use cases} I har valgt at implementere i næste iteration overkommelige, udfra hvad I hidtil har nået. \\
 - I har ikke lagt fokus på høstning af data. I nævner ikke eksplicit, hvor jeres data kommer fra. \\
