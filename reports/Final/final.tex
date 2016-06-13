@@ -164,16 +164,15 @@ Nogle af disse filer er vigtigere end andre for at have en tilgængelig webappli
 Filen \texttt{manage.py} er essentiel eftersom, at det er den fil som styrer selve hjemmesiden. Det er med den fil man opretter et Django-projekt, starter en lokal webserver, opdaterer ens database og meget andet.\\
 Vi har en fil der hedder \texttt{fillmockdata.py}, som står for at bruge scraperen til at høste data, hvorefter den indsætter det i databasen. Det er altså et interface mellem scraperen og det Django-specifikke databasekode.\\
 \\
-<<<<<<< HEAD
+
 Vores specifikke struktur kan findes i bilag under ...
 
 \subsection{Generelt om Django frameworket}
 Django frameworket er opbygget efter designmønstret \textit{Model-View-Controller (MVC)}. Udviklerne har dog valgt navnekonventionen \textit{Model-Template-View (MTV)} \cite{djangoFAQ}. I Django er \textit{model} ansvarlig for at tilgå og validere data fra f.eks. en database. Her kan Django frameworket hjælpe således, at et felt i Django-model svarer til et felt i en databasetabel. \\
 Et \textit{view} er en Python-funktion, der tager en web-forespørgsel (\textit{request}) og returnerer web-respons \cite{djangoView}. \\
 \textit{Template} benyttes til dynamisk at genere HTML-sider, der b.la. til visuelt at præsentere information for brugeren. Django har sit eget indbyggede \textit{template language} \cite{djangoTemplate}. Vi har benyttet dette \textit{template language} i vores projekt.
-=======
+
 Den specifikke struktur for vores projekt kan findes i \nameref{sec:bilag_struktur}.
->>>>>>> d5d0e77e45b7f14eb10f913cdd6c9caddccb6356
 
 \subsection{Modularitet}
 Django er bygget op således, at (næsten) alle moduler kan tilføjes, ændres og fjernes som man ønsker, uden at det betyder noget for den overordnede applikation. Altså kan man f.eks. tilføje/fjerne \texttt{models.py} for at tilføje/fjerne projektets databasestruktur eller tilføje/fjerne \texttt{tests.py} afhængigt af om man vil have tests eller ej. Alternativt kan man lave en undermappe der hedder tests og placere sine \texttt{test\_*.py} filer her. Dette er en funktion indbygget i Pythons \texttt{unittest} modul, som automatisk leder i denne mappe efter navne der starter med "test".
@@ -250,10 +249,10 @@ For at efterprøve vores tests, kan de køres på følgende vis
 \begin{enumerate}
   \item Installer Robot vha. pip installer og følgende kommando\\
   \texttt{pip install robotframework}
-  \item Find ind i test mappen via følgende sti \\ \texttt{ProjectStockSD/project\_stock/project\_stock/tests/RobotTests/real\_tests} 
+  \item Find ind i test mappen via følgende sti \\ \texttt{ProjectStockSD/project\_stock/project\_stock/tests/RobotTests/real\_tests}
   \item Kør den valgte test ved at skrive \texttt{robot valgte test} eksempelvis
   \texttt{robot ProjectsTest.robot}
-  \item Hvis robot er installeret korrekt skulle terminalen gerne se således ud 
+  \item Hvis robot er installeret korrekt skulle terminalen gerne se således ud
     \begin{figure}[H]
         \centering
         \includegraphics[scale=0.5]{test.png}
@@ -324,11 +323,8 @@ Vi har vurderet, at det ville være svært og formentlig unødigvendigt at desig
 Da vi ikke har fundet andre websteder, hvor man kan høste information om de ansatte, eller projekter, for den sags skyld, vurderede vi at ikke ville være i overenstemmelse med den agile tankegang at prøve at designe en abstrakt scraper.
 
 \subsection{Distrubution af arbejdet}
-<<<<<<< HEAD
-Arbejdet med projektets forskellige elementer er blevet fordelt således, at hvert element er blevet udført af en eller to af gruppens medlemmer. En fordel ved denne metode er, at det er nemmere at uddelegere arbejdet, og at gruppens medlemmer skal fokusere på færre ting. Men samtidig kan det betyde at koden kan indeholde flere fejl. Ligeledes kan det betyde at det kan være sværere for udefrakommende personer eller de andre gruppemedlemmer at forstå de enkelte dele af projektet. Da man kan tendens til at skrive enten kode eller rapport på en måde, der kun er foreståelig for en selv.
-=======
+
 Arbejdet med projektets forskellige elementer er blevet fordelt således, at hvert element er blevet udført af en eller to af gruppens medlemmer. En fordel ved denne metode er, at det er nemmere at uddelegere arbejdet, og at gruppens medlemmer skal fokusere på færre ting. Men samtidig kan det betyde at koden kan indeholde flere fejl. Ligeledes kan det betyde at det kan være sværere for udefrakommende personer eller de andre gruppemedlemmer at forstå de enkelte dele af projektet, da man kan have en tendens til at skrive enten kode eller rapport på en måde, der kun er foreståelig for én selv.
->>>>>>> d5d0e77e45b7f14eb10f913cdd6c9caddccb6356
 
 \section{Videreudvikling}
 \label{sec:videreudvikling}
@@ -444,10 +440,9 @@ Vi har en også server der kører webapplikationen her: \url{http://128.199.39.1
 \subsubsection*{\textit{Meta:}}
 Vi foretog i dette \textit{sprint} et \textit{review} af 'gruppe 4's delaflevering 1. Her gav vi dem følgende kommentarer, her præsenteret som stikord til os selv, der blev uddybet, mundtligt.
 
-\subsubsection*{\textit{Review:}} 
+\subsubsection*{\textit{Review:}}
 \textbf{Afklaring af krav} \\
 Beskriver den nuværende problemstilling fint ("shopping" problemet).
-<<<<<<< HEAD
 User stories: \\
 - Hvad med business-clubs?\\
 \textbf{Opsætning af udviklingsmiljø} \\
@@ -460,20 +455,7 @@ Udførlig beskrivelse.\\
 - Use case 3(c), hvilke informationer skal mere præcist være knyttet til en vejleder.\\
 \textbf{Generelt} \\
 - Generelt virker de \textit{use cases} I har valgt at implementere i næste iteration overkommelige, udfra hvad I hidtil har nået. \\
-=======
-User stories:
-- Hvad med business-clubs?
-\textbf{Opsætning af udviklingsmiljø}
-Udførlig beskrivelse.
-\textbf{Den næste iteration}
-- Uklart hvornår en underopgave, knyttet til en user story, er godkendt. Menes der her tests der passeres?
-- Lidt uklare termer for uindvidede ("Forbind dette nye view med et url.")
-- Underopgaverne til use case 1 og 2 er nærmest identiske.
-- Use case 3(a), hvad menes med: "Tjek at databasens "Counselor" model har kontaktoplysninger, tilføj og tilpas efter behov."
-- Use case 3(c), hvilke informationer skal mere præcist være knyttet til en vejleder.
-\textbf{Generelt}
-- Generelt virker de use cases I har valgt at implementere i næste iteration overkommelige, udfra hvad I hidtil har nået. \\
->>>>>>> d5d0e77e45b7f14eb10f913cdd6c9caddccb6356
+
 - I har ikke lagt fokus på høstning af data. I nævner ikke eksplicit, hvor jeres data kommer fra. \\
 - Verificering af vejledere. Loginsystem?
 
