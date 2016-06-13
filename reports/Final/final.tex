@@ -149,15 +149,75 @@ Vi foretog en løs priotering af produktets brugsscenarier og vurderede, hvad de
 \subsubsection{Kernefunktionaliteter}
 \label{sec:corefuncs}
 \begin{enumerate}
-	\item Det skal være muligt at se et katalog over projekter og vejledere.
+	\item \begin{itemize}
+		\item Primær aktor: Studerende
+		\item Mål: Find information om projekt fra katalog
+		\begin{enumerate}
+			\item\label{u1} Den studerende går ind på 'Project Stock'-siden
+			\item\label{u2} Siden præsenterer muligheden for at se et katalog over projekter
+			\item\label{u3} Den studerende vælger at se kataloget med projekterne
+			\item\label{u4} Katalog bliver nu præsenteret på siden
+			\item\label{u5} Den studerende udvælger sig et projekt fra kataloget
+			\item\label{u6} Siden præsenterer information pågældene projekt.
+		\end{enumerate}
+		\item Udvidelser:
+		\begin{itemize}
+		\item \ref{u2} Siden præsenterer ikke information som ønsket
+		\begin{itemize}
+			\item \ref{u2}. Fejlbesked bliver præsenteret
+		\end{itemize}
+		\item \ref{u3} Den studerende vælger noget andet end at se kataloget
+		\begin{itemize}
+			\item \ref{u3} Siden præsenterer fortsat muligheden for at se kataloget
+		\end{itemize}
+	  \end{itemize}
+		\item Variationer:
+		\begin{enumerate}
+			\item Studerende er
+			\begin{itemize}
+				\item bachelor-studerende
+				\item kandidat-studerende
+			\end{itemize}
+			\item Projekt kan være
+			\begin{itemize}
+				\item Datalogisk Institut projekt
+				\item Business club projekt
+			\end{itemize}
+			\item Søgt information er om
+			\begin{itemize}
+				\item vejleder i stedet for projekt
+			\end{itemize}
+		\end{enumerate}
+	\end{itemize}
 	\item Systemet skal kunne præsentere opdaterede oplysninger om potentielle vejledere, herunder:
 	\begin{itemize}
 		\item Tidligere projekter
 		\item Forskningspublikationer
 		\item Kontaktoplysninger
 	\end{itemize}
-	\item Personer, der optræder på siden, skal kunne verificeres, hvis de eksempelvis ønsker at tilføje projekter eller foretage rettelser.
-	\item Vejledere skal kunne oprette projekter, som derefter vil indgå i kataloget over projekter.
+
+	\item \begin{itemize}
+		\item Primær aktor: Vejleder
+		\item Mål: Verificere sig selv, således at vejleder kan foretage rettelser
+		\begin{enumerate}
+			\item\label{u1} Vejlederen går ind på 'Project Stock'-siden
+			\item\label{u2} Siden præsenterer muligheden for at verificere sig selv via sin oplyste mail
+			\item\label{u3} Vejlederen modtager sin verifikationskode via mail
+			\item\label{u4} Vejlederen vælger at give de tilstrækkelige oplysninger for at blive verificeret
+			\item\label{u5} Vejlederen er nu oprettet således, at han kan foretage ændringer i informationer der vedrører ham
+		\end{enumerate}
+		\item Udvidelser:
+		\begin{itemize}
+		\item \ref{u2} Siden præsenterer ikke information som ønsket
+		\begin{itemize}
+			\item \ref{u2}. Fejlbesked bliver præsenteret
+		\end{itemize}
+		\item \ref{u3} Vejlederen har ikke adgang til den oplyste mail
+		\begin{itemize}
+			\item \ref{u3} Mulighed for at kontakte adminstrator bliver præsenteret
+		\end{itemize}
+	  \end{itemize}
+	\end{itemize}
 \end{enumerate}
 
 \subsubsection{"Nice-to-have"{}-funktionaliteter}
