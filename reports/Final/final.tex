@@ -84,18 +84,20 @@
 
 \section{Indledning}
 \label{sec:indledning}
-Hvert år skal datalogistuderende på DIKU finde et projekt til at afslutte deres bachelor eller kandidat. Det kan være en besværlig proces at finde en vejleder eller et emne som passer til ens ønsker. De studerende har enten skulle gå fra dør til dør og spørge en vejleder, om de har et projekt til en eller være tilstede til en enkel forelæsning hvor nogle vejledere præsenterer deres projekter. \\ \\
-Vi som studerende har en vis interesse i at få et bedre system på plads, hvori studerende kan finde et katalog med vejledere og projekter, da vi selv kommer til at stå i en situation hvor vi skal finde et kandidat eller bachelor projekt. En måde at se hvilke projekter vejlederne har liggende, men også en mulighed for at se hvilke projekter de har haft tidligere. \\ \\
-Vores løsning til dette problem er en dynamisk hjemmeside, hvori vejledere selv kan ligge projekter op, informere om deadlines og meget andet. Hjemmesiden er skrevet i det objektorienterede programmeringssprog \textit{Python} samt open-source frameworket \textit{Django}. \\ \\
-Vi vil igennem rapporten gå igennem de krav vi har opstillet, vores designproces, afprøvning, udviklingsmiljø, og til sidst vil vi diskutere, hvad der mangler at blive lavet på vores projekt og hvordan vi har arbejdet sammen.\\
+Denne rapport beskriver udviklingsprocessen og det produkt, der er fremkommet efter et semesters arbejde med projektet med titlen 'Project in Stock' (også omtalt 'Project Stock'). Projektet har været en del af kurset Softwareudvikling på Datalogisk Institut, Københavns Universitet.
 
 \section{Problembeskrivelse}
 \label{sec:problem}
-Vores projekt er udviklet som en løsning på den til dels besværlige proces, som det kan være at tilmelde sig bachelorprojekter. Jyrki, som er medansvarlig for bachelorprojekterne, ønskede en mindre manuel løsning end den forhenværende. Det største problem i den tidligere løsning opstod når elever skulle gå fra professor til professor og få afslag. Yderligere har problemer som den nye reform gjort det endnu vigtigere at få en hurtigere og smartere metode. \\
-Vi har derfor lavet en side, som ved automatisk \textit{scraping}\cite{scraping} af informationer fra DIKU's hjemmeside, kan præsentere en opdateret visning af de forskellige ledige projekter og vejledere, samt deres arbejdsbyrde. Opsumeret har vi altså fået implementeret alle "Quality requirements". \\
-% mellemrum efter " bliver slettet, derfor {}
-Vi kunne til gengæld ikke opfylde alle de funktionelle krav, da et punkt som f.eks. "There should be a mechanism to check the quality of industrial projects"{} er for subjektivt og vi hverken har erfaring eller viden omkring dette. \\
-Ligeledes har vi også valgt ikke at implementere en løsning, hvor studerende kan lave et "ønske-opslag"{} om uaktuelle emner, i håb om at nogle vejledere vil lave et projekt om det.
+Hvert år skal datalogistuderende på DIKU (Datalogisk Institut, Københavns Universitet) finde et projekt, samt en vejleder, til det afsluttende projekt på deres bachelor- eller kandidatuddanelse. Det kan være en besværlig process, især for studerende, der ikke kender instituttets vejledere eller taler dansk.\\
+Den nuværende situation er, at de studerende skal gå fra dør til dør, for at finde en vejleder. Det er en ressourcekrævende process, både for de studerende og for vejlederene, at finde frem til det rette \textit{match}. Et match, hvor de studerende finder et projekt, de synes er interessant, samt en vejleder, der både har tid og er villig til at arbejde med dette projekt. \\
+Det er denne omstændelige process, der har frembragt ønsket om et 'Project in Stock'-system. Der har som formål at lette denne process. \\
+\textit{Product owner} Jyrki Katajainen, er medansvarlig for koordineringen af bachelorprojekter, og ønsker både en nemmere process og en mindre manuel løsning, end den nuværende.
+Vi har derfor lavet et websted, som ved brug af \textit{scraping}\cite{scraping} af informationer fra DIKU's hjemmeside, kan præsentere en opdateret visning af de forskellige ledige projekter og vejledere.
+Vi kunne ikke opfylde alle de funktionelle krav. \\
+Et krav som eksempelvis: "There should be a mechanism to check the quality of industrial projects", har vi vurderet, ville være for omfattende at implementere indenfor den tid, vi havde til rådighed. \\
+Ligeledes har vi også valgt ikke at implementere en løsning, hvor en studerende kan lave et "ønske-opslag" \ med en idé eller et emne, i håb om at en vejleder ville lave et projekt om det. \\
+Vores løsning til dette problem er en dynamisk hjemmeside, hvori vejledere selv kan ligge projekter op, informere om deadlines og meget andet. Hjemmesiden er skrevet i programmeringssproget \textit{Python} samt open-source frameworket \textit{Django}.
+
 
 \section{Krav}
 \label{sec:krav}
