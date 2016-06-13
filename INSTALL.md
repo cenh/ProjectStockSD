@@ -26,16 +26,14 @@ Kør følgende kommando i en terminal:
 `python manage.py test --settings=project_stock.test_settings`
 
 ### Kør robot tests (valgfrit)
-Installer Robot med pip:
-
-Kør følgende kommando i en terminal:
+Installer Robot med pip ved at køre følgende kommando i en terminal:
 
 `pip install robotframework`
 
-Navigerer til testen:
+Naviger til testen:
 
 `cd ProjectStockSD/project_stock/project_stock/tests/RobotTests/real_tests`
 
-Kør en testene med (Vælg selv en af dem der ligger der):
+Kør en test med (vælg selv en af dem der ligger der):
 
-`robot test_file` f.eks. `robot ProjectsTest.robot`
+`robot test_file`, f.eks. `robot ProjectsTest.robot`
