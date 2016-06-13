@@ -19,7 +19,7 @@
 \usepackage{float}
 \usepackage{dirtree}
 %\usepackage[none]{hyphenat}
-\usepackage[super]{cite}
+\usepackage{cite}
 \lstset{
 	frame=single,
 	breaklines=true,
@@ -63,7 +63,9 @@
 	\and
 	\Large{Christian E.N. Hansen} - \textbf{vmk541} - \texttt{cralle@outlook.com}
 }
-
+\makeatletter
+\renewcommand\@cite[1]{\textsuperscript{[#1]}}
+\makeatother
 
 \begin{document}
 
