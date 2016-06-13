@@ -106,30 +106,35 @@ I forløbets start opstillede vi nogle brugsscenarier\footnote{Vi bruger termet 
 Vi foretog en løs priotering af produktets brugsscenarier og vurderede, hvad der var kernefunktionaliteter, og hvad der var \textit{"nice-to-have"}-funktionaliteter. Den fremgangsmåde, der er brugt til at skrive brugsscenarier følger i store træk [Cockburn\cite{cockburn}].
 
 \subsection*{Brugsscenarier}
+\subsubsection{Kernefunktionaliteter}
+\label{sec:corefuncs}
+\begin{enumerate}
+
+\item \label{item:katalog} \underline{Katalogbrugsscenarie:}
 \begin{itemize}
-	\item Primær aktor: Studerende
+	\item Primær aktør: Studerende
 	\item Mål: Find information om projekt fra katalog
-	\begin{enumerate}
+	\begin{enumerate}[(i)]
 		\item Den studerende går ind på 'Project Stock'-siden
-		\item Siden præsenterer muligheden for at se et katalog over projekter
-		\item Den studerende vælger at se kataloget med projekterne
+		\item \label{i2} Siden præsenterer muligheden for at se et katalog over projekter
+		\item \label{i3} Den studerende vælger at se kataloget med projekterne
 		\item Katalog bliver nu præsenteret på siden
 		\item Den studerende udvælger sig et projekt fra kataloget
 		\item Siden præsenterer information pågældene projekt.
 	\end{enumerate}
-	\item Udvidelser
+	\item Udvidelser:
 	\begin{itemize}
-	\item 2a Siden præsenterer ikke information som ønsket
+	\item Udvidelse til (\ref{i2}): Siden præsenterer ikke information som ønsket
 	\begin{itemize}
-		\item 2a1. Fejlbesked bliver præsenteret
+		\item Fejlbesked bliver præsenteret
 	\end{itemize}
-	\item 3a Den studerende vælger noget andet end at se kataloget
+	\item Udvidelse til (\ref{i3}): Den studerende vælger noget andet end at se kataloget
 	\begin{itemize}
-		\item 3a1. Siden præsenterer fortsat muligheden for at se kataloget
+		\item Siden præsenterer fortsat muligheden for at se kataloget
 	\end{itemize}
   \end{itemize}
 	\item Variationer:
-	\begin{enumerate}
+	\begin{itemize}
 		\item Studerende er
 		\begin{itemize}
 			\item bachelorstuderende
@@ -144,86 +149,48 @@ Vi foretog en løs priotering af produktets brugsscenarier og vurderede, hvad de
 		\begin{itemize}
 			\item vejleder i stedet for projekt
 		\end{itemize}
-	\end{enumerate}
-\end{itemize}
-\subsubsection{Kernefunktionaliteter}
-\label{sec:corefuncs}
-\begin{enumerate}
-	\item \begin{itemize}
-		\item Primær aktør: Studerende
-		\item Mål: Find information om projekt fra katalog
-		\begin{enumerate}
-			\item\label{a1} Den studerende går ind på 'Project Stock'-siden
-			\item\label{a2} Siden præsenterer muligheden for at se et katalog over projekter
-			\item\label{a3} Den studerende vælger at se kataloget med projekterne
-			\item\label{a4} Katalog bliver nu præsenteret på siden
-			\item\label{a5} Den studerende udvælger sig et projekt fra kataloget
-			\item\label{a6} Siden præsenterer information for det pågældene projekt
-		\end{enumerate}
-		\item Udvidelser:
-		\begin{itemize}
-		\item \ref{a2} Siden præsenterer ikke information som ønsket
-		\begin{itemize}
-			\item \ref{a2}. Fejlbesked bliver præsenteret
-		\end{itemize}
-		\item \ref{a3} Den studerende vælger noget andet end at se kataloget
-		\begin{itemize}
-			\item \ref{a3} Siden præsenterer fortsat muligheden for at se kataloget
-		\end{itemize}
-	  \end{itemize}
-		\item Variationer:
-		\begin{enumerate}
-			\item Studerende er
-			\begin{itemize}
-				\item bachelorstuderende
-				\item kandidatstuderende
-			\end{itemize}
-			\item Projekt kan være
-			\begin{itemize}
-				\item Datalogisk Institut projekt
-				\item Business club projekt
-			\end{itemize}
-			\item Søgt information er om
-			\begin{itemize}
-				\item vejleder i stedet for projekt
-			\end{itemize}
-		\end{enumerate}
 	\end{itemize}
-	\item Systemet skal kunne præsentere opdaterede oplysninger om potentielle vejledere, herunder:
+\end{itemize}
+
+\item \label{item:verificering} \underline{Verificeringsbrugsscenarie:}
+	\begin{itemize}
+	\item Primær aktør: Vejleder
+	\item Mål: Verificere sig selv, således at vejleder kan foretage rettelser
+	\begin{enumerate}[(i)]
+		\item\label{u1} Vejlederen går ind på 'Project Stock'-siden
+		\item\label{u2} Siden præsenterer muligheden for at verificere sig selv via sin oplyste mail
+		\item\label{u3} Vejlederen modtager sin verifikationskode via mail
+		\item\label{u4} Vejlederen vælger at give de tilstrækkelige oplysninger for at blive verificeret
+		\item\label{u5} Vejlederen er nu oprettet således, at han kan foretage ændringer i informationer, der vedrører ham
+	\end{enumerate}
+	\item Udvidelser:
+	\begin{itemize}
+	\item Udvidelse til (\ref{u2}): Siden præsenterer ikke information som ønsket
+	\begin{itemize}
+		\item Fejlbesked bliver præsenteret
+	\end{itemize}
+	\item Udvidelse til (\ref{u3}): Vejlederen har ikke adgang til den oplyste mail
+	\begin{itemize}
+		\item Mulighed for at kontakte adminstrator bliver præsenteret
+	\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+
+	\item \label{item:vejleder} Systemet skal kunne præsentere opdaterede oplysninger om potentielle vejledere, herunder:
 	\begin{itemize}
 		\item Tidligere projekter
 		\item Forskningspublikationer
 		\item Kontaktoplysninger
 	\end{itemize}
 
-	\item \begin{itemize}
-		\item Primær aktør: Vejleder
-		\item Mål: Verificere sig selv, således at vejleder kan foretage rettelser
-		\begin{enumerate}
-			\item\label{u1} Vejlederen går ind på 'Project Stock'-siden
-			\item\label{u2} Siden præsenterer muligheden for at verificere sig selv via sin oplyste mail
-			\item\label{u3} Vejlederen modtager sin verifikationskode via mail
-			\item\label{u4} Vejlederen vælger at give de tilstrækkelige oplysninger for at blive verificeret
-			\item\label{u5} Vejlederen er nu oprettet således, at han kan foretage ændringer i informationer, der vedrører ham
-		\end{enumerate}
-		\item Udvidelser:
-		\begin{itemize}
-		\item \ref{u2} Siden præsenterer ikke information som ønsket
-		\begin{itemize}
-			\item \ref{u2}. Fejlbesked bliver præsenteret
-		\end{itemize}
-		\item \ref{u3} Vejlederen har ikke adgang til den oplyste mail
-		\begin{itemize}
-			\item \ref{u3} Mulighed for at kontakte adminstrator bliver præsenteret
-		\end{itemize}
-	  \end{itemize}
-	\end{itemize}
+
 \end{enumerate}
 
 \subsubsection{"Nice-to-have"{}-funktionaliteter}
 \label{sec:nicefuncs}
 \begin{enumerate}
-  \item Systemet skal kunne vise projekter knyttet til specifikke keywords.
+  \item \label{item:keyword} Systemet skal kunne vise projekter knyttet til specifikke keywords.
 
   \item Systemet skal vise en status på en vejleders arbejdsbyrde.
   \item En vejleder eller en person knyttet til en \textit{business-club}, skal kunne tilføje et projekt til projektkataloget.
@@ -307,7 +274,7 @@ Herunder har vi de mest essentielle sider i vores webapplikation.
     \label{fig:frontend_supervisors}
 \end{figure}
 ~\\
-\hyperref[fig:frontend_projects]{Figur \ref*{fig:frontend_projects}} og \hyperref[fig:frontend_supervisors]{figur \ref*{fig:frontend_supervisors}} viser de to vigtigste sider i vores webapplikation. Disse to sider viser information omkring projekter og vejledere, og opfylder dermed henholdsvis krav 1 og 2 fra afsnit \ref{sec:corefuncs}. Klikker man på en vejleder eller et projekt, vil man blive vist detaljer omkring den specifikke vejleder eller projekt.
+\hyperref[fig:frontend_projects]{Figur \ref*{fig:frontend_projects}} og \hyperref[fig:frontend_supervisors]{figur \ref*{fig:frontend_supervisors}} viser de to vigtigste sider i vores webapplikation. Disse to sider viser information omkring projekter og vejledere, og opfylder dermed brugsscenariekrav \ref{item:katalog} fra afsnit \ref{sec:corefuncs}. Klikker man på en vejleder eller et projekt, vil man blive vist detaljer omkring den specifikke vejleder eller projekt.
 
 \begin{figure}[H]
     \centering
@@ -316,16 +283,16 @@ Herunder har vi de mest essentielle sider i vores webapplikation.
     \label{fig:profile}
 \end{figure}
 ~\\
-\hyperref[fig:profile]{Figur \ref*{fig:profile}} viser hvordan en vejleders profilside ser ud. Denne profil er generet af vores scraper, som har høstet informationen fra DIKU's hjemmeside.
+\hyperref[fig:profile]{Figur \ref*{fig:profile}} viser hvordan en vejleders profilside ser ud. Denne profil er generet af vores scraper, som har høstet informationen fra DIKU's hjemmeside. Dette opfylder krav \ref{item:vejleder} fra afsnit \ref{sec:corefuncs}.
 
 \subsubsection{Grupper}
 På denne side kan studerende se en oversigt over grupper med vejledere inden for et specifikt felt, og dermed finde adskillige vejledere inden for feltet, som den studerende interesserer sig for.
-Denne side er funktionel og opfylder krav 1 i afsnit \ref{sec:nicefuncs}. Dog er scraperen endnu ikke i stand til også at høste ansattes grupper. \hyperref[fig:frontend_groups]{Figur \ref*{fig:frontend_groups}} på side \pageref{fig:frontend_groups} viser et screenshot af denne side.
+Denne side er funktionel og opfylder krav \ref{item:keyword} i afsnit \ref{sec:nicefuncs}, da navnet på en gruppe er et keyword. Dog er scraperen endnu ikke i stand til også at høste ansattes grupper. \hyperref[fig:frontend_groups]{Figur \ref*{fig:frontend_groups}} på side \pageref{fig:frontend_groups} viser et screenshot af denne side.
 
 \subsubsection{Registrering}
 Her kan en vejleder registrere sig på siden, men kun hvis vejlederen allerede står som vejleder på siden, enten indhentet vha. scraperen eller indtastet manuelt af en "superuser". En superuser er en bruger på siden der kan tilføje, slette og redigere i alt.\\
 Siden er ikke helt funktionel, da den ikke rigtigt gør noget, men dette ville ikke kræve meget ekstra arbejde at få lavet færdigt.
-Denne side ville opfylde krav 3 fra \ref{sec:corefuncs}, hvis den havde været færdigimplementeret. \hyperref[fig:frontend_registration]{Figur \ref*{fig:frontend_registration}} på side \pageref{fig:frontend_registration} viser et udkast af denne funktion.
+Denne side ville opfylde krav \ref{item:verificering} fra \ref{sec:corefuncs}, hvis den havde været færdigimplementeret. \hyperref[fig:frontend_registration]{Figur \ref*{fig:frontend_registration}} på side \pageref{fig:frontend_registration} viser et udkast af denne funktion.
 
 \subsubsection{Adminpanel}
 Vi bruger Djangos indbyggede adminpanel, dog med nogle få ændringer, til at håndtere indtastning af data manuelt. Bl.a. er adminpanelet blevet udvidet med en navigationsbar til at navigere rundt på siden. Denne fulgte ikke med Djangos adminpanel, og det kunne derfor være svært at komme tilbage til vores webapplikation når man først går ind i adminpanelet. Screenshots af adminpanelet, med og uden ændringer, kan ses på \hyperref[fig:frontend_admin_vanilla]{figur \ref*{fig:frontend_admin_vanilla}}, \ref{fig:frontend_admin_login} og \ref{fig:frontend_admin} i \nameref{sec:bilag_frontend}.
@@ -557,7 +524,7 @@ Vi kan efter vores forløb konkludere følgende:
 Man kan hente vores release på følgende link:
 \url{https://github.com/cenh/ProjectStockSD/releases/tag/0.1.1}\\
 \\
-I arkivet ligger der en fil kaldet INSTALL.md, der forklarer, hvordan man kører vores hjemmeside lokalt, og også hvordan man kører vores tests. \\ \\
+I arkivet ligger der en fil kaldet \texttt{INSTALL.md}, der forklarer, hvordan man kører vores hjemmeside lokalt, og også hvordan man kører vores tests. \\ \\
 Alternativt har vi også sat en server op til at køre webapplikationen her: \url{http://128.199.39.136/}
 
 \subsection{Bilag C}
