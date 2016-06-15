@@ -1,6 +1,12 @@
 # ProjectStockSD
 
 Velkommen til vores Project Stock repository!
+Dette tilhører gruppen bestående af:
+	
+Christian Engelsborg N Hansen
+Stefan Friis Tofte
+Lasse Halberg Haarby
+Mads Kronborg Nielsen
 
 ## Indholdsfortegnelse
 * [Kør Serveren Lokalt](https://github.com/cenh/ProjectStockSD#kør-serveren-lokalt)
